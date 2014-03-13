@@ -21,6 +21,7 @@
 		727ABD9118D257C1005B9ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7318D257C1005B9ACC /* UIKit.framework */; };
 		727ABD9918D257C1005B9ACC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 727ABD9718D257C1005B9ACC /* InfoPlist.strings */; };
 		727ABD9B18D257C1005B9ACC /* AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABD9A18D257C1005B9ACC /* AppTests.m */; };
+		727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDA518D257EC005B9ACC /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		727ABD9618D257C1005B9ACC /* AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppTests-Info.plist"; sourceTree = "<group>"; };
 		727ABD9818D257C1005B9ACC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		727ABD9A18D257C1005B9ACC /* AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTests.m; sourceTree = "<group>"; };
+		727ABDA418D257EC005B9ACC /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		727ABDA518D257EC005B9ACC /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 				727ABD8418D257C1005B9ACC /* AUDLViewController.h */,
 				727ABD8518D257C1005B9ACC /* AUDLViewController.m */,
 				727ABD8718D257C1005B9ACC /* Images.xcassets */,
+				727ABDA718D25801005B9ACC /* Library */,
 				727ABD7618D257C1005B9ACC /* Supporting Files */,
 			);
 			path = App;
@@ -150,6 +154,16 @@
 				727ABD9718D257C1005B9ACC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		727ABDA718D25801005B9ACC /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				727ABDA418D257EC005B9ACC /* SWRevealViewController.h */,
+				727ABDA518D257EC005B9ACC /* SWRevealViewController.m */,
+			);
+			name = Library;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +267,7 @@
 				727ABD8618D257C1005B9ACC /* AUDLViewController.m in Sources */,
 				727ABD8018D257C1005B9ACC /* AUDLAppDelegate.m in Sources */,
 				727ABD7C18D257C1005B9ACC /* main.m in Sources */,
+				727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
