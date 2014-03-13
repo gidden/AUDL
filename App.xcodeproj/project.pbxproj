@@ -22,6 +22,8 @@
 		727ABD9918D257C1005B9ACC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 727ABD9718D257C1005B9ACC /* InfoPlist.strings */; };
 		727ABD9B18D257C1005B9ACC /* AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABD9A18D257C1005B9ACC /* AppTests.m */; };
 		727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDA518D257EC005B9ACC /* SWRevealViewController.m */; };
+		727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDA918D25B59005B9ACC /* SidebarViewController.m */; };
+		727ABDAD18D25C7B005B9ACC /* AUDLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		727ABD9A18D257C1005B9ACC /* AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTests.m; sourceTree = "<group>"; };
 		727ABDA418D257EC005B9ACC /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		727ABDA518D257EC005B9ACC /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		727ABDA818D25B59005B9ACC /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
+		727ABDA918D25B59005B9ACC /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
+		727ABDAB18D25C7B005B9ACC /* AUDLMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLMainViewController.h; sourceTree = "<group>"; };
+		727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLMainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +124,12 @@
 				727ABD7E18D257C1005B9ACC /* AUDLAppDelegate.h */,
 				727ABD7F18D257C1005B9ACC /* AUDLAppDelegate.m */,
 				727ABD8118D257C1005B9ACC /* Main.storyboard */,
+				727ABDAB18D25C7B005B9ACC /* AUDLMainViewController.h */,
+				727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */,
 				727ABD8418D257C1005B9ACC /* AUDLViewController.h */,
 				727ABD8518D257C1005B9ACC /* AUDLViewController.m */,
+				727ABDA818D25B59005B9ACC /* SidebarViewController.h */,
+				727ABDA918D25B59005B9ACC /* SidebarViewController.m */,
 				727ABD8718D257C1005B9ACC /* Images.xcassets */,
 				727ABDA718D25801005B9ACC /* Library */,
 				727ABD7618D257C1005B9ACC /* Supporting Files */,
@@ -264,6 +274,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */,
+				727ABDAD18D25C7B005B9ACC /* AUDLMainViewController.m in Sources */,
 				727ABD8618D257C1005B9ACC /* AUDLViewController.m in Sources */,
 				727ABD8018D257C1005B9ACC /* AUDLAppDelegate.m in Sources */,
 				727ABD7C18D257C1005B9ACC /* main.m in Sources */,
