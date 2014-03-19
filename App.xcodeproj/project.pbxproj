@@ -24,6 +24,8 @@
 		727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDA518D257EC005B9ACC /* SWRevealViewController.m */; };
 		727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDA918D25B59005B9ACC /* SidebarViewController.m */; };
 		727ABDAD18D25C7B005B9ACC /* AUDLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */; };
+		72F4DAEE18D7739900E571FC /* AUDLNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F4DAEC18D7739900E571FC /* AUDLNewsViewController.m */; };
+		72F4DAEF18D7739900E571FC /* AUDLNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4DAED18D7739900E571FC /* AUDLNewsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,9 @@
 		727ABDA918D25B59005B9ACC /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		727ABDAB18D25C7B005B9ACC /* AUDLMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLMainViewController.h; sourceTree = "<group>"; };
 		727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLMainViewController.m; sourceTree = "<group>"; };
+		72F4DAEB18D7739900E571FC /* AUDLNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLNewsViewController.h; sourceTree = "<group>"; };
+		72F4DAEC18D7739900E571FC /* AUDLNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLNewsViewController.m; sourceTree = "<group>"; };
+		72F4DAED18D7739900E571FC /* AUDLNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLNewsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +129,9 @@
 				727ABD7E18D257C1005B9ACC /* AUDLAppDelegate.h */,
 				727ABD7F18D257C1005B9ACC /* AUDLAppDelegate.m */,
 				727ABD8118D257C1005B9ACC /* Main.storyboard */,
+				72F4DAEB18D7739900E571FC /* AUDLNewsViewController.h */,
+				72F4DAEC18D7739900E571FC /* AUDLNewsViewController.m */,
+				72F4DAED18D7739900E571FC /* AUDLNewsViewController.xib */,
 				727ABDAB18D25C7B005B9ACC /* AUDLMainViewController.h */,
 				727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */,
 				727ABD8418D257C1005B9ACC /* AUDLViewController.h */,
@@ -254,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				727ABD8818D257C1005B9ACC /* Images.xcassets in Resources */,
+				72F4DAEF18D7739900E571FC /* AUDLNewsViewController.xib in Resources */,
 				727ABD7A18D257C1005B9ACC /* InfoPlist.strings in Resources */,
 				727ABD8318D257C1005B9ACC /* Main.storyboard in Resources */,
 			);
@@ -279,6 +288,7 @@
 				727ABD8618D257C1005B9ACC /* AUDLViewController.m in Sources */,
 				727ABD8018D257C1005B9ACC /* AUDLAppDelegate.m in Sources */,
 				727ABD7C18D257C1005B9ACC /* main.m in Sources */,
+				72F4DAEE18D7739900E571FC /* AUDLNewsViewController.m in Sources */,
 				727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +494,7 @@
 				727ABDA018D257C1005B9ACC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		727ABDA118D257C1005B9ACC /* Build configuration list for PBXNativeTarget "AppTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +503,7 @@
 				727ABDA318D257C1005B9ACC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
