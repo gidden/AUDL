@@ -89,7 +89,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="G1H-5o-iDs" kind="custom" customClass="SWRevealViewControllerSegue" id="ZfR-kv-2QV"/>
+                                    <segue destination="ncx-yl-juI" kind="custom" customClass="SWRevealViewControllerSegue" id="AGc-vN-S5x"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teams" id="A52-ET-1aB">
@@ -108,6 +108,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="7Vv-Hs-o4D" kind="custom" customClass="SWRevealViewControllerSegue" id="PFc-mN-JXp"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="statistics" id="hyT-CI-R62">
                                 <rect key="frame" x="0.0" y="198" width="320" height="44"/>
@@ -189,39 +192,76 @@
             </objects>
             <point key="canvasLocation" x="83" y="-269"/>
         </scene>
-        <!--News View Controller - NewsViewController-->
-        <scene sceneID="3xc-um-yeN">
+        <!--News Table View Controller-->
+        <scene sceneID="40t-d4-icd">
             <objects>
-                <viewController title="NewsViewController" id="G1H-5o-iDs" customClass="AUDLNewsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IU4-oY-ipU"/>
-                        <viewControllerLayoutGuide type="bottom" id="k9Q-vW-ai2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="p9N-xr-EQz">
+                <tableViewController id="ncx-yl-juI" customClass="AUDLNewsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="k3O-Y7-c0H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AUDL News" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyg-SY-BxF">
-                                <rect key="frame" x="114" y="118" width="93" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="uXx-yt-n9q">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="luB-jd-NG6"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="QQP-Bk-mAK">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QQP-Bk-mAK" id="kqz-o3-9VZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ncx-yl-juI" id="ElB-Kz-iyE"/>
+                            <outlet property="delegate" destination="ncx-yl-juI" id="V7C-EG-863"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="CA7-bN-UNb">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="A6L-NN-mz2"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="sidebarButton" destination="luB-jd-NG6" id="FZN-2n-BhD"/>
+                        <outlet property="sidebarButton" destination="A6L-NN-mz2" id="Iw8-Wp-dH0"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YjC-3O-9Nk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7KA-O0-jUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="593" y="-269"/>
+            <point key="canvasLocation" x="595" y="-298"/>
+        </scene>
+        <!--Teams Table View Controller-->
+        <scene sceneID="czx-bR-dw8">
+            <objects>
+                <tableViewController id="7Vv-Hs-o4D" customClass="AUDLTeamsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OwE-Eh-XCZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tiP-6W-TTe">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tiP-6W-TTe" id="I9U-7W-Aqw">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7Vv-Hs-o4D" id="yH7-Qk-2w3"/>
+                            <outlet property="delegate" destination="7Vv-Hs-o4D" id="lMK-oD-PLe"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="BBW-i7-z04">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="xzp-86-FYQ"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="sidebarButton" destination="xzp-86-FYQ" id="G1F-dI-A89"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50J-Ib-nU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="593" y="-1037"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pd5-Sh-rwr">
@@ -277,6 +317,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dpr-eK-A74"/>
+        <segue reference="Nxa-tY-DVV"/>
     </inferredMetricsTieBreakers>
 </document>

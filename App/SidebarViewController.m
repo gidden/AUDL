@@ -1,9 +1,9 @@
 //
 //  SidebarViewController.m
-//  SidebarDemo
+//  App
 //
-//  Created by Simon on 29/6/13.
-//  Copyright (c) 2013 Appcoda. All rights reserved.
+//  Created by Ryan Zoellner on 3/13/14.
+//  Copyright (c) 2014 AUDL. All rights reserved.
 //
 
 #import "SidebarViewController.h"
@@ -13,6 +13,7 @@
 @interface SidebarViewController ()
 
 @property (nonatomic, strong) NSArray *menuItems;
+
 @end
 
 @implementation SidebarViewController
@@ -30,13 +31,16 @@
 {
     
     
-    //self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    //self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    //self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
+    self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+    self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+    self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
     
     _menuItems = @[@"title", @"home", @"news", @"teams", @"statistics", @"schedule", @"now", @"standings"];
     
     [super viewDidLoad];
+    
+    //self.view.backgroundColor = [UIColor lightGrayColor];
+    
 }
 
 - (void)didReceiveMemoryWarning
