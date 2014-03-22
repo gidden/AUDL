@@ -8,6 +8,8 @@
 
 #import "AUDLSettingsTableViewController.h"
 #import "AUDLSettingTableViewCell.h"
+#import "AUDLMainViewController.h"
+#import "SWRevealViewController.h"
 
 @interface AUDLSettingsTableViewController ()
 
@@ -28,18 +30,40 @@
 {
     [super viewDidLoad];
     
+    // Change button color
+    _sidebarButton.tintColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+    //_sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+    
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    _sidebarButton.target = self.revealViewController;
+    _sidebarButton.action = @selector(revealToggle:);
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+   
+    //title page
+    self.title = @"Settings";
     
+    //list of settings
     _Setting = @[@"setting 1",
                  @"setting 2",
                  @"setting 3",
                  @"setting 4",
                  @"setting 5",
                  @"setting 6",];
+    
+    
+    
+    
+   
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,13 +89,42 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"AUDLSettingTableViewCell";
-    AUDLSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AUDLSettingTableViewCell" forIndexPath:indexPath];
+    NSArray *settings = [self.Setting objectAtIndex:indexPath.row];
+    NSString *cellIdentifier = [settings objectAtIndex:0];
+    AUDLSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     int row = [indexPath row];
     cell.SettingLabel = _Setting[row];
     return cell;
+    /*
+    NSArray *thisTeam = [self.teams objectAtIndex:indexPath.row];
+    NSString *cellIdentifier = [thisTeam objectAtIndex:0];
+    NSString *cellTeamId = [thisTeam objectAtIndex:1];
+    
+    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    // Configure the cell...
+    cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
+    [cell setTeamId:cellTeamId];
+    
+    return cell;
+     */
+    /*
+     NSArray *settings = [self.Setting objectAtIndex:indexPath.row];
+     NSString *cellIdentifier = [settings objectAtIndex:0];
+     
+     AUDLSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+     
+     // Configure the cell...
+     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
+     [cell setSettingLabel:cellIdentifier];
+     
+     return cell;
+*/
 }
 
 
