@@ -9,5 +9,5 @@
 #import "AUDLMainViewController.h"
 
 @interface AUDLStandingsViewController : AUDLMainViewController
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @end

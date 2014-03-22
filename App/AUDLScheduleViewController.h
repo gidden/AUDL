@@ -6,8 +6,12 @@
 //  Copyright (c) 2014 AUDL. All rights reserved.
 //
 
-#import "AUDLMainViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface AUDLScheduleViewController : AUDLMainViewController
+@interface AUDLScheduleViewController : UITableViewController
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
+- (void)getSchedule;
 
 @end
