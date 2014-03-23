@@ -30,11 +30,11 @@
     // Do any additional setup after loading the view from its nib.
     
     //change color of button
-    _sidebarButton3.tintColor = [UIColor colorWithRed:0 green:122.0/225.0 blue:1.0 alpha:1.0];
+    _sidebarButton.tintColor = [UIColor colorWithRed:0 green:122.0/225.0 blue:1.0 alpha:1.0];
     
     //set side bar button acton. when tapped, sidebar appears
-    _sidebarButton3.target = self.revealViewController;
-    _sidebarButton3.action = @selector(revealToggle:);
+    _sidebarButton.target = self.revealViewController;
+    _sidebarButton.action = @selector(revealToggle:);
     
     //set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];

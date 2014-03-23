@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AUDLMainViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton8;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (strong, nonatomic) NSString *roster;
 
 @end

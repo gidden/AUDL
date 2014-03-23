@@ -9,5 +9,5 @@
 #import "AUDLMainViewController.h"
 
 @interface AUDLVideoTableViewController : UITableViewController
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton4;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @end

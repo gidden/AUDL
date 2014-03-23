@@ -10,7 +10,7 @@
 
 @interface AUDLScheduleTableViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton2;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 - (void)getSchedule;
 

@@ -10,7 +10,7 @@
 
 
 @interface AUDLNewsTableViewController : UITableViewController
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton6;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 
 
 
