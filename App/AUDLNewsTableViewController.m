@@ -45,6 +45,11 @@
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
     [self.view addGestureRecognizer:gesture];
     
+    // Add pull-to-refresh
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+    
     
 }
 
@@ -152,6 +157,7 @@
 
 - (void)getNewsItems
 {
+    NSLog(@"server request");
     
     // Prepare the link that is going to be used on the GET request
     NSURL * url = [[NSURL alloc] initWithString:@"http://68.190.167.114:4000/News/"];
@@ -172,6 +178,7 @@
                                                 error:&error];
     
     // Construct Array around the Data from the response
+    _newsItems = [[NSArray alloc] init];
     _newsItems = [NSJSONSerialization
               JSONObjectWithData:urlData
               options:0
@@ -194,7 +201,10 @@
     }
 }
 
-
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    [self getNewsItems];
+    [refreshControl endRefreshing];
+}
 
 
 
