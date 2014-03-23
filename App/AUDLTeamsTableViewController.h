@@ -10,7 +10,7 @@
 
 @interface AUDLTeamsTableViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton7;
 
 - (void)getTeams;
 

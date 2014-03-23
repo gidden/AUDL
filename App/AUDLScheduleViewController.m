@@ -12,12 +12,12 @@
 
 
 
-@interface AUDLScheduleViewController ()
+@interface AUDLScheduleTableViewController ()
 
 @property (nonatomic, strong) NSArray *schedule;
 @end
 
-@implementation AUDLScheduleViewController
+@implementation AUDLScheduleTableViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     
-    
+   
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -40,11 +40,11 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     // Change button color
-    _sidebarButton.tintColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+    _sidebarButton2.tintColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    _sidebarButton.target = self.revealViewController;
-    _sidebarButton.action = @selector(revealToggle:);
+    _sidebarButton2.target = self.revealViewController;
+    _sidebarButton2.action = @selector(revealToggle:);
     
     // Add a gesture recognizer for the navigation sidebar
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];

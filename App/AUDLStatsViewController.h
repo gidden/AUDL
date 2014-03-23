@@ -8,6 +8,6 @@
 
 #import "AUDLMainViewController.h"
 
-@interface AUDLStatsViewController : AUDLMainViewController
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@interface AUDLStatsTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton3;
 @end

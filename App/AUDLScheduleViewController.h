@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AUDLScheduleViewController : UITableViewController
+@interface AUDLScheduleTableViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton2;
 
 - (void)getSchedule;
 

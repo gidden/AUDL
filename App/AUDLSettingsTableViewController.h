@@ -12,7 +12,7 @@
 
 
 //sidebar button
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton5;
 
 //break table up into arrays
 @property (nonatomic, strong) NSArray *Setting;

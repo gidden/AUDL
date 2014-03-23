@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 AUDL. All rights reserved.
 //
 
-#import "AUDLMainViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface AUDLStandingsViewController : AUDLMainViewController
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@interface AUDLStandingsTableViewController : UITableViewController
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton0;
+
 @end
