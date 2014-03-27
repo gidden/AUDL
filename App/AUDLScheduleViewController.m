@@ -14,7 +14,7 @@
 
 @interface AUDLScheduleTableViewController ()
 
-@property (nonatomic, strong) NSArray *schedule;
+//@property (nonatomic, strong) NSArray *schedule;
 @end
 
 @implementation AUDLScheduleTableViewController
@@ -50,7 +50,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     // Get news items from the server
-    [self getSchedule];
+    [self scheduleRequest];
     
     
 }
@@ -155,11 +155,11 @@
  */
 
 
-- (void)getSchedule
+- (void)scheduleRequest
 {
     
     // Prepare the link that is going to be used on the GET request
-    NSURL * url = [[NSURL alloc] initWithString:@"http://68.190.167.114:4000/Schedule/"];
+    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/Schedule"];
     
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url

@@ -11,7 +11,8 @@
 @interface AUDLScheduleTableViewController : UITableViewController
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (nonatomic, strong) NSArray *schedule;
 
-- (void)getSchedule;
+- (void)scheduleRequest;
 
 @end

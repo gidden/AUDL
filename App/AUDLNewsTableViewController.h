@@ -11,9 +11,9 @@
 
 @interface AUDLNewsTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
+@property (nonatomic, strong) NSArray *newsItems;
 
 
-
-- (void)getNewsItems;
+- (void)newsItemsRequest;
 
 @end

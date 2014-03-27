@@ -12,7 +12,7 @@
 
 @interface AUDLNewsTableViewController ()
 
-@property (nonatomic, strong) NSArray *newsItems;
+//@property (nonatomic, strong) NSArray *newsItems;
 
 @end
 
@@ -40,11 +40,16 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     // Get news items from the server
-    [self getNewsItems];
+    [self newsItemsRequest];
     
     // Add a gesture recognizer to the table view for the cell selection
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
     [self.view addGestureRecognizer:gesture];
+    
+    // Add pull-to-refresh
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
     
     
 }
@@ -151,11 +156,11 @@
 */
 
 
-- (void)getNewsItems
+- (void)newsItemsRequest
 {
     
     // Prepare the link that is going to be used on the GET request
-    NSURL * url = [[NSURL alloc] initWithString:@"http://68.190.167.114:4000/News/"];
+    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/News"];
     
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
@@ -193,6 +198,11 @@
         // opens the selected cell's url in Safari
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.link]];
     }
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    [self newsItemsRequest];
+    [refreshControl endRefreshing];
 }
 
 
