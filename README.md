@@ -3,7 +3,7 @@ AUDL
 
 AUDL App for iOS
 
---branch to look at:  master
+--branch to look at:  evan-branch-march21-1
 
 --Should be run in Xcode 5 with iOS Simulator 7.0
 
