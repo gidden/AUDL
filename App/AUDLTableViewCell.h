@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString *link;
 @property (strong, nonatomic) NSString *teamId;
+@property (strong, nonatomic) NSString *Setting;
 
 @end

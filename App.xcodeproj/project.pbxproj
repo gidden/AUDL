@@ -33,6 +33,7 @@
 		E90995F318DCA3E4003A07FD /* AUDLSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90995F118DCA3E4003A07FD /* AUDLSettingsViewController.xib */; };
 		E90995F618DCAA7C003A07FD /* AUDLSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */; };
 		E90995F918DCAF0B003A07FD /* AUDLSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90995F818DCAF0B003A07FD /* AUDLSettingTableViewCell.m */; };
+		E9A9AB7518E91E2200F5BEED /* TeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A9AB7418E91E2200F5BEED /* TeamViewController.m */; };
 		E9D674BE18DE019100712370 /* AUDLVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D674BC18DE019100712370 /* AUDLVideoViewController.m */; };
 		E9D674BF18DE019100712370 /* AUDLVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D674BD18DE019100712370 /* AUDLVideoViewController.xib */; };
 		E9D674C518DE01D700712370 /* AUDLStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D674C318DE01D700712370 /* AUDLStatsViewController.m */; };
@@ -95,6 +96,8 @@
 		E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLSettingsTableViewController.m; sourceTree = "<group>"; };
 		E90995F718DCAF0B003A07FD /* AUDLSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLSettingTableViewCell.h; sourceTree = "<group>"; };
 		E90995F818DCAF0B003A07FD /* AUDLSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLSettingTableViewCell.m; sourceTree = "<group>"; };
+		E9A9AB7318E91E2200F5BEED /* TeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamViewController.h; sourceTree = "<group>"; };
+		E9A9AB7418E91E2200F5BEED /* TeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamViewController.m; sourceTree = "<group>"; };
 		E9D674BB18DE019100712370 /* AUDLVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLVideoViewController.h; sourceTree = "<group>"; };
 		E9D674BC18DE019100712370 /* AUDLVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLVideoViewController.m; sourceTree = "<group>"; };
 		E9D674BD18DE019100712370 /* AUDLVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLVideoViewController.xib; sourceTree = "<group>"; };
@@ -237,6 +240,7 @@
 				72F4DAFA18DA0A8A00E571FC /* AUDLTeamsTableViewController.h */,
 				72F4DAFB18DA0A8A00E571FC /* AUDLTeamsTableViewController.m */,
 				72F4DAFC18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib */,
+				E9A9AB7218E91DE400F5BEED /* Team */,
 			);
 			name = Teams;
 			sourceTree = "<group>";
@@ -289,6 +293,15 @@
 				E90995F818DCAF0B003A07FD /* AUDLSettingTableViewCell.m */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		E9A9AB7218E91DE400F5BEED /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				E9A9AB7318E91E2200F5BEED /* TeamViewController.h */,
+				E9A9AB7418E91E2200F5BEED /* TeamViewController.m */,
+			);
+			name = Team;
 			sourceTree = "<group>";
 		};
 		E9D674C018DE01A100712370 /* Video */ = {
@@ -454,6 +467,7 @@
 				E9D674D118DE022B00712370 /* AUDLNowViewController.m in Sources */,
 				E90995F618DCAA7C003A07FD /* AUDLSettingsTableViewController.m in Sources */,
 				72F4DB0618DB36C700E571FC /* AUDLNewsTableViewController.m in Sources */,
+				E9A9AB7518E91E2200F5BEED /* TeamViewController.m in Sources */,
 				E90995F918DCAF0B003A07FD /* AUDLSettingTableViewCell.m in Sources */,
 				727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */,
 				E9D674D718DE025C00712370 /* AUDLStandingsViewController.m in Sources */,
