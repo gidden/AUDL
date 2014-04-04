@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		721F682218EF3B0B0019EFB9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 721F682118EF3B0B0019EFB9 /* Default-568h@2x.png */; };
+		721F682418EF3C260019EFB9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 721F682318EF3C260019EFB9 /* Default@2x.png */; };
+		721F682A18EF405C0019EFB9 /* audl-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 721F682918EF405C0019EFB9 /* audl-120.png */; };
 		727ABD7018D257C1005B9ACC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD6F18D257C1005B9ACC /* Foundation.framework */; };
 		727ABD7218D257C1005B9ACC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7118D257C1005B9ACC /* CoreGraphics.framework */; };
 		727ABD7418D257C1005B9ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7318D257C1005B9ACC /* UIKit.framework */; };
@@ -56,23 +59,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		727ABD6C18D257C1005B9ACC /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		721F682118EF3B0B0019EFB9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		721F682318EF3C260019EFB9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		721F682918EF405C0019EFB9 /* audl-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audl-120.png"; sourceTree = "<group>"; };
+		727ABD6C18D257C1005B9ACC /* AUDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AUDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		727ABD6F18D257C1005B9ACC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		727ABD7118D257C1005B9ACC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		727ABD7318D257C1005B9ACC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		727ABD7718D257C1005B9ACC /* App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "App-Info.plist"; sourceTree = "<group>"; };
+		727ABD7718D257C1005B9ACC /* AUDL-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AUDL-Info.plist"; sourceTree = "<group>"; };
 		727ABD7918D257C1005B9ACC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		727ABD7B18D257C1005B9ACC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		727ABD7D18D257C1005B9ACC /* App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "App-Prefix.pch"; sourceTree = "<group>"; };
+		727ABD7D18D257C1005B9ACC /* AUDL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AUDL-Prefix.pch"; sourceTree = "<group>"; };
 		727ABD7E18D257C1005B9ACC /* AUDLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLAppDelegate.h; sourceTree = "<group>"; };
 		727ABD7F18D257C1005B9ACC /* AUDLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUDLAppDelegate.m; sourceTree = "<group>"; };
 		727ABD8218D257C1005B9ACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		727ABD8418D257C1005B9ACC /* AUDLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLViewController.h; sourceTree = "<group>"; };
 		727ABD8518D257C1005B9ACC /* AUDLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUDLViewController.m; sourceTree = "<group>"; };
 		727ABD8718D257C1005B9ACC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		727ABD8D18D257C1005B9ACC /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		727ABD8D18D257C1005B9ACC /* AUDLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AUDLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		727ABD8E18D257C1005B9ACC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		727ABD9618D257C1005B9ACC /* AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppTests-Info.plist"; sourceTree = "<group>"; };
+		727ABD9618D257C1005B9ACC /* AUDLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AUDLTests-Info.plist"; sourceTree = "<group>"; };
 		727ABD9818D257C1005B9ACC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		727ABD9A18D257C1005B9ACC /* AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTests.m; sourceTree = "<group>"; };
 		727ABDA418D257EC005B9ACC /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -139,6 +145,9 @@
 		727ABD6318D257C1005B9ACC = {
 			isa = PBXGroup;
 			children = (
+				721F682918EF405C0019EFB9 /* audl-120.png */,
+				721F682318EF3C260019EFB9 /* Default@2x.png */,
+				721F682118EF3B0B0019EFB9 /* Default-568h@2x.png */,
 				727ABD7518D257C1005B9ACC /* App */,
 				727ABD9418D257C1005B9ACC /* AppTests */,
 				727ABD6E18D257C1005B9ACC /* Frameworks */,
@@ -149,8 +158,8 @@
 		727ABD6D18D257C1005B9ACC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				727ABD6C18D257C1005B9ACC /* App.app */,
-				727ABD8D18D257C1005B9ACC /* AppTests.xctest */,
+				727ABD6C18D257C1005B9ACC /* AUDL.app */,
+				727ABD8D18D257C1005B9ACC /* AUDLTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,10 +204,10 @@
 		727ABD7618D257C1005B9ACC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				727ABD7718D257C1005B9ACC /* App-Info.plist */,
+				727ABD7718D257C1005B9ACC /* AUDL-Info.plist */,
 				727ABD7818D257C1005B9ACC /* InfoPlist.strings */,
 				727ABD7B18D257C1005B9ACC /* main.m */,
-				727ABD7D18D257C1005B9ACC /* App-Prefix.pch */,
+				727ABD7D18D257C1005B9ACC /* AUDL-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -215,7 +224,7 @@
 		727ABD9518D257C1005B9ACC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				727ABD9618D257C1005B9ACC /* AppTests-Info.plist */,
+				727ABD9618D257C1005B9ACC /* AUDLTests-Info.plist */,
 				727ABD9718D257C1005B9ACC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -344,9 +353,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		727ABD6B18D257C1005B9ACC /* App */ = {
+		727ABD6B18D257C1005B9ACC /* AUDL */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 727ABD9E18D257C1005B9ACC /* Build configuration list for PBXNativeTarget "App" */;
+			buildConfigurationList = 727ABD9E18D257C1005B9ACC /* Build configuration list for PBXNativeTarget "AUDL" */;
 			buildPhases = (
 				727ABD6818D257C1005B9ACC /* Sources */,
 				727ABD6918D257C1005B9ACC /* Frameworks */,
@@ -356,14 +365,14 @@
 			);
 			dependencies = (
 			);
-			name = App;
+			name = AUDL;
 			productName = App;
-			productReference = 727ABD6C18D257C1005B9ACC /* App.app */;
+			productReference = 727ABD6C18D257C1005B9ACC /* AUDL.app */;
 			productType = "com.apple.product-type.application";
 		};
-		727ABD8C18D257C1005B9ACC /* AppTests */ = {
+		727ABD8C18D257C1005B9ACC /* AUDLTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 727ABDA118D257C1005B9ACC /* Build configuration list for PBXNativeTarget "AppTests" */;
+			buildConfigurationList = 727ABDA118D257C1005B9ACC /* Build configuration list for PBXNativeTarget "AUDLTests" */;
 			buildPhases = (
 				727ABD8918D257C1005B9ACC /* Sources */,
 				727ABD8A18D257C1005B9ACC /* Frameworks */,
@@ -374,9 +383,9 @@
 			dependencies = (
 				727ABD9318D257C1005B9ACC /* PBXTargetDependency */,
 			);
-			name = AppTests;
+			name = AUDLTests;
 			productName = AppTests;
-			productReference = 727ABD8D18D257C1005B9ACC /* AppTests.xctest */;
+			productReference = 727ABD8D18D257C1005B9ACC /* AUDLTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -394,7 +403,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 727ABD6718D257C1005B9ACC /* Build configuration list for PBXProject "App" */;
+			buildConfigurationList = 727ABD6718D257C1005B9ACC /* Build configuration list for PBXProject "AUDL" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -407,8 +416,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				727ABD6B18D257C1005B9ACC /* App */,
-				727ABD8C18D257C1005B9ACC /* AppTests */,
+				727ABD6B18D257C1005B9ACC /* AUDL */,
+				727ABD8C18D257C1005B9ACC /* AUDLTests */,
 			);
 		};
 /* End PBXProject section */
@@ -421,14 +430,17 @@
 				E9D674BF18DE019100712370 /* AUDLVideoViewController.xib in Resources */,
 				E9D674CC18DE01FF00712370 /* AUDLScheduleViewController.xib in Resources */,
 				727ABD8818D257C1005B9ACC /* Images.xcassets in Resources */,
+				721F682A18EF405C0019EFB9 /* audl-120.png in Resources */,
 				72F4DAFE18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib in Resources */,
 				E90995F318DCA3E4003A07FD /* AUDLSettingsViewController.xib in Resources */,
 				E9D674C618DE01D700712370 /* AUDLStatsViewController.xib in Resources */,
 				72F4DB0718DB36C700E571FC /* AUDLNewsTableViewController.xib in Resources */,
 				727ABD7A18D257C1005B9ACC /* InfoPlist.strings in Resources */,
 				E9D674D818DE025C00712370 /* AUDLStandingsViewController.xib in Resources */,
+				721F682218EF3B0B0019EFB9 /* Default-568h@2x.png in Resources */,
 				E9D674D218DE022B00712370 /* AUDLNowViewController.xib in Resources */,
 				727ABD8318D257C1005B9ACC /* Main.storyboard in Resources */,
+				721F682418EF3C260019EFB9 /* Default@2x.png in Resources */,
 				72F4DB0C18DB5A3F00E571FC /* AUDLTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,7 +492,7 @@
 /* Begin PBXTargetDependency section */
 		727ABD9318D257C1005B9ACC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 727ABD6B18D257C1005B9ACC /* App */;
+			target = 727ABD6B18D257C1005B9ACC /* AUDL */;
 			targetProxy = 727ABD9218D257C1005B9ACC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -589,9 +601,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "App/App-Prefix.pch";
-				INFOPLIST_FILE = "App/App-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "App/AUDL-Prefix.pch";
+				INFOPLIST_FILE = "App/AUDL-Info.plist";
+				PRODUCT_NAME = AUDL;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -602,9 +614,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "App/App-Prefix.pch";
-				INFOPLIST_FILE = "App/App-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "App/AUDL-Prefix.pch";
+				INFOPLIST_FILE = "App/AUDL-Info.plist";
+				PRODUCT_NAME = AUDL;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -624,8 +636,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "AppTests/AppTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "AppTests/AUDLTests-Info.plist";
+				PRODUCT_NAME = AUDLTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -642,8 +654,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "App/App-Prefix.pch";
-				INFOPLIST_FILE = "AppTests/AppTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "AppTests/AUDLTests-Info.plist";
+				PRODUCT_NAME = AUDLTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -652,7 +664,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		727ABD6718D257C1005B9ACC /* Build configuration list for PBXProject "App" */ = {
+		727ABD6718D257C1005B9ACC /* Build configuration list for PBXProject "AUDL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				727ABD9C18D257C1005B9ACC /* Debug */,
@@ -661,7 +673,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		727ABD9E18D257C1005B9ACC /* Build configuration list for PBXNativeTarget "App" */ = {
+		727ABD9E18D257C1005B9ACC /* Build configuration list for PBXNativeTarget "AUDL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				727ABD9F18D257C1005B9ACC /* Debug */,
@@ -670,7 +682,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		727ABDA118D257C1005B9ACC /* Build configuration list for PBXNativeTarget "AppTests" */ = {
+		727ABDA118D257C1005B9ACC /* Build configuration list for PBXNativeTarget "AUDLTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				727ABDA218D257C1005B9ACC /* Debug */,
