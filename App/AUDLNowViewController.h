@@ -14,4 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (strong, nonatomic) IBOutlet UITableView *nowTableView;
 @property (strong, nonatomic) NSArray *dataSource;
+
+-(void) getTimeLine;
 @end

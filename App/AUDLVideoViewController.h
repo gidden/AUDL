@@ -10,4 +10,7 @@
 
 @interface AUDLVideoTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (nonatomic, strong) NSArray *videos;
+
+- (void) getVideos;
 @end
