@@ -44,6 +44,8 @@
     
     //set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    [self getTimeLine];
 }
 
 - (void)didReceiveMemoryWarning

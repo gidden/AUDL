@@ -305,6 +305,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="VxM-QM-V42" id="6yy-3E-qiX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UGK-fD-D0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

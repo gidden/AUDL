@@ -38,6 +38,18 @@
     
     //set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    //get videos from server
+    [self getVideos];
+    
+    // Add a gesture recognizer to the table view for the cell selection
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
+    [self.view addGestureRecognizer:gesture];
+    
+    // Add pull-to-refresh
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,7 +62,7 @@
 {
     
     // Prepare the link that is going to be used on the GET request
-    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/Video"];
+    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/Videos"];
     
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
@@ -111,5 +123,24 @@
     return cell;
 }
 
+- (void)didSelect:(UIGestureRecognizer *)gestureRecognizer {
+    
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        CGPoint tapLocation = [gestureRecognizer locationInView:self.tableView];
+        NSIndexPath *tappedIndexPath = [self.tableView indexPathForRowAtPoint:tapLocation];
+        UITableViewCell* tappedCell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
+        
+        // pointer to the cell that was selected
+        AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
+        
+        // opens the selected cell's url in Safari
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.link]];
+    }
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    [self getVideos];
+    [refreshControl endRefreshing];
+}
 
 @end

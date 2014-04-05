@@ -9,5 +9,6 @@
 #import "AUDLTeamsTableViewController.h"
 
 @interface TeamViewController : AUDLTeamsTableViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 
 @end
