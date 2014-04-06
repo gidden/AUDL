@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "727ABD6B18D257C1005B9ACC"
                BuildableName = "App.app"
-               BlueprintName = "App"
-               ReferencedContainer = "container:App.xcodeproj">
+               BlueprintName = "AUDL"
+               ReferencedContainer = "container:AUDL.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "727ABD8C18D257C1005B9ACC"
                BuildableName = "AppTests.xctest"
-               BlueprintName = "AppTests"
-               ReferencedContainer = "container:App.xcodeproj">
+               BlueprintName = "AUDLTests"
+               ReferencedContainer = "container:AUDL.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "727ABD6B18D257C1005B9ACC"
             BuildableName = "App.app"
-            BlueprintName = "App"
-            ReferencedContainer = "container:App.xcodeproj">
+            BlueprintName = "AUDL"
+            ReferencedContainer = "container:AUDL.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "727ABD6B18D257C1005B9ACC"
             BuildableName = "App.app"
-            BlueprintName = "App"
-            ReferencedContainer = "container:App.xcodeproj">
+            BlueprintName = "AUDL"
+            ReferencedContainer = "container:AUDL.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "727ABD6B18D257C1005B9ACC"
             BuildableName = "App.app"
-            BlueprintName = "App"
-            ReferencedContainer = "container:App.xcodeproj">
+            BlueprintName = "AUDL"
+            ReferencedContainer = "container:AUDL.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

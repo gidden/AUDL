@@ -12,8 +12,8 @@
 
 @interface AUDLTeamsTableViewController ()
 
-@property (nonatomic, strong) NSArray *teams;
-@property (nonatomic, strong) NSMutableArray *teamNames;
+//@property (nonatomic, strong) NSArray *teams;
+//@property (nonatomic, strong) NSMutableArray *teamNames;
 
 @end
 
@@ -41,7 +41,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     //get teams
-    [self getTeams];
+    [self teamsRequest];
     
     // Add a gesture recognizer to the table view for the cell selection
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
@@ -148,15 +148,16 @@
 
 
 
-- (void)getTeams
+- (void)teamsRequest
 {
 
     // Prepare the link that is going to be used on the GET request
-    NSURL * url = [[NSURL alloc] initWithString:@"http://68.190.167.114:4000/Teams/"];
+    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/Teams"];
     
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
-                                                cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                //cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                             timeoutInterval:30];
     
     // Prepare the variables for the JSON response

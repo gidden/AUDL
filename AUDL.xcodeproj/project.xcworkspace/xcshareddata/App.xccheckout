@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>247F259C-18D9-4CA1-823B-9E132FB82C86</string>
+	<key>IDESourceControlProjectName</key>
+	<string>App</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>590806FF-8E13-4BC9-A679-C1BF53815D93</key>
+		<string>https://github.com/ryanzoellner/AUDL.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>App.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>590806FF-8E13-4BC9-A679-C1BF53815D93</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ryanzoellner/AUDL.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>590806FF-8E13-4BC9-A679-C1BF53815D93</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>590806FF-8E13-4BC9-A679-C1BF53815D93</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AUDL ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -11,7 +11,9 @@
 @interface AUDLTeamsTableViewController : UITableViewController
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (nonatomic, strong) NSArray *teams;
+@property (nonatomic, strong) NSMutableArray *teamNames;
 
-- (void)getTeams;
+- (void)teamsRequest;
 
 @end

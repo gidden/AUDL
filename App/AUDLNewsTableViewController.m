@@ -12,7 +12,7 @@
 
 @interface AUDLNewsTableViewController ()
 
-@property (nonatomic, strong) NSArray *newsItems;
+//@property (nonatomic, strong) NSArray *newsItems;
 
 @end
 
@@ -22,6 +22,7 @@
 {
     [super viewDidLoad];
     
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -29,17 +30,17 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     // Change button color
-    _sidebarButton.tintColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+    _sideBarButton.tintColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    _sidebarButton.target = self.revealViewController;
-    _sidebarButton.action = @selector(revealToggle:);
+    _sideBarButton.target = self.revealViewController;
+    _sideBarButton.action = @selector(revealToggle:);
     
     // Add a gesture recognizer for the navigation sidebar
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     // Get news items from the server
-    [self getNewsItems];
+    [self newsItemsRequest];
     
     // Add a gesture recognizer to the table view for the cell selection
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
@@ -155,16 +156,17 @@
 */
 
 
-- (void)getNewsItems
+- (void)newsItemsRequest
 {
     NSLog(@"server request");
     
     // Prepare the link that is going to be used on the GET request
-    NSURL * url = [[NSURL alloc] initWithString:@"http://68.190.167.114:4000/News/"];
+    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/News"];
     
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
-                                                cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                //cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                             timeoutInterval:30];
     
     // Prepare the variables for the JSON response
@@ -202,9 +204,17 @@
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
+<<<<<<< HEAD
     [self getNewsItems];
     [refreshControl endRefreshing];
 }
+=======
+    [self newsItemsRequest];
+    [refreshControl endRefreshing];
+}
+
+
+>>>>>>> evan-branch-march21-1
 
 
 

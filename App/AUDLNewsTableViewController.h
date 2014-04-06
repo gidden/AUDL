@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface AUDLNewsTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
+@property (nonatomic, strong) NSArray *newsItems;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
-- (void)getNewsItems;
+- (void)newsItemsRequest;
 
 @end
