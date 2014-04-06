@@ -7,6 +7,7 @@
 //
 
 #import "AUDLScheduleViewController.h"
+#import "AUDLDivisionTableViewController.h"
 #import "SWRevealViewController.h"
 #import "AUDLTableViewCell.h"
 
@@ -52,6 +53,10 @@
     // Get news items from the server
     [self scheduleRequest];
     
+    // Add a gesture recognizer to the table view for the cell selection
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
+    [self.view addGestureRecognizer:gesture];
+    
     
 }
 
@@ -81,11 +86,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // "+1" is to start at first story, not the header
     NSArray *thisSchedule = [self.schedule objectAtIndex:indexPath.row];
     
+    // the first element, the cellIdentifier, is the division name
     NSString *cellIdentifier = [thisSchedule objectAtIndex:0];
-    NSString *cellLink = [thisSchedule objectAtIndex:1];
+    
+    // the second element, divSchedule, is the divison's schedule
+    NSArray *divSchedule = [thisSchedule objectAtIndex:1];
     AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -93,7 +100,7 @@
     
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    [cell setLink:cellLink];
+    [cell setDivSchedule:divSchedule];
     
     return cell;
 }
@@ -183,6 +190,41 @@
                   options:0
                   error:&error];
 }
+
+- (void)didSelect:(UIGestureRecognizer *)gestureRecognizer {
+    
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        CGPoint tapLocation = [gestureRecognizer locationInView:self.tableView];
+        NSIndexPath *tappedIndexPath = [self.tableView indexPathForRowAtPoint:tapLocation];
+        UITableViewCell* tappedCell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
+        
+        // pointer to the cell that was selected
+        AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
+        for (int i=0; i<selectedCell.divSchedule.count; i++) {
+            NSLog(@"%@", selectedCell.divSchedule[i]);
+        }
+        
+        // create the view controller we want to present
+        AUDLDivisionTableViewController *divSchedule = [[AUDLDivisionTableViewController alloc] initWithSchedule:selectedCell.divSchedule];
+        
+        // select the transition style
+        //divSchedule.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        
+        // set the presenting view controller to this controller
+        //divSchedule.delegate = self;
+        
+        // Create the navigation controller and present it.
+        //UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:divSchedule];
+        
+        // override the back button in the new controller from saying "Schedule"
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+        self.navigationItem.backBarButtonItem = backButton;
+        
+        // present the new view controller
+        [self.navigationController pushViewController:divSchedule animated:YES];
+    }
+}
+
 
 
 

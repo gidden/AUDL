@@ -10,6 +10,8 @@
 		721F682218EF3B0B0019EFB9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 721F682118EF3B0B0019EFB9 /* Default-568h@2x.png */; };
 		721F682418EF3C260019EFB9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 721F682318EF3C260019EFB9 /* Default@2x.png */; };
 		721F682A18EF405C0019EFB9 /* audl-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 721F682918EF405C0019EFB9 /* audl-120.png */; };
+		721F683618F2065F0019EFB9 /* AUDLDivisionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721F683418F2065F0019EFB9 /* AUDLDivisionTableViewController.m */; };
+		721F683718F2065F0019EFB9 /* AUDLDivisionTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721F683518F2065F0019EFB9 /* AUDLDivisionTableViewController.xib */; };
 		727ABD7018D257C1005B9ACC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD6F18D257C1005B9ACC /* Foundation.framework */; };
 		727ABD7218D257C1005B9ACC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7118D257C1005B9ACC /* CoreGraphics.framework */; };
 		727ABD7418D257C1005B9ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7318D257C1005B9ACC /* UIKit.framework */; };
@@ -62,6 +64,9 @@
 		721F682118EF3B0B0019EFB9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		721F682318EF3C260019EFB9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		721F682918EF405C0019EFB9 /* audl-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audl-120.png"; sourceTree = "<group>"; };
+		721F683318F2065F0019EFB9 /* AUDLDivisionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLDivisionTableViewController.h; sourceTree = "<group>"; };
+		721F683418F2065F0019EFB9 /* AUDLDivisionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLDivisionTableViewController.m; sourceTree = "<group>"; };
+		721F683518F2065F0019EFB9 /* AUDLDivisionTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLDivisionTableViewController.xib; sourceTree = "<group>"; };
 		727ABD6C18D257C1005B9ACC /* AUDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AUDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		727ABD6F18D257C1005B9ACC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		727ABD7118D257C1005B9ACC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -142,6 +147,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		721F683018EF72D10019EFB9 /* Divison */ = {
+			isa = PBXGroup;
+			children = (
+				721F683318F2065F0019EFB9 /* AUDLDivisionTableViewController.h */,
+				721F683418F2065F0019EFB9 /* AUDLDivisionTableViewController.m */,
+				721F683518F2065F0019EFB9 /* AUDLDivisionTableViewController.xib */,
+			);
+			name = Divison;
+			sourceTree = "<group>";
+		};
 		727ABD6318D257C1005B9ACC = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +341,7 @@
 				E9D674C818DE01FF00712370 /* AUDLScheduleViewController.h */,
 				E9D674C918DE01FF00712370 /* AUDLScheduleViewController.m */,
 				E9D674CA18DE01FF00712370 /* AUDLScheduleViewController.xib */,
+				721F683018EF72D10019EFB9 /* Divison */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -429,6 +445,7 @@
 			files = (
 				E9D674BF18DE019100712370 /* AUDLVideoViewController.xib in Resources */,
 				E9D674CC18DE01FF00712370 /* AUDLScheduleViewController.xib in Resources */,
+				721F683718F2065F0019EFB9 /* AUDLDivisionTableViewController.xib in Resources */,
 				727ABD8818D257C1005B9ACC /* Images.xcassets in Resources */,
 				721F682A18EF405C0019EFB9 /* audl-120.png in Resources */,
 				72F4DAFE18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib in Resources */,
@@ -460,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721F683618F2065F0019EFB9 /* AUDLDivisionTableViewController.m in Sources */,
 				72F4DAFD18DA0A8A00E571FC /* AUDLTeamsTableViewController.m in Sources */,
 				72F4DB0B18DB5A3F00E571FC /* AUDLTableViewCell.m in Sources */,
 				E9D674C518DE01D700712370 /* AUDLStatsViewController.m in Sources */,
