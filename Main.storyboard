@@ -263,15 +263,6 @@
         <scene sceneID="c7o-tB-BnY">
             <objects>
                 <viewController id="JfY-h4-ngk" customClass="AUDLNowViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vHC-mq-eav">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="JfY-h4-ngk" id="X6U-UI-LWD"/>
-                            <outlet property="delegate" destination="JfY-h4-ngk" id="0Lo-a6-vG2"/>
-                        </connections>
-                    </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="BEY-WL-kw7">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="pXM-J7-gkl"/>
@@ -279,43 +270,12 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="nowTableView" destination="vHC-mq-eav" id="NMO-Uk-TeL"/>
                         <outlet property="sidebarButton" destination="pXM-J7-gkl" id="Qrl-98-He3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8p-ll-3Ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
             <point key="canvasLocation" x="1265" y="-1901"/>
-=======
-            <point key="canvasLocation" x="1491" y="-290"/>
-        </scene>
-        <!--Team View Controller - Title-->
-        <scene sceneID="N3x-iA-6mQ">
-            <objects>
-                <tableViewController id="2Ws-tK-dHP" customClass="TeamViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="v1R-kJ-mWA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="2Ws-tK-dHP" id="C3d-4S-A8C"/>
-                            <outlet property="delegate" destination="2Ws-tK-dHP" id="0yW-DU-AbO"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="uqQ-tJ-5Rd">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="VxM-QM-V42"/>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="backButton" destination="VxM-QM-V42" id="6yy-3E-qiX"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UGK-fD-D0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="583" y="-1801"/>
->>>>>>> origin/evan-branch-march21-11
         </scene>
         <!--Teams Table View Controller-->
         <scene sceneID="czx-bR-dw8">

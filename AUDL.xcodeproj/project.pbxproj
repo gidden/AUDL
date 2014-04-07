@@ -12,7 +12,6 @@
 		721F682A18EF405C0019EFB9 /* audl-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 721F682918EF405C0019EFB9 /* audl-120.png */; };
 		721F683618F2065F0019EFB9 /* AUDLDivisionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721F683418F2065F0019EFB9 /* AUDLDivisionTableViewController.m */; };
 		721F683718F2065F0019EFB9 /* AUDLDivisionTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721F683518F2065F0019EFB9 /* AUDLDivisionTableViewController.xib */; };
-		721F683918F221210019EFB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 721F683818F221210019EFB9 /* Main.storyboard */; };
 		727ABD7018D257C1005B9ACC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD6F18D257C1005B9ACC /* Foundation.framework */; };
 		727ABD7218D257C1005B9ACC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7118D257C1005B9ACC /* CoreGraphics.framework */; };
 		727ABD7418D257C1005B9ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7318D257C1005B9ACC /* UIKit.framework */; };
@@ -29,6 +28,7 @@
 		727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDA518D257EC005B9ACC /* SWRevealViewController.m */; };
 		727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDA918D25B59005B9ACC /* SidebarViewController.m */; };
 		727ABDAD18D25C7B005B9ACC /* AUDLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */; };
+		72C18E0818F2258800849056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72C18E0718F2258800849056 /* Main.storyboard */; };
 		72F4DAFD18DA0A8A00E571FC /* AUDLTeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F4DAFB18DA0A8A00E571FC /* AUDLTeamsTableViewController.m */; };
 		72F4DAFE18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4DAFC18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib */; };
 		72F4DB0618DB36C700E571FC /* AUDLNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F4DB0418DB36C700E571FC /* AUDLNewsTableViewController.m */; };
@@ -71,7 +71,6 @@
 		721F683318F2065F0019EFB9 /* AUDLDivisionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLDivisionTableViewController.h; sourceTree = "<group>"; };
 		721F683418F2065F0019EFB9 /* AUDLDivisionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLDivisionTableViewController.m; sourceTree = "<group>"; };
 		721F683518F2065F0019EFB9 /* AUDLDivisionTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLDivisionTableViewController.xib; sourceTree = "<group>"; };
-		721F683818F221210019EFB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		727ABD6C18D257C1005B9ACC /* AUDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AUDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		727ABD6F18D257C1005B9ACC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		727ABD7118D257C1005B9ACC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,6 +95,7 @@
 		727ABDA918D25B59005B9ACC /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		727ABDAB18D25C7B005B9ACC /* AUDLMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLMainViewController.h; sourceTree = "<group>"; };
 		727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLMainViewController.m; sourceTree = "<group>"; };
+		72C18E0718F2258800849056 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		72F4DAFA18DA0A8A00E571FC /* AUDLTeamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLTeamsTableViewController.h; sourceTree = "<group>"; };
 		72F4DAFB18DA0A8A00E571FC /* AUDLTeamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTeamsTableViewController.m; sourceTree = "<group>"; };
 		72F4DAFC18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLTeamsTableViewController.xib; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 		727ABD6318D257C1005B9ACC = {
 			isa = PBXGroup;
 			children = (
-				721F683818F221210019EFB9 /* Main.storyboard */,
+				72C18E0718F2258800849056 /* Main.storyboard */,
 				721F682918EF405C0019EFB9 /* audl-120.png */,
 				721F682318EF3C260019EFB9 /* Default@2x.png */,
 				721F682118EF3B0B0019EFB9 /* Default-568h@2x.png */,
@@ -479,7 +479,7 @@
 				72F4DB0718DB36C700E571FC /* AUDLNewsTableViewController.xib in Resources */,
 				727ABD7A18D257C1005B9ACC /* InfoPlist.strings in Resources */,
 				E9D674D818DE025C00712370 /* AUDLStandingsViewController.xib in Resources */,
-				721F683918F221210019EFB9 /* Main.storyboard in Resources */,
+				72C18E0818F2258800849056 /* Main.storyboard in Resources */,
 				721F682218EF3B0B0019EFB9 /* Default-568h@2x.png in Resources */,
 				E9D674D218DE022B00712370 /* AUDLNowViewController.xib in Resources */,
 				721F682418EF3C260019EFB9 /* Default@2x.png in Resources */,
