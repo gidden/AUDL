@@ -7,8 +7,7 @@
 //
 
 #import "AUDLSettingsTableViewController.h"
-#import "AUDLSettingTableViewCell.h"
-#import "AUDLMainViewController.h"
+#import "AUDLTableViewCell.h"
 #import "SWRevealViewController.h"
 
 @interface AUDLSettingsTableViewController ()
@@ -83,9 +82,26 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section (number of NSArray Settings).
-    return 0;
+    return [self.Setting count];
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *thisSetting = [self.Setting objectAtIndex:indexPath.row];
+    NSString *cellIdentifier = [thisSetting objectAtIndex:0];
+    NSString *cellSettingId = [thisSetting objectAtIndex:1];
+    
+    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(cell == nil) {
+       cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    //configure the cell
+    cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
+    [cell setSetting:cellSettingId];
+    
+    return cell;
+}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -176,5 +192,26 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)settingRequest
+{
+    //prepare the link that is going to be used on the GET request
+    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/Settings"];
+    
+    //prepare the request object
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30];
+    
+    //prepare the variables for the JSON response
+    NSData *urlData;
+    NSURLResponse *response;
+    NSError *error;
+    
+    //make synchronous request
+    urlData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
+    
+    //construct array around the data from the response
+    _Setting = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:&error];
+}
+
 
 @end

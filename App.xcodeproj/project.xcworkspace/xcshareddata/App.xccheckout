@@ -5,7 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>DEC6B116-3EB3-4EFA-B490-10C89B62BE9B</string>
+=======
+	<string>B7D07755-A327-410E-A615-CD62462B003D</string>
+>>>>>>> origin/evan-branch-march21-11
 	<key>IDESourceControlProjectName</key>
 	<string>App</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
