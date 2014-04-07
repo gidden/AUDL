@@ -204,17 +204,10 @@
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
-<<<<<<< HEAD
-    [self getNewsItems];
-    [refreshControl endRefreshing];
-}
-=======
     [self newsItemsRequest];
     [refreshControl endRefreshing];
 }
 
-
->>>>>>> evan-branch-march21-1
 
 
 
