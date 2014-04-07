@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "727ABD6B18D257C1005B9ACC"
-               BuildableName = "App.app"
+               BuildableName = "AUDL.app"
                BlueprintName = "AUDL"
                ReferencedContainer = "container:AUDL.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "727ABD8C18D257C1005B9ACC"
-               BuildableName = "AppTests.xctest"
+               BuildableName = "AUDLTests.xctest"
                BlueprintName = "AUDLTests"
                ReferencedContainer = "container:AUDL.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "727ABD6B18D257C1005B9ACC"
-            BuildableName = "App.app"
+            BuildableName = "AUDL.app"
             BlueprintName = "AUDL"
             ReferencedContainer = "container:AUDL.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "727ABD6B18D257C1005B9ACC"
-            BuildableName = "App.app"
+            BuildableName = "AUDL.app"
             BlueprintName = "AUDL"
             ReferencedContainer = "container:AUDL.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "727ABD6B18D257C1005B9ACC"
-            BuildableName = "App.app"
+            BuildableName = "AUDL.app"
             BlueprintName = "AUDL"
             ReferencedContainer = "container:AUDL.xcodeproj">
          </BuildableReference>

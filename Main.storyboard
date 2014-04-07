@@ -474,10 +474,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-        <segue reference="dpr-eK-A74"/>
-=======
         <segue reference="HSl-AU-4yY"/>
->>>>>>> evan-branch-march21-1
     </inferredMetricsTieBreakers>
 </document>

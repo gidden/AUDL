@@ -12,13 +12,13 @@
 		721F682A18EF405C0019EFB9 /* audl-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 721F682918EF405C0019EFB9 /* audl-120.png */; };
 		721F683618F2065F0019EFB9 /* AUDLDivisionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721F683418F2065F0019EFB9 /* AUDLDivisionTableViewController.m */; };
 		721F683718F2065F0019EFB9 /* AUDLDivisionTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721F683518F2065F0019EFB9 /* AUDLDivisionTableViewController.xib */; };
+		721F683918F221210019EFB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 721F683818F221210019EFB9 /* Main.storyboard */; };
 		727ABD7018D257C1005B9ACC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD6F18D257C1005B9ACC /* Foundation.framework */; };
 		727ABD7218D257C1005B9ACC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7118D257C1005B9ACC /* CoreGraphics.framework */; };
 		727ABD7418D257C1005B9ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7318D257C1005B9ACC /* UIKit.framework */; };
 		727ABD7A18D257C1005B9ACC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 727ABD7818D257C1005B9ACC /* InfoPlist.strings */; };
 		727ABD7C18D257C1005B9ACC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABD7B18D257C1005B9ACC /* main.m */; };
 		727ABD8018D257C1005B9ACC /* AUDLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABD7F18D257C1005B9ACC /* AUDLAppDelegate.m */; };
-		727ABD8318D257C1005B9ACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 727ABD8118D257C1005B9ACC /* Main.storyboard */; };
 		727ABD8618D257C1005B9ACC /* AUDLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABD8518D257C1005B9ACC /* AUDLViewController.m */; };
 		727ABD8818D257C1005B9ACC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727ABD8718D257C1005B9ACC /* Images.xcassets */; };
 		727ABD8F18D257C1005B9ACC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD8E18D257C1005B9ACC /* XCTest.framework */; };
@@ -71,6 +71,7 @@
 		721F683318F2065F0019EFB9 /* AUDLDivisionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLDivisionTableViewController.h; sourceTree = "<group>"; };
 		721F683418F2065F0019EFB9 /* AUDLDivisionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLDivisionTableViewController.m; sourceTree = "<group>"; };
 		721F683518F2065F0019EFB9 /* AUDLDivisionTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLDivisionTableViewController.xib; sourceTree = "<group>"; };
+		721F683818F221210019EFB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		727ABD6C18D257C1005B9ACC /* AUDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AUDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		727ABD6F18D257C1005B9ACC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		727ABD7118D257C1005B9ACC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,7 +82,6 @@
 		727ABD7D18D257C1005B9ACC /* AUDL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AUDL-Prefix.pch"; sourceTree = "<group>"; };
 		727ABD7E18D257C1005B9ACC /* AUDLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLAppDelegate.h; sourceTree = "<group>"; };
 		727ABD7F18D257C1005B9ACC /* AUDLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUDLAppDelegate.m; sourceTree = "<group>"; };
-		727ABD8218D257C1005B9ACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		727ABD8418D257C1005B9ACC /* AUDLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLViewController.h; sourceTree = "<group>"; };
 		727ABD8518D257C1005B9ACC /* AUDLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUDLViewController.m; sourceTree = "<group>"; };
 		727ABD8718D257C1005B9ACC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -172,6 +172,7 @@
 		727ABD6318D257C1005B9ACC = {
 			isa = PBXGroup;
 			children = (
+				721F683818F221210019EFB9 /* Main.storyboard */,
 				721F682918EF405C0019EFB9 /* audl-120.png */,
 				721F682318EF3C260019EFB9 /* Default@2x.png */,
 				721F682118EF3B0B0019EFB9 /* Default-568h@2x.png */,
@@ -213,7 +214,6 @@
 				727ABD8718D257C1005B9ACC /* Images.xcassets */,
 				727ABD7E18D257C1005B9ACC /* AUDLAppDelegate.h */,
 				727ABD7F18D257C1005B9ACC /* AUDLAppDelegate.m */,
-				727ABD8118D257C1005B9ACC /* Main.storyboard */,
 				E9D674D318DE023B00712370 /* Scores/Standings */,
 				E9D674CD18DE020C00712370 /* Now */,
 				E9D674C718DE01E000712370 /* Schedule */,
@@ -479,9 +479,9 @@
 				72F4DB0718DB36C700E571FC /* AUDLNewsTableViewController.xib in Resources */,
 				727ABD7A18D257C1005B9ACC /* InfoPlist.strings in Resources */,
 				E9D674D818DE025C00712370 /* AUDLStandingsViewController.xib in Resources */,
+				721F683918F221210019EFB9 /* Main.storyboard in Resources */,
 				721F682218EF3B0B0019EFB9 /* Default-568h@2x.png in Resources */,
 				E9D674D218DE022B00712370 /* AUDLNowViewController.xib in Resources */,
-				727ABD8318D257C1005B9ACC /* Main.storyboard in Resources */,
 				721F682418EF3C260019EFB9 /* Default@2x.png in Resources */,
 				72F4DB0C18DB5A3F00E571FC /* AUDLTableViewCell.xib in Resources */,
 			);
@@ -548,14 +548,6 @@
 				727ABD7918D257C1005B9ACC /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		727ABD8118D257C1005B9ACC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				727ABD8218D257C1005B9ACC /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		727ABD9718D257C1005B9ACC /* InfoPlist.strings */ = {
