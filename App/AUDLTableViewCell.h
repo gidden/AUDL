@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString *link;
 @property (strong, nonatomic) NSString *teamId;
+@property (strong, nonatomic) NSString *teamName;
 @property (strong, nonatomic) NSString *date;
 @property (nonatomic, strong) NSArray *divSchedule;
 @property (nonatomic, strong) NSArray *divTeams;

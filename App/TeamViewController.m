@@ -13,6 +13,18 @@
 @end
 
 @implementation TeamViewController
+//@synthesize teamName;
+
+- (id)initWithTeam:(NSArray *)teamList
+{
+    self = [super init];
+    if (self) {
+        // Custom initialization
+        self.teamList = teamList;
+        
+    }
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,5 +57,38 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)indivTeamRequest
+{
+    
+    ////add team's name to the url
+   // NSURL * url = [[NSURL alloc] initWithString:[@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/" stringByAppendingString:teamName]];
+    //NSLog(@"%@",teamName);
+    //NSLog(@"%@",url);
+    
+    //NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
+                                //cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                //cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                            //timeoutInterval:30];
+    
+    // Prepare the variables for the JSON response
+    NSData *urlData;
+    NSURLResponse *response;
+    NSError *error;
+    
+    // Make synchronous request
+    //urlData = [NSURLConnection sendSynchronousRequest:urlRequest
+                                    //returningResponse:&response
+                                               // error:&error];
+    
+    //problem here parsing team info
+    //indivTeam = [NSJSONSerialization
+                  //JSONObjectWithData:urlData
+                  //options:0
+                  //error:&error];
+    //int i = 10;
+   // i + 8;
+    
+}
 
 @end

@@ -9,6 +9,18 @@
 #import "AUDLTeamsTableViewController.h"
 
 @interface TeamViewController : AUDLTeamsTableViewController
+    //NSString *teamName;
+
+
+@property (nonatomic, strong) NSString *teamName;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (nonatomic, strong) NSArray *teamList;
+@property (nonatomic, strong) NSArray *indivTeam;
+@property id delegate;
+
+
+- (id)initWithTeam:(NSArray *)teamList;
+
+- (void)indivTeamRequest;
 
 @end

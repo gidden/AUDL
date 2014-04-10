@@ -18,6 +18,8 @@
 		72255C2218F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72255C2018F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib */; };
 		72255C2718F6EAB0001E6937 /* AUDLStandingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72255C2518F6EAB0001E6937 /* AUDLStandingsTableViewCell.m */; };
 		72255C2818F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72255C2618F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib */; };
+		7249E15918F708E200C4012B /* AUDLIndivTeamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7249E15718F708E200C4012B /* AUDLIndivTeamTableViewController.m */; };
+		7249E15A18F708E200C4012B /* AUDLIndivTeamTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7249E15818F708E200C4012B /* AUDLIndivTeamTableViewController.xib */; };
 		727ABD7018D257C1005B9ACC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD6F18D257C1005B9ACC /* Foundation.framework */; };
 		727ABD7218D257C1005B9ACC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7118D257C1005B9ACC /* CoreGraphics.framework */; };
 		727ABD7418D257C1005B9ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7318D257C1005B9ACC /* UIKit.framework */; };
@@ -30,11 +32,11 @@
 		727ABD9018D257C1005B9ACC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD6F18D257C1005B9ACC /* Foundation.framework */; };
 		727ABD9118D257C1005B9ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7318D257C1005B9ACC /* UIKit.framework */; };
 		727ABD9918D257C1005B9ACC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 727ABD9718D257C1005B9ACC /* InfoPlist.strings */; };
-		727ABD9B18D257C1005B9ACC /* AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABD9A18D257C1005B9ACC /* AppTests.m */; };
 		727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDA518D257EC005B9ACC /* SWRevealViewController.m */; };
 		727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDA918D25B59005B9ACC /* SidebarViewController.m */; };
 		727ABDAD18D25C7B005B9ACC /* AUDLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */; };
 		72C18E0818F2258800849056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72C18E0718F2258800849056 /* Main.storyboard */; };
+		72E09EDC18F72B9900F7D802 /* AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E09EDB18F72B9900F7D802 /* AppTests.m */; };
 		72F4DAFD18DA0A8A00E571FC /* AUDLTeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F4DAFB18DA0A8A00E571FC /* AUDLTeamsTableViewController.m */; };
 		72F4DAFE18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4DAFC18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib */; };
 		72F4DB0618DB36C700E571FC /* AUDLNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F4DB0418DB36C700E571FC /* AUDLNewsTableViewController.m */; };
@@ -86,6 +88,9 @@
 		72255C2418F6EAB0001E6937 /* AUDLStandingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLStandingsTableViewCell.h; sourceTree = "<group>"; };
 		72255C2518F6EAB0001E6937 /* AUDLStandingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLStandingsTableViewCell.m; sourceTree = "<group>"; };
 		72255C2618F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLStandingsTableViewCell.xib; sourceTree = "<group>"; };
+		7249E15618F708E200C4012B /* AUDLIndivTeamTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLIndivTeamTableViewController.h; sourceTree = "<group>"; };
+		7249E15718F708E200C4012B /* AUDLIndivTeamTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLIndivTeamTableViewController.m; sourceTree = "<group>"; };
+		7249E15818F708E200C4012B /* AUDLIndivTeamTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLIndivTeamTableViewController.xib; sourceTree = "<group>"; };
 		727ABD6C18D257C1005B9ACC /* AUDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AUDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		727ABD6F18D257C1005B9ACC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		727ABD7118D257C1005B9ACC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,7 +108,6 @@
 		727ABD8E18D257C1005B9ACC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		727ABD9618D257C1005B9ACC /* AUDLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AUDLTests-Info.plist"; sourceTree = "<group>"; };
 		727ABD9818D257C1005B9ACC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		727ABD9A18D257C1005B9ACC /* AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTests.m; sourceTree = "<group>"; };
 		727ABDA418D257EC005B9ACC /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		727ABDA518D257EC005B9ACC /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		727ABDA818D25B59005B9ACC /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		727ABDAB18D25C7B005B9ACC /* AUDLMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLMainViewController.h; sourceTree = "<group>"; };
 		727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLMainViewController.m; sourceTree = "<group>"; };
 		72C18E0718F2258800849056 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		72E09EDB18F72B9900F7D802 /* AppTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTests.m; sourceTree = SOURCE_ROOT; };
 		72F4DAFA18DA0A8A00E571FC /* AUDLTeamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLTeamsTableViewController.h; sourceTree = "<group>"; };
 		72F4DAFB18DA0A8A00E571FC /* AUDLTeamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTeamsTableViewController.m; sourceTree = "<group>"; };
 		72F4DAFC18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLTeamsTableViewController.xib; sourceTree = "<group>"; };
@@ -292,7 +297,7 @@
 		727ABD9418D257C1005B9ACC /* AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				727ABD9A18D257C1005B9ACC /* AppTests.m */,
+				72E09EDB18F72B9900F7D802 /* AppTests.m */,
 				727ABD9518D257C1005B9ACC /* Supporting Files */,
 			);
 			path = AppTests;
@@ -383,6 +388,9 @@
 			children = (
 				E9A9AB7318E91E2200F5BEED /* TeamViewController.h */,
 				E9A9AB7418E91E2200F5BEED /* TeamViewController.m */,
+				7249E15618F708E200C4012B /* AUDLIndivTeamTableViewController.h */,
+				7249E15718F708E200C4012B /* AUDLIndivTeamTableViewController.m */,
+				7249E15818F708E200C4012B /* AUDLIndivTeamTableViewController.xib */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -449,6 +457,7 @@
 				727ABD6818D257C1005B9ACC /* Sources */,
 				727ABD6918D257C1005B9ACC /* Frameworks */,
 				727ABD6A18D257C1005B9ACC /* Resources */,
+				72E09EDD18F72D3900F7D802 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -523,6 +532,7 @@
 				721F682A18EF405C0019EFB9 /* audl-120.png in Resources */,
 				72F4DAFE18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib in Resources */,
 				E90995F318DCA3E4003A07FD /* AUDLSettingsViewController.xib in Resources */,
+				7249E15A18F708E200C4012B /* AUDLIndivTeamTableViewController.xib in Resources */,
 				72255C2818F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib in Resources */,
 				E9D674C618DE01D700712370 /* AUDLStatsViewController.xib in Resources */,
 				72F4DB0718DB36C700E571FC /* AUDLNewsTableViewController.xib in Resources */,
@@ -547,6 +557,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72E09EDD18F72D3900F7D802 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = XcodeCoverage/exportenv.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		727ABD6818D257C1005B9ACC /* Sources */ = {
@@ -574,6 +600,7 @@
 				72255C2718F6EAB0001E6937 /* AUDLStandingsTableViewCell.m in Sources */,
 				727ABD7C18D257C1005B9ACC /* main.m in Sources */,
 				727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */,
+				7249E15918F708E200C4012B /* AUDLIndivTeamTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,7 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				727ABD9B18D257C1005B9ACC /* AppTests.m in Sources */,
+				72E09EDC18F72B9900F7D802 /* AppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,6 +662,9 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -673,6 +703,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -714,7 +745,7 @@
 		727ABDA218D257C1005B9ACC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/App.app/App";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AUDL.app/AUDL";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -736,7 +767,7 @@
 		727ABDA318D257C1005B9ACC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/App.app/App";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AUDL.app/AUDL";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

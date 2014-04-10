@@ -134,7 +134,9 @@
         AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
         
         // opens the selected cell's url in Safari
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.link]];
+        // in the simulator, it will open in Safari since YouTube app is not present
+        // on a device, it will open in thr YouTube app
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.videoId]];
     }
 }
 

@@ -12,7 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (nonatomic, strong) NSArray *teams;
-@property (nonatomic, strong) NSMutableArray *teamNames;
+@property (nonatomic, strong) NSArray *indivTeam;
+@property (nonatomic, strong) NSString *teamName;
 
 - (void)teamsRequest;
 

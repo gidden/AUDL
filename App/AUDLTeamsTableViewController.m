@@ -9,6 +9,7 @@
 #import "AUDLTeamsTableViewController.h"
 #import "SWRevealViewController.h"
 #import "AUDLTableViewCell.h"
+#import "AUDLIndivTeamTableViewController.h"
 
 @interface AUDLTeamsTableViewController ()
 
@@ -75,7 +76,9 @@
 {
     
     NSArray *thisTeam = [self.teams objectAtIndex:indexPath.row];
+    // cell identifier is also team name
     NSString *cellIdentifier = [thisTeam objectAtIndex:0];
+    // team ID
     NSString *cellTeamId = [thisTeam objectAtIndex:1];
     
     AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -85,8 +88,8 @@
     
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    [cell setTeamId:cellTeamId];
-    
+    [cell setTeamId:[NSString stringWithFormat: @"%@", cellTeamId]];
+    [cell setTeamName:cellIdentifier];
     return cell;
 }
 
@@ -189,6 +192,169 @@
         NSLog(@"%@", selectedCell.teamId);
         // opens the selected cell's url in Safari
         //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.link]];
+        
+        
+        // create the view controller we want to present
+        AUDLIndivTeamTableViewController *teamSelection = [[AUDLIndivTeamTableViewController alloc] init];
+        teamSelection.teamName = selectedCell.teamName;
+        teamSelection.teamId = selectedCell.teamId;
+        
+        // override the back button in the new controller from saying "Schedule"
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+        self.navigationItem.backBarButtonItem = backButton;
+        
+        // present the new view controller
+        [self.navigationController pushViewController:teamSelection animated:YES];
+        
+        
+        
+        
+        
+        
+        /*
+        for (int i=0; i<selectedCell.indivTeam.count; i++) {
+            NSLog(@"%@", selectedCell.indivTeam[i]);
+        }
+        
+        // create the view controller we want to present
+        TeamViewController *teamList = [[TeamViewController alloc] initWithTeam:selectedCell.indivTeam];
+        
+        //spent too much time trying to get the title from the _team array, did a bunch of if stmts
+        
+        if(tappedIndexPath.row == 0){
+            _teamName = @"Madison Radicals";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 1){
+            _teamName = @"Minnesota Wind Chill";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 2){
+            _teamName = @"Detroit Mechanix";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 3){
+            _teamName = @"Rochester Dragons";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+            
+        }
+        else if(tappedIndexPath.row == 4){
+            _teamName = @"Cincinnati Revolution";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 5){
+            _teamName = @"Salt Lake Lions";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 6){
+            _teamName = @"Vancouver Riptide";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 7){
+            _teamName = @"DC Breeze";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 8){
+            _teamName = @"Indianapolis AlleyCats";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 9){
+            _teamName = @"Montreal Royal";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 10){
+            _teamName = @"Seattle Raptors";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 11){
+            _teamName = @"Toronto Rush";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 12){
+            _teamName = @"Philadelphia Phoenix";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 13){
+            _teamName = @"San Jose Spiders";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 14){
+            _teamName = @"San Francisco FlameThrowers";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 15){
+            _teamName = @"New York Empire";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else if(tappedIndexPath.row == 16){
+            _teamName = @"Chicago Wildfire";
+            //set _teamName to teamName in TeamViewController
+            TeamViewController *team = [[TeamViewController alloc] init];
+            team.teamName = _teamName;
+            [self presentViewController:team animated:YES completion:nil];
+        }
+        else{
+            _teamName = @"NULL";
+        }
+        //title the new page
+        teamList.title = _teamName  ;
+        
+        // override the back button in the new controller from saying "Teams"
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+        self.navigationItem.backBarButtonItem = backButton;
+        
+        
+        // present the new view controller
+        [self.navigationController pushViewController:teamList animated:YES];
+        */
     }
 }
 
