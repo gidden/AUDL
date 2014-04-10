@@ -11,5 +11,8 @@
 @interface AUDLStandingsTableViewController : UITableViewController
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (nonatomic, strong) NSArray *standings;
+
+- (void)standingsRequest;
 
 @end

@@ -14,6 +14,10 @@
 		721F683718F2065F0019EFB9 /* AUDLDivisionTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721F683518F2065F0019EFB9 /* AUDLDivisionTableViewController.xib */; };
 		72255C1B18F61D52001E6937 /* AUDLScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72255C1918F61D52001E6937 /* AUDLScheduleTableViewCell.m */; };
 		72255C1C18F61D52001E6937 /* AUDLScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72255C1A18F61D52001E6937 /* AUDLScheduleTableViewCell.xib */; };
+		72255C2118F6E8A3001E6937 /* AUDLDivStandingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72255C1F18F6E8A3001E6937 /* AUDLDivStandingsTableViewController.m */; };
+		72255C2218F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72255C2018F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib */; };
+		72255C2718F6EAB0001E6937 /* AUDLStandingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72255C2518F6EAB0001E6937 /* AUDLStandingsTableViewCell.m */; };
+		72255C2818F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72255C2618F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib */; };
 		727ABD7018D257C1005B9ACC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD6F18D257C1005B9ACC /* Foundation.framework */; };
 		727ABD7218D257C1005B9ACC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7118D257C1005B9ACC /* CoreGraphics.framework */; };
 		727ABD7418D257C1005B9ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7318D257C1005B9ACC /* UIKit.framework */; };
@@ -76,6 +80,12 @@
 		72255C1818F61D52001E6937 /* AUDLScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLScheduleTableViewCell.h; sourceTree = "<group>"; };
 		72255C1918F61D52001E6937 /* AUDLScheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLScheduleTableViewCell.m; sourceTree = "<group>"; };
 		72255C1A18F61D52001E6937 /* AUDLScheduleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLScheduleTableViewCell.xib; sourceTree = "<group>"; };
+		72255C1E18F6E8A3001E6937 /* AUDLDivStandingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLDivStandingsTableViewController.h; sourceTree = "<group>"; };
+		72255C1F18F6E8A3001E6937 /* AUDLDivStandingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLDivStandingsTableViewController.m; sourceTree = "<group>"; };
+		72255C2018F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLDivStandingsTableViewController.xib; sourceTree = "<group>"; };
+		72255C2418F6EAB0001E6937 /* AUDLStandingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLStandingsTableViewCell.h; sourceTree = "<group>"; };
+		72255C2518F6EAB0001E6937 /* AUDLStandingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLStandingsTableViewCell.m; sourceTree = "<group>"; };
+		72255C2618F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLStandingsTableViewCell.xib; sourceTree = "<group>"; };
 		727ABD6C18D257C1005B9ACC /* AUDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AUDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		727ABD6F18D257C1005B9ACC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		727ABD7118D257C1005B9ACC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -183,6 +193,27 @@
 				72255C1A18F61D52001E6937 /* AUDLScheduleTableViewCell.xib */,
 			);
 			name = "Schedule Table Cell";
+			sourceTree = "<group>";
+		};
+		72255C2318F6E8AA001E6937 /* Division */ = {
+			isa = PBXGroup;
+			children = (
+				72255C1E18F6E8A3001E6937 /* AUDLDivStandingsTableViewController.h */,
+				72255C1F18F6E8A3001E6937 /* AUDLDivStandingsTableViewController.m */,
+				72255C2018F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib */,
+				72255C2918F6EAB7001E6937 /* Standings Table Cell */,
+			);
+			name = Division;
+			sourceTree = "<group>";
+		};
+		72255C2918F6EAB7001E6937 /* Standings Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				72255C2418F6EAB0001E6937 /* AUDLStandingsTableViewCell.h */,
+				72255C2518F6EAB0001E6937 /* AUDLStandingsTableViewCell.m */,
+				72255C2618F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib */,
+			);
+			name = "Standings Table Cell";
 			sourceTree = "<group>";
 		};
 		727ABD6318D257C1005B9ACC = {
@@ -403,6 +434,7 @@
 				E9D674D418DE025C00712370 /* AUDLStandingsViewController.h */,
 				E9D674D518DE025C00712370 /* AUDLStandingsViewController.m */,
 				E9D674D618DE025C00712370 /* AUDLStandingsViewController.xib */,
+				72255C2318F6E8AA001E6937 /* Division */,
 			);
 			name = Scores/Standings;
 			sourceTree = "<group>";
@@ -491,6 +523,7 @@
 				721F682A18EF405C0019EFB9 /* audl-120.png in Resources */,
 				72F4DAFE18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib in Resources */,
 				E90995F318DCA3E4003A07FD /* AUDLSettingsViewController.xib in Resources */,
+				72255C2818F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib in Resources */,
 				E9D674C618DE01D700712370 /* AUDLStatsViewController.xib in Resources */,
 				72F4DB0718DB36C700E571FC /* AUDLNewsTableViewController.xib in Resources */,
 				727ABD7A18D257C1005B9ACC /* InfoPlist.strings in Resources */,
@@ -499,6 +532,7 @@
 				721F682218EF3B0B0019EFB9 /* Default-568h@2x.png in Resources */,
 				E9D674D218DE022B00712370 /* AUDLNowViewController.xib in Resources */,
 				72255C1C18F61D52001E6937 /* AUDLScheduleTableViewCell.xib in Resources */,
+				72255C2218F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib in Resources */,
 				721F682418EF3C260019EFB9 /* Default@2x.png in Resources */,
 				72F4DB0C18DB5A3F00E571FC /* AUDLTableViewCell.xib in Resources */,
 			);
@@ -526,6 +560,7 @@
 				E9D674D118DE022B00712370 /* AUDLNowViewController.m in Sources */,
 				E90995F618DCAA7C003A07FD /* AUDLSettingsTableViewController.m in Sources */,
 				72F4DB0618DB36C700E571FC /* AUDLNewsTableViewController.m in Sources */,
+				72255C2118F6E8A3001E6937 /* AUDLDivStandingsTableViewController.m in Sources */,
 				72255C1B18F61D52001E6937 /* AUDLScheduleTableViewCell.m in Sources */,
 				E9A9AB7518E91E2200F5BEED /* TeamViewController.m in Sources */,
 				E90995F918DCAF0B003A07FD /* AUDLSettingTableViewCell.m in Sources */,
@@ -536,6 +571,7 @@
 				727ABD8618D257C1005B9ACC /* AUDLViewController.m in Sources */,
 				E9D674BE18DE019100712370 /* AUDLVideoViewController.m in Sources */,
 				727ABD8018D257C1005B9ACC /* AUDLAppDelegate.m in Sources */,
+				72255C2718F6EAB0001E6937 /* AUDLStandingsTableViewCell.m in Sources */,
 				727ABD7C18D257C1005B9ACC /* main.m in Sources */,
 				727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */,
 			);
