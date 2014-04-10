@@ -200,6 +200,7 @@
     
         // opens the selected cell's url in Safari
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.link]];
+        //[self.webview loadRequest:[NSURL URLWithString:selectedCell.link]];
     }
 }
 

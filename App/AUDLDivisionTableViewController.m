@@ -8,6 +8,7 @@
 
 #import "AUDLDivisionTableViewController.h"
 #import "AUDLTableViewCell.h"
+#import "AUDLScheduleTableViewCell.h"
 
 @interface AUDLDivisionTableViewController ()
 
@@ -37,6 +38,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     //self.navigationItem.hidesBackButton =YES;
 
+    [self.tableView registerNib:[UINib nibWithNibName:@"AUDLScheduleTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    self.tableView.rowHeight = 100;
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,16 +70,24 @@
     // "+1" is to start at first story, not the header
     NSArray *thisNewsItem = [self.schedule objectAtIndex:indexPath.row];
     
-    NSString *cellIdentifier = [thisNewsItem objectAtIndex:0];
-    NSString *cellLink = [thisNewsItem objectAtIndex:2];
-    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    //NSString *cellIdentifier = [thisNewsItem objectAtIndex:0];
+    NSString *cellIdentifier = @"Cell";
+
+    //NSString *cellLink = [thisNewsItem objectAtIndex:2];
+    AUDLScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    //AUDLScheduleTableViewCell *cell = nil;
+
     if (cell == nil) {
-        cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[AUDLScheduleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
+    //cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
     //[cell setLink:cellLink];
+    cell.teamOne.text = [thisNewsItem objectAtIndex:0];
+    cell.teamTwo.text = [thisNewsItem objectAtIndex:2];
+    cell.date.text = [thisNewsItem objectAtIndex:4];
+    cell.time.text = [thisNewsItem objectAtIndex:5];
     
     return cell;
 }
