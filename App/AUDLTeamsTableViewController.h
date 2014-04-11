@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSString *teamName;
 
 - (void)teamsRequest;
+- (void)didSelect:UIGestureRecognizer;
 
 @end

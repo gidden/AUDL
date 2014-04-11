@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSArray *schedule;
 
 - (void)scheduleRequest;
+- (void)didSelect:UIGestureRecognizer;
 
 @end

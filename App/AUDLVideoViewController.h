@@ -13,4 +13,5 @@
 @property (nonatomic, strong) NSArray *videos;
 
 - (void) getVideos;
+- (void)didSelect:UIGestureRecognizer;
 @end

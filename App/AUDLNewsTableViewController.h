@@ -15,5 +15,6 @@
 
 
 - (void)newsItemsRequest;
+- (void)didSelect:UIGestureRecognizer;
 
 @end
