@@ -6,8 +6,11 @@
 //  Copyright (c) 2014 AUDL. All rights reserved.
 //
 
-#import "AUDLMainViewController.h"
+#import <UIKit/UIKit.h>
 
 @interface AUDLStatsTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (nonatomic, strong) NSArray *playerStats;
+
+- (void) playerStatsRequest;
 @end

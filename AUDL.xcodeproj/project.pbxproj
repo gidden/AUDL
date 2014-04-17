@@ -46,6 +46,7 @@
 		E90995F318DCA3E4003A07FD /* AUDLSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90995F118DCA3E4003A07FD /* AUDLSettingsViewController.xib */; };
 		E90995F618DCAA7C003A07FD /* AUDLSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */; };
 		E90995F918DCAF0B003A07FD /* AUDLSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90995F818DCAF0B003A07FD /* AUDLSettingTableViewCell.m */; };
+		E91A883E19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91A883D19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m */; };
 		E967BBEE18F06EBB001BE229 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967BBED18F06EBB001BE229 /* Accounts.framework */; };
 		E967BBF018F06ED1001BE229 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967BBEF18F06ED1001BE229 /* Social.framework */; };
 		E967BBF218F077CF001BE229 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967BBF118F077CF001BE229 /* Twitter.framework */; };
@@ -130,6 +131,8 @@
 		E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLSettingsTableViewController.m; sourceTree = "<group>"; };
 		E90995F718DCAF0B003A07FD /* AUDLSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLSettingTableViewCell.h; sourceTree = "<group>"; };
 		E90995F818DCAF0B003A07FD /* AUDLSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLSettingTableViewCell.m; sourceTree = "<group>"; };
+		E91A883C19004C9E00B8070E /* AUDLPlayerStatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLPlayerStatsTableViewController.h; sourceTree = "<group>"; };
+		E91A883D19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLPlayerStatssTableViewController.m; sourceTree = "<group>"; };
 		E967BBED18F06EBB001BE229 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E967BBEF18F06ED1001BE229 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E967BBF118F077CF001BE229 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -383,6 +386,15 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		E91A883B19004C8700B8070E /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				E91A883C19004C9E00B8070E /* AUDLPlayerStatsTableViewController.h */,
+				E91A883D19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
 		E9A9AB7218E91DE400F5BEED /* Team */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +423,7 @@
 				E9D674C218DE01D700712370 /* AUDLStatsViewController.h */,
 				E9D674C318DE01D700712370 /* AUDLStatsViewController.m */,
 				E9D674C418DE01D700712370 /* AUDLStatsViewController.xib */,
+				E91A883B19004C8700B8070E /* Player */,
 			);
 			name = Stats;
 			sourceTree = "<group>";
@@ -457,7 +470,6 @@
 				727ABD6818D257C1005B9ACC /* Sources */,
 				727ABD6918D257C1005B9ACC /* Frameworks */,
 				727ABD6A18D257C1005B9ACC /* Resources */,
-				72E09EDD18F72D3900F7D802 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -558,22 +570,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		72E09EDD18F72D3900F7D802 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = XcodeCoverage/exportenv.sh;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		727ABD6818D257C1005B9ACC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -600,6 +596,7 @@
 				72255C2718F6EAB0001E6937 /* AUDLStandingsTableViewCell.m in Sources */,
 				727ABD7C18D257C1005B9ACC /* main.m in Sources */,
 				727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */,
+				E91A883E19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m in Sources */,
 				7249E15918F708E200C4012B /* AUDLIndivTeamTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
