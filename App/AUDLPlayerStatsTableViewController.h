@@ -10,4 +10,11 @@
 
 @interface AUDLPlayerStatsTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSString *stat;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *back;
+@property (nonatomic, strong) NSArray *top;
+@property id delegate;
+
+-(id)initWithTop5:(NSArray *)top;
+
 @end

@@ -7,6 +7,9 @@
 //
 
 #import "AUDLPlayerStatsTableViewController.h"
+#import "AUDLTableViewCell.h"
+#import "AUDLStatsViewController.h"
+#import "AUDLTop5TableViewCell.h"
 
 @interface AUDLPlayerStatsTableViewController ()
 
@@ -14,11 +17,13 @@
 
 @implementation AUDLPlayerStatsTableViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithTop5:(NSArray *)top
 {
-    self = [super initWithNibName:@"Top Player Stats" bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
         // Custom initialization
+        self.top = top;
+        self.navigationItem.title = @"League Leaders";
     }
     return self;
 }
@@ -32,6 +37,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView registerNib:[UINib nibWithNibName:@"AUDLTop5TableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    self.tableView.rowHeight = 100;
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,64 +53,44 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.top count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NSLog(@"creating the stats list");
+    NSArray *thisStatsItem = [self.top objectAtIndex:indexPath.row];
+    NSLog(thisStatsItem[0]);
     
-    // Configure the cell...
+    NSLog(@"cell identifier");
+    //NSString *cellIdentifier = [thisNewsItem objectAtIndex:0];
+    NSString *cellIdentifier = @"Cell";
     
+    NSLog(@"creating top5 table cell");
+    //NSString *cellLink = [thisNewsItem objectAtIndex:2];
+    
+    AUDLTop5TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    //AUDLScheduleTableViewCell *cell = nil;
+    NSLog(@"just checking");
+    if (cell == nil) {
+        cell = [[AUDLTop5TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    NSLog(@"Setting up top 5 table cell");
+    cell.playerName.text = thisStatsItem[0];
+    cell.number.text = [NSString stringWithFormat:@"%@",thisStatsItem[1]];
+    //should be object at index 2
+    cell.icon = nil;
+    NSLog(@"at the end");
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation
