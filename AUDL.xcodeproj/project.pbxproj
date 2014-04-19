@@ -454,8 +454,8 @@
 			isa = PBXGroup;
 			children = (
 				E9D674BB18DE019100712370 /* AUDLVideoViewController.h */,
-				E9D674BD18DE019100712370 /* AUDLVideoViewController.xib */,
 				E9D674BC18DE019100712370 /* AUDLVideoViewController.m */,
+				E9D674BD18DE019100712370 /* AUDLVideoViewController.xib */,
 			);
 			name = Video;
 			sourceTree = "<group>";

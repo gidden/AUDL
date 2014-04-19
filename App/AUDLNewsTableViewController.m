@@ -95,7 +95,7 @@
     
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    //cell.imageView.image = [UIimageView path]
+    cell.imageView.image = [UIImage imageNamed:@"audl-30px.png"];
     
     
     [cell setLink:cellLink];
