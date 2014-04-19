@@ -41,6 +41,7 @@
 		72C7F17C1903125F00D7C49B /* AUDLScoresTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C7F17A1903125F00D7C49B /* AUDLScoresTableViewController.m */; };
 		72C7F17D1903125F00D7C49B /* AUDLScoresTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72C7F17B1903125F00D7C49B /* AUDLScoresTableViewController.xib */; };
 		72C7F1801903324500D7C49B /* audl-30px.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C7F17F1903324500D7C49B /* audl-30px.png */; };
+		72C7F1811903347200D7C49B /* AUDLTop5TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96980DA19031D660060E5F2 /* AUDLTop5TableViewCell.xib */; };
 		72E09EDC18F72B9900F7D802 /* AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E09EDB18F72B9900F7D802 /* AppTests.m */; };
 		72F4DAFD18DA0A8A00E571FC /* AUDLTeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F4DAFB18DA0A8A00E571FC /* AUDLTeamsTableViewController.m */; };
 		72F4DAFE18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4DAFC18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib */; };
@@ -56,7 +57,6 @@
 		E967BBF018F06ED1001BE229 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967BBEF18F06ED1001BE229 /* Social.framework */; };
 		E967BBF218F077CF001BE229 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967BBF118F077CF001BE229 /* Twitter.framework */; };
 		E96980DB19031D660060E5F2 /* AUDLTop5TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96980D919031D660060E5F2 /* AUDLTop5TableViewCell.m */; };
-		E96980DC19031D660060E5F2 /* AUDLTop5TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96980DA19031D660060E5F2 /* AUDLTop5TableViewCell.xib */; };
 		E9A9AB7518E91E2200F5BEED /* TeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A9AB7418E91E2200F5BEED /* TeamViewController.m */; };
 		E9D674BE18DE019100712370 /* AUDLVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D674BC18DE019100712370 /* AUDLVideoViewController.m */; };
 		E9D674BF18DE019100712370 /* AUDLVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D674BD18DE019100712370 /* AUDLVideoViewController.xib */; };
@@ -580,6 +580,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72C7F1811903347200D7C49B /* AUDLTop5TableViewCell.xib in Resources */,
 				E9D674BF18DE019100712370 /* AUDLVideoViewController.xib in Resources */,
 				E9D674CC18DE01FF00712370 /* AUDLScheduleViewController.xib in Resources */,
 				721F683718F2065F0019EFB9 /* AUDLDivisionTableViewController.xib in Resources */,
