@@ -66,7 +66,7 @@
     
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
-                                                cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                             timeoutInterval:30];
     
     // Prepare the variables for the JSON response
@@ -110,7 +110,7 @@
     NSArray *thisVideo = [self.videos objectAtIndex:indexPath.row];
     NSString *cellIdentifier = [thisVideo objectAtIndex:0];
     NSString *cellVideoId = [thisVideo objectAtIndex:1];
-    
+    NSString *cellThumbnailURL = [thisVideo objectAtIndex:2];
     AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -119,6 +119,9 @@
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
     [cell setVideoId:cellVideoId];
+    
+    UIImage *thumbnail = [self imageFromURLString:cellThumbnailURL];
+    cell.imageView.image = thumbnail;
     
     return cell;
 }
@@ -138,6 +141,25 @@
         // on a device, it will open in thr YouTube app
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.videoId]];
     }
+}
+
+
+// method to get the thumbnails from their URL
+- (UIImage *)imageFromURLString:(NSString *)urlString
+{
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *result = [NSURLConnection sendSynchronousRequest:request
+                                           returningResponse:&response error:&error];
+    //[self handleError:error];
+    UIImage *resultImage = [UIImage imageWithData:(NSData *)result];
+    
+    //NSLog(@"urlString: %@",urlString);
+    return resultImage;
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {

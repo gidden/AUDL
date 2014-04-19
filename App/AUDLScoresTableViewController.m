@@ -1,30 +1,21 @@
 //
-//  AUDLIndivTeamTableViewController.m
+//  AUDLScoresTableViewController.m
 //  AUDL
 //
-//  Created by Ryan Zoellner on 4/10/14.
+//  Created by Ryan Zoellner on 4/19/14.
 //  Copyright (c) 2014 AUDL. All rights reserved.
 //
 
-#import "AUDLIndivTeamTableViewController.h"
+#import "AUDLScoresTableViewController.h"
+#import "SWRevealViewController.h"
+#import "AUDLDivisionTableViewController.h"
 #import "AUDLTableViewCell.h"
-#import "AUDLRosterTableViewController.h"
 
-@interface AUDLIndivTeamTableViewController ()
+@interface AUDLScoresTableViewController ()
 
 @end
 
-@implementation AUDLIndivTeamTableViewController
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        // Custom initialization
-        
-    }
-    return self;
-}
+@implementation AUDLScoresTableViewController
 
 - (void)viewDidLoad
 {
@@ -35,12 +26,19 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.navigationItem.title = self.teamName;
     
-    _teamMenu = @[@"Roster", @"Schedule", @"Team Statistics"];
-
-    //get teams
-    [self teamRequest];
+    // Change button color
+    _sideBarButton.tintColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+    
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    _sideBarButton.target = self.revealViewController;
+    _sideBarButton.action = @selector(revealToggle:);
+    
+    // Add a gesture recognizer for the navigation sidebar
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    // Get score items from the server
+    [self scoreRequest];
     
     // Add a gesture recognizer to the table view for the cell selection
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
@@ -64,24 +62,29 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_teamMenu count];
+    return [self.scores count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellIdentifier = [self.teamMenu objectAtIndex:indexPath.row];
+    NSArray *thisDivisionsScores = [self.scores objectAtIndex:indexPath.row];
     
+    // the first element, the cellIdentifier, is the division name
+    NSString *cellIdentifier = [thisDivisionsScores objectAtIndex:0];
+    
+    // the second element, divScores, is the divison's scores
+    NSArray *divScores = [thisDivisionsScores objectAtIndex:1];
     AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+    
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    cell.cellIdentifier = cellIdentifier;
+    [cell setDivScores:divScores];
+    [cell setDivisionName:cellIdentifier];
     
-    // add the right pointing arrow to the cell
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
@@ -141,13 +144,12 @@
 }
 */
 
-
-- (void)teamRequest
+- (void)scoreRequest
 {
     
     // Prepare the link that is going to be used on the GET request
-    NSURL * url = [[NSURL alloc] initWithString:[@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/Teams/" stringByAppendingString:_teamId]];
-    //NSLog(@"%@", url);
+    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/Scores"];
+    
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
                                 //cachePolicy:NSURLRequestReturnCacheDataElseLoad
@@ -164,15 +166,14 @@
                                     returningResponse:&response
                                                 error:&error];
     
-    // Construct array around the Data from the response
-    _data = [NSJSONSerialization
-              JSONObjectWithData:urlData
-              options:0
-              error:&error];
+    // Construct Array around the Data from the response
+    _scores = [NSJSONSerialization
+                 JSONObjectWithData:urlData
+                 options:0
+                 error:&error];
 }
 
-- (void)didSelect:(UIGestureRecognizer *)gestureRecognizer
-{
+- (void)didSelect:(UIGestureRecognizer *)gestureRecognizer {
     
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
         CGPoint tapLocation = [gestureRecognizer locationInView:self.tableView];
@@ -181,30 +182,21 @@
         
         // pointer to the cell that was selected
         AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
-        NSLog(@"%@", selectedCell.cellIdentifier);
-        
-        UITableViewController *controllerToShow;
+        for (int i=0; i<selectedCell.divScores.count; i++) {
+            NSLog(@"%@", selectedCell.divScores[i]);
+        }
         
         // create the view controller we want to present
-        if ([selectedCell.cellIdentifier isEqualToString:@"Roster"]) {
-            AUDLRosterTableViewController *roster = [[AUDLRosterTableViewController alloc] init];
-            controllerToShow = roster;
-            roster.roster = _data[0];
-            
-            
-            
-        }
-        //AUDLIndivTeamTableViewController *teamSelection = [[AUDLIndivTeamTableViewController alloc] init];
-        //teamSelection.teamName = selectedCell.teamName;
-        //teamSelection.teamId = selectedCell.teamId;
+        AUDLDivisionTableViewController *divScores = [[AUDLDivisionTableViewController alloc] initWithSchedule:selectedCell.divScores];
+        
+        divScores.division = selectedCell.divisionName;
         
         // override the back button in the new controller from saying "Schedule"
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
         self.navigationItem.backBarButtonItem = backButton;
         
         // present the new view controller
-        [self.navigationController pushViewController:controllerToShow animated:YES];
-        
+        [self.navigationController pushViewController:divScores animated:YES];
     }
 }
 

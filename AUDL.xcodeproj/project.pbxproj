@@ -36,6 +36,11 @@
 		727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDA918D25B59005B9ACC /* SidebarViewController.m */; };
 		727ABDAD18D25C7B005B9ACC /* AUDLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */; };
 		72C18E0818F2258800849056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72C18E0718F2258800849056 /* Main.storyboard */; };
+		72C7F1771901AC9900D7C49B /* AUDLRosterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C7F1751901AC9900D7C49B /* AUDLRosterTableViewController.m */; };
+		72C7F1781901AC9900D7C49B /* AUDLRosterTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72C7F1761901AC9900D7C49B /* AUDLRosterTableViewController.xib */; };
+		72C7F17C1903125F00D7C49B /* AUDLScoresTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C7F17A1903125F00D7C49B /* AUDLScoresTableViewController.m */; };
+		72C7F17D1903125F00D7C49B /* AUDLScoresTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72C7F17B1903125F00D7C49B /* AUDLScoresTableViewController.xib */; };
+		72C7F1801903324500D7C49B /* audl-30px.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C7F17F1903324500D7C49B /* audl-30px.png */; };
 		72E09EDC18F72B9900F7D802 /* AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E09EDB18F72B9900F7D802 /* AppTests.m */; };
 		72F4DAFD18DA0A8A00E571FC /* AUDLTeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F4DAFB18DA0A8A00E571FC /* AUDLTeamsTableViewController.m */; };
 		72F4DAFE18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4DAFC18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib */; };
@@ -115,6 +120,13 @@
 		727ABDAB18D25C7B005B9ACC /* AUDLMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLMainViewController.h; sourceTree = "<group>"; };
 		727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLMainViewController.m; sourceTree = "<group>"; };
 		72C18E0718F2258800849056 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		72C7F1741901AC9900D7C49B /* AUDLRosterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLRosterTableViewController.h; sourceTree = "<group>"; };
+		72C7F1751901AC9900D7C49B /* AUDLRosterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLRosterTableViewController.m; sourceTree = "<group>"; };
+		72C7F1761901AC9900D7C49B /* AUDLRosterTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLRosterTableViewController.xib; sourceTree = "<group>"; };
+		72C7F1791903125F00D7C49B /* AUDLScoresTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLScoresTableViewController.h; sourceTree = "<group>"; };
+		72C7F17A1903125F00D7C49B /* AUDLScoresTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLScoresTableViewController.m; sourceTree = "<group>"; };
+		72C7F17B1903125F00D7C49B /* AUDLScoresTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLScoresTableViewController.xib; sourceTree = "<group>"; };
+		72C7F17F1903324500D7C49B /* audl-30px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "audl-30px.png"; path = "../../audl-30px.png"; sourceTree = "<group>"; };
 		72E09EDB18F72B9900F7D802 /* AppTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTests.m; sourceTree = SOURCE_ROOT; };
 		72F4DAFA18DA0A8A00E571FC /* AUDLTeamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLTeamsTableViewController.h; sourceTree = "<group>"; };
 		72F4DAFB18DA0A8A00E571FC /* AUDLTeamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTeamsTableViewController.m; sourceTree = "<group>"; };
@@ -224,6 +236,7 @@
 		727ABD6318D257C1005B9ACC = {
 			isa = PBXGroup;
 			children = (
+				72C7F17F1903324500D7C49B /* audl-30px.png */,
 				72C18E0718F2258800849056 /* Main.storyboard */,
 				721F682918EF405C0019EFB9 /* audl-120.png */,
 				721F682318EF3C260019EFB9 /* Default@2x.png */,
@@ -266,17 +279,18 @@
 				727ABD8718D257C1005B9ACC /* Images.xcassets */,
 				727ABD7E18D257C1005B9ACC /* AUDLAppDelegate.h */,
 				727ABD7F18D257C1005B9ACC /* AUDLAppDelegate.m */,
-				E9D674D318DE023B00712370 /* Scores/Standings */,
-				E9D674CD18DE020C00712370 /* Now */,
-				E9D674C718DE01E000712370 /* Schedule */,
+				72F4DB0118DA0C5A00E571FC /* Home */,
+				72F4DB0E18DB6EFC00E571FC /* News */,
+				72F4DAFF18DA0C3F00E571FC /* Teams */,
+				72C7F17E1903126A00D7C49B /* Scores */,
 				E9D674C118DE01B800712370 /* Stats */,
+				E9D674C718DE01E000712370 /* Schedule */,
+				E9D674CD18DE020C00712370 /* Now */,
+				E9D674D318DE023B00712370 /* Standings */,
 				E9D674C018DE01A100712370 /* Video */,
 				E90995EE18DCA294003A07FD /* Settings */,
-				72F4DB0E18DB6EFC00E571FC /* News */,
 				72F4DB0D18DB5A6300E571FC /* Table View Cell */,
-				72F4DB0118DA0C5A00E571FC /* Home */,
 				72F4DB0218DA0C7000E571FC /* Sidebar */,
-				72F4DAFF18DA0C3F00E571FC /* Teams */,
 				727ABDA718D25801005B9ACC /* Library */,
 				727ABD7618D257C1005B9ACC /* Supporting Files */,
 			);
@@ -320,6 +334,16 @@
 			);
 			name = Library;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		72C7F17E1903126A00D7C49B /* Scores */ = {
+			isa = PBXGroup;
+			children = (
+				72C7F1791903125F00D7C49B /* AUDLScoresTableViewController.h */,
+				72C7F17A1903125F00D7C49B /* AUDLScoresTableViewController.m */,
+				72C7F17B1903125F00D7C49B /* AUDLScoresTableViewController.xib */,
+			);
+			name = Scores;
 			sourceTree = "<group>";
 		};
 		72F4DAFF18DA0C3F00E571FC /* Teams */ = {
@@ -391,6 +415,9 @@
 				7249E15618F708E200C4012B /* AUDLIndivTeamTableViewController.h */,
 				7249E15718F708E200C4012B /* AUDLIndivTeamTableViewController.m */,
 				7249E15818F708E200C4012B /* AUDLIndivTeamTableViewController.xib */,
+				72C7F1741901AC9900D7C49B /* AUDLRosterTableViewController.h */,
+				72C7F1751901AC9900D7C49B /* AUDLRosterTableViewController.m */,
+				72C7F1761901AC9900D7C49B /* AUDLRosterTableViewController.xib */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -399,8 +426,8 @@
 			isa = PBXGroup;
 			children = (
 				E9D674BB18DE019100712370 /* AUDLVideoViewController.h */,
-				E9D674BC18DE019100712370 /* AUDLVideoViewController.m */,
 				E9D674BD18DE019100712370 /* AUDLVideoViewController.xib */,
+				E9D674BC18DE019100712370 /* AUDLVideoViewController.m */,
 			);
 			name = Video;
 			sourceTree = "<group>";
@@ -436,7 +463,7 @@
 			name = Now;
 			sourceTree = "<group>";
 		};
-		E9D674D318DE023B00712370 /* Scores/Standings */ = {
+		E9D674D318DE023B00712370 /* Standings */ = {
 			isa = PBXGroup;
 			children = (
 				E9D674D418DE025C00712370 /* AUDLStandingsViewController.h */,
@@ -444,7 +471,7 @@
 				E9D674D618DE025C00712370 /* AUDLStandingsViewController.xib */,
 				72255C2318F6E8AA001E6937 /* Division */,
 			);
-			name = Scores/Standings;
+			name = Standings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,7 +484,6 @@
 				727ABD6818D257C1005B9ACC /* Sources */,
 				727ABD6918D257C1005B9ACC /* Frameworks */,
 				727ABD6A18D257C1005B9ACC /* Resources */,
-				72E09EDD18F72D3900F7D802 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -530,11 +556,13 @@
 				721F683718F2065F0019EFB9 /* AUDLDivisionTableViewController.xib in Resources */,
 				727ABD8818D257C1005B9ACC /* Images.xcassets in Resources */,
 				721F682A18EF405C0019EFB9 /* audl-120.png in Resources */,
+				72C7F1801903324500D7C49B /* audl-30px.png in Resources */,
 				72F4DAFE18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib in Resources */,
 				E90995F318DCA3E4003A07FD /* AUDLSettingsViewController.xib in Resources */,
 				7249E15A18F708E200C4012B /* AUDLIndivTeamTableViewController.xib in Resources */,
 				72255C2818F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib in Resources */,
 				E9D674C618DE01D700712370 /* AUDLStatsViewController.xib in Resources */,
+				72C7F17D1903125F00D7C49B /* AUDLScoresTableViewController.xib in Resources */,
 				72F4DB0718DB36C700E571FC /* AUDLNewsTableViewController.xib in Resources */,
 				727ABD7A18D257C1005B9ACC /* InfoPlist.strings in Resources */,
 				E9D674D818DE025C00712370 /* AUDLStandingsViewController.xib in Resources */,
@@ -543,6 +571,7 @@
 				E9D674D218DE022B00712370 /* AUDLNowViewController.xib in Resources */,
 				72255C1C18F61D52001E6937 /* AUDLScheduleTableViewCell.xib in Resources */,
 				72255C2218F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib in Resources */,
+				72C7F1781901AC9900D7C49B /* AUDLRosterTableViewController.xib in Resources */,
 				721F682418EF3C260019EFB9 /* Default@2x.png in Resources */,
 				72F4DB0C18DB5A3F00E571FC /* AUDLTableViewCell.xib in Resources */,
 			);
@@ -557,22 +586,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		72E09EDD18F72D3900F7D802 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = XcodeCoverage/exportenv.sh;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		727ABD6818D257C1005B9ACC /* Sources */ = {
@@ -592,6 +605,8 @@
 				E90995F918DCAF0B003A07FD /* AUDLSettingTableViewCell.m in Sources */,
 				727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */,
 				E9D674D718DE025C00712370 /* AUDLStandingsViewController.m in Sources */,
+				72C7F1771901AC9900D7C49B /* AUDLRosterTableViewController.m in Sources */,
+				72C7F17C1903125F00D7C49B /* AUDLScoresTableViewController.m in Sources */,
 				E9D674CB18DE01FF00712370 /* AUDLScheduleViewController.m in Sources */,
 				727ABDAD18D25C7B005B9ACC /* AUDLMainViewController.m in Sources */,
 				727ABD8618D257C1005B9ACC /* AUDLViewController.m in Sources */,

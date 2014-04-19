@@ -15,7 +15,6 @@
 
 @interface AUDLScheduleTableViewController ()
 
-//@property (nonatomic, strong) NSArray *schedule;
 @end
 
 @implementation AUDLScheduleTableViewController
@@ -101,6 +100,7 @@
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
     [cell setDivSchedule:divSchedule];
+    [cell setDivisionName:cellIdentifier];
     
     return cell;
 }
@@ -206,6 +206,9 @@
         
         // create the view controller we want to present
         AUDLDivisionTableViewController *divSchedule = [[AUDLDivisionTableViewController alloc] initWithSchedule:selectedCell.divSchedule];
+        
+        divSchedule.division = selectedCell.divisionName;
+        NSLog(@"%@", divSchedule.division);
         
         // select the transition style
         //divSchedule.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

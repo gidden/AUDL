@@ -15,9 +15,12 @@
 @property (strong, nonatomic) NSString *teamName;
 @property (strong, nonatomic) NSString *date;
 @property (nonatomic, strong) NSArray *divSchedule;
+@property (nonatomic, strong) NSArray *divScores;
 @property (nonatomic, strong) NSArray *divTeams;
 @property (strong, nonatomic) NSString *divisionName;
 @property (strong, nonatomic) NSString *videoId;
 @property (strong, nonatomic) NSString *Setting;
+@property (strong, nonatomic) NSString *cellIdentifier;
+
 
 @end

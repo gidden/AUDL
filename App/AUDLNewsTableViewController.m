@@ -51,6 +51,7 @@
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
     
+    //(AUDLAppDelegate *)[[UIApplication sharedApplication].delegate.
     
 }
 
@@ -94,6 +95,9 @@
     
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
+    //cell.imageView.image = [UIimageView path]
+    
+    
     [cell setLink:cellLink];
 
     return cell;

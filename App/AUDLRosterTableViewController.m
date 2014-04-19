@@ -1,30 +1,19 @@
 //
-//  AUDLDivisionTableViewController.m
+//  AUDLRosterTableViewController.m
 //  AUDL
 //
-//  Created by Ryan Zoellner on 4/6/14.
+//  Created by Ryan Zoellner on 4/18/14.
 //  Copyright (c) 2014 AUDL. All rights reserved.
 //
 
-#import "AUDLDivisionTableViewController.h"
+#import "AUDLRosterTableViewController.h"
 #import "AUDLTableViewCell.h"
-#import "AUDLScheduleTableViewCell.h"
 
-@interface AUDLDivisionTableViewController ()
+@interface AUDLRosterTableViewController ()
 
 @end
 
-@implementation AUDLDivisionTableViewController
-
-- (id)initWithSchedule:(NSArray *)schedule
-{
-    self = [super init];
-    if (self) {
-        // Custom initialization
-        self.schedule = schedule;
-    }
-    return self;
-}
+@implementation AUDLRosterTableViewController
 
 - (void)viewDidLoad
 {
@@ -35,12 +24,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    //self.navigationItem.hidesBackButton =YES;
-
-    [self.tableView registerNib:[UINib nibWithNibName:@"AUDLScheduleTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
-    self.tableView.rowHeight = 100;
-    self.navigationItem.title = [_division stringByAppendingString:@" Division" ];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,43 +36,40 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.schedule count];
+    return [_roster count]-1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // "+1" is to start at first story, not the header
-    NSArray *thisNewsItem = [self.schedule objectAtIndex:indexPath.row];
     
-    //NSString *cellIdentifier = [thisNewsItem objectAtIndex:0];
-    NSString *cellIdentifier = @"Cell";
-
-    //NSString *cellLink = [thisNewsItem objectAtIndex:2];
-    AUDLScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    //AUDLScheduleTableViewCell *cell = nil;
-
+    //
+    NSArray *thisTableCell = [self.roster objectAtIndex:indexPath.row+1];
+    NSString *cellIdentifier = [thisTableCell objectAtIndex:0];
+    NSString *currPlayer = cellIdentifier;
+    NSString *currPlayerNumber = [thisTableCell objectAtIndex:1];
+    
+    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[AUDLScheduleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    
     // Configure the cell...
-    //cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    //[cell setLink:cellLink];
-    cell.teamOne.text = [thisNewsItem objectAtIndex:0];
-    cell.teamTwo.text = [thisNewsItem objectAtIndex:2];
-    cell.date.text = [thisNewsItem objectAtIndex:4];
-    cell.time.text = [thisNewsItem objectAtIndex:5];
-    
+    NSString *displayString;
+    if (currPlayerNumber.length == 1) {
+        displayString = [[currPlayerNumber stringByAppendingString:@"     "] stringByAppendingString:currPlayer];
+    } else {
+        displayString = [[currPlayerNumber stringByAppendingString:@"    "] stringByAppendingString:currPlayer];
+    }
+    cell.textLabel.text = displayString;
+    cell.cellIdentifier = cellIdentifier;
+    cell.userInteractionEnabled = NO;
     return cell;
 }
 
