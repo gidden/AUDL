@@ -50,7 +50,7 @@
     STTwitterAPI *twitter = [STTwitterAPI twitterAPIAppOnlyWithConsumerKey:@"3egMgWgj6UXp7N3eh9VP5Q" consumerSecret:@"BoWTmMYa8CL2mDxNS7mAYcDHWJ5o5ah7ndqvpsaFA"];
     
     [twitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
-        [twitter getUserTimelineWithScreenName:@"AUDLAppDevTeam" successBlock:^(NSArray *statuses){
+        [twitter getUserTimelineWithScreenName:@"theAUDL" successBlock:^(NSArray *statuses){
             self.twitterFeed = [NSMutableArray arrayWithArray:statuses];
             
             [self.tableView reloadData];
