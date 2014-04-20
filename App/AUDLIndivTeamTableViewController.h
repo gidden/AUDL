@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (nonatomic, strong) NSArray *data;
 @property (nonatomic, strong) NSArray *teamMenu;
+@property (nonatomic, strong) NSArray *teamInfo;
+
 
 @property id delegate;
 

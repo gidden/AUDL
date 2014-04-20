@@ -1,32 +1,33 @@
 //
-//  AUDLRosterTableViewController.m
+//  AUDLTeamScheduleTableViewController.m
 //  AUDL
 //
-//  Created by Ryan Zoellner on 4/18/14.
+//  Created by Ryan Zoellner on 4/20/14.
 //  Copyright (c) 2014 AUDL. All rights reserved.
 //
 
-#import "AUDLRosterTableViewController.h"
-#import "AUDLTableViewCell.h"
+#import "AUDLTeamScheduleTableViewController.h"
+#import "AUDLScheduleTableViewCell.h"
+#import "AUDLAppDelegate.h"
 
-@interface AUDLRosterTableViewController ()
+@interface AUDLTeamScheduleTableViewController ()
 
 @end
 
-@implementation AUDLRosterTableViewController
+@implementation AUDLTeamScheduleTableViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // use the xib from the main schedule page -> same layout
+    [self.tableView registerNib:[UINib nibWithNibName:@"AUDLScheduleTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     
-    // currently uses default cell; no xib needed
+    // each cell is height 100 in xib, so rowHeight must be 100 too
+    self.tableView.rowHeight = 100;
     
-    // nav title is currently "CityName Roster"
-    self.navigationItem.title = [self.teamCity stringByAppendingString:@" Roster"];
-
+    // nav title is currently "CityName Schedule"
+    self.navigationItem.title = [self.teamCity stringByAppendingString:@" Schedule"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,40 +47,41 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    // first element is team info
-    return [_roster count]-1;
+    // the first two elements are teamName and teamId
+    return [self.teamSchedule count]-2;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // "+2" is to start at first schedule item
+    // index 0 is the team's name
+    // index 1 is the team's id
+    NSArray *thisScheduleItem = [self.teamSchedule objectAtIndex:indexPath.row+2];
+    NSString *cellIdentifier = @"Cell";
     
-    //
-    NSArray *thisTableCell = [self.roster objectAtIndex:indexPath.row+1];
-    NSString *cellIdentifier = [thisTableCell objectAtIndex:0];
-    NSString *currPlayer = cellIdentifier;
-    NSString *currPlayerNumber = [thisTableCell objectAtIndex:1];
+    AUDLScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[AUDLScheduleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+    
     // Configure the cell...
-    NSString *displayString;
-    // this is to align the player names in the roster
-    if (currPlayerNumber.length == 1) {
-        // 6 spaces
-        displayString = [[currPlayerNumber stringByAppendingString:@"      "] stringByAppendingString:currPlayer];
-    } else {
-        // 4 spaces
-        displayString = [[currPlayerNumber stringByAppendingString:@"    "] stringByAppendingString:currPlayer];
-    }
     
-    cell.textLabel.text = displayString;
-    cell.cellIdentifier = cellIdentifier;
+    // get an instance of the appDelegate to access global icon dictionary
+    AUDLAppDelegate *appDelegate = (AUDLAppDelegate *)[[UIApplication sharedApplication] delegate];
+    // get a temporary pointer for the icon dictionary
+    NSDictionary *tempDict = appDelegate.icons;
+    NSString *teamOneId = [NSString stringWithFormat: @"%@", self.teamId];
+    NSString *teamTwoId = [NSString stringWithFormat: @"%@", [thisScheduleItem objectAtIndex:3]];
     
-    // we do not want this cell to be clickable
-    cell.userInteractionEnabled = NO;
+    // set the attributes for this schedule cell
+    cell.teamOne.text = self.teamName;
+    cell.teamOneIcon.image = [tempDict objectForKey:teamOneId];
+    cell.teamTwo.text = [thisScheduleItem objectAtIndex:2];
+    cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
+    cell.date.text = [thisScheduleItem objectAtIndex:0];
+    cell.time.text = [thisScheduleItem objectAtIndex:1];
     
     return cell;
 }

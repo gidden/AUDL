@@ -9,6 +9,7 @@
 #import "AUDLIndivTeamTableViewController.h"
 #import "AUDLTableViewCell.h"
 #import "AUDLRosterTableViewController.h"
+#import "AUDLTeamScheduleTableViewController.h"
 
 @interface AUDLIndivTeamTableViewController ()
 
@@ -37,6 +38,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationItem.title = self.teamName;
     
+    // hardcoded because it is not part of the JSON
     _teamMenu = @[@"Roster", @"Schedule", @"Team Statistics"];
 
     //get teams
@@ -182,6 +184,9 @@
         // pointer to the cell that was selected
         AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
         NSLog(@"%@", selectedCell.cellIdentifier);
+       
+        NSArray *tempData = _data[0];
+        self.teamInfo = tempData[0];
         
         UITableViewController *controllerToShow;
         
@@ -190,8 +195,19 @@
             AUDLRosterTableViewController *roster = [[AUDLRosterTableViewController alloc] init];
             controllerToShow = roster;
             roster.roster = _data[0];
+            //NSArray *tempTeam = roster.roster[0];
+            roster.teamCity = self.teamInfo[1];
             
             
+        } else if ([selectedCell.cellIdentifier isEqualToString:@"Schedule"]) {
+            AUDLTeamScheduleTableViewController *schedule = [[AUDLTeamScheduleTableViewController alloc] init];
+            controllerToShow = schedule;
+            // pass the data
+            schedule.teamSchedule = _data[1];
+            // set these fields
+            schedule.teamName = schedule.teamSchedule[0];
+            schedule.teamId = schedule.teamSchedule[1];
+            schedule.teamCity = self.teamInfo[1];
             
         }
         //AUDLIndivTeamTableViewController *teamSelection = [[AUDLIndivTeamTableViewController alloc] init];
