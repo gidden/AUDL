@@ -11,6 +11,6 @@
 @interface AUDLRosterTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray *roster;
-
+@property (nonatomic, strong) NSString *teamCity;
 
 @end

@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "AUDLTableViewCell.h"
 #import "AUDLIndivTeamTableViewController.h"
+#import "AUDLAppDelegate.h"
 
 @interface AUDLTeamsTableViewController ()
 
@@ -88,8 +89,22 @@
     
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
+    cell.textLabel.font = [UIFont systemFontOfSize:15.0];
+    //NSLog("%@", cell.textLabel.text)
     [cell setTeamId:[NSString stringWithFormat: @"%@", cellTeamId]];
     [cell setTeamName:cellIdentifier];
+    
+    
+    //cell.imageView.bounds = CGRectMake(cell.imageView.frame.origin.x,cell.imageView.frame.origin.y, 20, 20);
+    //NSLog("%c", cell.imageView.frame.size.height);
+    // show the team's logo to the left of their name
+    AUDLAppDelegate *appDelegate = (AUDLAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSDictionary *tempDict = appDelegate.icons;
+    cell.imageView.image = [tempDict objectForKey:cell.teamId];
+    
+    
+    // add the right pointing arrow to the cell
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
