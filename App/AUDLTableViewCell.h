@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSArray *divScores;
 @property (nonatomic, strong) NSArray *divTeams;
 @property (nonatomic, strong) NSArray *top5;
+@property (strong, nonatomic) NSString *statName;
 @property (strong, nonatomic) NSString *divisionName;
 @property (strong, nonatomic) NSString *videoId;
 @property (strong, nonatomic) NSString *Setting;

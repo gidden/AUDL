@@ -81,9 +81,13 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
+    NSString *textToDisplay = [cellIdentifier stringByAppendingString:@" Division"];
+    cell.textLabel.text = textToDisplay;
     [cell setDivScores:divScores];
     [cell setDivisionName:cellIdentifier];
+    
+    // add the right pointing arrow to the cell
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
