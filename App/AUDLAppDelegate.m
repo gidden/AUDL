@@ -47,7 +47,86 @@
 
 - (void)getIconsOnStart
 {
+    [self teamsRequest];
+    [self createTeamsDictionary];
+}
+
+- (void)teamsRequest
+{
+    
+    // Prepare the link that is going to be used on the GET request
+    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/Teams"];
+    
+    // Prepare the request object
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
+                                //cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                            timeoutInterval:30];
+    
+    // Prepare the variables for the JSON response
+    NSData *urlData;
+    NSURLResponse *response;
+    NSError *error;
+    
+    // Make synchronous request
+    urlData = [NSURLConnection sendSynchronousRequest:urlRequest
+                                    returningResponse:&response
+                                                error:&error];
+    
+    // Construct array around the Data from the response
+    _teamsData = [NSJSONSerialization
+              JSONObjectWithData:urlData
+              options:0
+              error:&error];
+}
+
+- (void)createTeamsDictionary
+{
+    
+    _teamIds = [[NSMutableArray alloc] init];
+    _teamIcons = [[NSMutableArray alloc] init];
+    for (int i = 0; i < [_teamsData count]; i++) {
+        NSArray *tempArray = _teamsData[i];
+        //NSString *tempTeamName = [tempArray objectAtIndex:0];
+        NSString *tempTeamIdObject = [tempArray objectAtIndex:1];
+        NSString *tempTeamId = [NSString stringWithFormat: @"%@", tempTeamIdObject];
+        [_teamIds insertObject:tempTeamId atIndex:i];
+        
+        UIImage *tempTeamIcon = [self iconRequestWithTeamId:tempTeamId];
+        [_teamIcons insertObject:tempTeamIcon atIndex:i];
+    }
+    
+    // set up the dictionary
+    _icons = [NSDictionary dictionaryWithObjects:_teamIcons forKeys:_teamIds];
+    
     
 }
+
+- (UIImage *)iconRequestWithTeamId:(NSString *)teamId
+{
+    //NSLog(@"icon requested, %@", teamId);
+    // Prepare the link that is going to be used on the GET request
+    NSURL * url = [[NSURL alloc] initWithString:[@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/Icons/" stringByAppendingString:teamId]];
+    //NSLog(@"error here");
+
+    // Prepare the request object
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    // Prepare the variables for the JSON response
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    
+    // Make synchronous request
+    NSData *result = [NSURLConnection sendSynchronousRequest:request
+                                           returningResponse:&response error:&error];
+
+    // Construct UIImage around the Data from the response
+    UIImage *resultImage = [UIImage imageWithData:(NSData *)result];
+   
+    return resultImage;
+    
+}
+
 
 @end

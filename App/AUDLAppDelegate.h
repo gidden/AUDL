@@ -12,5 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSDictionary *icons;
+@property (strong, nonatomic) NSArray *teamsData;
+@property (strong, nonatomic) NSMutableArray *teamIds;
+@property (strong, nonatomic) NSMutableArray *teamIcons;
 
 @end

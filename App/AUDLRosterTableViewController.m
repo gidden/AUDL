@@ -24,6 +24,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.title = @"Madison Radicals \n Roster";
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,7 +65,7 @@
     // Configure the cell...
     NSString *displayString;
     if (currPlayerNumber.length == 1) {
-        displayString = [[currPlayerNumber stringByAppendingString:@"     "] stringByAppendingString:currPlayer];
+        displayString = [[currPlayerNumber stringByAppendingString:@"      "] stringByAppendingString:currPlayer];
     } else {
         displayString = [[currPlayerNumber stringByAppendingString:@"    "] stringByAppendingString:currPlayer];
     }

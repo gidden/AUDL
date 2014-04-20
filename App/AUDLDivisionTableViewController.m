@@ -9,6 +9,7 @@
 #import "AUDLDivisionTableViewController.h"
 #import "AUDLTableViewCell.h"
 #import "AUDLScheduleTableViewCell.h"
+#import "AUDLAppDelegate.h"
 
 @interface AUDLDivisionTableViewController ()
 
@@ -83,10 +84,24 @@
     }
     
     // Configure the cell...
+    
+    // get an instance of the appDelegate to access global icon dictionary
+    AUDLAppDelegate *appDelegate = (AUDLAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    // get a temporary pointer for the icon dictionary
+    NSDictionary *tempDict = appDelegate.icons;
+    
+    NSString *teamOneId = [NSString stringWithFormat: @"%@", [thisNewsItem objectAtIndex:1]];
+    NSString *teamTwoId = [NSString stringWithFormat: @"%@", [thisNewsItem objectAtIndex:3]];
+
+    
+    //cell.imageView.image = [tempDict objectForKey:@"5182111044599808"];
     //cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
     //[cell setLink:cellLink];
     cell.teamOne.text = [thisNewsItem objectAtIndex:0];
+    cell.teamOneIcon.image = [tempDict objectForKey:teamOneId];
     cell.teamTwo.text = [thisNewsItem objectAtIndex:2];
+    cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
     cell.date.text = [thisNewsItem objectAtIndex:4];
     cell.time.text = [thisNewsItem objectAtIndex:5];
     

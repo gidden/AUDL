@@ -9,6 +9,7 @@
 #import "AUDLNewsTableViewController.h"
 #import "SWRevealViewController.h"
 #import "AUDLTableViewCell.h"
+#import "AUDLAppDelegate.h"
 
 @interface AUDLNewsTableViewController ()
 
@@ -95,7 +96,15 @@
     
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
+    
+    // for now, use the AUDL logo as the news thumbnail
     cell.imageView.image = [UIImage imageNamed:@"audl-30px.png"];
+    
+    //AUDLAppDelegate *appDelegate = (AUDLAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    //NSDictionary *tempDict = appDelegate.icons;
+    
+    //cell.imageView.image = [tempDict objectForKey:@"5182111044599808"];
     
     
     [cell setLink:cellLink];
