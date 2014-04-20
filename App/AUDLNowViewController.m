@@ -10,11 +10,14 @@
 #import "SWRevealViewController.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
+#import "STTwitter.h"
 //#import <Twitter/Twitter.h>
 
-@interface AUDLNowViewController ()
+@interface AUDLNowViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSArray *array1;
+@property (strong, nonatomic) IBOutlet UITableView *twitterTableView;
+@property (strong, nonatomic) NSMutableArray *twitterFeed;
+
 
 @end
 
@@ -32,8 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //call timeline when application loads
-     [self getTimeLine];
+    
     // Do any additional setup after loading the view from its nib.
     //change color of button
     _sidebarButton.tintColor = [UIColor colorWithRed:0 green:122.0/225.0 blue:1.0 alpha:1.0];
@@ -44,8 +46,23 @@
     
     //set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+   
+    STTwitterAPI *twitter = [STTwitterAPI twitterAPIAppOnlyWithConsumerKey:@"3egMgWgj6UXp7N3eh9VP5Q" consumerSecret:@"BoWTmMYa8CL2mDxNS7mAYcDHWJ5o5ah7ndqvpsaFA"];
     
-    [self getTimeLine];
+    [twitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
+        [twitter getUserTimelineWithScreenName:@"AUDLAppDevTeam" successBlock:^(NSArray *statuses){
+            self.twitterFeed = [NSMutableArray arrayWithArray:statuses];
+            
+            [self.tableView reloadData];
+        } errorBlock:^(NSError *error){
+            NSLog(@"%@", error.debugDescription);
+        }];
+    }
+    
+errorBlock:^(NSError *error){
+    NSLog(@"%@", error.debugDescription);
+}];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,83 +71,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)getTimeLine {
-    ACAccountStore *account = [[ACAccountStore alloc] init];
-    ACAccountType *accountType = [account
-                                  accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-    
-    [account requestAccessToAccountsWithType:accountType
-                                     options:nil completion:^(BOOL granted, NSError *error)
-     {
-         if (granted == YES)
-         {
-             NSArray *arrayOfAccounts = [account
-                                         accountsWithAccountType:accountType];
-             
-             if ([arrayOfAccounts count] > 0)
-             {
-                 ACAccount *twitterAccount = [arrayOfAccounts lastObject];
-                 
-                 //TODO make a server request here
-                 NSURL *requestURL = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/home_timeline.json"];
-                 
-                 NSMutableDictionary *parameters =
-                 [[NSMutableDictionary alloc] init];
-                 [parameters setObject:@"20" forKey:@"count"];
-                 [parameters setObject:@"1" forKey:@"include_entities"];
-                 
-                 SLRequest *postRequest = [SLRequest
-                                           requestForServiceType:SLServiceTypeTwitter
-                                           requestMethod:SLRequestMethodGET
-                                           URL:requestURL parameters:parameters];
-                 
-                 postRequest.account = twitterAccount;
-                 
-                 [postRequest performRequestWithHandler:
-                  ^(NSData *responseData, NSHTTPURLResponse
-                    *urlResponse, NSError *error)
-                  {
-                      self.dataSource = [NSJSONSerialization
-                                         JSONObjectWithData:responseData
-                                         options:NSJSONReadingMutableLeaves
-                                         error:&error];
-                      
-                      if (self.dataSource.count != 0) {
-                          dispatch_async(dispatch_get_main_queue(), ^{
-                              [self.nowTableView reloadData];
-                          });
-                      }
-                  }];
-             }
-         } else {
-             // Handle failure to get account access
-         }
-     }];
+#pragma mark Table View Methods
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.twitterFeed.count;
 }
 
-#pragma mark -
-#pragma mark UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _dataSource.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellID = @"TwitterCellID";
     
-    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
-    UITableViewCell *cell = [self.nowTableView
-                             dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    if(cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        
     }
+    NSInteger index = indexPath.row;
+    NSDictionary *t = self.twitterFeed[index];
     
-    NSDictionary *tweet = _dataSource[[indexPath row]];
+    cell.textLabel.text = t[@"text"];
     
-    cell.textLabel.text = tweet[@"text"];
     return cell;
+    
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 
 @end
