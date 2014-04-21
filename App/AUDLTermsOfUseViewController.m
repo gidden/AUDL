@@ -1,23 +1,22 @@
 //
-//  AUDLFAQViewController.m
+//  AUDLTermsOfUseViewController.m
 //  AUDL
 //
-//  Created by Evan Rypel on 4/20/14.
+//  Created by Evan Rypel on 4/21/14.
 //  Copyright (c) 2014 AUDL. All rights reserved.
 //
 
-#import "AUDLFAQViewController.h"
+#import "AUDLTermsOfUseViewController.h"
 
-@interface AUDLFAQViewController ()
+@interface AUDLTermsOfUseViewController ()
 
 @end
 
-@implementation AUDLFAQViewController
+@implementation AUDLTermsOfUseViewController
 
 - (id)initWithString:(NSString *)str
 {
     self = [super init];
-    NSLog(@"init faqviewcontroller");
     if (self) {
         // Initialization code
         _message = [[UITextView alloc] init];
@@ -26,7 +25,7 @@
         _message.backgroundColor = [UIColor whiteColor];
         
         [[self view] addSubview:_message];
-         NSLog(@"%@",self.view.subviews);
+        NSLog(@"%@",self.view.subviews);
     }
     
     return self;
