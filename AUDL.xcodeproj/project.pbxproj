@@ -35,7 +35,6 @@
 		727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDA518D257EC005B9ACC /* SWRevealViewController.m */; };
 		727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDA918D25B59005B9ACC /* SidebarViewController.m */; };
 		727ABDAD18D25C7B005B9ACC /* AUDLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABDAC18D25C7B005B9ACC /* AUDLMainViewController.m */; };
-		72C124F91904585C00BAEC46 /* TeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C124F81904585C00BAEC46 /* TeamViewController.m */; };
 		72C124FD190459B500BAEC46 /* AUDLTeamScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C124FB190459B500BAEC46 /* AUDLTeamScheduleTableViewController.m */; };
 		72C124FE190459B500BAEC46 /* AUDLTeamScheduleTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72C124FC190459B500BAEC46 /* AUDLTeamScheduleTableViewController.xib */; };
 		72C1250219045EA800BAEC46 /* AUDLTeamStatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C1250019045EA800BAEC46 /* AUDLTeamStatsTableViewController.m */; };
@@ -78,9 +77,6 @@
 		E9A421811904384000F26D69 /* BAVPlistNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421721904384000F26D69 /* BAVPlistNode.m */; };
 		E9A421821904384000F26D69 /* JSONSyntaxHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421741904384000F26D69 /* JSONSyntaxHighlight.m */; };
 		E9A421831904384000F26D69 /* STHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421761904384000F26D69 /* STHTTPRequest.m */; };
-		E9A421A819049EF300F26D69 /* TeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421A719049EF300F26D69 /* TeamViewController.m */; };
-		E9A421AC19049F0A00F26D69 /* AUDLTeamScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421AA19049F0A00F26D69 /* AUDLTeamScheduleTableViewController.m */; };
-		E9A421AD19049F0A00F26D69 /* AUDLTeamScheduleTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A421AB19049F0A00F26D69 /* AUDLTeamScheduleTableViewController.xib */; };
 		E9A421B119049F9800F26D69 /* AUDLFAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421B019049F9800F26D69 /* AUDLFAQViewController.m */; };
 		E9D674BE18DE019100712370 /* AUDLVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D674BC18DE019100712370 /* AUDLVideoViewController.m */; };
 		E9D674BF18DE019100712370 /* AUDLVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D674BD18DE019100712370 /* AUDLVideoViewController.xib */; };
@@ -216,11 +212,6 @@
 		E9A421741904384000F26D69 /* JSONSyntaxHighlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONSyntaxHighlight.m; sourceTree = "<group>"; };
 		E9A421751904384000F26D69 /* STHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHTTPRequest.h; sourceTree = "<group>"; };
 		E9A421761904384000F26D69 /* STHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHTTPRequest.m; sourceTree = "<group>"; };
-		E9A421A619049EF300F26D69 /* TeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeamViewController.h; path = App/TeamViewController.h; sourceTree = "<group>"; };
-		E9A421A719049EF300F26D69 /* TeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TeamViewController.m; path = App/TeamViewController.m; sourceTree = "<group>"; };
-		E9A421A919049F0A00F26D69 /* AUDLTeamScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLTeamScheduleTableViewController.h; sourceTree = "<group>"; };
-		E9A421AA19049F0A00F26D69 /* AUDLTeamScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTeamScheduleTableViewController.m; sourceTree = "<group>"; };
-		E9A421AB19049F0A00F26D69 /* AUDLTeamScheduleTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLTeamScheduleTableViewController.xib; sourceTree = "<group>"; };
 		E9A421AF19049F9800F26D69 /* AUDLFAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLFAQViewController.h; sourceTree = "<group>"; };
 		E9A421B019049F9800F26D69 /* AUDLFAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLFAQViewController.m; sourceTree = "<group>"; };
 		E9D674BB18DE019100712370 /* AUDLVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLVideoViewController.h; sourceTree = "<group>"; };
@@ -312,8 +303,8 @@
 		727ABD6318D257C1005B9ACC = {
 			isa = PBXGroup;
 			children = (
-				E9A421A619049EF300F26D69 /* TeamViewController.h */,
-				E9A421A719049EF300F26D69 /* TeamViewController.m */,
+				72C124F71904585C00BAEC46 /* TeamViewController.h */,
+				72C124F81904585C00BAEC46 /* TeamViewController.m */,
 				72C18E0718F2258800849056 /* Main.storyboard */,
 				721F682918EF405C0019EFB9 /* audl-120.png */,
 				721F682318EF3C260019EFB9 /* Default@2x.png */,
@@ -457,9 +448,9 @@
 		72C7F18819043AA600D7C49B /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				E9A421A919049F0A00F26D69 /* AUDLTeamScheduleTableViewController.h */,
-				E9A421AA19049F0A00F26D69 /* AUDLTeamScheduleTableViewController.m */,
-				E9A421AB19049F0A00F26D69 /* AUDLTeamScheduleTableViewController.xib */,
+				72C124FA190459B500BAEC46 /* AUDLTeamScheduleTableViewController.h */,
+				72C124FB190459B500BAEC46 /* AUDLTeamScheduleTableViewController.m */,
+				72C124FC190459B500BAEC46 /* AUDLTeamScheduleTableViewController.xib */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -782,7 +773,7 @@
 				72C7F1781901AC9900D7C49B /* AUDLRosterTableViewController.xib in Resources */,
 				721F682418EF3C260019EFB9 /* Default@2x.png in Resources */,
 				72C7F18719043AA100D7C49B /* (null) in Resources */,
-				E9A421AD19049F0A00F26D69 /* AUDLTeamScheduleTableViewController.xib in Resources */,
+				72C124FE190459B500BAEC46 /* AUDLTeamScheduleTableViewController.xib in Resources */,
 				72F4DB0C18DB5A3F00E571FC /* AUDLTableViewCell.xib in Resources */,
 				72C1250919046FF400BAEC46 /* AUDLTeamStatsTableViewCell.xib in Resources */,
 			);
@@ -811,7 +802,6 @@
 				72F4DB0B18DB5A3F00E571FC /* AUDLTableViewCell.m in Sources */,
 				E96980DB19031D660060E5F2 /* AUDLTop5TableViewCell.m in Sources */,
 				E9D674C518DE01D700712370 /* AUDLStatsViewController.m in Sources */,
-				E9A421AC19049F0A00F26D69 /* AUDLTeamScheduleTableViewController.m in Sources */,
 				E9A4217D1904384000F26D69 /* STTwitterHTML.m in Sources */,
 				E9D674D118DE022B00712370 /* AUDLNowViewController.m in Sources */,
 				72C1250219045EA800BAEC46 /* AUDLTeamStatsTableViewController.m in Sources */,
@@ -820,7 +810,6 @@
 				E9A4217E1904384000F26D69 /* STTwitterOAuth.m in Sources */,
 				E9A421811904384000F26D69 /* BAVPlistNode.m in Sources */,
 				72255C2118F6E8A3001E6937 /* AUDLDivStandingsTableViewController.m in Sources */,
-				E9A421A819049EF300F26D69 /* TeamViewController.m in Sources */,
 				E9A421821904384000F26D69 /* JSONSyntaxHighlight.m in Sources */,
 				E99C29461905810C00B05EDC /* AUDLUCViewController.m in Sources */,
 				E9A4217C1904384000F26D69 /* STTwitterAppOnly.m in Sources */,
@@ -829,6 +818,7 @@
 				72C1250819046FF400BAEC46 /* AUDLTeamStatsTableViewCell.m in Sources */,
 				72255C1B18F61D52001E6937 /* AUDLScheduleTableViewCell.m in Sources */,
 				E9A421801904384000F26D69 /* STTwitterOSRequest.m in Sources */,
+				72C124FD190459B500BAEC46 /* AUDLTeamScheduleTableViewController.m in Sources */,
 				727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */,
 				E9D674D718DE025C00712370 /* AUDLStandingsViewController.m in Sources */,
 				E9A4217B1904384000F26D69 /* STTwitterAPI.m in Sources */,
