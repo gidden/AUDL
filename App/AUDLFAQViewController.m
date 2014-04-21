@@ -25,6 +25,7 @@
         _message.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
         _message.backgroundColor = [UIColor whiteColor];
         
+        _message.userInteractionEnabled = NO;
         [[self view] addSubview:_message];
          NSLog(@"%@",self.view.subviews);
     }
