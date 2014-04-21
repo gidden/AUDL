@@ -10,6 +10,8 @@
 #import "AUDLTableViewCell.h"
 #import "AUDLRosterTableViewController.h"
 #import "AUDLTeamScheduleTableViewController.h"
+#import "AUDLTeamStatsTableViewController.h"
+#import "AUDLDivisionTableViewController.h"
 
 @interface AUDLIndivTeamTableViewController ()
 
@@ -39,7 +41,7 @@
     self.navigationItem.title = self.teamName;
     
     // hardcoded because it is not part of the JSON
-    _teamMenu = @[@"Roster", @"Schedule", @"Team Statistics"];
+    _teamMenu = @[@"Roster", @"Schedule", @"Team Statistics", @"Scores"];
 
     //get teams
     [self teamRequest];
@@ -183,7 +185,6 @@
         
         // pointer to the cell that was selected
         AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
-        NSLog(@"%@", selectedCell.cellIdentifier);
        
         NSArray *tempData = _data[0];
         self.teamInfo = tempData[0];
@@ -209,11 +210,30 @@
             schedule.teamId = schedule.teamSchedule[1];
             schedule.teamCity = self.teamInfo[1];
             
+            
+        } else if ([selectedCell.cellIdentifier isEqualToString:@"Team Statistics"]) {
+            AUDLTeamStatsTableViewController *stats = [[AUDLTeamStatsTableViewController alloc] init];
+            controllerToShow = stats;
+            // pass the data
+            stats.teamStats = _data[2];
+            // set these fields
+            NSArray *tempTeamArray = stats.teamStats[0];
+            stats.teamName = tempTeamArray[1];
+            stats.teamId = tempTeamArray[2];
+            stats.teamCity = self.teamInfo[1];
+            stats.navigationTitle = [stats.teamName stringByAppendingString:@" Statistics"];
+            
+        } else if ([selectedCell.cellIdentifier isEqualToString:@"Scores"]) {
+            AUDLDivisionTableViewController *scores = [[AUDLDivisionTableViewController alloc] init];
+            controllerToShow = scores;
+            // pass the data
+            scores.schedule = _data[3];
+            // set these fields
+            //scores.teamName = scores.teamSchedule[0];
+            //scores.teamId = scores.teamSchedule[1];
+            //scores.teamCity = self.teamInfo[1];
         }
-        //AUDLIndivTeamTableViewController *teamSelection = [[AUDLIndivTeamTableViewController alloc] init];
-        //teamSelection.teamName = selectedCell.teamName;
-        //teamSelection.teamId = selectedCell.teamId;
-        
+
         // override the back button in the new controller from saying "Schedule"
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
         self.navigationItem.backBarButtonItem = backButton;

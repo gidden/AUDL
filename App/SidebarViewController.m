@@ -68,6 +68,10 @@
     NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    if ([CellIdentifier isEqualToString:@"title"]) {
+        cell.userInteractionEnabled = NO;
+    }
+    
     return cell;
 }
 

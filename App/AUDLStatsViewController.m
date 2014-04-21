@@ -50,6 +50,8 @@
      */
     _statDescription = @[@"Throwaways", @"Assists", @"Goals", @"PMC", @"Drops", @"Ds"];
     
+    // change the title; helps differentiate from team stats
+    self.navigationItem.title = @"League Leader Stats";
     
     //set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
@@ -84,12 +86,12 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *thisStats = [self.statDescription objectAtIndex:indexPath.row];
-    NSLog(@"populating first page");
+    //NSLog(@"populating first page");
     // the first element, the cellIdentifier, is the division name
     NSString *cellIdentifier = thisStats;
     
     // the second element, divSchedule, is the divison's schedule
-    NSLog(@"getting each page's top 5");
+    //NSLog(@"getting each page's top 5");
     NSArray *top5 = [_playerStats objectForKey:thisStats];
     AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
@@ -97,9 +99,13 @@
     }
     
     // Configure the cell...
-    NSLog(@"Configuring the cell");
+    //NSLog(@"Configuring the cell");
     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
     [cell setTop5:top5];
+    [cell setStatName:cellIdentifier];
+    
+    // add the right pointing arrow to the cell
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 
@@ -142,21 +148,15 @@
         
         // pointer to the cell that was selected
         AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
-        for (int i=0; i<selectedCell.top5.count; i++) {
-            NSLog(@"%@", selectedCell.top5[i]);
-        }
+        //for (int i=0; i<selectedCell.top5.count; i++) {
+        //    NSLog(@"%@", selectedCell.top5[i]);
+        //}
         
         // create the view controller we want to present
         AUDLPlayerStatsTableViewController *top5 = [[AUDLPlayerStatsTableViewController alloc] initWithTop5:selectedCell.top5];
         
-        // select the transition style
-        //divSchedule.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        
-        // set the presenting view controller to this controller
-        //divSchedule.delegate = self;
-        
-        // Create the navigation controller and present it.
-        //UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:divSchedule];
+        // set the name of this stat
+        top5.stat = selectedCell.statName;
         
         // override the back button in the new controller from saying "Schedule"
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
