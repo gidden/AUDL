@@ -18,6 +18,5 @@
 @property (nonatomic, strong) NSArray *Setting;
 //@property (nonatomic, strong) NSArray *Switch;
 
-- (void)settingRequest;
 @end
 

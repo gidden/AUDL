@@ -9,6 +9,7 @@
 #import "AUDLSettingsTableViewController.h"
 #import "AUDLTableViewCell.h"
 #import "SWRevealViewController.h"
+#import "AUDLFAQViewController.h"
 
 @interface AUDLSettingsTableViewController ()
 
@@ -40,6 +41,9 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
+    [self.view addGestureRecognizer:gesture];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -50,12 +54,10 @@
     self.title = @"Settings";
     
     //list of settings
-    _Setting = @[@"setting 1",
-                 @"setting 2",
-                 @"setting 3",
-                 @"setting 4",
-                 @"setting 5",
-                 @"setting 6",];
+    _Setting = @[@"FAQ",
+                 @"Terms of Use",
+                 @"Notifications",
+                 @"Send Feedback"];
     
     
     
@@ -87,131 +89,58 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *thisSetting = [self.Setting objectAtIndex:indexPath.row];
-    NSString *cellIdentifier = [thisSetting objectAtIndex:0];
-    NSString *cellSettingId = [thisSetting objectAtIndex:1];
+    NSString *cellIdentifier = [self.Setting objectAtIndex:indexPath.row];
     
     AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if(cell == nil) {
-       cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    
-    //configure the cell
-    cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    [cell setSetting:cellSettingId];
-    
-    return cell;
-}
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSArray *settings = [self.Setting objectAtIndex:indexPath.row];
-    NSString *cellIdentifier = [settings objectAtIndex:0];
-    AUDLSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    int row = [indexPath row];
-    cell.SettingLabel = _Setting[row];
-    return cell;
-    /*
-    NSArray *thisTeam = [self.teams objectAtIndex:indexPath.row];
-    NSString *cellIdentifier = [thisTeam objectAtIndex:0];
-    NSString *cellTeamId = [thisTeam objectAtIndex:1];
-    
-    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
         cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    
-    // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    [cell setTeamId:cellTeamId];
+    cell.cellIdentifier = cellIdentifier;
     
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
-     */
-    /*
-     NSArray *settings = [self.Setting objectAtIndex:indexPath.row];
-     NSString *cellIdentifier = [settings objectAtIndex:0];
-     
-     AUDLSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-     
-     // Configure the cell...
-     cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-     [cell setSettingLabel:cellIdentifier];
-     
-     return cell;
-
 }
 
-*/
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)didSelect:(UIGestureRecognizer *)gestureRecognizer
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (void)settingRequest
-{
-    //prepare the link that is going to be used on the GET request
-    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/Settings"];
     
-    //prepare the request object
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30];
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        CGPoint tapLocation = [gestureRecognizer locationInView:self.tableView];
+        NSIndexPath *tappedIndexPath = [self.tableView indexPathForRowAtPoint:tapLocation];
+        UITableViewCell* tappedCell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
+        
+        // pointer to the cell that was selected
+        AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
+        NSLog(@"%@", selectedCell.cellIdentifier);
+        
     
-    //prepare the variables for the JSON response
-    NSData *urlData;
-    NSURLResponse *response;
-    NSError *error;
-    
-    //make synchronous request
-    urlData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
-    
-    //construct array around the data from the response
-    _Setting = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:&error];
+        
+        UIViewController *controllerToShow;
+        
+        // create the view controller we want to present
+        if ([selectedCell.cellIdentifier isEqualToString:@"FAQ"]) {
+            AUDLFAQViewController *faq = [[AUDLFAQViewController alloc] init];
+            controllerToShow = faq;
+            
+            
+            
+            
+            
+        
+        }
+       
+        
+        // override the back button in the new controller from saying "Schedule"
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+        self.navigationItem.backBarButtonItem = backButton;
+        
+        // present the new view controller
+        [self.navigationController pushViewController:controllerToShow animated:YES];
+        
+    }
 }
+
 
 
 @end
