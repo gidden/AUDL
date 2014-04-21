@@ -61,7 +61,7 @@
     // index 0 is the current team's info
     NSArray *thisStatItem = [self.teamStats objectAtIndex:indexPath.row+1];
     NSString *cellIdentifier = @"Cell";
-    NSLog(@"%@", thisStatItem[0]);
+    //NSLog(@"%@", self.teamStats[1]);
     
     AUDLTeamStatsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
@@ -73,15 +73,33 @@
     //NSString * tempString = [NSString sWithFormat:[thisStatItem objectAtIndex:0]];
     //NSLog(tempString);
     // set the attributes for this schedule cell
-    //NSString *statString = [NSString stringWithFormat:@"%@", [thisStatItem objectAtIndex:0]];
-    cell.stat.text = [NSString stringWithFormat:@"%@", [thisStatItem objectAtIndex:0]];
-    //NSArray *tempPlayer1 = [thisStatItem objectAtIndex:1];
-    //cell.player1.text = [tempPlayer1 objectAtIndex:0];
-    //cell.teamOneIcon.image = [tempDict objectForKey:teamOneId];
-    //cell.teamTwo.text = [thisScheduleItem objectAtIndex:2];
-    //cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
-    //cell.date.text = [thisScheduleItem objectAtIndex:0];
-    //cell.time.text = [thisScheduleItem objectAtIndex:1];
+    NSString *statString = [NSString stringWithFormat:@"%@", [thisStatItem objectAtIndex:0]];
+    statString = [statString capitalizedString];
+    if ([statString isEqualToString:@"Plusminuscount"]) {
+        statString = @"+/-";
+    }
+    
+    statString = [statString stringByAppendingString:@":"];
+    //cell.stat.text = [NSString stringWithFormat:@"%@", [thisStatItem objectAtIndex:0]];
+    cell.stat.text = statString;
+    
+    NSArray *topPlayersForThisStat = [thisStatItem objectAtIndex:1];
+    NSArray *player1 = [topPlayersForThisStat objectAtIndex:0];
+    NSArray *player2 = [topPlayersForThisStat objectAtIndex:1];
+    NSArray *player3 = [topPlayersForThisStat objectAtIndex:2];
+    NSArray *player4 = [topPlayersForThisStat objectAtIndex:3];
+    NSArray *player5 = [topPlayersForThisStat objectAtIndex:4];
+    
+    cell.player1.text = [player1 objectAtIndex:0];
+    cell.player1No.text = [NSString stringWithFormat:@"%@", [player1 objectAtIndex:1]];
+    cell.player2.text = [player2 objectAtIndex:0];
+    cell.player2No.text = [NSString stringWithFormat:@"%@", [player2 objectAtIndex:1]];
+    cell.player3.text = [player3 objectAtIndex:0];
+    cell.player3No.text = [NSString stringWithFormat:@"%@", [player3 objectAtIndex:1]];
+    cell.player4.text = [player4 objectAtIndex:0];
+    cell.player4No.text = [NSString stringWithFormat:@"%@", [player4 objectAtIndex:1]];
+    cell.player5.text = [player5 objectAtIndex:0];
+    cell.player5No.text = [NSString stringWithFormat:@"%@", [player5 objectAtIndex:1]];
     
     return cell;
 }
