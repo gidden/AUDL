@@ -55,7 +55,7 @@
 {
     
     // Prepare the link that is going to be used on the GET request
-    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/Teams"];
+    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-86-111-95.us-west-2.compute.amazonaws.com:4001/Teams"];
     
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
@@ -106,7 +106,7 @@
 {
     //NSLog(@"icon requested, %@", teamId);
     // Prepare the link that is going to be used on the GET request
-    NSURL * url = [[NSURL alloc] initWithString:[@"http://ec2-54-186-184-48.us-west-2.compute.amazonaws.com:4000/Icons/" stringByAppendingString:teamId]];
+    NSURL * url = [[NSURL alloc] initWithString:[@"http://ec2-54-86-111-95.us-west-2.compute.amazonaws.com:4001/Icons/" stringByAppendingString:teamId]];
     //NSLog(@"error here");
 
     // Prepare the request object
