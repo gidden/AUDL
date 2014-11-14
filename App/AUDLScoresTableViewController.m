@@ -152,7 +152,7 @@
 {
     
     // Prepare the link that is going to be used on the GET request
-    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-86-111-95.us-west-2.compute.amazonaws.com:4001/Scores"];
+    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-86-111-95.us-west-2.compute-1.amazonaws.com:4001/Scores"];
     
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
