@@ -170,6 +170,7 @@
 		72F4DB0818DB5A3F00E571FC /* AUDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLTableViewCell.h; sourceTree = "<group>"; };
 		72F4DB0918DB5A3F00E571FC /* AUDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTableViewCell.m; sourceTree = "<group>"; };
 		72F4DB0A18DB5A3F00E571FC /* AUDLTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLTableViewCell.xib; sourceTree = "<group>"; };
+		CD9132EF1A5F64CE0096A08E /* Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		E90995F418DCAA7C003A07FD /* AUDLSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLSettingsTableViewController.h; sourceTree = "<group>"; };
 		E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLSettingsTableViewController.m; sourceTree = "<group>"; };
 		E91A883C19004C9E00B8070E /* AUDLPlayerStatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLPlayerStatsTableViewController.h; sourceTree = "<group>"; };
@@ -303,6 +304,7 @@
 		727ABD6318D257C1005B9ACC = {
 			isa = PBXGroup;
 			children = (
+				CD9132EF1A5F64CE0096A08E /* Globals.h */,
 				72C124F71904585C00BAEC46 /* TeamViewController.h */,
 				72C124F81904585C00BAEC46 /* TeamViewController.m */,
 				72C18E0718F2258800849056 /* Main.storyboard */,

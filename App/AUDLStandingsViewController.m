@@ -99,7 +99,9 @@
 {
     
     // Prepare the link that is going to be used on the GET request
-    NSURL * url = [[NSURL alloc] initWithString:@"http://ec2-54-86-111-95.compute-1.amazonaws.com:4001/Standings"];
+    NSString *path = @"/Standings";
+    NSString *full_url = [server_url stringByAppendingString: path];
+    NSURL * url = [[NSURL alloc] initWithString:full_url];
     
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Globals.h"
 
 @interface AUDLStatsTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;

@@ -7,6 +7,7 @@
 //
 
 #import "AUDLTeamsTableViewController.h"
+#import "Globals.h"
 
 @interface TeamViewController : AUDLTeamsTableViewController
     //NSString *teamName;

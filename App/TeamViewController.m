@@ -62,7 +62,7 @@
 {
     
     ////add team's name to the url
-   // NSURL * url = [[NSURL alloc] initWithString:[@"http://ec2-54-86-111-95.us-west-2.compute-1.amazonaws.com:4001/" stringByAppendingString:teamName]];
+   // NSURL * url = [[NSURL alloc] initWithString:[@server_url stringByAppendingString:teamName]];
     //NSLog(@"%@",teamName);
     //NSLog(@"%@",url);
     

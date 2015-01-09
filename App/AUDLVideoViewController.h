@@ -7,6 +7,7 @@
 //
 
 #import "AUDLMainViewController.h"
+#import "Globals.h"
 
 @interface AUDLVideoTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
