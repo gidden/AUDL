@@ -110,7 +110,7 @@
     // Prepare the link that is going to be used on the GET request
     NSString *path = [@"/Icons" stringByAppendingString:teamId];
     NSString *full_url = [server_url stringByAppendingString: path];
-    NSURL * url = [[NSURL alloc] initWithString:[full_url];
+    NSURL * url = [[NSURL alloc] initWithString:full_url];
     //NSLog(@"error here");
 
     // Prepare the request object
