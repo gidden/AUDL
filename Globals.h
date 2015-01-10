@@ -10,6 +10,7 @@
 #define AUDL_Globals_h
 
 
-NSString *server_url = @"http://ec2-54-86-111-95.compute-1.amazonaws.com:4001";
+extern NSString *server_url;
+
 
 #endif

@@ -10,6 +10,8 @@
 #import "SWRevealViewController.h"
 #import "AUDLTableViewCell.h"
 #import "AUDLAppDelegate.h"
+#import "Globals.h"
+
 //#import "Globals.h"
 
 @interface AUDLNewsTableViewController ()
