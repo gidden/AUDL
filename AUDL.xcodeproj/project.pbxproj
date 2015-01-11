@@ -130,7 +130,7 @@
 		727ABD8418D257C1005B9ACC /* AUDLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLViewController.h; sourceTree = "<group>"; };
 		727ABD8518D257C1005B9ACC /* AUDLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUDLViewController.m; sourceTree = "<group>"; };
 		727ABD8718D257C1005B9ACC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images.xcassets; sourceTree = "<group>"; };
-		727ABD8D18D257C1005B9ACC /* AUDLTests */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = AUDLTests; sourceTree = BUILT_PRODUCTS_DIR; };
+		727ABD8D18D257C1005B9ACC /* AUDLTests */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; name = AUDLTests; path = AUDLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		727ABD8E18D257C1005B9ACC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		727ABD9618D257C1005B9ACC /* AUDLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AUDLTests-Info.plist"; sourceTree = "<group>"; };
 		727ABD9818D257C1005B9ACC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		72C1250519046FF400BAEC46 /* AUDLTeamStatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLTeamStatsTableViewCell.h; sourceTree = "<group>"; };
 		72C1250619046FF400BAEC46 /* AUDLTeamStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTeamStatsTableViewCell.m; sourceTree = "<group>"; };
 		72C1250719046FF400BAEC46 /* AUDLTeamStatsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLTeamStatsTableViewCell.xib; sourceTree = "<group>"; };
-		72C18E0718F2258800849056 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Main.storyboard; sourceTree = "<group>"; };
+		72C18E0718F2258800849056 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		72C7F1741901AC9900D7C49B /* AUDLRosterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLRosterTableViewController.h; sourceTree = "<group>"; };
 		72C7F1751901AC9900D7C49B /* AUDLRosterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLRosterTableViewController.m; sourceTree = "<group>"; };
 		72C7F1761901AC9900D7C49B /* AUDLRosterTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLRosterTableViewController.xib; sourceTree = "<group>"; };

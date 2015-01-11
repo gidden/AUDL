@@ -9,7 +9,8 @@
 #import "AUDLAppDelegate.h"
 
 @implementation AUDLAppDelegate
-NSString *server_url  = @"http://ec2-54-86-111-95.compute-1.amazonaws.com:4001";
+//Set the vlaue of the server_url
+NSString *server_url  = @"http://ec2-54-86-111-95.compute-1.amazonaws.com:4000";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -109,7 +110,7 @@ NSString *server_url  = @"http://ec2-54-86-111-95.compute-1.amazonaws.com:4001";
 {
     //NSLog(@"icon requested, %@", teamId);
     // Prepare the link that is going to be used on the GET request
-    NSString *path = [@"/Icons" stringByAppendingString:teamId];
+    NSString *path = [@"/Icons/" stringByAppendingString:teamId];
     NSString *full_url = [server_url stringByAppendingString: path];
     NSURL * url = [[NSURL alloc] initWithString:full_url];
     //NSLog(@"error here");
