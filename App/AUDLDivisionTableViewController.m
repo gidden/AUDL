@@ -104,7 +104,9 @@
     cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
     cell.date.text = [thisNewsItem objectAtIndex:4];
     cell.time.text = [thisNewsItem objectAtIndex:5];
-    
+    cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisNewsItem objectAtIndex:6]];
+    cell.teamTwoScore.text = [NSString stringWithFormat:@"%@",[thisNewsItem objectAtIndex:7]];
+
     return cell;
 }
 
