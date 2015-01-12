@@ -104,9 +104,17 @@
     cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
     cell.date.text = [thisNewsItem objectAtIndex:4];
     cell.time.text = [thisNewsItem objectAtIndex:5];
+    if ( thisNewsItem.count > 6 )
+    {
     cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisNewsItem objectAtIndex:6]];
     cell.teamTwoScore.text = [NSString stringWithFormat:@"%@",[thisNewsItem objectAtIndex:7]];
-
+    }
+    else
+    {
+        cell.teamOneScore.text = @"";
+        cell.teamTwoScore.text = @"";
+    }
+    
     return cell;
 }
 
