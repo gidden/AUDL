@@ -8,6 +8,7 @@
 
 #import "AUDLDivStandingsTableViewController.h"
 #import "AUDLStandingsTableViewCell.h"
+#import "AUDLAppDelegate.h"
 
 @interface AUDLDivStandingsTableViewController ()
 
@@ -74,8 +75,16 @@
         cell = [[AUDLStandingsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
+    //Grab the icons dictionary
+    AUDLAppDelegate *appDelegate = (AUDLAppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSDictionary *logos = appDelegate.icons;
+    
     // Configure the cell...
     //cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
+    NSString *teamID = [NSString stringWithFormat:@"%@", [thisTeam objectAtIndex:1]];
+    
+    cell.teamIcon.image = [logos objectForKey:teamID];
+    
     cell.teamName.text = [thisTeam objectAtIndex:0];
     NSString *wins = [ NSString stringWithFormat:@"%@",[thisTeam objectAtIndex:2]];
     NSString *losses = [ NSString stringWithFormat:@"%@",[thisTeam objectAtIndex:3]];
@@ -83,6 +92,13 @@
     NSString *rec = [wins stringByAppendingString:@" - "];
     cell.record.text = [rec stringByAppendingString:losses];
     cell.pDiff.text = [NSString stringWithFormat:@"%@", [thisTeam objectAtIndex:4]];
+
+    //Grab this cell's index
+    //NSString *placement = [NSString stringWithFormat:@"%ld", (long)indexPath.row + 1];
+    
+    
+    
+
     
     return cell;
 }
