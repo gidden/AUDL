@@ -58,7 +58,6 @@
     //list of settings
     _Setting = @[@"FAQ",
                  @"Terms of Use",
-                 @"Notifications",
                  @"Send Feedback"];
     
     
