@@ -76,10 +76,13 @@
     
     // Configure the cell...
     //cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    cell.name.text = [thisTeam objectAtIndex:0];
-    //cell.element1.text = thisTeam objectAtIndex:1];
-    //cell.element2.text = [thisNewsItem objectAtIndex:2];
-    //cell.element3.text = [thisNewsItem objectAtIndex:3];
+    cell.teamName.text = [thisTeam objectAtIndex:0];
+    NSString *wins = [ NSString stringWithFormat:@"%@",[thisTeam objectAtIndex:2]];
+    NSString *losses = [ NSString stringWithFormat:@"%@",[thisTeam objectAtIndex:3]];
+    
+    NSString *rec = [wins stringByAppendingString:@" - "];
+    cell.record.text = [rec stringByAppendingString:losses];
+    cell.pDiff.text = [NSString stringWithFormat:@"%@", [thisTeam objectAtIndex:4]];
     
     return cell;
 }

@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface AUDLStandingsTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UILabel *element1;
-@property (weak, nonatomic) IBOutlet UILabel *element2;
+@property (weak, nonatomic) IBOutlet UILabel *teamName;
+@property (weak, nonatomic) IBOutlet UILabel *record;
+@property (weak, nonatomic) IBOutlet UILabel *pDiff;
 @property (weak, nonatomic) IBOutlet UILabel *element3;
 @end
