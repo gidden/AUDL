@@ -130,7 +130,7 @@
 		727ABD8418D257C1005B9ACC /* AUDLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLViewController.h; sourceTree = "<group>"; };
 		727ABD8518D257C1005B9ACC /* AUDLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUDLViewController.m; sourceTree = "<group>"; };
 		727ABD8718D257C1005B9ACC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images.xcassets; sourceTree = "<group>"; };
-		727ABD8D18D257C1005B9ACC /* AUDLTests */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; name = AUDLTests; path = AUDLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		727ABD8D18D257C1005B9ACC /* AUDLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AUDLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		727ABD8E18D257C1005B9ACC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		727ABD9618D257C1005B9ACC /* AUDLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AUDLTests-Info.plist"; sourceTree = "<group>"; };
 		727ABD9818D257C1005B9ACC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -320,7 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				727ABD6C18D257C1005B9ACC /* AUDL.app */,
-				727ABD8D18D257C1005B9ACC /* AUDLTests */,
+				727ABD8D18D257C1005B9ACC /* AUDLTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -708,7 +708,7 @@
 			);
 			name = AUDLTests;
 			productName = AppTests;
-			productReference = 727ABD8D18D257C1005B9ACC /* AUDLTests */;
+			productReference = 727ABD8D18D257C1005B9ACC /* AUDLTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
