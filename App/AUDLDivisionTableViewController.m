@@ -69,13 +69,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // "+1" is to start at first story, not the header
-    NSArray *thisNewsItem = [self.schedule objectAtIndex:indexPath.row];
+
+    //get the game info for this index
+    NSArray *thisGameItem = [self.schedule objectAtIndex:indexPath.row];
     
-    //NSString *cellIdentifier = [thisNewsItem objectAtIndex:0];
     NSString *cellIdentifier = @"Cell";
 
-    //NSString *cellLink = [thisNewsItem objectAtIndex:2];
     AUDLScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     //AUDLScheduleTableViewCell *cell = nil;
 
@@ -91,23 +90,20 @@
     // get a temporary pointer for the icon dictionary
     NSDictionary *tempDict = appDelegate.icons;
     
-    NSString *teamOneId = [NSString stringWithFormat: @"%@", [thisNewsItem objectAtIndex:1]];
-    NSString *teamTwoId = [NSString stringWithFormat: @"%@", [thisNewsItem objectAtIndex:3]];
+    NSString *teamOneId = [NSString stringWithFormat: @"%@", [thisGameItem objectAtIndex:1]];
+    NSString *teamTwoId = [NSString stringWithFormat: @"%@", [thisGameItem objectAtIndex:3]];
 
     
-    //cell.imageView.image = [tempDict objectForKey:@"5182111044599808"];
-    //cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    //[cell setLink:cellLink];
-    cell.teamOne.text = [thisNewsItem objectAtIndex:0];
+      cell.teamOne.text = [thisGameItem objectAtIndex:0];
     cell.teamOneIcon.image = [tempDict objectForKey:teamOneId];
-    cell.teamTwo.text = [thisNewsItem objectAtIndex:2];
+    cell.teamTwo.text = [thisGameItem objectAtIndex:2];
     cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
-    cell.date.text = [thisNewsItem objectAtIndex:4];
-    cell.time.text = [thisNewsItem objectAtIndex:5];
-    if ( thisNewsItem.count > 6 )
+    cell.date.text = [thisGameItem objectAtIndex:4];
+    cell.time.text = [thisGameItem objectAtIndex:5];
+    if ( thisGameItem.count > 6 )
     {
-    cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisNewsItem objectAtIndex:6]];
-    cell.teamTwoScore.text = [NSString stringWithFormat:@"%@",[thisNewsItem objectAtIndex:7]];
+    cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:6]];
+    cell.teamTwoScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:7]];
     }
     else
     {

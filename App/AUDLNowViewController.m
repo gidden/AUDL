@@ -11,6 +11,7 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 #import "STTwitter.h"
+#import "AUDLTwitterViewCell.h"
 //#import <Twitter/Twitter.h>
 
 @interface AUDLNowViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -23,14 +24,14 @@
 
 @implementation AUDLNowViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
@@ -48,6 +49,11 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
    
     STTwitterAPI *twitter = [STTwitterAPI twitterAPIAppOnlyWithConsumerKey:@"3egMgWgj6UXp7N3eh9VP5Q" consumerSecret:@"BoWTmMYa8CL2mDxNS7mAYcDHWJ5o5ah7ndqvpsaFA"];
+    
+    //register with the view cell class
+    [self.tableView registerNib:[UINib nibWithNibName:@"AUDLTwitterViewCell" bundle:nil] forCellReuseIdentifier:@"TwitterCellID"];
+    self.tableView.rowHeight = 100;
+
     
     [twitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
         [twitter getUserTimelineWithScreenName:@"theAUDL" successBlock:^(NSArray *statuses){
@@ -77,19 +83,27 @@ errorBlock:^(NSError *error){
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     static NSString *cellID = @"TwitterCellID";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    AUDLTwitterViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
-    if(cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-        
+    if (cell == nil) {
+        cell = [[AUDLTwitterViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
+    
+    
+//    if(cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+//        
+//    }
     NSInteger index = indexPath.row;
     NSDictionary *t = self.twitterFeed[index];
-    
-    cell.textLabel.text = t[@"text"];
-    
+    NSLog(t[@"text"]);
+    cell.feedText.text = [NSString stringWithFormat:@"%@",t[@"text"]];
+    //cell.textLabel.text = t[@"text"];
+
     return cell;
     
 }
