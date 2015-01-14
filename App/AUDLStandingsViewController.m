@@ -92,6 +92,9 @@
     [cell setDivTeams:divTeams];
     [cell setDivisionName:cellIdentifier];
     
+    // add the right pointing arrow to the cell
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     return cell;
 }
 

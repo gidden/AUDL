@@ -93,8 +93,8 @@
     NSString *teamOneId = [NSString stringWithFormat: @"%@", [thisGameItem objectAtIndex:1]];
     NSString *teamTwoId = [NSString stringWithFormat: @"%@", [thisGameItem objectAtIndex:3]];
 
-    
-      cell.teamOne.text = [thisGameItem objectAtIndex:0];
+    //populate the cell info
+    cell.teamOne.text = [thisGameItem objectAtIndex:0];
     cell.teamOneIcon.image = [tempDict objectForKey:teamOneId];
     cell.teamTwo.text = [thisGameItem objectAtIndex:2];
     cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
