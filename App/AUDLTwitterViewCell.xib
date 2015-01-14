@@ -13,11 +13,11 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DU9-vN-reU" id="M2h-wQ-tg9">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t03-ra-fkh">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Twitter_bird_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="t03-ra-fkh">
                         <rect key="frame" x="27" y="23" width="57" height="44"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NZR-ut-7st">
-                        <rect key="frame" x="8" y="8" width="57" height="44"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="audl-120.png" translatesAutoresizingMaskIntoConstraints="NO" id="NZR-ut-7st">
+                        <rect key="frame" x="10" y="9" width="52" height="44"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMW-lF-6CK" customClass="AUDL">
                         <rect key="frame" x="88" y="10" width="229" height="106"/>
@@ -35,11 +35,13 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="AUDLIcon" destination="NZR-ut-7st" id="Gmn-8C-F7f"/>
                 <outlet property="feedText" destination="qMW-lF-6CK" id="XLr-Rd-ydH"/>
-                <outlet property="twitterIcon" destination="t03-ra-fkh" id="LQG-0e-98y"/>
             </connections>
-            <point key="canvasLocation" x="55.5" y="252"/>
+            <point key="canvasLocation" x="55.5" y="251"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Twitter_bird_logo.png" width="2500" height="2500"/>
+        <image name="audl-120.png" width="120" height="120"/>
+    </resources>
 </document>

@@ -104,8 +104,8 @@ errorBlock:^(NSError *error){
     cell.feedText.text = [NSString stringWithFormat:@"%@",t[@"text"]];
     //cell.textLabel.text = t[@"text"];
 
-    cell.twitterIcon.image = [UIImage imageNamed:@"Twitter_bird_logo.png"];
-    cell.AUDLIcon.image = [UIImage imageNamed:@"audl-120.png"];
+    //cell.twitterIcon.image = [UIImage imageNamed:@"Twitter_bird_logo.png"];
+    //cell.AUDLIcon.image = [UIImage imageNamed:@"audl-120.png"];
     
     return cell;
     
