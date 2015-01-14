@@ -52,7 +52,7 @@
     
     //register with the view cell class
     [self.tableView registerNib:[UINib nibWithNibName:@"AUDLTwitterViewCell" bundle:nil] forCellReuseIdentifier:@"TwitterCellID"];
-    self.tableView.rowHeight = 100;
+    self.tableView.rowHeight = 120;
 
     
     [twitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
