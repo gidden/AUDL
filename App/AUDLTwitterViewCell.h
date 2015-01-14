@@ -10,8 +10,8 @@
 
 @interface AUDLTwitterViewCell : UITableViewCell
 
-@property (strong
+@property (weak
            , nonatomic) IBOutlet UILabel *feedText;
-//@property (weak, nonatomic) IBOutlet UIImageView *twitterIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *twitterIcon;
 
 @end

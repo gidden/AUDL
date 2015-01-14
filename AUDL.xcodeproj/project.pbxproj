@@ -56,6 +56,7 @@
 		72F4DB0C18DB5A3F00E571FC /* AUDLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4DB0A18DB5A3F00E571FC /* AUDLTableViewCell.xib */; };
 		CD16C90F1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD16C90E1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib */; };
 		CD16C9121A654D1400AC24E9 /* AUDLTwitterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD16C9111A654D1400AC24E9 /* AUDLTwitterViewCell.m */; };
+		CD8FD7C71A6620AB00572CE6 /* Twitter_bird_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */; };
 		E90995F618DCAA7C003A07FD /* AUDLSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */; };
 		E91A883E19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91A883D19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m */; };
 		E967BBEE18F06EBB001BE229 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967BBED18F06EBB001BE229 /* Accounts.framework */; };
@@ -173,6 +174,7 @@
 		CD16C90E1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLTwitterViewCell.xib; sourceTree = "<group>"; };
 		CD16C9101A654D0700AC24E9 /* AUDLTwitterViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLTwitterViewCell.h; sourceTree = "<group>"; };
 		CD16C9111A654D1400AC24E9 /* AUDLTwitterViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTwitterViewCell.m; sourceTree = "<group>"; };
+		CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter_bird_logo.png; sourceTree = "<group>"; };
 		CD9132EF1A5F64CE0096A08E /* Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		E90995F418DCAA7C003A07FD /* AUDLSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLSettingsTableViewController.h; sourceTree = "<group>"; };
 		E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLSettingsTableViewController.m; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 		727ABD6318D257C1005B9ACC = {
 			isa = PBXGroup;
 			children = (
+				CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */,
 				CD9132EF1A5F64CE0096A08E /* Globals.h */,
 				72C124F71904585C00BAEC46 /* TeamViewController.h */,
 				72C124F81904585C00BAEC46 /* TeamViewController.m */,
@@ -766,6 +769,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD8FD7C71A6620AB00572CE6 /* Twitter_bird_logo.png in Resources */,
 				72C7F1811903347200D7C49B /* AUDLTop5TableViewCell.xib in Resources */,
 				E9D674BF18DE019100712370 /* AUDLVideoViewController.xib in Resources */,
 				E9D674CC18DE01FF00712370 /* AUDLScheduleViewController.xib in Resources */,
