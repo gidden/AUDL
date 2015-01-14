@@ -82,6 +82,8 @@
     cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
     cell.date.text = [thisScheduleItem objectAtIndex:0];
     cell.time.text = [thisScheduleItem objectAtIndex:1];
+    cell.teamOneScore.text = @""; // these should be blank for a schedule
+    cell.teamTwoScore.text = @"";
     
     return cell;
 }
