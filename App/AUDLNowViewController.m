@@ -105,6 +105,7 @@ errorBlock:^(NSError *error){
     //cell.textLabel.text = t[@"text"];
 
     cell.twitterIcon.image = [UIImage imageNamed:@"Twitter_bird_logo.png"];
+    cell.AUDLIcon.image = [UIImage imageNamed:@"audl-120.png"];
     
     return cell;
     
