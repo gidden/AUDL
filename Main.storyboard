@@ -8,6 +8,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <viewController id="vXZ-lx-hvc" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
@@ -23,7 +24,6 @@
                         <segue destination="zLj-Af-sqf" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="xA8-Fz-T4B"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-540" y="124"/>
         </scene>
@@ -376,7 +376,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="tNa-Rx-eud" kind="relationship" relationship="rootViewController" id="dpr-eK-A74"/>
+                        <segue destination="7Vv-Hs-o4D" kind="relationship" relationship="rootViewController" id="cjd-Rj-vOd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zjn-D1-CEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -489,6 +489,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="HSl-AU-4yY"/>
+        <segue reference="dlu-GT-xaJ"/>
     </inferredMetricsTieBreakers>
 </document>
