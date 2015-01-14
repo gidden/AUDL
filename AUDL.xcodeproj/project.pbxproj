@@ -57,6 +57,7 @@
 		CD16C90F1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD16C90E1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib */; };
 		CD16C9121A654D1400AC24E9 /* AUDLTwitterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD16C9111A654D1400AC24E9 /* AUDLTwitterViewCell.m */; };
 		CD8FD7C71A6620AB00572CE6 /* Twitter_bird_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */; };
+		CD8FD8841A662E7C00572CE6 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8FD8831A662E7C00572CE6 /* Launch Screen.xib */; };
 		E90995F618DCAA7C003A07FD /* AUDLSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */; };
 		E91A883E19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91A883D19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m */; };
 		E967BBEE18F06EBB001BE229 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967BBED18F06EBB001BE229 /* Accounts.framework */; };
@@ -175,6 +176,7 @@
 		CD16C9101A654D0700AC24E9 /* AUDLTwitterViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLTwitterViewCell.h; sourceTree = "<group>"; };
 		CD16C9111A654D1400AC24E9 /* AUDLTwitterViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTwitterViewCell.m; sourceTree = "<group>"; };
 		CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter_bird_logo.png; sourceTree = "<group>"; };
+		CD8FD8831A662E7C00572CE6 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		CD9132EF1A5F64CE0096A08E /* Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		E90995F418DCAA7C003A07FD /* AUDLSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLSettingsTableViewController.h; sourceTree = "<group>"; };
 		E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLSettingsTableViewController.m; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 		727ABD6318D257C1005B9ACC = {
 			isa = PBXGroup;
 			children = (
+				CD8FD8831A662E7C00572CE6 /* Launch Screen.xib */,
 				CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */,
 				CD9132EF1A5F64CE0096A08E /* Globals.h */,
 				72C124F71904585C00BAEC46 /* TeamViewController.h */,
@@ -774,6 +777,7 @@
 				E9D674BF18DE019100712370 /* AUDLVideoViewController.xib in Resources */,
 				E9D674CC18DE01FF00712370 /* AUDLScheduleViewController.xib in Resources */,
 				721F683718F2065F0019EFB9 /* AUDLDivisionTableViewController.xib in Resources */,
+				CD8FD8841A662E7C00572CE6 /* Launch Screen.xib in Resources */,
 				727ABD8818D257C1005B9ACC /* Images.xcassets in Resources */,
 				721F682A18EF405C0019EFB9 /* audl-120.png in Resources */,
 				72F4DAFE18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib in Resources */,
