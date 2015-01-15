@@ -10,6 +10,7 @@
 #import "AUDLTableViewCell.h"
 #import "AUDLScheduleTableViewCell.h"
 #import "AUDLAppDelegate.h"
+#import "AUDLGameGraphViewController.h"
 
 @interface AUDLDivisionTableViewController ()
 
@@ -41,6 +42,11 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"AUDLScheduleTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     self.tableView.rowHeight = 100;
     self.navigationItem.title = [_division stringByAppendingString:@" Division" ];
+    
+    // Add a gesture recognizer to the table view for the cell selection
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
+    [self.view addGestureRecognizer:gesture];
+
 
 }
 
@@ -93,6 +99,7 @@
     NSString *teamOneId = [NSString stringWithFormat: @"%@", [thisGameItem objectAtIndex:1]];
     NSString *teamTwoId = [NSString stringWithFormat: @"%@", [thisGameItem objectAtIndex:3]];
 
+    
     //populate the cell info
     cell.teamOne.text = [thisGameItem objectAtIndex:0];
     cell.teamOneIcon.image = [tempDict objectForKey:teamOneId];
@@ -104,16 +111,55 @@
     {
     cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:6]];
     cell.teamTwoScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:7]];
+    cell.gameID = [teamOneId stringByAppendingString:cell.date.text];
     }
     else
     {
         cell.teamOneScore.text = @"";
         cell.teamTwoScore.text = @"";
+        cell.gameID = @"";
     }
-    
+
     return cell;
 }
 
+
+- (void)didSelect:(UIGestureRecognizer *)gestureRecognizer {
+    
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        CGPoint tapLocation = [gestureRecognizer locationInView:self.tableView];
+        NSIndexPath *tappedIndexPath = [self.tableView indexPathForRowAtPoint:tapLocation];
+        UITableViewCell* tappedCell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
+        
+        
+        // pointer to the cell that was selected
+        AUDLScheduleTableViewCell* selectedCell = (AUDLScheduleTableViewCell*)tappedCell;
+        
+        if (![selectedCell.gameID isEqualToString: @""]) {
+        
+    
+        // opens the selected cell's url in Safari
+        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.link]];
+        
+        
+        // create the view controller we want to present
+        AUDLGameGraphViewController *gameGraph = [[AUDLGameGraphViewController alloc] init];
+        
+        //AUDLIndivTeamTableViewController *teamSelection = [[AUDLIndivTeamTableViewController alloc] init];
+        //teamSelection.teamName = selectedCell.teamName;
+        //teamSelection.teamId = selectedCell.teamId;
+        
+        // override the back button in the new controller from saying "Schedule"
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+        self.navigationItem.backBarButtonItem = backButton;
+        NSLog(selectedCell.gameID);
+        // present the new view controller
+        [self.navigationController pushViewController:gameGraph animated:YES];
+        
+        }
+        
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
