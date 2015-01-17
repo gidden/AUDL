@@ -56,6 +56,7 @@
 		72F4DB0C18DB5A3F00E571FC /* AUDLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4DB0A18DB5A3F00E571FC /* AUDLTableViewCell.xib */; };
 		CD16C90F1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD16C90E1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib */; };
 		CD16C9121A654D1400AC24E9 /* AUDLTwitterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD16C9111A654D1400AC24E9 /* AUDLTwitterViewCell.m */; };
+		CD32C1571A6A36FC00E75E6B /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32C1541A6A368500E75E6B /* libCorePlot-CocoaTouch.a */; };
 		CD8FD7C71A6620AB00572CE6 /* Twitter_bird_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */; };
 		CD8FD8841A662E7C00572CE6 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8FD8831A662E7C00572CE6 /* Launch Screen.xib */; };
 		CDF89A881A68073B00382B6D /* AUDLGameGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF89A871A68073B00382B6D /* AUDLGameGraphViewController.m */; };
@@ -101,6 +102,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 727ABD6B18D257C1005B9ACC;
 			remoteInfo = App;
+		};
+		CD32C1531A6A368500E75E6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD32C14D1A6A368500E75E6B /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+		CD32C1551A6A36B000E75E6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD32C14D1A6A368500E75E6B /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -177,6 +192,7 @@
 		CD16C90E1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLTwitterViewCell.xib; sourceTree = "<group>"; };
 		CD16C9101A654D0700AC24E9 /* AUDLTwitterViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLTwitterViewCell.h; sourceTree = "<group>"; };
 		CD16C9111A654D1400AC24E9 /* AUDLTwitterViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTwitterViewCell.m; sourceTree = "<group>"; };
+		CD32C14D1A6A368500E75E6B /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../core-plot/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
 		CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter_bird_logo.png; sourceTree = "<group>"; };
 		CD8FD8831A662E7C00572CE6 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		CD9132EF1A5F64CE0096A08E /* Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
@@ -249,6 +265,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD32C1571A6A36FC00E75E6B /* libCorePlot-CocoaTouch.a in Frameworks */,
 				E967BBEE18F06EBB001BE229 /* Accounts.framework in Frameworks */,
 				E967BBF218F077CF001BE229 /* Twitter.framework in Frameworks */,
 				E967BBF018F06ED1001BE229 /* Social.framework in Frameworks */,
@@ -316,6 +333,7 @@
 		727ABD6318D257C1005B9ACC = {
 			isa = PBXGroup;
 			children = (
+				CD32C14D1A6A368500E75E6B /* CorePlot-CocoaTouch.xcodeproj */,
 				CD8FD8831A662E7C00572CE6 /* Launch Screen.xib */,
 				CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */,
 				CD9132EF1A5F64CE0096A08E /* Globals.h */,
@@ -531,6 +549,14 @@
 			name = AUDLTwitterViewCell;
 			sourceTree = "<group>";
 		};
+		CD32C14E1A6A368500E75E6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD32C1541A6A368500E75E6B /* libCorePlot-CocoaTouch.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CDF89A831A6806BC00382B6D /* Game Graph */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,6 +751,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CD32C1561A6A36B000E75E6B /* PBXTargetDependency */,
 			);
 			name = AUDL;
 			productName = App;
@@ -778,6 +805,12 @@
 			mainGroup = 727ABD6318D257C1005B9ACC;
 			productRefGroup = 727ABD6D18D257C1005B9ACC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CD32C14E1A6A368500E75E6B /* Products */;
+					ProjectRef = CD32C14D1A6A368500E75E6B /* CorePlot-CocoaTouch.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				727ABD6B18D257C1005B9ACC /* AUDL */,
@@ -785,6 +818,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CD32C1541A6A368500E75E6B /* libCorePlot-CocoaTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCorePlot-CocoaTouch.a";
+			remoteRef = CD32C1531A6A368500E75E6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		727ABD6A18D257C1005B9ACC /* Resources */ = {
@@ -902,6 +945,11 @@
 			target = 727ABD6B18D257C1005B9ACC /* AUDL */;
 			targetProxy = 727ABD9218D257C1005B9ACC /* PBXContainerItemProxy */;
 		};
+		CD32C1561A6A36B000E75E6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CorePlot-CocoaTouch";
+			targetProxy = CD32C1551A6A36B000E75E6B /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1007,6 +1055,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "App/AUDL-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../core-plot/framework/**",
+				);
 				INFOPLIST_FILE = "App/AUDL-Info.plist";
 				PRODUCT_NAME = AUDL;
 				PROVISIONING_PROFILE = "";
@@ -1023,6 +1076,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "App/AUDL-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../core-plot/framework/**",
+				);
 				INFOPLIST_FILE = "App/AUDL-Info.plist";
 				PRODUCT_NAME = AUDL;
 				PROVISIONING_PROFILE = "";

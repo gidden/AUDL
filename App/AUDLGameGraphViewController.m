@@ -8,6 +8,7 @@
 
 
 #import "AUDLGameGraphViewController.h"
+#import "CorePlot-CocoaTouch.h"
 
 @implementation AUDLGameGraphViewController
 
@@ -24,8 +25,16 @@
     
     [self gameDataRequest];
     
+    [self drawGraph];
+    
 }
 
+-(void)drawGraph {
+    
+    CGRect frame = [[self view] bounds];
+    frame.size.height = 200;
+    
+}
 - (id)initWithID:(NSString *) ID
 {
     self = [super init];
