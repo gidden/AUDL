@@ -111,6 +111,7 @@
     {
     cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:6]];
     cell.teamTwoScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:7]];
+    teamOneId = [NSString stringWithFormat:[teamOneId stringByAppendingString:@"/"]];
     cell.gameID = [NSString stringWithString:[teamOneId stringByAppendingString:cell.date.text]];
     }
     else
