@@ -111,9 +111,7 @@
     {
     cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:6]];
     cell.teamTwoScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:7]];
-        cell.gameID = [NSString stringWithString:[teamOneId stringByAppendingString:cell.date.text]];
-        //NSLog( [teamOneId stringByAppendingString:cell.date.text]);
-        NSLog(cell.gameID);
+    cell.gameID = [NSString stringWithString:[teamOneId stringByAppendingString:cell.date.text]];
     }
     else
     {
@@ -136,7 +134,7 @@
         
         // pointer to the cell that was selected
         AUDLScheduleTableViewCell* selectedCell = (AUDLScheduleTableViewCell*)tappedCell;
-        //NSLog(@"%@",selectedCell.gameID);
+
         if (![selectedCell.gameID isEqualToString: @""]) {
         
     
@@ -146,9 +144,7 @@
         
         // create the view controller we want to present
             AUDLGameGraphViewController *gameGraph = [[AUDLGameGraphViewController alloc] initWithID: selectedCell.gameID];
-//            NSLog(@"%@", selectedCell.gameID);
-//            gameGraph.gameID.text = [NSString stringWithFormat:selectedCell.gameID];
-//            NSLog(gameGraph.gameID.text);
+
         //AUDLIndivTeamTableViewController *teamSelection = [[AUDLIndivTeamTableViewController alloc] init];
         //teamSelection.teamName = selectedCell.teamName;
         //teamSelection.teamId = selectedCell.teamId;
