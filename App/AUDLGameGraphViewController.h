@@ -10,7 +10,9 @@
 
 @interface AUDLGameGraphViewController: UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *gameID;
+@property (strong, nonatomic) IBOutlet UILabel *gameID;
+@property (strong, nonatomic) NSString *gID;
 
+- (id)initWithID:(NSString *) gID;
 
 @end

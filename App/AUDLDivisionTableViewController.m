@@ -111,7 +111,9 @@
     {
     cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:6]];
     cell.teamTwoScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:7]];
-    cell.gameID = [teamOneId stringByAppendingString:cell.date.text];
+        cell.gameID = [NSString stringWithString:[teamOneId stringByAppendingString:cell.date.text]];
+        //NSLog( [teamOneId stringByAppendingString:cell.date.text]);
+        NSLog(cell.gameID);
     }
     else
     {
@@ -134,7 +136,7 @@
         
         // pointer to the cell that was selected
         AUDLScheduleTableViewCell* selectedCell = (AUDLScheduleTableViewCell*)tappedCell;
-        
+        //NSLog(@"%@",selectedCell.gameID);
         if (![selectedCell.gameID isEqualToString: @""]) {
         
     
@@ -143,8 +145,10 @@
         
         
         // create the view controller we want to present
-        AUDLGameGraphViewController *gameGraph = [[AUDLGameGraphViewController alloc] init];
-        
+            AUDLGameGraphViewController *gameGraph = [[AUDLGameGraphViewController alloc] initWithID: selectedCell.gameID];
+//            NSLog(@"%@", selectedCell.gameID);
+//            gameGraph.gameID.text = [NSString stringWithFormat:selectedCell.gameID];
+//            NSLog(gameGraph.gameID.text);
         //AUDLIndivTeamTableViewController *teamSelection = [[AUDLIndivTeamTableViewController alloc] init];
         //teamSelection.teamName = selectedCell.teamName;
         //teamSelection.teamId = selectedCell.teamId;
@@ -152,7 +156,7 @@
         // override the back button in the new controller from saying "Schedule"
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
         self.navigationItem.backBarButtonItem = backButton;
-        NSLog(selectedCell.gameID);
+        //NSLog(@"%@",selectedCell.gameID);
         // present the new view controller
         [self.navigationController pushViewController:gameGraph animated:YES];
         

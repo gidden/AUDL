@@ -17,5 +17,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *teamOneScore;
 @property (weak, nonatomic) IBOutlet UILabel *teamTwoScore; 
-@property (weak, nonatomic) IBOutlet NSString *gameID;
+@property (strong, nonatomic) IBOutlet NSString *gameID;
 @end
