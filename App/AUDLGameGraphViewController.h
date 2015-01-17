@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Globals.h"
 
 @interface AUDLGameGraphViewController: UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *gameID;
 @property (strong, nonatomic) NSString *gID;
+
+@property (nonatomic, strong) NSArray *gameData;
 
 - (id)initWithID:(NSString *) gID;
 
