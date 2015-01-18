@@ -16,7 +16,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *noGraph;
 @property (strong, nonatomic) NSString *gID;
 
-@property (nonatomic, strong) NSArray *gameData;
+@property (strong, nonatomic) NSArray *team1pnts;
+@property (strong, nonatomic) NSArray *team2pnts;
+@property (strong, nonatomic) NSString *team1;
+@property (strong, nonatomic) NSString *team2;
 
 - (id)initWithID:(NSString *) gID;
 

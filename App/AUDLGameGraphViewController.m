@@ -25,11 +25,13 @@
     
     [self gameDataRequest];
     
-    if ([self.gameData count] < 2) {
+    if (([self.team1pnts count] < 2) && ([self.team2pnts count] < 2)) {
         self.noGraph.text = @"No graph available for this game.";
     }
     else{
         self.noGraph.text = @"";
+        NSLog(self.team1);
+        NSLog(self.team2);
         [self drawGraph];
     }
     
@@ -60,13 +62,25 @@
     [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.1 ) length:CPTDecimalFromFloat( 1 )]];
     
     // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
-    CPTScatterPlot* plot = [[CPTScatterPlot alloc] initWithFrame:CGRectZero];
+    CPTScatterPlot* plot1 = [[CPTScatterPlot alloc] initWithFrame:CGRectZero];
+    plot1.identifier = @"Team1";
     
     // Let's keep it simple and let this class act as datasource (therefore we implemtn <CPTPlotDataSource>)
-    plot.dataSource = self;
+    plot1.dataSource = self;
     
     // Finally, add the created plot to the default plot space of the CPTGraph object we created before
-    [graph addPlot:plot toPlotSpace:graph.defaultPlotSpace];
+    [graph addPlot:plot1 toPlotSpace:graph.defaultPlotSpace];
+    
+    // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
+    CPTScatterPlot* plot2 = [[CPTScatterPlot alloc] initWithFrame:CGRectZero];
+    plot2.identifier = @"Team2";
+    
+    // Let's keep it simple and let this class act as datasource (therefore we implemtn <CPTPlotDataSource>)
+    plot2.dataSource = self;
+    
+    // Finally, add the created plot to the default plot space of the CPTGraph object we created before
+    [graph addPlot:plot2 toPlotSpace:graph.defaultPlotSpace];
+
     
 }
 
@@ -88,7 +102,15 @@
 // This method is here because this class also functions as datasource for our graph
 // Therefore this class implements the CPTPlotDataSource protocol
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plotnumberOfRecords {
-    return 9; // Our sample graph contains 9 'points'
+    
+    if ([plotnumberOfRecords.identifier isEqual:@"Team1"] == YES) {
+        return [self.team1pnts count];
+    }
+    else
+    {
+        return [self.team2pnts count];
+    }
+    
 }
 
 // This method is here because this class also functions as datasource for our graph
@@ -97,18 +119,34 @@
 {
     // We need to provide an X or Y (this method will be called for each) value for every index
     int x = index;
-    NSArray *teamPntsData = [[self.gameData objectAtIndex:0] objectAtIndex:1];
+    //NSArray *teamPntsData = [[self.gameData objectAtIndex:0] objectAtIndex:1];
     // This method is actually called twice per point in the plot, one for the X and one for the Y value
-    NSArray *thisPntData = [teamPntsData objectAtIndex:index];
-    NSLog(@"%@",[thisPntData objectAtIndex:0]);
+    //NSArray *thisPntData = [teamPntsData objectAtIndex:index];
+    //NSLog(@"%@",[thisPntData objectAtIndex:0]);
     if(fieldEnum == CPTScatterPlotFieldX)
     {
         // Return x value, which will, depending on index, be between -4 to 4
         //NSLog(@"%@",self.gameData[0][0]);
-        return [thisPntData objectAtIndex:0] ;
+        if ([(NSString*)plot.identifier isEqualToString:@"Team1"])
+        {
+            NSLog(@"Match");
+        }
+        if ([plot.identifier isEqual:@"Team1"] == YES) {
+            return [[self.team1pnts objectAtIndex:index] objectAtIndex:0];
+        }
+        else
+        {
+            return [[self.team2pnts objectAtIndex:index] objectAtIndex:0];
+        }
     } else {
-        // Return y value, for this example we'll be plotting y = x * x
-        return [thisPntData objectAtIndex:1];
+        // Return y value, forthis example we'll be plotting y = x * x
+        if ([plot.identifier isEqual:@"Team1"] == YES) {
+            return [[self.team1pnts objectAtIndex:index] objectAtIndex:1];
+        }
+        else
+        {
+            return [[self.team2pnts objectAtIndex:index] objectAtIndex:1];
+        }
     }
 }
 
@@ -140,10 +178,15 @@
                                                 error:&error];
     
     // Construct Array around the Data from the response
-    self.gameData = [NSJSONSerialization
+    NSArray *gameData = [NSJSONSerialization
                  JSONObjectWithData:urlData
                  options:0
                  error:&error];
+    
+    self.team1 = [[gameData objectAtIndex:0] objectAtIndex:0];
+    self.team1pnts = [[gameData objectAtIndex:0] objectAtIndex:1];
+    self.team2 = [[gameData objectAtIndex:1] objectAtIndex:0];
+    self.team2pnts = [[gameData objectAtIndex:1] objectAtIndex:1];
     
 }
 
