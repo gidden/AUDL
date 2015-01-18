@@ -27,6 +27,11 @@
     
     [self drawGraph];
     
+    
+}
+
+-(void)drawGraph {
+    
     // We need a hostview, you can create one in IB (and create an outlet) or just do this:
     CPTGraphHostingView* hostView = [[CPTGraphHostingView alloc] initWithFrame:self.view.frame];
     [self.view addSubview: hostView];
@@ -50,13 +55,6 @@
     
     // Finally, add the created plot to the default plot space of the CPTGraph object we created before
     [graph addPlot:plot toPlotSpace:graph.defaultPlotSpace];
-    
-}
-
--(void)drawGraph {
-    
-    CGRect frame = [[self view] bounds];
-    frame.size.height = 200;
     
 }
 
