@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Globals.h"
+#import "CorePlot-CocoaTouch.h"
 
-@interface AUDLGameGraphViewController: UIViewController
+
+@interface AUDLGameGraphViewController: UIViewController <CPTPlotDataSource>
 
 @property (strong, nonatomic) IBOutlet UILabel *gameID;
 @property (strong, nonatomic) NSString *gID;
