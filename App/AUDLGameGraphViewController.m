@@ -32,12 +32,19 @@
 
 -(void)drawGraph {
     
+    CGRect gFrame = self.view.bounds;
+    //gFrame.size.height = 200;
+    //gFrame.origin.y += 100;
     // We need a hostview, you can create one in IB (and create an outlet) or just do this:
-    CPTGraphHostingView* hostView = [[CPTGraphHostingView alloc] initWithFrame:self.view.frame];
+    CPTGraphHostingView* hostView = [[CPTGraphHostingView alloc] initWithFrame:gFrame];
     [self.view addSubview: hostView];
     
     // Create a CPTGraph object and add to hostView
     CPTGraph* graph = [[CPTXYGraph alloc] initWithFrame:hostView.bounds];
+    graph.paddingLeft = 10.0;
+    graph.paddingTop = 50.0;
+    graph.paddingRight = 10.0;
+    graph.paddingBottom = 50.0;
     hostView.hostedGraph = graph;
     
     // Get the (default) plotspace from the graph so we can set its x/y ranges
@@ -45,7 +52,7 @@
     
     // Note that these CPTPlotRange are defined by START and LENGTH (not START and END) !!
     [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( 0 ) length:CPTDecimalFromFloat( 16 )]];
-    [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -4 ) length:CPTDecimalFromFloat( 8 )]];
+    [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.5 ) length:CPTDecimalFromFloat( 8 )]];
     
     // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
     CPTScatterPlot* plot = [[CPTScatterPlot alloc] initWithFrame:CGRectZero];
