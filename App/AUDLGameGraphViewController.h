@@ -13,7 +13,7 @@
 
 @interface AUDLGameGraphViewController: UIViewController <CPTPlotDataSource>
 
-@property (strong, nonatomic) IBOutlet UILabel *gameID;
+@property (strong, nonatomic) IBOutlet UILabel *noGraph;
 @property (strong, nonatomic) NSString *gID;
 
 @property (nonatomic, strong) NSArray *gameData;

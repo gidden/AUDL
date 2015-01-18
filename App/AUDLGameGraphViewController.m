@@ -21,12 +21,17 @@
     
     [super viewDidLoad];
     
-    self.gameID.text = self.gID;
+    //self.gameID.text = self.gID;
     
     [self gameDataRequest];
     
-    [self drawGraph];
-    
+    if ([self.gameData count] < 2) {
+        self.noGraph.text = @"No graph available for this game.";
+    }
+    else{
+        self.noGraph.text = @"";
+        [self drawGraph];
+    }
     
 }
 
@@ -52,7 +57,7 @@
     
     // Note that these CPTPlotRange are defined by START and LENGTH (not START and END) !!
     [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( 0 ) length:CPTDecimalFromFloat( 16 )]];
-    [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.5 ) length:CPTDecimalFromFloat( 8 )]];
+    [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.1 ) length:CPTDecimalFromFloat( 1 )]];
     
     // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
     CPTScatterPlot* plot = [[CPTScatterPlot alloc] initWithFrame:CGRectZero];
@@ -91,16 +96,19 @@
 -(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
     // We need to provide an X or Y (this method will be called for each) value for every index
-    int x = index - 4;
-    
+    int x = index;
+    NSArray *teamPntsData = [[self.gameData objectAtIndex:0] objectAtIndex:1];
     // This method is actually called twice per point in the plot, one for the X and one for the Y value
+    NSArray *thisPntData = [teamPntsData objectAtIndex:index];
+    NSLog(@"%@",[thisPntData objectAtIndex:0]);
     if(fieldEnum == CPTScatterPlotFieldX)
     {
         // Return x value, which will, depending on index, be between -4 to 4
-        return [NSNumber numberWithInt: x];
+        //NSLog(@"%@",self.gameData[0][0]);
+        return [thisPntData objectAtIndex:0] ;
     } else {
         // Return y value, for this example we'll be plotting y = x * x
-        return [NSNumber numberWithInt: x * x];
+        return [thisPntData objectAtIndex:1];
     }
 }
 
@@ -108,10 +116,11 @@
 {
     
     // Prepare the link that is going to be used on the GET request
-    NSString *path = @"/Game";
+    NSString *path = @"/Game/";
     path = [path stringByAppendingString:self.gID];
     path = [path stringByAppendingString:@"/graph"];
     NSString *full_url = [server_url stringByAppendingString: path];
+    NSLog(full_url);
     NSURL * url = [[NSURL alloc] initWithString:full_url];
     
     // Prepare the request object
@@ -135,6 +144,7 @@
                  JSONObjectWithData:urlData
                  options:0
                  error:&error];
+    
 }
 
 @end
