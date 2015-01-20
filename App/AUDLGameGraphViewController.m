@@ -20,8 +20,9 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
-    
-    //self.gameID.text = self.gID;
+//    self.graphBounds = self.view.bounds;
+//    NSLog(@"viewDidLoad bounds = %@", NSStringFromCGRect(self.graphBounds));
+//    //self.gameID.text = self.gID;
     
     [self gameDataRequest];
     
@@ -30,27 +31,40 @@
     }
     else{
         self.noGraph.text = @"";
+    }
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    self.graphBounds = self.view.bounds;
+    if (([self.team1pnts count] > 2) && ([self.team2pnts count] > 2)) {
+    
         NSLog(self.team1);
         NSLog(self.team2);
         [self drawGraph];
+
     }
+
     
 }
-
 -(void)drawGraph {
     
     CGRect gFrame = self.view.bounds;
+    self.graphBounds = CGRectMake(0, 0, 1024, 748);
+    NSLog(@"bounds = %@", NSStringFromCGRect(self.graphBounds));
+
     //gFrame.size.height = 200;
     //gFrame.origin.y += 100;
     // We need a hostview, you can create one in IB (and create an outlet) or just do this:
-    CPTGraphHostingView* hostView = [[CPTGraphHostingView alloc] initWithFrame:gFrame];
+    CPTGraphHostingView* hostView = [[CPTGraphHostingView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview: hostView];
     
     // Create a CPTGraph object and add to hostView
-    CPTGraph* graph = [[CPTXYGraph alloc] initWithFrame:hostView.bounds];
-    graph.paddingLeft = 10.0;
-    graph.paddingTop = 50.0;
-    graph.paddingRight = 10.0;
+    CPTGraph* graph = [[CPTXYGraph alloc] init];
+    graph.paddingLeft = 15.0;
+    graph.paddingTop = 80.0;
+    graph.paddingRight = 50.0;
     graph.paddingBottom = 50.0;
     hostView.hostedGraph = graph;
     
@@ -58,23 +72,39 @@
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
     
     // Note that these CPTPlotRange are defined by START and LENGTH (not START and END) !!
-    [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( 0 ) length:CPTDecimalFromFloat( 16 )]];
-    [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.1 ) length:CPTDecimalFromFloat( 1 )]];
+    float ymax = ([self.team1pnts count ] > [self.team2pnts count]) ?
+        (float)[self.team1pnts count] : (float)[self.team2pnts count];
+    
+    //Setup plot maxes/mins
+    [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.1 ) length:CPTDecimalFromFloat( ymax )]];
+    [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.15 ) length:CPTDecimalFromFloat( 1.2 )]];
+    
+    //Setup axis tic formatting
+    CPTXYAxisSet *axSet = (CPTXYAxisSet*) graph.axisSet;
+    
+    CPTXYAxis *x = axSet.xAxis;
+    x.majorIntervalLength = CPTDecimalFromFloat(1);
+    x.minorTicksPerInterval = 1;
+    x.borderWidth = 0;
+    
+    CPTXYAxis *y = axSet.yAxis;
+    y.majorIntervalLength = CPTDecimalFromFloat(5);
+    y.minorTicksPerInterval = 5;
+    //.y.borderWidth = 0;
     
     // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
-    CPTScatterPlot* plot1 = [[CPTScatterPlot alloc] initWithFrame:CGRectZero];
+    CPTScatterPlot* plot1 = [[CPTScatterPlot alloc] initWithFrame:self.view.bounds];
     plot1.identifier = @"Team1";
     CPTMutableLineStyle *ls = [CPTMutableLineStyle lineStyle];
-    ls.lineWidth = 3.f;
+    ls.lineWidth = 2.f;
     ls.lineColor = [CPTColor redColor];
     plot1.dataLineStyle = ls;
     
     CPTPlotSymbol *ps = [CPTPlotSymbol ellipsePlotSymbol];
-    ps.size = CGSizeMake(10,10);
+    ps.size = CGSizeMake(5,5);
     ps.lineStyle = ls;
+    ps.fill = [CPTFill fillWithColor:[CPTColor redColor]];
     plot1.plotSymbol = ps;
-    
-    
     
     // Let's keep it simple and let this class act as datasource (therefore we implemtn <CPTPlotDataSource>)
     plot1.dataSource = self;
@@ -83,13 +113,15 @@
     [graph addPlot:plot1 toPlotSpace:graph.defaultPlotSpace];
     
     // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
-    CPTScatterPlot* plot2 = [[CPTScatterPlot alloc] initWithFrame:CGRectZero];
+    
+    CPTScatterPlot* plot2 = [[CPTScatterPlot alloc] initWithFrame:self.view.bounds];
     plot2.identifier = @"Team2";
     ls.lineColor = [CPTColor blueColor];
     plot2.dataLineStyle = ls;
     ps.lineStyle = ls;
-    plot2.plotSymbol = ps;
     
+    ps.fill = [CPTFill fillWithColor:[CPTColor blueColor]];
+    plot2.plotSymbol = ps;
     
     // Let's keep it simple and let this class act as datasource (therefore we implemtn <CPTPlotDataSource>)
     plot2.dataSource = self;

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Reveal View Controller-->
@@ -10,8 +11,8 @@
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="mPP-pe-kBu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qej-zO-mJ7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="SWRevealView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -25,7 +26,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-540" y="124"/>
+            <point key="canvasLocation" x="-540" y="123.99999999999999"/>
         </scene>
         <!--Sidebar-->
         <scene sceneID="5ZB-bN-Nvy">
@@ -43,13 +44,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AUDL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDL-4G-CMR">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUDL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDL-4G-CMR">
                                             <rect key="frame" x="30" y="11" width="51" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="51" id="5B6-oD-EN0"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pDL-4G-CMR" firstAttribute="bottom" secondItem="y30-wh-0zS" secondAttribute="bottomMargin" id="dSP-vT-eFu"/>
+                                        <constraint firstItem="pDL-4G-CMR" firstAttribute="leading" secondItem="y30-wh-0zS" secondAttribute="leadingMargin" constant="22" id="sK3-Gj-8WB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="home" id="SG1-AU-f5T">
@@ -59,13 +67,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhk-mZ-us7">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhk-mZ-us7">
                                             <rect key="frame" x="45" y="11" width="46" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="7e3-2b-5NB"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hhk-mZ-us7" firstAttribute="leading" secondItem="5Wh-pH-Y2e" secondAttribute="leadingMargin" constant="37" id="dGR-PB-VzU"/>
+                                        <constraint firstItem="hhk-mZ-us7" firstAttribute="bottom" secondItem="5Wh-pH-Y2e" secondAttribute="bottomMargin" id="nvh-Q0-obh"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="tNa-Rx-eud" kind="custom" customClass="SWRevealViewControllerSegue" id="HSl-AU-4yY"/>
@@ -78,13 +93,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="News" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBX-jZ-O4C">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBX-jZ-O4C">
                                             <rect key="frame" x="45" y="11" width="44" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="XLf-2o-47x"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="uBX-jZ-O4C" firstAttribute="leading" secondItem="N3j-w7-PMk" secondAttribute="leadingMargin" constant="37" id="UwG-aD-Pv7"/>
+                                        <constraint firstItem="uBX-jZ-O4C" firstAttribute="bottom" secondItem="N3j-w7-PMk" secondAttribute="bottomMargin" id="ucX-vX-BUD"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="ncx-yl-juI" kind="custom" customClass="SWRevealViewControllerSegue" id="K6t-2T-vAp"/>
@@ -97,13 +119,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Statistics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZw-6C-whO">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statistics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZw-6C-whO">
                                             <rect key="frame" x="45" y="11" width="71" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="71" id="dxC-pp-PTe"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SZw-6C-whO" firstAttribute="bottom" secondItem="dTx-O9-3PI" secondAttribute="bottomMargin" id="PF9-Z3-WO3"/>
+                                        <constraint firstItem="SZw-6C-whO" firstAttribute="leading" secondItem="dTx-O9-3PI" secondAttribute="leadingMargin" constant="37" id="Vjz-y0-OVZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="jXI-Qk-iGk" kind="custom" customClass="SWRevealViewControllerSegue" id="VHz-lz-6l8"/>
@@ -116,13 +145,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4N-bF-xy6">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4N-bF-xy6">
                                             <rect key="frame" x="45" y="11" width="50" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="dA7-j7-sOQ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="D4N-bF-xy6" firstAttribute="bottom" secondItem="f99-1U-7rT" secondAttribute="bottomMargin" id="5gq-u5-Ijg"/>
+                                        <constraint firstItem="D4N-bF-xy6" firstAttribute="leading" secondItem="f99-1U-7rT" secondAttribute="leadingMargin" constant="37" id="woA-Za-77p"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="7Vv-Hs-o4D" kind="custom" customClass="SWRevealViewControllerSegue" id="dlu-GT-xaJ"/>
@@ -135,13 +171,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Schedule" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWj-tt-sps">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWj-tt-sps">
                                             <rect key="frame" x="45" y="11" width="72" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="72" id="ofN-Jc-s3w"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JWj-tt-sps" firstAttribute="leading" secondItem="h1E-Pp-pKV" secondAttribute="leadingMargin" constant="37" id="CPp-lm-DLk"/>
+                                        <constraint firstItem="JWj-tt-sps" firstAttribute="bottom" secondItem="h1E-Pp-pKV" secondAttribute="bottomMargin" id="HrV-u3-tYP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="T48-Wm-db9" kind="custom" customClass="SWRevealViewControllerSegue" id="ADt-Jf-fHm"/>
@@ -154,13 +197,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Now" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiK-Xy-zkN">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiK-Xy-zkN">
                                             <rect key="frame" x="45" y="11" width="36" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="36" id="GcP-jR-kHj"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TiK-Xy-zkN" firstAttribute="leading" secondItem="3rQ-ZH-RWz" secondAttribute="leadingMargin" constant="37" id="Msy-kF-CRc"/>
+                                        <constraint firstItem="TiK-Xy-zkN" firstAttribute="bottom" secondItem="3rQ-ZH-RWz" secondAttribute="bottomMargin" id="mFe-h2-jmJ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="JfY-h4-ngk" kind="custom" customClass="SWRevealViewControllerSegue" id="f3c-LA-r42"/>
@@ -173,13 +223,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Standings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gk2-yZ-4df">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gk2-yZ-4df">
                                             <rect key="frame" x="45" y="11" width="78" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="78" id="8S2-EI-yJP"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gk2-yZ-4df" firstAttribute="bottom" secondItem="W4Y-qY-hFE" secondAttribute="bottomMargin" id="6Xj-wN-uJq"/>
+                                        <constraint firstItem="gk2-yZ-4df" firstAttribute="leading" secondItem="W4Y-qY-hFE" secondAttribute="leadingMargin" constant="37" id="Kba-O9-80g"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="3zQ-6X-c1E" kind="custom" customClass="SWRevealViewControllerSegue" id="bCZ-G4-tAt"/>
@@ -192,13 +249,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGF-Ll-aSe">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGF-Ll-aSe">
                                             <rect key="frame" x="44" y="11" width="63" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="63" id="QEf-nU-jd0"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pGF-Ll-aSe" firstAttribute="bottom" secondItem="525-n7-0ar" secondAttribute="bottomMargin" id="5Bp-70-Vle"/>
+                                        <constraint firstItem="pGF-Ll-aSe" firstAttribute="leading" secondItem="525-n7-0ar" secondAttribute="leadingMargin" constant="36" id="qJE-68-5Wq"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="h6c-nC-v23" kind="custom" customClass="SWRevealViewControllerSegue" id="u1M-TC-rJZ"/>
@@ -211,13 +275,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s25-ut-7qf">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s25-ut-7qf">
                                             <rect key="frame" x="45" y="11" width="44" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="ajC-ec-zad"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="s25-ut-7qf" firstAttribute="leading" secondItem="LSk-j5-y1R" secondAttribute="leadingMargin" constant="37" id="UWD-b5-2eo"/>
+                                        <constraint firstItem="s25-ut-7qf" firstAttribute="bottom" secondItem="LSk-j5-y1R" secondAttribute="bottomMargin" id="zek-ph-lob"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="n1p-2d-XnR" kind="custom" customClass="SWRevealViewControllerSegue" id="3dE-FG-gOt"/>
@@ -230,13 +301,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scores" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="su2-Ma-YfR">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scores" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="su2-Ma-YfR">
                                             <rect key="frame" x="45" y="11" width="55" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="55" id="fzu-v8-1oe"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="su2-Ma-YfR" firstAttribute="leading" secondItem="I5G-PA-XXt" secondAttribute="leadingMargin" constant="37" id="LBN-mT-tCZ"/>
+                                        <constraint firstItem="su2-Ma-YfR" firstAttribute="bottom" secondItem="I5G-PA-XXt" secondAttribute="bottomMargin" id="QHK-aY-hWX"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="0K4-iS-1dj" kind="custom" customClass="SWRevealViewControllerSegue" id="hIE-PX-Uyk"/>
@@ -251,7 +329,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WiA-HB-QxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59" y="-256"/>
+            <point key="canvasLocation" x="59" y="-255.99999999999997"/>
         </scene>
         <!--News Table View Controller-->
         <scene sceneID="40t-d4-icd">
@@ -267,7 +345,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7KA-O0-jUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="725" y="-256"/>
+            <point key="canvasLocation" x="725" y="-255.99999999999997"/>
         </scene>
         <!--AUDL-->
         <scene sceneID="c7o-tB-BnY">
@@ -314,7 +392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8p-ll-3Ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="-1901"/>
+            <point key="canvasLocation" x="1791" y="-1900.9999999999998"/>
         </scene>
         <!--Scores Table View Controller-->
         <scene sceneID="G7z-Rw-22n">
@@ -327,11 +405,32 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="sideBarButton" destination="q3b-4s-CDw" id="QBJ-WL-fsh"/>
+                        <segue destination="gqV-Uq-RsR" kind="push" id="kgw-IQ-EuD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2QI-nX-ax5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2422" y="-1888"/>
+            <point key="canvasLocation" x="2422" y="-1887.9999999999998"/>
+        </scene>
+        <!--Game Graph View Controller-->
+        <scene sceneID="cGp-3G-Dnc">
+            <objects>
+                <viewController id="gqV-Uq-RsR" customClass="AUDLGameGraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xZG-Vd-iSn"/>
+                        <viewControllerLayoutGuide type="bottom" id="CCi-Al-ZlZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UXJ-nT-0Kp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LEQ-4k-5cz"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="llo-Yh-tIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3082" y="-1817"/>
         </scene>
         <!--Teams Table View Controller-->
         <scene sceneID="czx-bR-dw8">
@@ -349,7 +448,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50J-Ib-nU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="617" y="-1901"/>
+            <point key="canvasLocation" x="617" y="-1900.9999999999998"/>
         </scene>
         <!--Standings Table View Controller-->
         <scene sceneID="f2O-Hw-opx">
@@ -388,20 +487,24 @@
             <objects>
                 <viewController id="tNa-Rx-eud" customClass="AUDLMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OWk-pX-EIU"/>
-                        <viewControllerLayoutGuide type="bottom" id="bD9-OS-KH1"/>
+                        <viewControllerLayoutGuide type="top" id="DsF-ta-LEB"/>
+                        <viewControllerLayoutGuide type="bottom" id="VHZ-AM-yns"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BfL-xY-5Gb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to the AUDL app!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5z-j7-Eey">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the AUDL app!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5z-j7-Eey">
                                 <rect key="frame" x="61" y="191" width="209" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s5z-j7-Eey" firstAttribute="top" secondItem="DsF-ta-LEB" secondAttribute="bottom" constant="171" id="h4I-sf-IS3"/>
+                            <constraint firstItem="s5z-j7-Eey" firstAttribute="leading" secondItem="BfL-xY-5Gb" secondAttribute="leadingMargin" constant="45" id="lbi-ao-A5O"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="emm-xn-rbN">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="z2r-H3-TbP"/>
@@ -463,7 +566,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVf-LF-cjk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1251" y="-256"/>
+            <point key="canvasLocation" x="1251" y="-255.99999999999997"/>
         </scene>
         <!--Video Table View Controller-->
         <scene sceneID="W6S-cp-vDM">
