@@ -64,7 +64,7 @@
     CPTGraph* graph = [[CPTXYGraph alloc] init];
     graph.paddingLeft = 15.0;
     graph.paddingTop = 80.0;
-    graph.paddingRight = 50.0;
+    graph.paddingRight = 20.0;
     graph.paddingBottom = 50.0;
     hostView.hostedGraph = graph;
     
@@ -76,8 +76,8 @@
         (float)[self.team1pnts count] : (float)[self.team2pnts count];
     
     //Setup plot maxes/mins
-    [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.1 ) length:CPTDecimalFromFloat( ymax )]];
-    [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.15 ) length:CPTDecimalFromFloat( 1.2 )]];
+    [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.15 ) length:CPTDecimalFromFloat( ymax )]];
+    [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.15 ) length:CPTDecimalFromFloat( 1.25 )]];
     
     //Setup axis tic formatting
     CPTXYAxisSet *axSet = (CPTXYAxisSet*) graph.axisSet;
@@ -95,6 +95,7 @@
     // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
     CPTScatterPlot* plot1 = [[CPTScatterPlot alloc] initWithFrame:self.view.bounds];
     plot1.identifier = @"Team1";
+    plot1.title = self.team1;
     CPTMutableLineStyle *ls = [CPTMutableLineStyle lineStyle];
     ls.lineWidth = 2.f;
     ls.lineColor = [CPTColor redColor];
@@ -116,6 +117,7 @@
     
     CPTScatterPlot* plot2 = [[CPTScatterPlot alloc] initWithFrame:self.view.bounds];
     plot2.identifier = @"Team2";
+    plot2.title = self.team2;
     ls.lineColor = [CPTColor blueColor];
     plot2.dataLineStyle = ls;
     ps.lineStyle = ls;
@@ -126,8 +128,16 @@
     // Let's keep it simple and let this class act as datasource (therefore we implemtn <CPTPlotDataSource>)
     plot2.dataSource = self;
     
+    
     // Finally, add the created plot to the default plot space of the CPTGraph object we created before
     [graph addPlot:plot2 toPlotSpace:graph.defaultPlotSpace];
+
+    //setup the legend for the graph
+    graph.legend = [CPTLegend legendWithGraph:graph];
+    graph.legend.fill = [CPTFill fillWithColor:[CPTColor whiteColor] ];
+    graph.legend.cornerRadius = 5;
+    //graph.legendAnchor = CPTRectAnchorTop;
+    graph.legendDisplacement = CGPointMake( 0, 4.0);
 
     
 }
