@@ -64,6 +64,17 @@
     // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
     CPTScatterPlot* plot1 = [[CPTScatterPlot alloc] initWithFrame:CGRectZero];
     plot1.identifier = @"Team1";
+    CPTMutableLineStyle *ls = [CPTMutableLineStyle lineStyle];
+    ls.lineWidth = 3.f;
+    ls.lineColor = [CPTColor redColor];
+    plot1.dataLineStyle = ls;
+    
+    CPTPlotSymbol *ps = [CPTPlotSymbol ellipsePlotSymbol];
+    ps.size = CGSizeMake(10,10);
+    ps.lineStyle = ls;
+    plot1.plotSymbol = ps;
+    
+    
     
     // Let's keep it simple and let this class act as datasource (therefore we implemtn <CPTPlotDataSource>)
     plot1.dataSource = self;
@@ -74,6 +85,11 @@
     // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
     CPTScatterPlot* plot2 = [[CPTScatterPlot alloc] initWithFrame:CGRectZero];
     plot2.identifier = @"Team2";
+    ls.lineColor = [CPTColor blueColor];
+    plot2.dataLineStyle = ls;
+    ps.lineStyle = ls;
+    plot2.plotSymbol = ps;
+    
     
     // Let's keep it simple and let this class act as datasource (therefore we implemtn <CPTPlotDataSource>)
     plot2.dataSource = self;
@@ -127,10 +143,6 @@
     {
         // Return x value, which will, depending on index, be between -4 to 4
         //NSLog(@"%@",self.gameData[0][0]);
-        if ([(NSString*)plot.identifier isEqualToString:@"Team1"])
-        {
-            NSLog(@"Match");
-        }
         if ([plot.identifier isEqual:@"Team1"] == YES) {
             return [[self.team1pnts objectAtIndex:index] objectAtIndex:0];
         }
