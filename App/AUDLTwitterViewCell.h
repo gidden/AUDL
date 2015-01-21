@@ -12,8 +12,7 @@
 
 @property (weak
            , nonatomic) IBOutlet UILabel *feedText;
-@property (weak, nonatomic) IBOutlet UIImageView *twitterIcon;
 
-@property (weak, nonatomic) IBOutlet UIImageView *AUDLIcon;
+@property (weak, nonatomic) NSString *tweetLink;
 
 @end

@@ -40,7 +40,6 @@
     // Do any additional setup after loading the view from its nib.
     //change color of button
     _sidebarButton.tintColor = [UIColor colorWithRed:0 green:122.0/225.0 blue:1.0 alpha:1.0];
-    
     //set side bar button acton. when tapped, sidebar appears
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
@@ -48,28 +47,41 @@
     //set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
    
-    STTwitterAPI *twitter = [STTwitterAPI twitterAPIAppOnlyWithConsumerKey:@"3egMgWgj6UXp7N3eh9VP5Q" consumerSecret:@"BoWTmMYa8CL2mDxNS7mAYcDHWJ5o5ah7ndqvpsaFA"];
-    
-    //register with the view cell class
-    [self.tableView registerNib:[UINib nibWithNibName:@"AUDLTwitterViewCell" bundle:nil] forCellReuseIdentifier:@"TwitterCellID"];
-    self.tableView.rowHeight = 120;
+//  STTwitterAPI *twitter = [STTwitterAPI twitterAPIAppOnlyWithConsumerKey:@"3egMgWgj6UXp7N3eh9VP5Q" consumerSecret:@"BoWTmMYa8CL2mDxNS7mAYcDHWJ5o5ah7ndqvpsaFA"];
 
-    
-    [twitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
-        [twitter getUserTimelineWithScreenName:@"theAUDL" successBlock:^(NSArray *statuses){
-            self.twitterFeed = [NSMutableArray arrayWithArray:statuses];
-            
-            [self.tableView reloadData];
-        } errorBlock:^(NSError *error){
-            NSLog(@"%@", error.debugDescription);
-        }];
-    }
-    
-errorBlock:^(NSError *error){
-    NSLog(@"%@", error.debugDescription);
-}];
+    //register with the view cell class
+//    [self.tableView registerNib:[UINib nibWithNibName:@"AUDLTwitterViewCell" bundle:nil] forCellReuseIdentifier:@"TwitterCellID"];
+//    self.tableView.rowHeight = 120;
+//
+//    
+//    [twitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
+//        [twitter getUserTimelineWithScreenName:@"theAUDL" successBlock:^(NSArray *statuses){
+//            self.twitterFeed = [NSMutableArray arrayWithArray:statuses];
+//            
+//            [self.tableView reloadData];
+//        } errorBlock:^(NSError *error){
+//            NSLog(@"%@", error.debugDescription);
+//        }];
+//    }
+//    
+//errorBlock:^(NSError *error){
+//    NSLog(@"%@", error.debugDescription);
+//}];
 
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    UIWebView *webView = [[UIWebView alloc] init];
+    [webView setFrame:self.view.bounds];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://mobile.twitter.com/theaudl"]]];
+    
+    [[self view] addSubview:webView];
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
