@@ -207,8 +207,9 @@
     
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
-                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                                            timeoutInterval:30];
+                                cachePolicy:
+                                NSURLRequestReloadIgnoringLocalCacheData
+                                timeoutInterval: 30];
     
     // Prepare the variables for the JSON response
     NSData *urlData;
