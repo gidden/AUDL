@@ -10,10 +10,10 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 
-@interface AUDLNowViewController : UITableViewController
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@interface AUDLNowViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
-
+@property (strong,nonatomic) UIWebView *webView;
 
 @end
