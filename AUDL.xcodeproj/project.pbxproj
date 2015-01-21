@@ -57,6 +57,9 @@
 		CD16C90F1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD16C90E1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib */; };
 		CD16C9121A654D1400AC24E9 /* AUDLTwitterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD16C9111A654D1400AC24E9 /* AUDLTwitterViewCell.m */; };
 		CD32C1571A6A36FC00E75E6B /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32C1541A6A368500E75E6B /* libCorePlot-CocoaTouch.a */; };
+		CD659C4D1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD659C4C1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m */; };
+		CD659C511A6F45ED00B5EDB9 /* AUDLNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD659C501A6F45ED00B5EDB9 /* AUDLNewsTableViewCell.xib */; };
+		CD659C531A6F68C200B5EDB9 /* news_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD659C521A6F68C200B5EDB9 /* news_icon.png */; };
 		CD8C22C11A6B573C00A719F9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8C22C01A6B573C00A719F9 /* Accelerate.framework */; };
 		CD8C22C51A6B574200A719F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8C22C41A6B574200A719F9 /* QuartzCore.framework */; };
 		CD8FD7C71A6620AB00572CE6 /* Twitter_bird_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */; };
@@ -195,6 +198,10 @@
 		CD16C9101A654D0700AC24E9 /* AUDLTwitterViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLTwitterViewCell.h; sourceTree = "<group>"; };
 		CD16C9111A654D1400AC24E9 /* AUDLTwitterViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTwitterViewCell.m; sourceTree = "<group>"; };
 		CD32C14D1A6A368500E75E6B /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../core-plot/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
+		CD659C4B1A6F447900B5EDB9 /* AUDLNewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLNewsTableViewCell.h; sourceTree = "<group>"; };
+		CD659C4C1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLNewsTableViewCell.m; sourceTree = "<group>"; };
+		CD659C501A6F45ED00B5EDB9 /* AUDLNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLNewsTableViewCell.xib; sourceTree = "<group>"; };
+		CD659C521A6F68C200B5EDB9 /* news_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = news_icon.png; path = App/news_icon.png; sourceTree = "<group>"; };
 		CD8C22C01A6B573C00A719F9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		CD8C22C41A6B574200A719F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter_bird_logo.png; sourceTree = "<group>"; };
@@ -342,6 +349,7 @@
 				CD32C14D1A6A368500E75E6B /* CorePlot-CocoaTouch.xcodeproj */,
 				CD8FD8831A662E7C00572CE6 /* Launch Screen.xib */,
 				CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */,
+				CD659C521A6F68C200B5EDB9 /* news_icon.png */,
 				CD9132EF1A5F64CE0096A08E /* Globals.h */,
 				72C124F71904585C00BAEC46 /* TeamViewController.h */,
 				72C124F81904585C00BAEC46 /* TeamViewController.m */,
@@ -543,6 +551,7 @@
 				72F4DB0318DB36C700E571FC /* AUDLNewsTableViewController.h */,
 				72F4DB0418DB36C700E571FC /* AUDLNewsTableViewController.m */,
 				72F4DB0518DB36C700E571FC /* AUDLNewsTableViewController.xib */,
+				CD659C481A6F445100B5EDB9 /* NewsTableViewCell */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -563,6 +572,16 @@
 				CD32C1541A6A368500E75E6B /* libCorePlot-CocoaTouch.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CD659C481A6F445100B5EDB9 /* NewsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CD659C4B1A6F447900B5EDB9 /* AUDLNewsTableViewCell.h */,
+				CD659C4C1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m */,
+				CD659C501A6F45ED00B5EDB9 /* AUDLNewsTableViewCell.xib */,
+			);
+			name = NewsTableViewCell;
 			sourceTree = "<group>";
 		};
 		CDF89A831A6806BC00382B6D /* Game Graph */ = {
@@ -842,6 +861,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD659C531A6F68C200B5EDB9 /* news_icon.png in Resources */,
 				CD8FD7C71A6620AB00572CE6 /* Twitter_bird_logo.png in Resources */,
 				72C7F1811903347200D7C49B /* AUDLTop5TableViewCell.xib in Resources */,
 				E9D674BF18DE019100712370 /* AUDLVideoViewController.xib in Resources */,
@@ -866,6 +886,7 @@
 				E9D674D218DE022B00712370 /* AUDLNowViewController.xib in Resources */,
 				72255C1C18F61D52001E6937 /* AUDLScheduleTableViewCell.xib in Resources */,
 				72255C2218F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib in Resources */,
+				CD659C511A6F45ED00B5EDB9 /* AUDLNewsTableViewCell.xib in Resources */,
 				72C7F1781901AC9900D7C49B /* AUDLRosterTableViewController.xib in Resources */,
 				721F682418EF3C260019EFB9 /* Default@2x.png in Resources */,
 				72C124FE190459B500BAEC46 /* AUDLTeamScheduleTableViewController.xib in Resources */,
@@ -915,6 +936,7 @@
 				72C1250819046FF400BAEC46 /* AUDLTeamStatsTableViewCell.m in Sources */,
 				72255C1B18F61D52001E6937 /* AUDLScheduleTableViewCell.m in Sources */,
 				E9A421801904384000F26D69 /* STTwitterOSRequest.m in Sources */,
+				CD659C4D1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m in Sources */,
 				72C124FD190459B500BAEC46 /* AUDLTeamScheduleTableViewController.m in Sources */,
 				727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */,
 				E9D674D718DE025C00712370 /* AUDLStandingsViewController.m in Sources */,

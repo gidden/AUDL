@@ -8,7 +8,7 @@
 
 #import "AUDLNewsTableViewController.h"
 #import "SWRevealViewController.h"
-#import "AUDLTableViewCell.h"
+#import "AUDLNewsTableViewCell.h"
 #import "AUDLAppDelegate.h"
 #import "Globals.h"
 
@@ -46,6 +46,10 @@
     // Get news items from the server
     [self newsItemsRequest];
     
+    //register with the view cell class
+    [self.tableView registerNib:[UINib nibWithNibName:@"AUDLNewsTableViewCell" bundle:nil] forCellReuseIdentifier:@"NewsCell"];
+    self.tableView.rowHeight = 120;
+
     // Add a gesture recognizer to the table view for the cell selection
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
     [self.view addGestureRecognizer:gesture];
@@ -89,16 +93,16 @@
 {
     // "+1" is to start at first story, not the header
     NSArray *thisNewsItem = [self.newsItems objectAtIndex:indexPath.row+1];
-
-    NSString *cellIdentifier = [thisNewsItem objectAtIndex:0];
+    NSString *cellIdentifier = @"NewsCell";
+    NSString *cellText = [thisNewsItem objectAtIndex:0];
     NSString *cellLink = [thisNewsItem objectAtIndex:1];
-    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    AUDLNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[AUDLNewsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
+    //cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
     
     // for now, use the AUDL logo as the news thumbnail
     cell.imageView.image = [UIImage imageNamed:@"audl-30px.png"];
@@ -108,8 +112,9 @@
     //NSDictionary *tempDict = appDelegate.icons;
     
     //cell.imageView.image = [tempDict objectForKey:@"5182111044599808"];
-    
-    
+    cell.artTitle.text = cellText;
+    //[cell setArticleTitle:cellIdentifier];
+    //NSLog(@"%@",cell.articleTitle);
     [cell setLink:cellLink];
 
     return cell;
@@ -214,7 +219,7 @@
         UITableViewCell* tappedCell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
         
         // pointer to the cell that was selected
-        AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
+        AUDLNewsTableViewCell* selectedCell = (AUDLNewsTableViewCell*)tappedCell;
     
         // opens the selected cell's url in Safari
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.link]];
