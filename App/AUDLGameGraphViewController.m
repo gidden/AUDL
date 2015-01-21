@@ -20,12 +20,11 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
-//    self.graphBounds = self.view.bounds;
-//    NSLog(@"viewDidLoad bounds = %@", NSStringFromCGRect(self.graphBounds));
-//    //self.gameID.text = self.gID;
     
+    // Get the gameData from the AUDL server
     [self gameDataRequest];
     
+    //Set the view label according to graph data availability
     if (([self.team1pnts count] < 2) && ([self.team2pnts count] < 2)) {
         self.noGraph.text = @"No graph available for this game.";
     }
@@ -37,11 +36,10 @@
 -(void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
-    self.graphBounds = self.view.bounds;
+
+    //load the graph if sufficient data is available
     if (([self.team1pnts count] > 2) && ([self.team2pnts count] > 2)) {
     
-        NSLog(self.team1);
-        NSLog(self.team2);
         [self drawGraph];
 
     }
@@ -50,13 +48,7 @@
 }
 -(void)drawGraph {
     
-    CGRect gFrame = self.view.bounds;
-    self.graphBounds = CGRectMake(0, 0, 1024, 748);
-    NSLog(@"bounds = %@", NSStringFromCGRect(self.graphBounds));
-
-    //gFrame.size.height = 200;
-    //gFrame.origin.y += 100;
-    // We need a hostview, you can create one in IB (and create an outlet) or just do this:
+    
     CPTGraphHostingView* hostView = [[CPTGraphHostingView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview: hostView];
     
@@ -71,13 +63,12 @@
     // Get the (default) plotspace from the graph so we can set its x/y ranges
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
     
-    // Note that these CPTPlotRange are defined by START and LENGTH (not START and END) !!
     float ymax = ([self.team1pnts count ] > [self.team2pnts count]) ?
         (float)[self.team1pnts count] : (float)[self.team2pnts count];
-    
     //Setup plot maxes/mins
     [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.15 ) length:CPTDecimalFromFloat( ymax )]];
     [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -0.15 ) length:CPTDecimalFromFloat( 1.25 )]];
+    // Note that these CPTPlotRange are defined by START and LENGTH (not START and END)
     
     //Setup axis tic formatting
     CPTXYAxisSet *axSet = (CPTXYAxisSet*) graph.axisSet;
@@ -95,12 +86,15 @@
     // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
     CPTScatterPlot* plot1 = [[CPTScatterPlot alloc] initWithFrame:self.view.bounds];
     plot1.identifier = @"Team1";
+    // set plot title to the first team name
     plot1.title = self.team1;
+    // setup the linestyle with a red color for the first team
     CPTMutableLineStyle *ls = [CPTMutableLineStyle lineStyle];
     ls.lineWidth = 2.f;
     ls.lineColor = [CPTColor redColor];
     plot1.dataLineStyle = ls;
     
+    // setup markers for the plot (red for the first team)
     CPTPlotSymbol *ps = [CPTPlotSymbol ellipsePlotSymbol];
     ps.size = CGSizeMake(5,5);
     ps.lineStyle = ls;
@@ -110,54 +104,50 @@
     // Let's keep it simple and let this class act as datasource (therefore we implemtn <CPTPlotDataSource>)
     plot1.dataSource = self;
     
-    // Finally, add the created plot to the default plot space of the CPTGraph object we created before
+    // add the first plot to our graph view
     [graph addPlot:plot1 toPlotSpace:graph.defaultPlotSpace];
     
     // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
     
     CPTScatterPlot* plot2 = [[CPTScatterPlot alloc] initWithFrame:self.view.bounds];
     plot2.identifier = @"Team2";
+    // set the second team name to the plot title
     plot2.title = self.team2;
+    //change line color to blue for the second team
     ls.lineColor = [CPTColor blueColor];
     plot2.dataLineStyle = ls;
     ps.lineStyle = ls;
-    
+    // set the markers to blue for the second team
     ps.fill = [CPTFill fillWithColor:[CPTColor blueColor]];
     plot2.plotSymbol = ps;
     
-    // Let's keep it simple and let this class act as datasource (therefore we implemtn <CPTPlotDataSource>)
+    // add this view controller as the data source for the plot
     plot2.dataSource = self;
     
-    
-    // Finally, add the created plot to the default plot space of the CPTGraph object we created before
+    // now add the plot for the second team to this graph view
     [graph addPlot:plot2 toPlotSpace:graph.defaultPlotSpace];
 
     //setup the legend for the graph
     graph.legend = [CPTLegend legendWithGraph:graph];
     graph.legend.fill = [CPTFill fillWithColor:[CPTColor whiteColor] ];
     graph.legend.cornerRadius = 5;
-    //graph.legendAnchor = CPTRectAnchorTop;
-    graph.legendDisplacement = CGPointMake( 0, 4.0);
+    graph.legendDisplacement = CGPointMake(0, 4.0);
 
     
 }
 
-- (id)initWithID:(NSString *) ID
+- (id)initWithGameID:(NSString *) ID
 {
     self = [super init];
+    // set the graphView's game id value
     if (self) {
-        // Custom initialization
         self.gID = ID;
     }
-    
-    NSLog(self.gID);
     return self;
- 
-    
 }
 
 
-// This method is here because this class also functions as datasource for our graph
+// The following methods are here because this class also functions as datasource for our graph
 // Therefore this class implements the CPTPlotDataSource protocol
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plotnumberOfRecords {
     
@@ -171,39 +161,39 @@
     
 }
 
-// This method is here because this class also functions as datasource for our graph
-// Therefore this class implements the CPTPlotDataSource protocol
+
 -(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
-    // We need to provide an X or Y (this method will be called for each) value for every index
-    int x = index;
-    //NSArray *teamPntsData = [[self.gameData objectAtIndex:0] objectAtIndex:1];
-    // This method is actually called twice per point in the plot, one for the X and one for the Y value
-    //NSArray *thisPntData = [teamPntsData objectAtIndex:index];
-    //NSLog(@"%@",[thisPntData objectAtIndex:0]);
+    //For x values
     if(fieldEnum == CPTScatterPlotFieldX)
     {
-        // Return x value, which will, depending on index, be between -4 to 4
-        //NSLog(@"%@",self.gameData[0][0]);
+        // If this is the first team's plot return its data
         if ([plot.identifier isEqual:@"Team1"] == YES) {
             return [[self.team1pnts objectAtIndex:index] objectAtIndex:0];
         }
+        // If this is the second team return its data
         else
         {
             return [[self.team2pnts objectAtIndex:index] objectAtIndex:0];
         }
+        
+    //For y values
     } else {
-        // Return y value, forthis example we'll be plotting y = x * x
+        
+        // If this is the first team's plot return its data
         if ([plot.identifier isEqual:@"Team1"] == YES) {
             return [[self.team1pnts objectAtIndex:index] objectAtIndex:1];
         }
+        // If this is the second team return its data
         else
         {
             return [[self.team2pnts objectAtIndex:index] objectAtIndex:1];
         }
+        
     }
 }
 
+// Function for getting all available game graph data from the AUDL server
 - (void)gameDataRequest
 {
     
@@ -212,12 +202,11 @@
     path = [path stringByAppendingString:self.gID];
     path = [path stringByAppendingString:@"/graph"];
     NSString *full_url = [server_url stringByAppendingString: path];
-    NSLog(full_url);
-    NSURL * url = [[NSURL alloc] initWithString:full_url];
+
+    NSURL *url = [[NSURL alloc] initWithString:full_url];
     
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
-                                //cachePolicy:NSURLRequestReturnCacheDataElseLoad
                                                 cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                             timeoutInterval:30];
     
@@ -237,6 +226,7 @@
                  options:0
                  error:&error];
     
+    // divy up the data to the appropriate class properties
     self.team1 = [[gameData objectAtIndex:0] objectAtIndex:0];
     self.team1pnts = [[gameData objectAtIndex:0] objectAtIndex:1];
     self.team2 = [[gameData objectAtIndex:1] objectAtIndex:0];

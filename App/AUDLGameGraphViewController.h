@@ -21,8 +21,6 @@
 @property (strong, nonatomic) NSString *team1;
 @property (strong, nonatomic) NSString *team2;
 
-@property (nonatomic) CGRect graphBounds;
-
-- (id)initWithID:(NSString *) gID;
+- (id)initWithGameID:(NSString *) gID;
 
 @end
