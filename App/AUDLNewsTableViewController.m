@@ -9,6 +9,7 @@
 #import "AUDLNewsTableViewController.h"
 #import "SWRevealViewController.h"
 #import "AUDLNewsTableViewCell.h"
+#import "AUDLNewsWebViewController.h"
 #import "AUDLAppDelegate.h"
 #import "Globals.h"
 
@@ -222,7 +223,19 @@
         AUDLNewsTableViewCell* selectedCell = (AUDLNewsTableViewCell*)tappedCell;
     
         // opens the selected cell's url in Safari
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.link]];
+        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.link]];
+        // present the new view controller
+        // create the view controller we want to present
+        AUDLNewsWebViewController *newsWebView = [[AUDLNewsWebViewController alloc] init];
+        
+        //set the web view link
+        newsWebView.link = selectedCell.link;
+        
+        // override the back button in the new controller from saying "Schedule"
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+        self.navigationItem.backBarButtonItem = backButton;
+
+        [self.navigationController pushViewController:newsWebView animated:YES];
         //[self.webview loadRequest:[NSURL URLWithString:selectedCell.link]];
     }
 }
