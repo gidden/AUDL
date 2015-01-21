@@ -21,10 +21,25 @@
 -(void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
-    UIWebView *webView = [[UIWebView alloc] init];
-    [webView setFrame:self.view.bounds];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.link]]];
-    [[self view] addSubview:webView];
+    self.webView = [[UIWebView alloc] init];
+    [self.webView setFrame:self.view.bounds];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.link]]];
+    
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self.webView action:@selector(goBack)];
+    
+    UIBarButtonItem *forwardButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self.webView action:@selector(goForward)];
+    
+    NSArray *tBarItems = [[NSArray alloc] initWithObjects:forwardButton,backButton,nil];
+    
+    
+    [self.navigationItem setRightBarButtonItems:tBarItems animated:YES];
+    
+ 
+    
+    
+    
+    [[self view] addSubview:self.webView];
 
     
 }
