@@ -7,8 +7,6 @@
 //
 
 #import "AUDLMainViewController.h"
-#import <Accounts/Accounts.h>
-#import <Social/Social.h>
 
 @interface AUDLNowViewController : UIViewController
 

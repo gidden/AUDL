@@ -13,6 +13,6 @@
 
 @property (strong, nonatomic) NSString *link;
 
-@property (strong,nonatomic) UIWebView *webView; 
+@property (strong,nonatomic) UIWebView *webView;
 
 @end

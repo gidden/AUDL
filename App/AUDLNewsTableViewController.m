@@ -222,21 +222,18 @@
         // pointer to the cell that was selected
         AUDLNewsTableViewCell* selectedCell = (AUDLNewsTableViewCell*)tappedCell;
     
-        // opens the selected cell's url in Safari
-        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.link]];
-        // present the new view controller
+        // present the news webview controller
         // create the view controller we want to present
         AUDLNewsWebViewController *newsWebView = [[AUDLNewsWebViewController alloc] init];
         
         //set the web view link
         newsWebView.link = selectedCell.link;
         
-        // override the back button in the new controller from saying "Schedule"
+        //create a back button so that users can access the article list again if desired
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
         self.navigationItem.backBarButtonItem = backButton;
 
         [self.navigationController pushViewController:newsWebView animated:YES];
-        //[self.webview loadRequest:[NSURL URLWithString:selectedCell.link]];
     }
 }
 

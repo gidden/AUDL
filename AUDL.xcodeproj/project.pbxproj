@@ -27,7 +27,6 @@
 		727ABD7C18D257C1005B9ACC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABD7B18D257C1005B9ACC /* main.m */; };
 		727ABD8018D257C1005B9ACC /* AUDLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABD7F18D257C1005B9ACC /* AUDLAppDelegate.m */; };
 		727ABD8618D257C1005B9ACC /* AUDLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727ABD8518D257C1005B9ACC /* AUDLViewController.m */; };
-		727ABD8818D257C1005B9ACC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727ABD8718D257C1005B9ACC /* Images.xcassets */; };
 		727ABD8F18D257C1005B9ACC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD8E18D257C1005B9ACC /* XCTest.framework */; };
 		727ABD9018D257C1005B9ACC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD6F18D257C1005B9ACC /* Foundation.framework */; };
 		727ABD9118D257C1005B9ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7318D257C1005B9ACC /* UIKit.framework */; };
@@ -54,9 +53,8 @@
 		72F4DB0718DB36C700E571FC /* AUDLNewsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4DB0518DB36C700E571FC /* AUDLNewsTableViewController.xib */; };
 		72F4DB0B18DB5A3F00E571FC /* AUDLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F4DB0918DB5A3F00E571FC /* AUDLTableViewCell.m */; };
 		72F4DB0C18DB5A3F00E571FC /* AUDLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4DB0A18DB5A3F00E571FC /* AUDLTableViewCell.xib */; };
-		CD16C90F1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD16C90E1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib */; };
-		CD16C9121A654D1400AC24E9 /* AUDLTwitterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD16C9111A654D1400AC24E9 /* AUDLTwitterViewCell.m */; };
 		CD32C1571A6A36FC00E75E6B /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32C1541A6A368500E75E6B /* libCorePlot-CocoaTouch.a */; };
+		CD37741D1A70AFCD007FD6E9 /* audl-120.png in Resources */ = {isa = PBXBuildFile; fileRef = CD37741C1A70AFCC007FD6E9 /* audl-120.png */; };
 		CD659C4D1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD659C4C1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m */; };
 		CD659C511A6F45ED00B5EDB9 /* AUDLNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD659C501A6F45ED00B5EDB9 /* AUDLNewsTableViewCell.xib */; };
 		CD659C531A6F68C200B5EDB9 /* news_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD659C521A6F68C200B5EDB9 /* news_icon.png */; };
@@ -71,24 +69,9 @@
 		E90995F618DCAA7C003A07FD /* AUDLSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */; };
 		E91A883E19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91A883D19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m */; };
 		E967BBEE18F06EBB001BE229 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967BBED18F06EBB001BE229 /* Accounts.framework */; };
-		E967BBF018F06ED1001BE229 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967BBEF18F06ED1001BE229 /* Social.framework */; };
-		E967BBF218F077CF001BE229 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967BBF118F077CF001BE229 /* Twitter.framework */; };
 		E96980DB19031D660060E5F2 /* AUDLTop5TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96980D919031D660060E5F2 /* AUDLTop5TableViewCell.m */; };
 		E99C294219057CA800B05EDC /* AUDLTermsOfUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99C294119057CA800B05EDC /* AUDLTermsOfUseViewController.m */; };
 		E99C29461905810C00B05EDC /* AUDLUCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99C29451905810C00B05EDC /* AUDLUCViewController.m */; };
-		E9A421771904384000F26D69 /* NSDateFormatter+STTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A4215B1904384000F26D69 /* NSDateFormatter+STTwitter.m */; };
-		E9A421781904384000F26D69 /* NSError+STTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A4215D1904384000F26D69 /* NSError+STTwitter.m */; };
-		E9A421791904384000F26D69 /* NSString+STTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A4215F1904384000F26D69 /* NSString+STTwitter.m */; };
-		E9A4217A1904384000F26D69 /* STHTTPRequest+STTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421611904384000F26D69 /* STHTTPRequest+STTwitter.m */; };
-		E9A4217B1904384000F26D69 /* STTwitterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421641904384000F26D69 /* STTwitterAPI.m */; };
-		E9A4217C1904384000F26D69 /* STTwitterAppOnly.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421661904384000F26D69 /* STTwitterAppOnly.m */; };
-		E9A4217D1904384000F26D69 /* STTwitterHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421681904384000F26D69 /* STTwitterHTML.m */; };
-		E9A4217E1904384000F26D69 /* STTwitterOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A4216A1904384000F26D69 /* STTwitterOAuth.m */; };
-		E9A4217F1904384000F26D69 /* STTwitterOS.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A4216C1904384000F26D69 /* STTwitterOS.m */; };
-		E9A421801904384000F26D69 /* STTwitterOSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A4216E1904384000F26D69 /* STTwitterOSRequest.m */; };
-		E9A421811904384000F26D69 /* BAVPlistNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421721904384000F26D69 /* BAVPlistNode.m */; };
-		E9A421821904384000F26D69 /* JSONSyntaxHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421741904384000F26D69 /* JSONSyntaxHighlight.m */; };
-		E9A421831904384000F26D69 /* STHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421761904384000F26D69 /* STHTTPRequest.m */; };
 		E9A421B119049F9800F26D69 /* AUDLFAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A421B019049F9800F26D69 /* AUDLFAQViewController.m */; };
 		E9D674BE18DE019100712370 /* AUDLVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D674BC18DE019100712370 /* AUDLVideoViewController.m */; };
 		E9D674BF18DE019100712370 /* AUDLVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D674BD18DE019100712370 /* AUDLVideoViewController.xib */; };
@@ -157,7 +140,6 @@
 		727ABD7F18D257C1005B9ACC /* AUDLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUDLAppDelegate.m; sourceTree = "<group>"; };
 		727ABD8418D257C1005B9ACC /* AUDLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLViewController.h; sourceTree = "<group>"; };
 		727ABD8518D257C1005B9ACC /* AUDLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUDLViewController.m; sourceTree = "<group>"; };
-		727ABD8718D257C1005B9ACC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images.xcassets; sourceTree = "<group>"; };
 		727ABD8D18D257C1005B9ACC /* AUDLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AUDLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		727ABD8E18D257C1005B9ACC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		727ABD9618D257C1005B9ACC /* AUDLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AUDLTests-Info.plist"; sourceTree = "<group>"; };
@@ -196,10 +178,8 @@
 		72F4DB0818DB5A3F00E571FC /* AUDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLTableViewCell.h; sourceTree = "<group>"; };
 		72F4DB0918DB5A3F00E571FC /* AUDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTableViewCell.m; sourceTree = "<group>"; };
 		72F4DB0A18DB5A3F00E571FC /* AUDLTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLTableViewCell.xib; sourceTree = "<group>"; };
-		CD16C90E1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLTwitterViewCell.xib; sourceTree = "<group>"; };
-		CD16C9101A654D0700AC24E9 /* AUDLTwitterViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLTwitterViewCell.h; sourceTree = "<group>"; };
-		CD16C9111A654D1400AC24E9 /* AUDLTwitterViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTwitterViewCell.m; sourceTree = "<group>"; };
 		CD32C14D1A6A368500E75E6B /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../core-plot/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
+		CD37741C1A70AFCC007FD6E9 /* audl-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audl-120.png"; sourceTree = "<group>"; };
 		CD659C4B1A6F447900B5EDB9 /* AUDLNewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLNewsTableViewCell.h; sourceTree = "<group>"; };
 		CD659C4C1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLNewsTableViewCell.m; sourceTree = "<group>"; };
 		CD659C501A6F45ED00B5EDB9 /* AUDLNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLNewsTableViewCell.xib; sourceTree = "<group>"; };
@@ -229,34 +209,6 @@
 		E99C294119057CA800B05EDC /* AUDLTermsOfUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTermsOfUseViewController.m; sourceTree = "<group>"; };
 		E99C29441905810C00B05EDC /* AUDLUCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLUCViewController.h; sourceTree = "<group>"; };
 		E99C29451905810C00B05EDC /* AUDLUCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLUCViewController.m; sourceTree = "<group>"; };
-		E9A4215A1904384000F26D69 /* NSDateFormatter+STTwitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+STTwitter.h"; sourceTree = "<group>"; };
-		E9A4215B1904384000F26D69 /* NSDateFormatter+STTwitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+STTwitter.m"; sourceTree = "<group>"; };
-		E9A4215C1904384000F26D69 /* NSError+STTwitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+STTwitter.h"; sourceTree = "<group>"; };
-		E9A4215D1904384000F26D69 /* NSError+STTwitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+STTwitter.m"; sourceTree = "<group>"; };
-		E9A4215E1904384000F26D69 /* NSString+STTwitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+STTwitter.h"; sourceTree = "<group>"; };
-		E9A4215F1904384000F26D69 /* NSString+STTwitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+STTwitter.m"; sourceTree = "<group>"; };
-		E9A421601904384000F26D69 /* STHTTPRequest+STTwitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "STHTTPRequest+STTwitter.h"; sourceTree = "<group>"; };
-		E9A421611904384000F26D69 /* STHTTPRequest+STTwitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "STHTTPRequest+STTwitter.m"; sourceTree = "<group>"; };
-		E9A421621904384000F26D69 /* STTwitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTwitter.h; sourceTree = "<group>"; };
-		E9A421631904384000F26D69 /* STTwitterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTwitterAPI.h; sourceTree = "<group>"; };
-		E9A421641904384000F26D69 /* STTwitterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTwitterAPI.m; sourceTree = "<group>"; };
-		E9A421651904384000F26D69 /* STTwitterAppOnly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTwitterAppOnly.h; sourceTree = "<group>"; };
-		E9A421661904384000F26D69 /* STTwitterAppOnly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTwitterAppOnly.m; sourceTree = "<group>"; };
-		E9A421671904384000F26D69 /* STTwitterHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTwitterHTML.h; sourceTree = "<group>"; };
-		E9A421681904384000F26D69 /* STTwitterHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTwitterHTML.m; sourceTree = "<group>"; };
-		E9A421691904384000F26D69 /* STTwitterOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTwitterOAuth.h; sourceTree = "<group>"; };
-		E9A4216A1904384000F26D69 /* STTwitterOAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTwitterOAuth.m; sourceTree = "<group>"; };
-		E9A4216B1904384000F26D69 /* STTwitterOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTwitterOS.h; sourceTree = "<group>"; };
-		E9A4216C1904384000F26D69 /* STTwitterOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTwitterOS.m; sourceTree = "<group>"; };
-		E9A4216D1904384000F26D69 /* STTwitterOSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTwitterOSRequest.h; sourceTree = "<group>"; };
-		E9A4216E1904384000F26D69 /* STTwitterOSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTwitterOSRequest.m; sourceTree = "<group>"; };
-		E9A4216F1904384000F26D69 /* STTwitterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTwitterProtocol.h; sourceTree = "<group>"; };
-		E9A421711904384000F26D69 /* BAVPlistNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAVPlistNode.h; sourceTree = "<group>"; };
-		E9A421721904384000F26D69 /* BAVPlistNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAVPlistNode.m; sourceTree = "<group>"; };
-		E9A421731904384000F26D69 /* JSONSyntaxHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSyntaxHighlight.h; sourceTree = "<group>"; };
-		E9A421741904384000F26D69 /* JSONSyntaxHighlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONSyntaxHighlight.m; sourceTree = "<group>"; };
-		E9A421751904384000F26D69 /* STHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHTTPRequest.h; sourceTree = "<group>"; };
-		E9A421761904384000F26D69 /* STHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHTTPRequest.m; sourceTree = "<group>"; };
 		E9A421AF19049F9800F26D69 /* AUDLFAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLFAQViewController.h; sourceTree = "<group>"; };
 		E9A421B019049F9800F26D69 /* AUDLFAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLFAQViewController.m; sourceTree = "<group>"; };
 		E9D674BB18DE019100712370 /* AUDLVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLVideoViewController.h; sourceTree = "<group>"; };
@@ -285,8 +237,6 @@
 				CD8C22C51A6B574200A719F9 /* QuartzCore.framework in Frameworks */,
 				CD8C22C11A6B573C00A719F9 /* Accelerate.framework in Frameworks */,
 				E967BBEE18F06EBB001BE229 /* Accounts.framework in Frameworks */,
-				E967BBF218F077CF001BE229 /* Twitter.framework in Frameworks */,
-				E967BBF018F06ED1001BE229 /* Social.framework in Frameworks */,
 				727ABD7218D257C1005B9ACC /* CoreGraphics.framework in Frameworks */,
 				727ABD7418D257C1005B9ACC /* UIKit.framework in Frameworks */,
 				727ABD7018D257C1005B9ACC /* Foundation.framework in Frameworks */,
@@ -398,8 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				727ABD8418D257C1005B9ACC /* AUDLViewController.h */,
+				CD37741C1A70AFCC007FD6E9 /* audl-120.png */,
 				727ABD8518D257C1005B9ACC /* AUDLViewController.m */,
-				727ABD8718D257C1005B9ACC /* Images.xcassets */,
 				727ABD7E18D257C1005B9ACC /* AUDLAppDelegate.h */,
 				727ABD7F18D257C1005B9ACC /* AUDLAppDelegate.m */,
 				72F4DB0118DA0C5A00E571FC /* Home */,
@@ -562,16 +512,6 @@
 			name = News;
 			sourceTree = "<group>";
 		};
-		CD16C90D1A654B9E00AC24E9 /* AUDLTwitterViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				CD16C9101A654D0700AC24E9 /* AUDLTwitterViewCell.h */,
-				CD16C9111A654D1400AC24E9 /* AUDLTwitterViewCell.m */,
-				CD16C90E1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib */,
-			);
-			name = AUDLTwitterViewCell;
-			sourceTree = "<group>";
-		};
 		CD32C14E1A6A368500E75E6B /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,49 +600,6 @@
 			name = "under construction";
 			sourceTree = "<group>";
 		};
-		E9A421591904384000F26D69 /* STTwitter */ = {
-			isa = PBXGroup;
-			children = (
-				E9A4215A1904384000F26D69 /* NSDateFormatter+STTwitter.h */,
-				E9A4215B1904384000F26D69 /* NSDateFormatter+STTwitter.m */,
-				E9A4215C1904384000F26D69 /* NSError+STTwitter.h */,
-				E9A4215D1904384000F26D69 /* NSError+STTwitter.m */,
-				E9A4215E1904384000F26D69 /* NSString+STTwitter.h */,
-				E9A4215F1904384000F26D69 /* NSString+STTwitter.m */,
-				E9A421601904384000F26D69 /* STHTTPRequest+STTwitter.h */,
-				E9A421611904384000F26D69 /* STHTTPRequest+STTwitter.m */,
-				E9A421621904384000F26D69 /* STTwitter.h */,
-				E9A421631904384000F26D69 /* STTwitterAPI.h */,
-				E9A421641904384000F26D69 /* STTwitterAPI.m */,
-				E9A421651904384000F26D69 /* STTwitterAppOnly.h */,
-				E9A421661904384000F26D69 /* STTwitterAppOnly.m */,
-				E9A421671904384000F26D69 /* STTwitterHTML.h */,
-				E9A421681904384000F26D69 /* STTwitterHTML.m */,
-				E9A421691904384000F26D69 /* STTwitterOAuth.h */,
-				E9A4216A1904384000F26D69 /* STTwitterOAuth.m */,
-				E9A4216B1904384000F26D69 /* STTwitterOS.h */,
-				E9A4216C1904384000F26D69 /* STTwitterOS.m */,
-				E9A4216D1904384000F26D69 /* STTwitterOSRequest.h */,
-				E9A4216E1904384000F26D69 /* STTwitterOSRequest.m */,
-				E9A4216F1904384000F26D69 /* STTwitterProtocol.h */,
-				E9A421701904384000F26D69 /* Vendor */,
-			);
-			path = STTwitter;
-			sourceTree = "<group>";
-		};
-		E9A421701904384000F26D69 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				E9A421711904384000F26D69 /* BAVPlistNode.h */,
-				E9A421721904384000F26D69 /* BAVPlistNode.m */,
-				E9A421731904384000F26D69 /* JSONSyntaxHighlight.h */,
-				E9A421741904384000F26D69 /* JSONSyntaxHighlight.m */,
-				E9A421751904384000F26D69 /* STHTTPRequest.h */,
-				E9A421761904384000F26D69 /* STHTTPRequest.m */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
 		E9A421AE19049F6700F26D69 /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,11 +657,9 @@
 		E9D674CD18DE020C00712370 /* Now */ = {
 			isa = PBXGroup;
 			children = (
-				E9A421591904384000F26D69 /* STTwitter */,
 				E9D674CE18DE022B00712370 /* AUDLNowViewController.h */,
 				E9D674CF18DE022B00712370 /* AUDLNowViewController.m */,
 				E9D674D018DE022B00712370 /* AUDLNowViewController.xib */,
-				CD16C90D1A654B9E00AC24E9 /* AUDLTwitterViewCell */,
 			);
 			name = Now;
 			sourceTree = "<group>";
@@ -882,15 +777,14 @@
 				CD8FD7C71A6620AB00572CE6 /* Twitter_bird_logo.png in Resources */,
 				72C7F1811903347200D7C49B /* AUDLTop5TableViewCell.xib in Resources */,
 				E9D674BF18DE019100712370 /* AUDLVideoViewController.xib in Resources */,
+				CD37741D1A70AFCD007FD6E9 /* audl-120.png in Resources */,
 				E9D674CC18DE01FF00712370 /* AUDLScheduleViewController.xib in Resources */,
 				721F683718F2065F0019EFB9 /* AUDLDivisionTableViewController.xib in Resources */,
 				CD8FD8841A662E7C00572CE6 /* Launch Screen.xib in Resources */,
 				CDF89A8A1A68074E00382B6D /* AUDLGameGraphView.xib in Resources */,
-				727ABD8818D257C1005B9ACC /* Images.xcassets in Resources */,
 				721F682A18EF405C0019EFB9 /* audl-120.png in Resources */,
 				72F4DAFE18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib in Resources */,
 				7249E15A18F708E200C4012B /* AUDLIndivTeamTableViewController.xib in Resources */,
-				CD16C90F1A654C0C00AC24E9 /* AUDLTwitterViewCell.xib in Resources */,
 				72255C2818F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib in Resources */,
 				72C1250319045EA800BAEC46 /* AUDLTeamStatsTableViewController.xib in Resources */,
 				E9D674C618DE01D700712370 /* AUDLStatsViewController.xib in Resources */,
@@ -929,40 +823,27 @@
 			files = (
 				721F683618F2065F0019EFB9 /* AUDLDivisionTableViewController.m in Sources */,
 				72F4DAFD18DA0A8A00E571FC /* AUDLTeamsTableViewController.m in Sources */,
-				E9A421771904384000F26D69 /* NSDateFormatter+STTwitter.m in Sources */,
 				E9A421B119049F9800F26D69 /* AUDLFAQViewController.m in Sources */,
-				E9A421831904384000F26D69 /* STHTTPRequest.m in Sources */,
 				72F4DB0B18DB5A3F00E571FC /* AUDLTableViewCell.m in Sources */,
 				E96980DB19031D660060E5F2 /* AUDLTop5TableViewCell.m in Sources */,
 				E9D674C518DE01D700712370 /* AUDLStatsViewController.m in Sources */,
-				E9A4217D1904384000F26D69 /* STTwitterHTML.m in Sources */,
 				E9D674D118DE022B00712370 /* AUDLNowViewController.m in Sources */,
 				CD659C581A6F736D00B5EDB9 /* AUDLNewsWebViewController.m in Sources */,
 				72C1250219045EA800BAEC46 /* AUDLTeamStatsTableViewController.m in Sources */,
 				E90995F618DCAA7C003A07FD /* AUDLSettingsTableViewController.m in Sources */,
 				72F4DB0618DB36C700E571FC /* AUDLNewsTableViewController.m in Sources */,
-				E9A4217E1904384000F26D69 /* STTwitterOAuth.m in Sources */,
-				E9A421811904384000F26D69 /* BAVPlistNode.m in Sources */,
 				72255C2118F6E8A3001E6937 /* AUDLDivStandingsTableViewController.m in Sources */,
-				E9A421821904384000F26D69 /* JSONSyntaxHighlight.m in Sources */,
 				E99C29461905810C00B05EDC /* AUDLUCViewController.m in Sources */,
-				E9A4217C1904384000F26D69 /* STTwitterAppOnly.m in Sources */,
-				E9A4217F1904384000F26D69 /* STTwitterOS.m in Sources */,
-				CD16C9121A654D1400AC24E9 /* AUDLTwitterViewCell.m in Sources */,
 				CDF89A881A68073B00382B6D /* AUDLGameGraphViewController.m in Sources */,
-				E9A421781904384000F26D69 /* NSError+STTwitter.m in Sources */,
 				72C1250819046FF400BAEC46 /* AUDLTeamStatsTableViewCell.m in Sources */,
 				72255C1B18F61D52001E6937 /* AUDLScheduleTableViewCell.m in Sources */,
-				E9A421801904384000F26D69 /* STTwitterOSRequest.m in Sources */,
 				CD659C4D1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m in Sources */,
 				72C124FD190459B500BAEC46 /* AUDLTeamScheduleTableViewController.m in Sources */,
 				727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */,
 				E9D674D718DE025C00712370 /* AUDLStandingsViewController.m in Sources */,
-				E9A4217B1904384000F26D69 /* STTwitterAPI.m in Sources */,
 				72C7F1771901AC9900D7C49B /* AUDLRosterTableViewController.m in Sources */,
 				72C7F17C1903125F00D7C49B /* AUDLScoresTableViewController.m in Sources */,
 				E9D674CB18DE01FF00712370 /* AUDLScheduleViewController.m in Sources */,
-				E9A421791904384000F26D69 /* NSString+STTwitter.m in Sources */,
 				727ABDAD18D25C7B005B9ACC /* AUDLMainViewController.m in Sources */,
 				727ABD8618D257C1005B9ACC /* AUDLViewController.m in Sources */,
 				E9D674BE18DE019100712370 /* AUDLVideoViewController.m in Sources */,
@@ -973,7 +854,6 @@
 				727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */,
 				E91A883E19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m in Sources */,
 				7249E15918F708E200C4012B /* AUDLIndivTeamTableViewController.m in Sources */,
-				E9A4217A1904384000F26D69 /* STHTTPRequest+STTwitter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1055,7 +935,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1088,7 +968,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1097,7 +977,7 @@
 		727ABD9F18D257C1005B9ACC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1119,7 +999,7 @@
 		727ABDA018D257C1005B9ACC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
