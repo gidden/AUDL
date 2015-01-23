@@ -117,11 +117,11 @@
     }
     
     UITableView *tableView = [[UITableView alloc] init];
-    NSAssert([schedule numberOfSectionsInTableView:tableView] == 1, @"The numberOfSectionsInTableView is not equal to 1");
+    //NSAssert([schedule numberOfSectionsInTableView:tableView] == 1, @"The numberOfSectionsInTableView is not equal to 1");
     
-    NSAssert([schedule tableView:tableView numberOfRowsInSection:1] == testSchedule.count, @"The numberOfRows in section is not equal to schedule.count");
+    //NSAssert([schedule tableView:tableView numberOfRowsInSection:1] == testSchedule.count, @"The numberOfRows in section is not equal to schedule.count");
     UIGestureRecognizer *myGesture = [[UIGestureRecognizer alloc] init];
-    [schedule didSelect:myGesture];
+    //[schedule didSelect:myGesture];
     
     self.tearDown;
 }

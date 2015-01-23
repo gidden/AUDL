@@ -47,14 +47,53 @@
     _sidebarButton.action = @selector(revealToggle:);
     
     // Add a gesture recognizer for the navigation sidebar
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    //[self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     // Get news items from the server
     [self scheduleRequest];
     
+    
     // Add a gesture recognizer to the table view for the cell selection
-    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
-    [self.view addGestureRecognizer:gesture];
+    //UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
+
+    //[self.view addGestureRecognizer:gesture];
+    
+    //add view controllers to the tabbed view
+    
+    
+    NSInteger divCount = [self.schedule count]; //the number of divisions to loop over
+    
+    NSArray *thisDivisonInfo; // array for a divisions info (name and game sched.)
+    NSString *divName; // string for division name
+    NSArray *divSchedule; // array for the game sched.
+    UITabBarItem *thisDivTab; //a tab bar item for the division
+    NSArray *tabViewControllers = [NSArray array]; //array of the view controllers to hand to the tabbed view
+    
+    //loop over our divisions
+    for (NSInteger i=0; i<divCount; i++) {
+    
+    //get the first schedule from the json data we loaded
+    thisDivisonInfo = [self.schedule objectAtIndex:i];
+    
+    //get the division name
+    divName = [thisDivisonInfo objectAtIndex:0];
+    // get the division's schedule info
+    divSchedule = [thisDivisonInfo objectAtIndex:1];
+    //add a tab bar item for this division
+    thisDivTab = [[UITabBarItem alloc] initWithTitle:divName image:nil selectedImage:nil];
+
+    //create a division view controller
+    AUDLDivisionTableViewController *divScheduleView = [[AUDLDivisionTableViewController alloc] initWithSchedule:divSchedule];
+    //set the tab bar item
+    divScheduleView.tabBarItem = thisDivTab;
+    
+    //add this view to the array of view controllers
+    tabViewControllers = [tabViewControllers arrayByAddingObject:divScheduleView];
+  
+    }
+    
+    //setup the array of view controllers for the tabbed view
+    self.viewControllers = tabViewControllers;
     
     
 }
@@ -66,48 +105,48 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    //#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-   
-    // Return the number of rows in the section.
-    
-    return [self.schedule count];
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSArray *thisSchedule = [self.schedule objectAtIndex:indexPath.row];
-    
-    // the first element, the cellIdentifier, is the division name
-    NSString *cellIdentifier = [thisSchedule objectAtIndex:0];
-    
-    // the second element, divSchedule, is the divison's schedule
-    NSArray *divSchedule = [thisSchedule objectAtIndex:1];
-    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    
-    // Configure the cell...
-    NSString *textToDisplay = [cellIdentifier stringByAppendingString:@" Division"];
-    cell.textLabel.text = textToDisplay;
-    [cell setDivSchedule:divSchedule];
-    [cell setDivisionName:cellIdentifier];
-    
-    // add the right pointing arrow to the cell
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    return cell;
-}
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    //#warning Potentially incomplete method implementation.
+//    // Return the number of sections.
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//   
+//    // Return the number of rows in the section.
+//    
+//    return [self.schedule count];
+//}
+//
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSArray *thisSchedule = [self.schedule objectAtIndex:indexPath.row];
+//    
+//    // the first element, the cellIdentifier, is the division name
+//    NSString *cellIdentifier = [thisSchedule objectAtIndex:0];
+//    
+//    // the second element, divSchedule, is the divison's schedule
+//    NSArray *divSchedule = [thisSchedule objectAtIndex:1];
+//    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//    if (cell == nil) {
+//        cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+//    }
+//    
+//    // Configure the cell...
+//    NSString *textToDisplay = [cellIdentifier stringByAppendingString:@" Division"];
+//    cell.textLabel.text = textToDisplay;
+//    [cell setDivSchedule:divSchedule];
+//    [cell setDivisionName:cellIdentifier];
+//    
+//    // add the right pointing arrow to the cell
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    
+//    return cell;
+//}
 
 
 /*
@@ -199,40 +238,42 @@
 
 - (void)didSelect:(UIGestureRecognizer *)gestureRecognizer {
     
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        CGPoint tapLocation = [gestureRecognizer locationInView:self.tableView];
-        NSIndexPath *tappedIndexPath = [self.tableView indexPathForRowAtPoint:tapLocation];
-        UITableViewCell* tappedCell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
-        
-        // pointer to the cell that was selected
-        AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
-        for (int i=0; i<selectedCell.divSchedule.count; i++) {
-            NSLog(@"%@", selectedCell.divSchedule[i]);
-        }
-        
-        // create the view controller we want to present
-        AUDLDivisionTableViewController *divSchedule = [[AUDLDivisionTableViewController alloc] initWithSchedule:selectedCell.divSchedule];
-        
-        divSchedule.division = selectedCell.divisionName;
-        NSLog(@"%@", divSchedule.division);
-        
-        // select the transition style
-        //divSchedule.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        
-        // set the presenting view controller to this controller
-        //divSchedule.delegate = self;
-        
-        // Create the navigation controller and present it.
-        //UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:divSchedule];
-        
-        // override the back button in the new controller from saying "Schedule"
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
-        self.navigationItem.backBarButtonItem = backButton;
-        
-        // present the new view controller
-        [self.navigationController pushViewController:divSchedule animated:YES];
-    }
 }
+//
+//    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+//        CGPoint tapLocation = [gestureRecognizer locationInView:self.tableView];
+//        NSIndexPath *tappedIndexPath = [self.tableView indexPathForRowAtPoint:tapLocation];
+//        UITableViewCell* tappedCell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
+//        
+//        // pointer to the cell that was selected
+//        AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
+//        for (int i=0; i<selectedCell.divSchedule.count; i++) {
+//            NSLog(@"%@", selectedCell.divSchedule[i]);
+//        }
+//        
+//        // create the view controller we want to present
+//        AUDLDivisionTableViewController *divSchedule = [[AUDLDivisionTableViewController alloc] initWithSchedule:selectedCell.divSchedule];
+//        
+//        divSchedule.division = selectedCell.divisionName;
+//        NSLog(@"%@", divSchedule.division);
+//        
+//        // select the transition style
+//        //divSchedule.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+//        
+//        // set the presenting view controller to this controller
+//        //divSchedule.delegate = self;
+//        
+//        // Create the navigation controller and present it.
+//        //UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:divSchedule];
+//        
+//        // override the back button in the new controller from saying "Schedule"
+//        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+//        self.navigationItem.backBarButtonItem = backButton;
+//        
+//        // present the new view controller
+//        [self.navigationController pushViewController:divSchedule animated:YES];
+//    }
+//}
 
 
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Globals.h"
-@interface AUDLScheduleTableViewController : UITableViewController
+@interface AUDLScheduleTableViewController : UITabBarController
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (nonatomic, strong) NSArray *schedule;
