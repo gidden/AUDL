@@ -48,7 +48,13 @@
     
     // Add a gesture recognizer for the navigation sidebar
     //[self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:swipeLeft];
     
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeRight];
     // Get news items from the server
     [self scheduleRequest];
     
@@ -96,6 +102,20 @@
     self.viewControllers = tabViewControllers;
     
     
+}
+
+- (IBAction)tappedRightButton:(id)sender
+{
+    NSUInteger selectedIndex = [self selectedIndex];
+    
+    [self setSelectedIndex:selectedIndex + 1];
+}
+
+- (IBAction)tappedLeftButton:(id)sender
+{
+    NSUInteger selectedIndex = [self selectedIndex];
+    
+    [self setSelectedIndex:selectedIndex - 1];
 }
 
 - (void)didReceiveMemoryWarning
