@@ -123,6 +123,7 @@
     [cell setVideoId:cellVideoId];
     
     UIImage *thumbnail = [self imageFromURLString:cellThumbnailURL];
+    NSLog(cellThumbnailURL);
     cell.imageView.image = thumbnail;
     
     return cell;

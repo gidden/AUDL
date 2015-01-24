@@ -65,7 +65,7 @@
     //[self.view addGestureRecognizer:gesture];
     
     //add view controllers to the tabbed view
-    
+    NSString *baseIconPath = [server_url stringByAppendingString:@"/Images/iOS/"];
     
     NSInteger divCount = [self.schedule count]; //the number of divisions to loop over
     
@@ -85,8 +85,25 @@
     divName = [thisDivisonInfo objectAtIndex:0];
     // get the division's schedule info
     divSchedule = [thisDivisonInfo objectAtIndex:1];
-    //add a tab bar item for this division
-    thisDivTab = [[UITabBarItem alloc] initWithTitle:divName image:nil selectedImage:nil];
+        
+    //setup images for the tab bar item
+    //selected image
+    NSString *onFilename = [baseIconPath stringByAppendingString:divName];
+    onFilename = [onFilename stringByAppendingString:@"-On-Small.png"];
+    NSURL *onURL = [NSURL URLWithString:onFilename];
+    NSData *onData = [NSData dataWithContentsOfURL:onURL];
+    UIImage *onImage = [UIImage imageWithData:onData];
+    onImage = [onImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; //make sure our selected image appears without tint overlay
+        
+    //unselected tab image
+    NSString *offFilename = [baseIconPath stringByAppendingString:divName];
+    offFilename = [offFilename stringByAppendingString:@"-Off-Small.png"];
+    NSURL *offURL = [NSURL URLWithString:offFilename];
+    NSData *offData = [NSData dataWithContentsOfURL:offURL];
+    UIImage *offImage = [UIImage imageWithData:offData];
+
+        //add a tab bar item for this division
+    thisDivTab = [[UITabBarItem alloc] initWithTitle:@"" image:offImage selectedImage:onImage];
 
     //create a division view controller
     AUDLDivisionTableViewController *divScheduleView = [[AUDLDivisionTableViewController alloc] initWithSchedule:divSchedule];
@@ -98,6 +115,7 @@
   
     }
     
+    self.tabBar.tintColor = [UIColor blackColor];
     //setup the array of view controllers for the tabbed view
     self.viewControllers = tabViewControllers;
     
