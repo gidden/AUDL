@@ -48,6 +48,9 @@
     // Add a gesture recognizer to the table view for the cell selection
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
     [self.view addGestureRecognizer:gesture];
+    self.navigationController.navigationBar.translucent = NO;
+    //[self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+
 }
 
 - (void)didReceiveMemoryWarning

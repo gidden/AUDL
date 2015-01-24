@@ -114,13 +114,13 @@
     tabViewControllers = [tabViewControllers arrayByAddingObject:divScheduleView];
   
     }
-    
-    self.tabBar.tintColor = [UIColor blackColor];
+
+    self.tabBar.translucent = NO;
+    //[self.tabBar setBarStyle:UIBarStyleBlack];
     //setup the array of view controllers for the tabbed view
     self.viewControllers = tabViewControllers;
     
-    
-}
+    }
 
 - (IBAction)tappedRightButton:(id)sender
 {
