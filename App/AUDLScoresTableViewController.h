@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Globals.h" 
 
-@interface AUDLScoresTableViewController : UITableViewController
+@interface AUDLScoresTableViewController : UITabBarController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 @property (nonatomic, strong) NSArray *scores;
 
 - (void)scoreRequest;
-- (void)didSelect:UIGestureRecognizer;
+//- (void)didSelect:UIGestureRecognizer;
 
 @end
