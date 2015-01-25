@@ -307,17 +307,11 @@
 			children = (
 				CD32C14D1A6A368500E75E6B /* CorePlot-CocoaTouch.xcodeproj */,
 				CD8FD8831A662E7C00572CE6 /* Launch Screen.xib */,
-				CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */,
-				CD659C521A6F68C200B5EDB9 /* news_icon.png */,
 				CD9132EF1A5F64CE0096A08E /* Globals.h */,
 				72C124F71904585C00BAEC46 /* TeamViewController.h */,
 				72C124F81904585C00BAEC46 /* TeamViewController.m */,
 				72C18E0718F2258800849056 /* Main.storyboard */,
-				721F682918EF405C0019EFB9 /* audl-120.png */,
-				721F682318EF3C260019EFB9 /* Default@2x.png */,
-				CD92BC471A73DF50007604B5 /* tb_background.png */,
-				721F682118EF3B0B0019EFB9 /* Default-568h@2x.png */,
-				CD92BC4B1A73E6F7007604B5 /* Grey_Bar_Scoreboard.png */,
+				CD92BC4E1A75AB7B007604B5 /* Images */,
 				727ABD7518D257C1005B9ACC /* App */,
 				727ABD9418D257C1005B9ACC /* AppTests */,
 				727ABD6E18D257C1005B9ACC /* Frameworks */,
@@ -544,6 +538,20 @@
 				CD659C5E1A6F7BDE00B5EDB9 /* AUDLNewsWebView.xib */,
 			);
 			name = NewsWebView;
+			sourceTree = "<group>";
+		};
+		CD92BC4E1A75AB7B007604B5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				721F682918EF405C0019EFB9 /* audl-120.png */,
+				CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */,
+				CD659C521A6F68C200B5EDB9 /* news_icon.png */,
+				721F682318EF3C260019EFB9 /* Default@2x.png */,
+				CD92BC471A73DF50007604B5 /* tb_background.png */,
+				721F682118EF3B0B0019EFB9 /* Default-568h@2x.png */,
+				CD92BC4B1A73E6F7007604B5 /* Grey_Bar_Scoreboard.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		CDF89A831A6806BC00382B6D /* Game Graph */ = {
