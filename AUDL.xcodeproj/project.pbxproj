@@ -10,8 +10,8 @@
 		721F682218EF3B0B0019EFB9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 721F682118EF3B0B0019EFB9 /* Default-568h@2x.png */; };
 		721F682418EF3C260019EFB9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 721F682318EF3C260019EFB9 /* Default@2x.png */; };
 		721F682A18EF405C0019EFB9 /* audl-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 721F682918EF405C0019EFB9 /* audl-120.png */; };
-		721F683618F2065F0019EFB9 /* AUDLDivisionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721F683418F2065F0019EFB9 /* AUDLDivisionTableViewController.m */; };
-		721F683718F2065F0019EFB9 /* AUDLDivisionTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721F683518F2065F0019EFB9 /* AUDLDivisionTableViewController.xib */; };
+		721F683618F2065F0019EFB9 /* AUDLDivisionScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721F683418F2065F0019EFB9 /* AUDLDivisionScheduleTableViewController.m */; };
+		721F683718F2065F0019EFB9 /* AUDLDivisionScheduleTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721F683518F2065F0019EFB9 /* AUDLDivisionScheduleTableViewController.xib */; };
 		72255C1B18F61D52001E6937 /* AUDLScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72255C1918F61D52001E6937 /* AUDLScheduleTableViewCell.m */; };
 		72255C1C18F61D52001E6937 /* AUDLScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72255C1A18F61D52001E6937 /* AUDLScheduleTableViewCell.xib */; };
 		72255C2118F6E8A3001E6937 /* AUDLDivStandingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72255C1F18F6E8A3001E6937 /* AUDLDivStandingsTableViewController.m */; };
@@ -66,6 +66,27 @@
 		CD8FD8841A662E7C00572CE6 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8FD8831A662E7C00572CE6 /* Launch Screen.xib */; };
 		CD92BC481A73DF50007604B5 /* tb_background.png in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC471A73DF50007604B5 /* tb_background.png */; };
 		CD92BC4C1A73E6F8007604B5 /* Grey_Bar_Scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC4B1A73E6F7007604B5 /* Grey_Bar_Scoreboard.png */; };
+		CD92BC651A75AE46007604B5 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC531A75AE46007604B5 /* Roboto-Black.ttf */; };
+		CD92BC661A75AE46007604B5 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC541A75AE46007604B5 /* Roboto-BlackItalic.ttf */; };
+		CD92BC671A75AE46007604B5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC551A75AE46007604B5 /* Roboto-Bold.ttf */; };
+		CD92BC681A75AE46007604B5 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC561A75AE46007604B5 /* Roboto-BoldItalic.ttf */; };
+		CD92BC691A75AE46007604B5 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC571A75AE46007604B5 /* Roboto-Italic.ttf */; };
+		CD92BC6A1A75AE46007604B5 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC581A75AE46007604B5 /* Roboto-Light.ttf */; };
+		CD92BC6B1A75AE46007604B5 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC591A75AE46007604B5 /* Roboto-LightItalic.ttf */; };
+		CD92BC6C1A75AE46007604B5 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC5A1A75AE46007604B5 /* Roboto-Medium.ttf */; };
+		CD92BC6D1A75AE46007604B5 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC5B1A75AE46007604B5 /* Roboto-MediumItalic.ttf */; };
+		CD92BC6E1A75AE46007604B5 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC5C1A75AE46007604B5 /* Roboto-Regular.ttf */; };
+		CD92BC6F1A75AE46007604B5 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC5D1A75AE46007604B5 /* Roboto-Thin.ttf */; };
+		CD92BC701A75AE46007604B5 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC5E1A75AE46007604B5 /* Roboto-ThinItalic.ttf */; };
+		CD92BC711A75AE46007604B5 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC5F1A75AE46007604B5 /* RobotoCondensed-Bold.ttf */; };
+		CD92BC721A75AE46007604B5 /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC601A75AE46007604B5 /* RobotoCondensed-BoldItalic.ttf */; };
+		CD92BC731A75AE46007604B5 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC611A75AE46007604B5 /* RobotoCondensed-Italic.ttf */; };
+		CD92BC741A75AE46007604B5 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC621A75AE46007604B5 /* RobotoCondensed-Light.ttf */; };
+		CD92BC751A75AE46007604B5 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC631A75AE46007604B5 /* RobotoCondensed-LightItalic.ttf */; };
+		CD92BC761A75AE46007604B5 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC641A75AE46007604B5 /* RobotoCondensed-Regular.ttf */; };
+		CD92BC7A1A75B0CE007604B5 /* AUDLScoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD92BC791A75B0CE007604B5 /* AUDLScoreTableViewCell.m */; };
+		CD92BC7C1A75B0E8007604B5 /* AUDLScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC7B1A75B0E8007604B5 /* AUDLScoreTableViewCell.xib */; };
+		CD92BC801A75B203007604B5 /* AUDLDivisionScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD92BC7F1A75B203007604B5 /* AUDLDivisionScoreTableViewController.m */; };
 		CDF89A881A68073B00382B6D /* AUDLGameGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF89A871A68073B00382B6D /* AUDLGameGraphViewController.m */; };
 		CDF89A8A1A68074E00382B6D /* AUDLGameGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF89A891A68074E00382B6D /* AUDLGameGraphView.xib */; };
 		E90995F618DCAA7C003A07FD /* AUDLSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */; };
@@ -115,9 +136,9 @@
 		721F682118EF3B0B0019EFB9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		721F682318EF3C260019EFB9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		721F682918EF405C0019EFB9 /* audl-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audl-120.png"; sourceTree = "<group>"; };
-		721F683318F2065F0019EFB9 /* AUDLDivisionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLDivisionTableViewController.h; sourceTree = "<group>"; };
-		721F683418F2065F0019EFB9 /* AUDLDivisionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLDivisionTableViewController.m; sourceTree = "<group>"; };
-		721F683518F2065F0019EFB9 /* AUDLDivisionTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLDivisionTableViewController.xib; sourceTree = "<group>"; };
+		721F683318F2065F0019EFB9 /* AUDLDivisionScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLDivisionScheduleTableViewController.h; sourceTree = "<group>"; };
+		721F683418F2065F0019EFB9 /* AUDLDivisionScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLDivisionScheduleTableViewController.m; sourceTree = "<group>"; };
+		721F683518F2065F0019EFB9 /* AUDLDivisionScheduleTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLDivisionScheduleTableViewController.xib; sourceTree = "<group>"; };
 		72255C1818F61D52001E6937 /* AUDLScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLScheduleTableViewCell.h; sourceTree = "<group>"; };
 		72255C1918F61D52001E6937 /* AUDLScheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLScheduleTableViewCell.m; sourceTree = "<group>"; };
 		72255C1A18F61D52001E6937 /* AUDLScheduleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLScheduleTableViewCell.xib; sourceTree = "<group>"; };
@@ -196,6 +217,29 @@
 		CD9132EF1A5F64CE0096A08E /* Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		CD92BC471A73DF50007604B5 /* tb_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tb_background.png; path = App/tb_background.png; sourceTree = "<group>"; };
 		CD92BC4B1A73E6F7007604B5 /* Grey_Bar_Scoreboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Grey_Bar_Scoreboard.png; path = App/Grey_Bar_Scoreboard.png; sourceTree = "<group>"; };
+		CD92BC531A75AE46007604B5 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		CD92BC541A75AE46007604B5 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		CD92BC551A75AE46007604B5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		CD92BC561A75AE46007604B5 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		CD92BC571A75AE46007604B5 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		CD92BC581A75AE46007604B5 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		CD92BC591A75AE46007604B5 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		CD92BC5A1A75AE46007604B5 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		CD92BC5B1A75AE46007604B5 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		CD92BC5C1A75AE46007604B5 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		CD92BC5D1A75AE46007604B5 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		CD92BC5E1A75AE46007604B5 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		CD92BC5F1A75AE46007604B5 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		CD92BC601A75AE46007604B5 /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		CD92BC611A75AE46007604B5 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		CD92BC621A75AE46007604B5 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		CD92BC631A75AE46007604B5 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		CD92BC641A75AE46007604B5 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		CD92BC781A75B0BB007604B5 /* AUDLScoreTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLScoreTableViewCell.h; sourceTree = "<group>"; };
+		CD92BC791A75B0CE007604B5 /* AUDLScoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLScoreTableViewCell.m; sourceTree = "<group>"; };
+		CD92BC7B1A75B0E8007604B5 /* AUDLScoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLScoreTableViewCell.xib; sourceTree = "<group>"; };
+		CD92BC7F1A75B203007604B5 /* AUDLDivisionScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLDivisionScoreTableViewController.m; sourceTree = "<group>"; };
+		CD92BC811A75B224007604B5 /* AUDLDivisionScoreTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLDivisionScoreTableViewController.h; sourceTree = "<group>"; };
 		CDF89A861A6806FD00382B6D /* AUDLGameGraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLGameGraphViewController.h; sourceTree = "<group>"; };
 		CDF89A871A68073B00382B6D /* AUDLGameGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLGameGraphViewController.m; sourceTree = "<group>"; };
 		CDF89A891A68074E00382B6D /* AUDLGameGraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLGameGraphView.xib; sourceTree = "<group>"; };
@@ -263,9 +307,9 @@
 		721F683018EF72D10019EFB9 /* Divison */ = {
 			isa = PBXGroup;
 			children = (
-				721F683318F2065F0019EFB9 /* AUDLDivisionTableViewController.h */,
-				721F683418F2065F0019EFB9 /* AUDLDivisionTableViewController.m */,
-				721F683518F2065F0019EFB9 /* AUDLDivisionTableViewController.xib */,
+				721F683318F2065F0019EFB9 /* AUDLDivisionScheduleTableViewController.h */,
+				721F683418F2065F0019EFB9 /* AUDLDivisionScheduleTableViewController.m */,
+				721F683518F2065F0019EFB9 /* AUDLDivisionScheduleTableViewController.xib */,
 				72255C1D18F61D56001E6937 /* Schedule Table Cell */,
 			);
 			name = Divison;
@@ -311,6 +355,7 @@
 				72C124F71904585C00BAEC46 /* TeamViewController.h */,
 				72C124F81904585C00BAEC46 /* TeamViewController.m */,
 				72C18E0718F2258800849056 /* Main.storyboard */,
+				CD92BC521A75AE2C007604B5 /* Fonts */,
 				CD92BC4E1A75AB7B007604B5 /* Images */,
 				727ABD7518D257C1005B9ACC /* App */,
 				727ABD9418D257C1005B9ACC /* AppTests */,
@@ -436,7 +481,7 @@
 				72C7F1791903125F00D7C49B /* AUDLScoresTableViewController.h */,
 				72C7F17A1903125F00D7C49B /* AUDLScoresTableViewController.m */,
 				72C7F17B1903125F00D7C49B /* AUDLScoresTableViewController.xib */,
-				CDF89A831A6806BC00382B6D /* Game Graph */,
+				CD92BC7D1A75B185007604B5 /* Division */,
 			);
 			name = Scores;
 			sourceTree = "<group>";
@@ -552,6 +597,52 @@
 				CD92BC4B1A73E6F7007604B5 /* Grey_Bar_Scoreboard.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		CD92BC521A75AE2C007604B5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CD92BC531A75AE46007604B5 /* Roboto-Black.ttf */,
+				CD92BC541A75AE46007604B5 /* Roboto-BlackItalic.ttf */,
+				CD92BC551A75AE46007604B5 /* Roboto-Bold.ttf */,
+				CD92BC561A75AE46007604B5 /* Roboto-BoldItalic.ttf */,
+				CD92BC571A75AE46007604B5 /* Roboto-Italic.ttf */,
+				CD92BC581A75AE46007604B5 /* Roboto-Light.ttf */,
+				CD92BC591A75AE46007604B5 /* Roboto-LightItalic.ttf */,
+				CD92BC5A1A75AE46007604B5 /* Roboto-Medium.ttf */,
+				CD92BC5B1A75AE46007604B5 /* Roboto-MediumItalic.ttf */,
+				CD92BC5C1A75AE46007604B5 /* Roboto-Regular.ttf */,
+				CD92BC5D1A75AE46007604B5 /* Roboto-Thin.ttf */,
+				CD92BC5E1A75AE46007604B5 /* Roboto-ThinItalic.ttf */,
+				CD92BC5F1A75AE46007604B5 /* RobotoCondensed-Bold.ttf */,
+				CD92BC601A75AE46007604B5 /* RobotoCondensed-BoldItalic.ttf */,
+				CD92BC611A75AE46007604B5 /* RobotoCondensed-Italic.ttf */,
+				CD92BC621A75AE46007604B5 /* RobotoCondensed-Light.ttf */,
+				CD92BC631A75AE46007604B5 /* RobotoCondensed-LightItalic.ttf */,
+				CD92BC641A75AE46007604B5 /* RobotoCondensed-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		CD92BC771A75B090007604B5 /* Score Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CD92BC781A75B0BB007604B5 /* AUDLScoreTableViewCell.h */,
+				CD92BC791A75B0CE007604B5 /* AUDLScoreTableViewCell.m */,
+				CD92BC7B1A75B0E8007604B5 /* AUDLScoreTableViewCell.xib */,
+				CDF89A831A6806BC00382B6D /* Game Graph */,
+			);
+			name = "Score Table Cell";
+			sourceTree = "<group>";
+		};
+		CD92BC7D1A75B185007604B5 /* Division */ = {
+			isa = PBXGroup;
+			children = (
+				CD92BC811A75B224007604B5 /* AUDLDivisionScoreTableViewController.h */,
+				CD92BC7F1A75B203007604B5 /* AUDLDivisionScoreTableViewController.m */,
+				CD92BC771A75B090007604B5 /* Score Table Cell */,
+			);
+			name = Division;
 			sourceTree = "<group>";
 		};
 		CDF89A831A6806BC00382B6D /* Game Graph */ = {
@@ -788,35 +879,54 @@
 			files = (
 				CD659C5F1A6F7BDE00B5EDB9 /* AUDLNewsWebView.xib in Resources */,
 				CD659C531A6F68C200B5EDB9 /* news_icon.png in Resources */,
+				CD92BC6B1A75AE46007604B5 /* Roboto-LightItalic.ttf in Resources */,
 				CD8FD7C71A6620AB00572CE6 /* Twitter_bird_logo.png in Resources */,
+				CD92BC6F1A75AE46007604B5 /* Roboto-Thin.ttf in Resources */,
+				CD92BC6D1A75AE46007604B5 /* Roboto-MediumItalic.ttf in Resources */,
 				72C7F1811903347200D7C49B /* AUDLTop5TableViewCell.xib in Resources */,
 				E9D674BF18DE019100712370 /* AUDLVideoViewController.xib in Resources */,
+				CD92BC651A75AE46007604B5 /* Roboto-Black.ttf in Resources */,
 				CD37741D1A70AFCD007FD6E9 /* audl-120.png in Resources */,
 				E9D674CC18DE01FF00712370 /* AUDLScheduleViewController.xib in Resources */,
-				721F683718F2065F0019EFB9 /* AUDLDivisionTableViewController.xib in Resources */,
+				721F683718F2065F0019EFB9 /* AUDLDivisionScheduleTableViewController.xib in Resources */,
 				CD8FD8841A662E7C00572CE6 /* Launch Screen.xib in Resources */,
 				CDF89A8A1A68074E00382B6D /* AUDLGameGraphView.xib in Resources */,
 				721F682A18EF405C0019EFB9 /* audl-120.png in Resources */,
+				CD92BC761A75AE46007604B5 /* RobotoCondensed-Regular.ttf in Resources */,
+				CD92BC701A75AE46007604B5 /* Roboto-ThinItalic.ttf in Resources */,
 				72F4DAFE18DA0A8A00E571FC /* AUDLTeamsTableViewController.xib in Resources */,
+				CD92BC731A75AE46007604B5 /* RobotoCondensed-Italic.ttf in Resources */,
 				7249E15A18F708E200C4012B /* AUDLIndivTeamTableViewController.xib in Resources */,
+				CD92BC671A75AE46007604B5 /* Roboto-Bold.ttf in Resources */,
 				72255C2818F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib in Resources */,
 				72C1250319045EA800BAEC46 /* AUDLTeamStatsTableViewController.xib in Resources */,
 				E9D674C618DE01D700712370 /* AUDLStatsViewController.xib in Resources */,
+				CD92BC661A75AE46007604B5 /* Roboto-BlackItalic.ttf in Resources */,
 				72C7F17D1903125F00D7C49B /* AUDLScoresTableViewController.xib in Resources */,
 				72F4DB0718DB36C700E571FC /* AUDLNewsTableViewController.xib in Resources */,
 				727ABD7A18D257C1005B9ACC /* InfoPlist.strings in Resources */,
 				E9D674D818DE025C00712370 /* AUDLStandingsViewController.xib in Resources */,
+				CD92BC681A75AE46007604B5 /* Roboto-BoldItalic.ttf in Resources */,
 				72C18E0818F2258800849056 /* Main.storyboard in Resources */,
+				CD92BC7C1A75B0E8007604B5 /* AUDLScoreTableViewCell.xib in Resources */,
 				721F682218EF3B0B0019EFB9 /* Default-568h@2x.png in Resources */,
 				E9D674D218DE022B00712370 /* AUDLNowViewController.xib in Resources */,
+				CD92BC721A75AE46007604B5 /* RobotoCondensed-BoldItalic.ttf in Resources */,
+				CD92BC691A75AE46007604B5 /* Roboto-Italic.ttf in Resources */,
 				CD92BC4C1A73E6F8007604B5 /* Grey_Bar_Scoreboard.png in Resources */,
 				72255C1C18F61D52001E6937 /* AUDLScheduleTableViewCell.xib in Resources */,
 				72255C2218F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib in Resources */,
+				CD92BC6E1A75AE46007604B5 /* Roboto-Regular.ttf in Resources */,
 				CD92BC481A73DF50007604B5 /* tb_background.png in Resources */,
 				CD659C511A6F45ED00B5EDB9 /* AUDLNewsTableViewCell.xib in Resources */,
 				72C7F1781901AC9900D7C49B /* AUDLRosterTableViewController.xib in Resources */,
+				CD92BC6C1A75AE46007604B5 /* Roboto-Medium.ttf in Resources */,
+				CD92BC751A75AE46007604B5 /* RobotoCondensed-LightItalic.ttf in Resources */,
 				721F682418EF3C260019EFB9 /* Default@2x.png in Resources */,
+				CD92BC6A1A75AE46007604B5 /* Roboto-Light.ttf in Resources */,
+				CD92BC711A75AE46007604B5 /* RobotoCondensed-Bold.ttf in Resources */,
 				72C124FE190459B500BAEC46 /* AUDLTeamScheduleTableViewController.xib in Resources */,
+				CD92BC741A75AE46007604B5 /* RobotoCondensed-Light.ttf in Resources */,
 				72F4DB0C18DB5A3F00E571FC /* AUDLTableViewCell.xib in Resources */,
 				72C1250919046FF400BAEC46 /* AUDLTeamStatsTableViewCell.xib in Resources */,
 			);
@@ -837,7 +947,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				721F683618F2065F0019EFB9 /* AUDLDivisionTableViewController.m in Sources */,
+				721F683618F2065F0019EFB9 /* AUDLDivisionScheduleTableViewController.m in Sources */,
 				72F4DAFD18DA0A8A00E571FC /* AUDLTeamsTableViewController.m in Sources */,
 				E9A421B119049F9800F26D69 /* AUDLFAQViewController.m in Sources */,
 				72F4DB0B18DB5A3F00E571FC /* AUDLTableViewCell.m in Sources */,
@@ -856,6 +966,7 @@
 				CD659C4D1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m in Sources */,
 				72C124FD190459B500BAEC46 /* AUDLTeamScheduleTableViewController.m in Sources */,
 				727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */,
+				CD92BC801A75B203007604B5 /* AUDLDivisionScoreTableViewController.m in Sources */,
 				E9D674D718DE025C00712370 /* AUDLStandingsViewController.m in Sources */,
 				72C7F1771901AC9900D7C49B /* AUDLRosterTableViewController.m in Sources */,
 				72C7F17C1903125F00D7C49B /* AUDLScoresTableViewController.m in Sources */,
@@ -869,6 +980,7 @@
 				E99C294219057CA800B05EDC /* AUDLTermsOfUseViewController.m in Sources */,
 				727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */,
 				E91A883E19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m in Sources */,
+				CD92BC7A1A75B0CE007604B5 /* AUDLScoreTableViewCell.m in Sources */,
 				7249E15918F708E200C4012B /* AUDLIndivTeamTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

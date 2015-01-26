@@ -11,7 +11,8 @@
 #import "AUDLRosterTableViewController.h"
 #import "AUDLTeamScheduleTableViewController.h"
 #import "AUDLTeamStatsTableViewController.h"
-#import "AUDLDivisionTableViewController.h"
+#import "AUDLDivisionScheduleTableViewController.h"
+#import "AUDLDivisionScoreTableViewController.h"
 
 @interface AUDLIndivTeamTableViewController ()
 
@@ -226,7 +227,7 @@
             stats.navigationTitle = [stats.teamName stringByAppendingString:@" Statistics"];
             
         } else if ([selectedCell.cellIdentifier isEqualToString:@"Scores"]) {
-            AUDLDivisionTableViewController *scores = [[AUDLDivisionTableViewController alloc] init];
+            AUDLDivisionScoreTableViewController *scores = [[AUDLDivisionScoreTableViewController alloc] init];
             controllerToShow = scores;
             // pass the data
             scores.schedule = _data[3];

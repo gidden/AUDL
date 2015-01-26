@@ -1,14 +1,14 @@
 //
-//  AUDLDivisionTableViewController.h
+//  AUDLDivisionScoreTableViewController.h
 //  AUDL
 //
-//  Created by Ryan Zoellner on 4/6/14.
-//  Copyright (c) 2014 AUDL. All rights reserved.
+//  Created by Patrick on 1/25/15.
+//  Copyright (c) 2015 AUDL. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface AUDLDivisionTableViewController : UITableViewController
+@interface AUDLDivisionScoreTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSString *division;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;

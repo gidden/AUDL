@@ -12,7 +12,7 @@
 #import "AUDLScheduleViewController.h"
 #import "AUDLStandingsViewController.h"
 #import "AUDLVideoViewController.h"
-#import "AUDLDivisionTableViewController.h"
+#import "AUDLDivisionScheduleTableViewController.h"
 
 
 

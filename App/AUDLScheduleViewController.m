@@ -7,7 +7,7 @@
 //
 
 #import "AUDLScheduleViewController.h"
-#import "AUDLDivisionTableViewController.h"
+#import "AUDLDivisionScheduleTableViewController.h"
 #import "SWRevealViewController.h"
 #import "AUDLTableViewCell.h"
 

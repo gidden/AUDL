@@ -8,7 +8,7 @@
 
 #import "AUDLScoresTableViewController.h"
 #import "SWRevealViewController.h"
-#import "AUDLDivisionTableViewController.h"
+#import "AUDLDivisionScoreTableViewController.h"
 #import "AUDLTableViewCell.h"
 
 @interface AUDLScoresTableViewController ()
@@ -97,7 +97,7 @@
         thisDivTab = [[UITabBarItem alloc] initWithTitle:@"" image:offImage selectedImage:onImage];
         
         //create a division view controller
-        AUDLDivisionTableViewController *divScheduleView = [[AUDLDivisionTableViewController alloc] initWithSchedule:divSchedule];
+        AUDLDivisionScoreTableViewController *divScheduleView = [[AUDLDivisionScoreTableViewController alloc] initWithSchedule:divSchedule];
         //set the tab bar item
         divScheduleView.tabBarItem = thisDivTab;
         

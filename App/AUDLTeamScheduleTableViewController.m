@@ -80,10 +80,11 @@
     cell.teamOneIcon.image = [tempDict objectForKey:teamOneId];
     cell.teamTwo.text = [thisScheduleItem objectAtIndex:2];
     cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
-    cell.date.text = [thisScheduleItem objectAtIndex:0];
-    cell.time.text = [thisScheduleItem objectAtIndex:1];
-    cell.teamOneScore.text = @""; // these should be blank for a schedule
-    cell.teamTwoScore.text = @"";
+    NSString *date = [thisScheduleItem objectAtIndex:0];
+    NSString *time = [thisScheduleItem objectAtIndex:1];
+    NSString *dt = [date stringByAppendingString:@" | "];
+    dt = [dt stringByAppendingString:time];
+    cell.dateTime.text = dt;
     
     return cell;
 }
