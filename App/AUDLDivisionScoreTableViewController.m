@@ -106,19 +106,36 @@
     cell.teamTwo.text = [thisGameItem objectAtIndex:2];
     cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
     cell.date.text = [thisGameItem objectAtIndex:4];
-    cell.status.text = [thisGameItem objectAtIndex:5];
-    if ( thisGameItem.count > 6 )
+    //cell.status.text = [thisGameItem objectAtIndex:5];
+
+
+    cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:6]];
+    cell.teamTwoScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:7]];
+    teamOneId = [NSString stringWithFormat:[teamOneId stringByAppendingString:@"/"]];
+    cell.gameID = [NSString stringWithString:[teamOneId stringByAppendingString:cell.date.text]];
+
+
+    NSString *statusVal = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:8]];
+    
+    if([statusVal isEqualToString:@"0"])
     {
-        cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:6]];
-        cell.teamTwoScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:7]];
-        teamOneId = [NSString stringWithFormat:[teamOneId stringByAppendingString:@"/"]];
-        cell.gameID = [NSString stringWithString:[teamOneId stringByAppendingString:cell.date.text]];
+        cell.status.text = [thisGameItem objectAtIndex:5];
+    }
+    else if ( [statusVal isEqualToString:@"1"])
+    {
+        cell.status.text = @"Ongoing";
+    }
+    else if ( [statusVal isEqualToString:@"2"])
+    {
+        cell.status.text = @"Final";
+    }
+    else if ( [statusVal isEqualToString:@"3"])
+    {
+        cell.status.text = @"Final";
     }
     else
     {
-        cell.teamOneScore.text = @"";
-        cell.teamTwoScore.text = @"";
-        cell.gameID = @"";
+        cell.status.text = @"Default Case";
     }
     
     return cell;
