@@ -108,28 +108,39 @@
     cell.date.text = [thisGameItem objectAtIndex:4];
     //cell.status.text = [thisGameItem objectAtIndex:5];
 
-
+    cell.teamOneScore.textColor = [UIColor colorWithRed:(121/255.0) green:(123/255.0) blue:(125/255.0) alpha:1];
+    cell.teamTwoScore.textColor = [UIColor colorWithRed:(121/255.0) green:(123/255.0) blue:(125/255.0) alpha:1];
     cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:6]];
     cell.teamTwoScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:7]];
     teamOneId = [NSString stringWithFormat:[teamOneId stringByAppendingString:@"/"]];
     cell.gameID = [NSString stringWithString:[teamOneId stringByAppendingString:cell.date.text]];
 
+    cell.status.text =  [thisGameItem objectAtIndex:5];
 
     NSString *statusVal = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:8]];
+
+    [self setCellStatus:cell withStatusValue:statusVal];
     
-    if([statusVal isEqualToString:@"0"])
+
+    return cell;
+}
+
+-(AUDLScoreTableViewCell*)setCellStatus:(AUDLScoreTableViewCell*)cell withStatusValue:(NSString*)statusValue
+{
+    
+    if([statusValue isEqualToString:@"0"])
     {
-        cell.status.text = [thisGameItem objectAtIndex:5];
+        return cell; // do nothing
     }
-    else if ( [statusVal isEqualToString:@"1"])
+    else if ( [statusValue isEqualToString:@"1"])
     {
         cell.status.text = @"Ongoing";
     }
-    else if ( [statusVal isEqualToString:@"2"])
+    else if ( [statusValue isEqualToString:@"2"])
     {
         cell.status.text = @"Final";
     }
-    else if ( [statusVal isEqualToString:@"3"])
+    else if ( [statusValue isEqualToString:@"3"])
     {
         cell.status.text = @"Final";
     }
@@ -137,10 +148,33 @@
     {
         cell.status.text = @"Default Case";
     }
-    
-    return cell;
-}
 
+    NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
+    //if this score is final, then adjust the font of the higher score
+    //(if tied, do nothing)
+    if( [cell.status.text isEqualToString:@"Final"])
+    {
+        NSNumber *scoreOne = [nf numberFromString:cell.teamOneScore.text];
+        NSNumber *scoreTwo = [nf numberFromString:cell.teamTwoScore.text];
+        NSLog(@"%@",scoreOne);
+        NSLog(@"%@",scoreTwo);
+        if ( scoreOne > scoreTwo)
+        {
+            cell.teamOneScore.textColor = [UIColor colorWithRed:0 green:(45/255.0) blue:(86/255.0) alpha:1];
+            NSLog(@"Text One Changed");
+        }
+        else if ( scoreTwo > scoreOne)
+        {
+            cell.teamTwoScore.textColor = [UIColor colorWithRed:0 green:(45/255.0) blue:(86/255.0) alpha:1];
+            NSLog(@"Text Two Changed");
+        }
+
+
+    }
+
+    return cell;
+    
+}
 
 - (void)didSelect:(UIGestureRecognizer *)gestureRecognizer {
     
