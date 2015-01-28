@@ -47,6 +47,34 @@
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
     [self.view addGestureRecognizer:gesture];
     
+    [self sortScores];
+}
+
+-(void)sortScores
+{
+    NSInteger num_of_games = [self.schedule count];
+    
+    NSMutableDictionary *sortedScores;
+    for( NSInteger i = 0; i < num_of_games; i++)
+    {
+        NSArray *game = [self.schedule objectAtIndex:i];
+        NSString *date = [game objectAtIndex:4];
+        
+        if (![sortedScores.allKeys containsObject:date])
+        {
+            NSArray *game_list = [sortedScores objectForKey:date];
+            game_list = [game_list arrayByAddingObject:game];
+            [sortedScores setObject:game_list forKey:date];
+        }
+        else
+        {
+            NSArray *game_list = [NSArray arrayWithObject:game];
+            [sortedScores setObject:game_list forKey:date];
+        }
+        
+    }
+    
+    self.game_dict = [[NSDictionary alloc] initWithDictionary:sortedScores];
     
 }
 

@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (nonatomic, strong) NSArray *schedule;
 @property id delegate;
+@property (strong,nonatomic) NSDictionary *game_dict;
+
 
 - (id)initWithSchedule:(NSArray *)schedule;
 
