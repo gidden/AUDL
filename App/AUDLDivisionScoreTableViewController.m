@@ -103,7 +103,7 @@
 -(UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UITableViewHeaderFooterView *headerView = [[UIView alloc] init];
-    headerView.frame = CGRectMake(0, 0, tableView.frame.size.width, 30);
+    headerView.frame = CGRectMake(0, 0, tableView.frame.size.width, 40);
     UIImage *bg = [UIImage imageNamed:@"Blue_Bar"];
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:bg];
@@ -112,7 +112,7 @@
 
     
     UILabel* headerLabel = [[UILabel alloc] init];
-    headerLabel.frame = CGRectMake(6, 4, tableView.frame.size.width - 5, 18);
+    headerLabel.frame = CGRectMake(10, 10, tableView.frame.size.width - 5, 18);
     headerLabel.backgroundColor = [UIColor clearColor];
     headerLabel.textColor = [UIColor whiteColor];
     headerLabel.font = [UIFont fontWithName:@"Roboto-Bold" size:12];
