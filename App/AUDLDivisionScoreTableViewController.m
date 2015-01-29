@@ -47,6 +47,13 @@
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
     [self.view addGestureRecognizer:gesture];
     
+    //Trick section headers into being anchored to cell views
+    CGFloat dummyViewHeight = 40;
+    UIView *dummyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, dummyViewHeight)];
+    self.tableView.tableHeaderView = dummyView;
+    self.tableView.contentInset = UIEdgeInsetsMake(-dummyViewHeight, 0, 0, 0);
+    
+    
     [self sortScores];
 }
 
@@ -102,27 +109,30 @@
 
 -(UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UITableViewHeaderFooterView *headerView = [[UIView alloc] init];
-    headerView.frame = CGRectMake(0, 0, tableView.frame.size.width, 40);
-    UIImage *bg = [UIImage imageNamed:@"Blue_Bar"];
     
+    //setup view for the section header
+    UITableViewHeaderFooterView *headerView = [[UIView alloc] init];
+    headerView.frame = CGRectMake(0, 0, tableView.frame.size.width, 30);
+    
+    
+    //create a background image for the header
+    UIImage *bg = [UIImage imageNamed:@"Blue_Bar"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:bg];
     imageView.frame = CGRectMake(headerView.frame.origin.x, headerView.frame.origin.y, headerView.frame.size.width, headerView.frame.size.height);
     imageView.clipsToBounds = YES;
 
-    
+    //create title for the section header
     UILabel* headerLabel = [[UILabel alloc] init];
-    headerLabel.frame = CGRectMake(10, 10, tableView.frame.size.width - 5, 18);
+    headerLabel.frame = CGRectMake(10, 6, tableView.frame.size.width - 5, 18);
     headerLabel.backgroundColor = [UIColor clearColor];
     headerLabel.textColor = [UIColor whiteColor];
     headerLabel.font = [UIFont fontWithName:@"Roboto-Bold" size:12];
     NSString *headerTitle = [self.game_dict.allKeys objectAtIndex:section];
+    //remove date dashes and replace with .'s
     headerLabel.text = [headerTitle stringByReplacingOccurrencesOfString:@"/" withString:@"."];
     headerLabel.textAlignment = NSTextAlignmentLeft;
     
-    
-    
-    
+    //add these views to the header view
     [headerView addSubview:headerLabel];
     [headerView addSubview:imageView];
     [headerView sendSubviewToBack:imageView];
@@ -135,8 +145,10 @@
 {
     //#warning Incomplete method implementation.
     // Return the number of rows in the section.
+    
     NSArray *section_data = [self.game_dict objectForKey:[self.game_dict.allKeys objectAtIndex:section]];
     return  [section_data count];
+ 
 }
 
 
