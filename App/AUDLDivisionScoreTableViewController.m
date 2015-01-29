@@ -115,7 +115,7 @@
     headerLabel.frame = CGRectMake(10, 2, tableView.frame.size.width - 5, 18);
     headerLabel.backgroundColor = [UIColor clearColor];
     headerLabel.textColor = [UIColor whiteColor];
-    headerLabel.font = [UIFont boldSystemFontOfSize:16.0];
+    headerLabel.font = [UIFont fontWithName:@"Roboto-Bold" size:16];
     headerLabel.text = [self.game_dict.allKeys objectAtIndex:section];
     headerLabel.textAlignment = NSTextAlignmentLeft;
     
