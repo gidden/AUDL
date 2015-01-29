@@ -99,6 +99,39 @@
     return (NSString*)[self.game_dict.allKeys objectAtIndex:section];
 }
 
+
+-(UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UITableViewHeaderFooterView *headerView = [[UIView alloc] init];
+    headerView.frame = CGRectMake(0, 0, tableView.frame.size.width, 30);
+    UIImage *bg = [UIImage imageNamed:@"Blue_Bar"];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:bg];
+    imageView.frame = CGRectMake(headerView.frame.origin.x, headerView.frame.origin.y, headerView.frame.size.width, headerView.frame.size.height);
+    imageView.clipsToBounds = YES;
+
+    
+    UILabel* headerLabel = [[UILabel alloc] init];
+    headerLabel.frame = CGRectMake(10, 2, tableView.frame.size.width - 5, 18);
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.textColor = [UIColor whiteColor];
+    headerLabel.font = [UIFont boldSystemFontOfSize:16.0];
+    headerLabel.text = [self.game_dict.allKeys objectAtIndex:section];
+    headerLabel.textAlignment = NSTextAlignmentLeft;
+    
+    
+    
+    
+    
+    
+    [headerView addSubview:headerLabel];
+    [headerView addSubview:imageView];
+    [headerView sendSubviewToBack:imageView];
+    
+    return headerView;
+    
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //#warning Incomplete method implementation.
