@@ -53,14 +53,15 @@
 -(void)sortScores
 {
     NSInteger num_of_games = [self.schedule count];
+    NSLog(@"%zd",num_of_games);
+    NSMutableDictionary *sortedScores = [[NSMutableDictionary alloc] init];
     
-    NSMutableDictionary *sortedScores;
     for( NSInteger i = 0; i < num_of_games; i++)
     {
         NSArray *game = [self.schedule objectAtIndex:i];
+
         NSString *date = [game objectAtIndex:4];
-        
-        if (![sortedScores.allKeys containsObject:date])
+        if([sortedScores.allKeys containsObject:date])
         {
             NSArray *game_list = [sortedScores objectForKey:date];
             game_list = [game_list arrayByAddingObject:game];
@@ -75,7 +76,7 @@
     }
     
     self.game_dict = [[NSDictionary alloc] initWithDictionary:sortedScores];
-    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,22 +91,29 @@
 {
     //#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return [self.game_dict.allKeys count];
+}
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return (NSString*)[self.game_dict.allKeys objectAtIndex:section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.schedule count];
+    NSArray *section_data = [self.game_dict objectForKey:[self.game_dict.allKeys objectAtIndex:section]];
+    return  [section_data count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     //get the game info for this index
-    NSArray *thisGameItem = [self.schedule objectAtIndex:indexPath.row];
+    NSArray *section_data = [self.game_dict objectForKey:[self.game_dict.allKeys objectAtIndex:indexPath.section]];
+
+    NSArray *thisGameItem = [section_data objectAtIndex:indexPath.row];
     
     NSString *cellIdentifier = @"Cell";
     
