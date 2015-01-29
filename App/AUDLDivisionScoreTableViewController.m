@@ -112,14 +112,13 @@
 
     
     UILabel* headerLabel = [[UILabel alloc] init];
-    headerLabel.frame = CGRectMake(10, 2, tableView.frame.size.width - 5, 18);
+    headerLabel.frame = CGRectMake(6, 4, tableView.frame.size.width - 5, 18);
     headerLabel.backgroundColor = [UIColor clearColor];
     headerLabel.textColor = [UIColor whiteColor];
-    headerLabel.font = [UIFont fontWithName:@"Roboto-Bold" size:16];
-    headerLabel.text = [self.game_dict.allKeys objectAtIndex:section];
+    headerLabel.font = [UIFont fontWithName:@"Roboto-Bold" size:12];
+    NSString *headerTitle = [self.game_dict.allKeys objectAtIndex:section];
+    headerLabel.text = [headerTitle stringByReplacingOccurrencesOfString:@"/" withString:@"."];
     headerLabel.textAlignment = NSTextAlignmentLeft;
-    
-    
     
     
     
