@@ -87,6 +87,7 @@
 		CD92BC7A1A75B0CE007604B5 /* AUDLScoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD92BC791A75B0CE007604B5 /* AUDLScoreTableViewCell.m */; };
 		CD92BC7C1A75B0E8007604B5 /* AUDLScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC7B1A75B0E8007604B5 /* AUDLScoreTableViewCell.xib */; };
 		CD92BC801A75B203007604B5 /* AUDLDivisionScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD92BC7F1A75B203007604B5 /* AUDLDivisionScoreTableViewController.m */; };
+		CD92BC841A79FFBE007604B5 /* Blue_Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = CD92BC831A79FFBD007604B5 /* Blue_Bar.png */; };
 		CDF89A881A68073B00382B6D /* AUDLGameGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF89A871A68073B00382B6D /* AUDLGameGraphViewController.m */; };
 		CDF89A8A1A68074E00382B6D /* AUDLGameGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF89A891A68074E00382B6D /* AUDLGameGraphView.xib */; };
 		E90995F618DCAA7C003A07FD /* AUDLSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */; };
@@ -240,6 +241,7 @@
 		CD92BC7B1A75B0E8007604B5 /* AUDLScoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLScoreTableViewCell.xib; sourceTree = "<group>"; };
 		CD92BC7F1A75B203007604B5 /* AUDLDivisionScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLDivisionScoreTableViewController.m; sourceTree = "<group>"; };
 		CD92BC811A75B224007604B5 /* AUDLDivisionScoreTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLDivisionScoreTableViewController.h; sourceTree = "<group>"; };
+		CD92BC831A79FFBD007604B5 /* Blue_Bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blue_Bar.png; path = App/Blue_Bar.png; sourceTree = "<group>"; };
 		CDF89A861A6806FD00382B6D /* AUDLGameGraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLGameGraphViewController.h; sourceTree = "<group>"; };
 		CDF89A871A68073B00382B6D /* AUDLGameGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLGameGraphViewController.m; sourceTree = "<group>"; };
 		CDF89A891A68074E00382B6D /* AUDLGameGraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLGameGraphView.xib; sourceTree = "<group>"; };
@@ -591,6 +593,7 @@
 				721F682918EF405C0019EFB9 /* audl-120.png */,
 				CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */,
 				CD659C521A6F68C200B5EDB9 /* news_icon.png */,
+				CD92BC831A79FFBD007604B5 /* Blue_Bar.png */,
 				721F682318EF3C260019EFB9 /* Default@2x.png */,
 				CD92BC471A73DF50007604B5 /* tb_background.png */,
 				721F682118EF3B0B0019EFB9 /* Default-568h@2x.png */,
@@ -913,6 +916,7 @@
 				E9D674D218DE022B00712370 /* AUDLNowViewController.xib in Resources */,
 				CD92BC721A75AE46007604B5 /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				CD92BC691A75AE46007604B5 /* Roboto-Italic.ttf in Resources */,
+				CD92BC841A79FFBE007604B5 /* Blue_Bar.png in Resources */,
 				CD92BC4C1A73E6F8007604B5 /* Grey_Bar_Scoreboard.png in Resources */,
 				72255C1C18F61D52001E6937 /* AUDLScheduleTableViewCell.xib in Resources */,
 				72255C2218F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib in Resources */,

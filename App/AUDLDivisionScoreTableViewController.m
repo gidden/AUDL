@@ -62,26 +62,38 @@
     NSInteger num_of_games = [self.schedule count];
     NSLog(@"%zd",num_of_games);
     NSMutableDictionary *sortedScores = [[NSMutableDictionary alloc] init];
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"'MM'/'dd'/'yy'"];
+    [df setDateStyle:NSDateFormatterShortStyle];
     
     for( NSInteger i = 0; i < num_of_games; i++)
     {
         NSArray *game = [self.schedule objectAtIndex:i];
-
-        NSString *date = [game objectAtIndex:4];
-        if([sortedScores.allKeys containsObject:date])
+        NSString *gameDate = [game objectAtIndex:4];
+        NSDate *dateKey = [df dateFromString:gameDate];
+        
+        if([sortedScores.allKeys containsObject:dateKey])
         {
-            NSArray *game_list = [sortedScores objectForKey:date];
+            NSArray *game_list = [sortedScores objectForKey:dateKey];
             game_list = [game_list arrayByAddingObject:game];
-            [sortedScores setObject:game_list forKey:date];
+            [sortedScores setObject:game_list forKey:dateKey];
         }
         else
         {
             NSArray *game_list = [NSArray arrayWithObject:game];
-            [sortedScores setObject:game_list forKey:date];
+            [sortedScores setObject:game_list forKey:dateKey];
         }
         
     }
     
+    //get the dictionary keys (dates)
+    NSArray *keys = [NSArray arrayWithArray:sortedScores.allKeys];
+    //sort these dates chronologically
+    keys = [keys sortedArrayUsingSelector:@selector(compare:)];
+    keys = [[keys reverseObjectEnumerator] allObjects];
+    
+    //set the object's attributes
+    self.dateKeys = keys;
     self.game_dict = [[NSDictionary alloc] initWithDictionary:sortedScores];
 
 }
@@ -103,7 +115,9 @@
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return (NSString*)[self.game_dict.allKeys objectAtIndex:section];
+    NSDate *thisDate = [self.dateKeys objectAtIndex:section];
+    // all of these objects have the same date string, use the first one
+    return (NSString*)[[[self.game_dict objectForKey:thisDate] objectAtIndex:0] objectAtIndex:4];
 }
 
 
@@ -127,7 +141,9 @@
     headerLabel.backgroundColor = [UIColor clearColor];
     headerLabel.textColor = [UIColor whiteColor];
     headerLabel.font = [UIFont fontWithName:@"Roboto-Bold" size:12];
-    NSString *headerTitle = [self.game_dict.allKeys objectAtIndex:section];
+    NSDate *thisDate = [self.dateKeys objectAtIndex:section];
+    // all of these objects have the same date string, use the first one
+    NSString *headerTitle = [[[self.game_dict objectForKey:thisDate] objectAtIndex:0] objectAtIndex:4];
     //remove date dashes and replace with .'s
     headerLabel.text = [headerTitle stringByReplacingOccurrencesOfString:@"/" withString:@"."];
     headerLabel.textAlignment = NSTextAlignmentLeft;

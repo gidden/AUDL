@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSArray *schedule;
 @property id delegate;
 @property (strong,nonatomic) NSDictionary *game_dict;
+@property (strong,nonatomic) NSArray *dateKeys;
 
 
 - (id)initWithSchedule:(NSArray *)schedule;
