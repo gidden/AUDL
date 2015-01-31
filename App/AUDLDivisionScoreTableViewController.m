@@ -111,7 +111,7 @@
 {
     
     //setup view for the section header
-    UITableViewHeaderFooterView *headerView = [[UIView alloc] init];
+    UITableViewHeaderFooterView *headerView = [[UITableViewHeaderFooterView alloc] init];
     headerView.frame = CGRectMake(0, 0, tableView.frame.size.width, 30);
     
     
