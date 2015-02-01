@@ -9,19 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "Globals.h"
 
-@interface AUDLIndivTeamTableViewController : UITableViewController
+@interface AUDLIndivTeamTableViewController : UITabBarController
 @property (nonatomic, strong) NSString *teamName;
-@property (nonatomic, strong) NSString *teamId;
+@property (nonatomic) NSString *teamId;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (nonatomic, strong) NSArray *data;
 @property (nonatomic, strong) NSArray *teamMenu;
 @property (nonatomic, strong) NSArray *teamInfo;
-
-
 @property id delegate;
 
 - (id)init;
+- (id)initWithId:(NSString *)Id;
 - (void)teamRequest;
+- (UITableViewController*)getTeamViewController:(NSString *)tabTitle;
 
 
 @end

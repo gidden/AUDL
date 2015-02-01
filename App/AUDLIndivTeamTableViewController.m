@@ -14,18 +14,29 @@
 #import "AUDLDivisionScheduleTableViewController.h"
 #import "AUDLDivisionScoreTableViewController.h"
 
-@interface AUDLIndivTeamTableViewController ()
 
-@end
 
 @implementation AUDLIndivTeamTableViewController
 
-- (id)init
+@synthesize teamId;
+//
+//- (id)init
+//{
+//    self = [super init];
+//    if (self) {
+//        // Custom initialization
+//        
+//    }
+//    return self;
+//}
+//
+- (id)initWithId:(NSString *)Id
 {
     self = [super init];
     if (self) {
         // Custom initialization
-        
+        self.teamId = Id;
+        NSLog(@"%@",self.teamId);
     }
     return self;
 }
@@ -41,15 +52,77 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationItem.title = self.teamName;
     
-    // hardcoded because it is not part of the JSON
-    _teamMenu = @[@"Roster", @"Schedule", @"Team Statistics", @"Scores"];
-
     //get teams
-    [self teamRequest];
+    //[self teamRequest];
     
     // Add a gesture recognizer to the table view for the cell selection
-    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
-    [self.view addGestureRecognizer:gesture];
+    //UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
+    //[self.view addGestureRecognizer:gesture];
+    
+  }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self teamRequest];
+    
+    [self setupTabView];
+
+}
+- (void)setupTabView{
+    
+    //gesture recognizers for moving between tab pages
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:swipeLeft];
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeRight];
+    
+    //add view controllers to the tabbed view
+    //NSString *baseIconPath = [server_url stringByAppendingString:@"/Images/iOS/"];
+    
+    //create array of tabs to show
+    NSArray *tabTitles = @[@"Roster",@"Schedule",@"Team Stats",@"Scores"];
+    NSArray *tabViews = [NSArray array];
+    UITabBarItem *thisTabItem;
+    
+    for( NSInteger i = 0; i < [tabTitles count]; i++)
+        {
+            
+            NSString *thisTabTitle = [tabTitles objectAtIndex:i];
+            thisTabItem = [[UITabBarItem alloc] initWithTitle:thisTabTitle image:nil selectedImage:nil];
+            
+            //create the appropriate view controller
+            UITableViewController *thisView = [self getTeamViewController:thisTabTitle];
+
+            thisView.tabBarItem = thisTabItem;
+            
+            //add it to the list of view controllers
+            tabViews = [tabViews arrayByAddingObject:thisView];
+        }
+    
+    self.tabBar.translucent = NO;
+    
+    self.viewControllers = tabViews;
+    
+}
+
+
+- (IBAction)tappedRightButton:(id)sender
+{
+    NSUInteger selectedIndex = [self selectedIndex];
+    
+    [self setSelectedIndex:selectedIndex + 1];
+}
+
+- (IBAction)tappedLeftButton:(id)sender
+{
+    NSUInteger selectedIndex = [self selectedIndex];
+    
+    [self setSelectedIndex:selectedIndex - 1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,36 +132,36 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return [_teamMenu count];
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *cellIdentifier = [self.teamMenu objectAtIndex:indexPath.row];
-    
-    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    cell.cellIdentifier = cellIdentifier;
-    
-    // add the right pointing arrow to the cell
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    return cell;
-}
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    // Return the number of sections.
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    // Return the number of rows in the section.
+//    return [_teamMenu count];
+//}
+//
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSString *cellIdentifier = [self.teamMenu objectAtIndex:indexPath.row];
+//    
+//    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//    if (cell == nil) {
+//        cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+//    }
+//    // Configure the cell...
+//    cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
+//    cell.cellIdentifier = cellIdentifier;
+//    
+//    // add the right pointing arrow to the cell
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    return cell;
+//}
 
 
 /*
@@ -151,10 +224,11 @@
 {
     
     // Prepare the link that is going to be used on the GET request
-    NSString *path = [@"/Teams/" stringByAppendingString:_teamId];
+    NSLog(@"%@",self.teamId);
+    NSString *path = [@"/Teams/" stringByAppendingString:self.teamId];
     NSString *full_url = [server_url stringByAppendingString: path];
     NSURL * url = [[NSURL alloc] initWithString:full_url];
-    //NSLog(@"%@", url);
+
     // Prepare the request object
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
                                 //cachePolicy:NSURLRequestReturnCacheDataElseLoad
@@ -172,30 +246,25 @@
                                                 error:&error];
     
     // Construct array around the Data from the response
-    _data = [NSJSONSerialization
+    self.data = [NSJSONSerialization
               JSONObjectWithData:urlData
               options:0
               error:&error];
+    //set team name
+    //NSString *teamName = [[[self.data objectAtIndex:0] objectAtIndex:0] objectAtIndex:0];
+    //teamName = [teamName stringByAppendingString:[[[self.data objectAtIndex:0] objectAtIndex:0] objectAtIndex:1]];
+    //self.teamName = teamName;
+    
 }
 
-- (void)didSelect:(UIGestureRecognizer *)gestureRecognizer
+- (UITableViewController*)getTeamViewController:(NSString *)tabTitle
 {
     
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        CGPoint tapLocation = [gestureRecognizer locationInView:self.tableView];
-        NSIndexPath *tappedIndexPath = [self.tableView indexPathForRowAtPoint:tapLocation];
-        UITableViewCell* tappedCell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
-        
-        // pointer to the cell that was selected
-        AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
-       
-        NSArray *tempData = _data[0];
-        self.teamInfo = tempData[0];
-        
+    NSLog(tabTitle);
         UITableViewController *controllerToShow;
         
         // create the view controller we want to present
-        if ([selectedCell.cellIdentifier isEqualToString:@"Roster"]) {
+        if ([tabTitle isEqualToString:@"Roster"]) {
             AUDLRosterTableViewController *roster = [[AUDLRosterTableViewController alloc] init];
             controllerToShow = roster;
             roster.roster = _data[0];
@@ -203,18 +272,18 @@
             roster.teamCity = self.teamInfo[1];
             
             
-        } else if ([selectedCell.cellIdentifier isEqualToString:@"Schedule"]) {
+        } else if ([tabTitle isEqualToString:@"Schedule"]) {
             AUDLTeamScheduleTableViewController *schedule = [[AUDLTeamScheduleTableViewController alloc] init];
             controllerToShow = schedule;
             // pass the data
-            schedule.teamSchedule = _data[1];
+            schedule.teamSchedule = self.data[1];
             // set these fields
             schedule.teamName = schedule.teamSchedule[0];
             schedule.teamId = schedule.teamSchedule[1];
             schedule.teamCity = self.teamInfo[1];
             
             
-        } else if ([selectedCell.cellIdentifier isEqualToString:@"Team Statistics"]) {
+        } else if ([tabTitle isEqualToString:@"Team Stats"]) {
             AUDLTeamStatsTableViewController *stats = [[AUDLTeamStatsTableViewController alloc] init];
             controllerToShow = stats;
             // pass the data
@@ -224,9 +293,9 @@
             stats.teamName = tempTeamArray[1];
             stats.teamId = tempTeamArray[2];
             stats.teamCity = self.teamInfo[1];
-            stats.navigationTitle = [stats.teamName stringByAppendingString:@" Statistics"];
+            stats.navigationTitle = stats.teamName; //[stats.teamName stringByAppendingString:@" Statistics"];
             
-        } else if ([selectedCell.cellIdentifier isEqualToString:@"Scores"]) {
+        } else if ([tabTitle isEqualToString:@"Scores"]) {
             AUDLDivisionScoreTableViewController *scores = [[AUDLDivisionScoreTableViewController alloc] init];
             controllerToShow = scores;
             // pass the data
@@ -242,9 +311,10 @@
         self.navigationItem.backBarButtonItem = backButton;
         
         // present the new view controller
-        [self.navigationController pushViewController:controllerToShow animated:YES];
-        
-    }
+//        [self.navigationController pushViewController:controllerToShow animated:YES];
+
+    return controllerToShow;
+    
 }
 
 @end

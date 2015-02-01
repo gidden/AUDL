@@ -215,9 +215,9 @@
         
         
         // create the view controller we want to present
-        AUDLIndivTeamTableViewController *teamSelection = [[AUDLIndivTeamTableViewController alloc] init];
+        AUDLIndivTeamTableViewController *teamSelection = [[AUDLIndivTeamTableViewController alloc] initWithId:selectedCell.teamId];
         teamSelection.teamName = selectedCell.teamName;
-        teamSelection.teamId = selectedCell.teamId;
+        //teamSelection.teamId = selectedCell.teamId;
         
         // override the back button in the new controller from saying "Schedule"
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
