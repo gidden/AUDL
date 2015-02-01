@@ -116,7 +116,7 @@
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     NSDate *thisDate = [self.dateKeys objectAtIndex:section];
-    // all of these objects have the same date string, use the first one
+    // all of these objects have the same date string, use the first one to set the title
     return (NSString*)[[[self.game_dict objectForKey:thisDate] objectAtIndex:0] objectAtIndex:4];
 }
 
@@ -162,7 +162,7 @@
     //#warning Incomplete method implementation.
     // Return the number of rows in the section.
     
-    NSArray *section_data = [self.game_dict objectForKey:[self.game_dict.allKeys objectAtIndex:section]];
+    NSArray *section_data = [self.game_dict objectForKey:[self.dateKeys objectAtIndex:section]];
     return  [section_data count];
  
 }
@@ -171,7 +171,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //get the game info for this index
-    NSArray *section_data = [self.game_dict objectForKey:[self.game_dict.allKeys objectAtIndex:indexPath.section]];
+    NSArray *section_data = [self.game_dict objectForKey:[self.dateKeys objectAtIndex:indexPath.section]];
 
     NSArray *thisGameItem = [section_data objectAtIndex:indexPath.row];
     
