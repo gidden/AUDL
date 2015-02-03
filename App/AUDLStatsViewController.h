@@ -12,6 +12,7 @@
 @interface AUDLStatsTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (nonatomic, strong) NSDictionary *playerStats;
+@property (nonatomic, strong) NSMutableArray *sectionBools;
 @property (nonatomic, strong) NSArray *throwaways;
 @property (nonatomic, strong) NSArray *assists;
 @property (nonatomic, strong) NSArray *goals;

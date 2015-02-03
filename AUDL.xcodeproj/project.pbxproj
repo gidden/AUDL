@@ -59,6 +59,9 @@
 		CD659C531A6F68C200B5EDB9 /* news_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD659C521A6F68C200B5EDB9 /* news_icon.png */; };
 		CD659C581A6F736D00B5EDB9 /* AUDLNewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD659C571A6F736D00B5EDB9 /* AUDLNewsWebViewController.m */; };
 		CD659C5F1A6F7BDE00B5EDB9 /* AUDLNewsWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD659C5E1A6F7BDE00B5EDB9 /* AUDLNewsWebView.xib */; };
+		CD6FD18F1A806E31000D5406 /* downArrowBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6FD18C1A806E30000D5406 /* downArrowBlack.png */; };
+		CD6FD1901A806E31000D5406 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CD6FD18D1A806E31000D5406 /* README.md */; };
+		CD6FD1911A806E31000D5406 /* upArrowBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6FD18E1A806E31000D5406 /* upArrowBlack.png */; };
 		CD8C22C11A6B573C00A719F9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8C22C01A6B573C00A719F9 /* Accelerate.framework */; };
 		CD8C22C51A6B574200A719F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8C22C41A6B574200A719F9 /* QuartzCore.framework */; };
 		CD8FD7C71A6620AB00572CE6 /* Twitter_bird_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */; };
@@ -208,6 +211,9 @@
 		CD659C571A6F736D00B5EDB9 /* AUDLNewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLNewsWebViewController.m; sourceTree = "<group>"; };
 		CD659C591A6F737F00B5EDB9 /* AUDLNewsWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLNewsWebViewController.h; sourceTree = "<group>"; };
 		CD659C5E1A6F7BDE00B5EDB9 /* AUDLNewsWebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLNewsWebView.xib; sourceTree = "<group>"; };
+		CD6FD18C1A806E30000D5406 /* downArrowBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downArrowBlack.png; sourceTree = "<group>"; };
+		CD6FD18D1A806E31000D5406 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CD6FD18E1A806E31000D5406 /* upArrowBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upArrowBlack.png; sourceTree = "<group>"; };
 		CD8C22C01A6B573C00A719F9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		CD8C22C41A6B574200A719F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter_bird_logo.png; sourceTree = "<group>"; };
@@ -587,6 +593,9 @@
 			children = (
 				721F682918EF405C0019EFB9 /* audl-120.png */,
 				CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */,
+				CD6FD18C1A806E30000D5406 /* downArrowBlack.png */,
+				CD6FD18D1A806E31000D5406 /* README.md */,
+				CD6FD18E1A806E31000D5406 /* upArrowBlack.png */,
 				CD659C521A6F68C200B5EDB9 /* news_icon.png */,
 				CD92BC831A79FFBD007604B5 /* Blue_Bar.png */,
 				721F682318EF3C260019EFB9 /* Default@2x.png */,
@@ -887,10 +896,12 @@
 				72255C2818F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib in Resources */,
 				72C1250319045EA800BAEC46 /* AUDLTeamStatsTableViewController.xib in Resources */,
 				E9D674C618DE01D700712370 /* AUDLStatsViewController.xib in Resources */,
+				CD6FD18F1A806E31000D5406 /* downArrowBlack.png in Resources */,
 				CD92BC661A75AE46007604B5 /* Roboto-BlackItalic.ttf in Resources */,
 				72C7F17D1903125F00D7C49B /* AUDLScoresTableViewController.xib in Resources */,
 				72F4DB0718DB36C700E571FC /* AUDLNewsTableViewController.xib in Resources */,
 				727ABD7A18D257C1005B9ACC /* InfoPlist.strings in Resources */,
+				CD6FD1911A806E31000D5406 /* upArrowBlack.png in Resources */,
 				E9D674D818DE025C00712370 /* AUDLStandingsViewController.xib in Resources */,
 				CD92BC681A75AE46007604B5 /* Roboto-BoldItalic.ttf in Resources */,
 				72C18E0818F2258800849056 /* Main.storyboard in Resources */,
@@ -951,6 +962,7 @@
 				72C1250819046FF400BAEC46 /* AUDLTeamStatsTableViewCell.m in Sources */,
 				72255C1B18F61D52001E6937 /* AUDLScheduleTableViewCell.m in Sources */,
 				CD659C4D1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m in Sources */,
+				CD6FD1901A806E31000D5406 /* README.md in Sources */,
 				72C124FD190459B500BAEC46 /* AUDLTeamScheduleTableViewController.m in Sources */,
 				727ABDAA18D25B59005B9ACC /* SidebarViewController.m in Sources */,
 				CD92BC801A75B203007604B5 /* AUDLDivisionScoreTableViewController.m in Sources */,

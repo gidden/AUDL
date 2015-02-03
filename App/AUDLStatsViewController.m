@@ -44,6 +44,14 @@
     //get player stats from server
     [self playerStatsRequest];
    
+    
+    //setup boolean array for collapsing sections
+    self.sectionBools = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < [self.playerStats count]; i++)
+    {
+        [self.sectionBools addObject:[NSNumber numberWithBool:NO]];
+    }
+    
      // change the title; helps differentiate from team stats
     self.navigationItem.title = @"League Leader Stats";
     
@@ -78,8 +86,13 @@
 {
     
     // Return the number of rows in the section.
-
-    return [[self.playerStats objectForKey:[self.playerStats.allKeys objectAtIndex:section]] count];
+    if ([[self.sectionBools objectAtIndex:section] boolValue]) {
+        return [[self.playerStats objectForKey:[self.playerStats.allKeys objectAtIndex:section]] count];
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 -(NSString*) tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section
@@ -87,6 +100,47 @@
     return [self.playerStats.allKeys objectAtIndex:section];
 }
 
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView              = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    headerView.tag                  = section;
+    headerView.backgroundColor      = [UIColor whiteColor];
+    UILabel *headerString           = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20-50, 50)];
+    BOOL manyCells                  = [[self.sectionBools objectAtIndex:section] boolValue];
+    headerString.text = [self.playerStats.allKeys objectAtIndex:section];
+    headerString.textAlignment      = NSTextAlignmentLeft;
+    headerString.textColor          = [UIColor blackColor];
+    [headerView addSubview:headerString];
+    
+    UITapGestureRecognizer  *headerTapped   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sectionHeaderTapped:)];
+    [headerView addGestureRecognizer:headerTapped];
+    
+    //up or down arrow depending on the bool
+    UIImageView *upDownArrow        = [[UIImageView alloc] initWithImage:manyCells ? [UIImage imageNamed:@"upArrowBlack"] : [UIImage imageNamed:@"downArrowBlack"]];
+    upDownArrow.autoresizingMask    = UIViewAutoresizingFlexibleLeftMargin;
+    upDownArrow.frame               = CGRectMake(self.view.frame.size.width-40, 10, 30, 30);
+    [headerView addSubview:upDownArrow];
+    
+    return headerView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *footer  = [[UIView alloc] initWithFrame:CGRectZero];
+    return footer;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 50;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 1;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([[self.sectionBools objectAtIndex:indexPath.section] boolValue]) {
+        return 50;
+    }
+    return 0;
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //get the stats key for this section
@@ -140,5 +194,21 @@
                  options:0
                  error:&error];
 }
+
+#pragma mark - gesture tapped
+- (void)sectionHeaderTapped:(UITapGestureRecognizer *)gestureRecognizer{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:gestureRecognizer.view.tag];
+    if (indexPath.row == 0) {
+        BOOL collapsed  = [[self.sectionBools objectAtIndex:indexPath.section] boolValue];
+        collapsed       = !collapsed;
+        [self.sectionBools replaceObjectAtIndex:indexPath.section withObject:[NSNumber numberWithBool:collapsed]];
+        
+        //reload specific section animated
+        NSRange range   = NSMakeRange(indexPath.section, 1);
+        NSIndexSet *sectionToReload = [NSIndexSet indexSetWithIndexesInRange:range];
+        [self.tableView reloadSections:sectionToReload withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 
 @end
