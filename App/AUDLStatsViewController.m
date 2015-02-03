@@ -9,6 +9,7 @@
 #import "AUDLStatsViewController.h"
 #import "SWRevealViewController.h"
 #import "AUDLTableViewCell.h"
+#import "AUDLTop5TableViewCell.h"
 #import "AUDLPlayerStatsTableViewController.h"
 
 @interface AUDLStatsTableViewController ()
@@ -31,6 +32,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"AUDLTop5TableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+
     //change color of button
     _sidebarButton.tintColor = [UIColor colorWithRed:0 green:122.0/225.0 blue:1.0 alpha:1.0];
     
@@ -55,9 +58,10 @@
     
     //set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+//    
+//    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
+//    [self.view addGestureRecognizer:gesture];
     
-    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
-    [self.view addGestureRecognizer:gesture];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,40 +76,47 @@
 {
     //#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return [self.playerStats.allKeys count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
     // Return the number of rows in the section.
-    
-    return [self.playerStats count];
+
+    return [[self.playerStats objectForKey:[self.playerStats.allKeys objectAtIndex:section]] count];
+}
+
+-(NSString*) tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [self.playerStats.allKeys objectAtIndex:section];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *thisStats = [self.statDescription objectAtIndex:indexPath.row];
+    NSString *thisStatName = [self.playerStats.allKeys objectAtIndex:indexPath.section];
+
     //NSLog(@"populating first page");
     // the first element, the cellIdentifier, is the division name
-    NSString *cellIdentifier = thisStats;
+    NSString *cellIdentifier = @"Cell";
     
     // the second element, divSchedule, is the divison's schedule
     //NSLog(@"getting each page's top 5");
-    NSArray *top5 = [_playerStats objectForKey:thisStats];
-    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    NSArray *top5 = [_playerStats objectForKey:thisStatName];
+    AUDLTop5TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[AUDLTop5TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
     // Configure the cell...
+    NSArray *playerInfo = [top5 objectAtIndex:indexPath.row];
+
     //NSLog(@"Configuring the cell");
-    cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    [cell setTop5:top5];
-    [cell setStatName:cellIdentifier];
-    
+    //cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
+    cell.playerName.text = playerInfo[0];
+    cell.number.text = [NSString stringWithFormat:@"%@", playerInfo[1]];
     // add the right pointing arrow to the cell
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 
@@ -140,33 +151,33 @@
                  options:0
                  error:&error];
 }
-
-- (void)didSelect:(UIGestureRecognizer *)gestureRecognizer {
-    
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        CGPoint tapLocation = [gestureRecognizer locationInView:self.tableView];
-        NSIndexPath *tappedIndexPath = [self.tableView indexPathForRowAtPoint:tapLocation];
-        UITableViewCell* tappedCell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
-        
-        // pointer to the cell that was selected
-        AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
-        //for (int i=0; i<selectedCell.top5.count; i++) {
-        //    NSLog(@"%@", selectedCell.top5[i]);
-        //}
-        
-        // create the view controller we want to present
-        AUDLPlayerStatsTableViewController *top5 = [[AUDLPlayerStatsTableViewController alloc] initWithTop5:selectedCell.top5];
-        
-        // set the name of this stat
-        top5.stat = selectedCell.statName;
-        
-        // override the back button in the new controller from saying "Schedule"
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
-        self.navigationItem.backBarButtonItem = backButton;
-        
-        // present the new view controller
-        [self.navigationController pushViewController:top5 animated:YES];
-    }
-}
+//
+//- (void)didSelect:(UIGestureRecognizer *)gestureRecognizer {
+//    
+//    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+//        CGPoint tapLocation = [gestureRecognizer locationInView:self.tableView];
+//        NSIndexPath *tappedIndexPath = [self.tableView indexPathForRowAtPoint:tapLocation];
+//        UITableViewCell* tappedCell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
+//        
+//        // pointer to the cell that was selected
+//        AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
+//        //for (int i=0; i<selectedCell.top5.count; i++) {
+//        //    NSLog(@"%@", selectedCell.top5[i]);
+//        //}
+//        
+//        // create the view controller we want to present
+//        AUDLPlayerStatsTableViewController *top5 = [[AUDLPlayerStatsTableViewController alloc] initWithTop5:selectedCell.top5];
+//        
+//        // set the name of this stat
+//        top5.stat = selectedCell.statName;
+//        
+//        // override the back button in the new controller from saying "Schedule"
+//        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+//        self.navigationItem.backBarButtonItem = backButton;
+//        
+//        // present the new view controller
+//        [self.navigationController pushViewController:top5 animated:YES];
+//    }
+//}
 
 @end
