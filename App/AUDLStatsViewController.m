@@ -47,6 +47,13 @@
      // change the title; helps differentiate from team stats
     self.navigationItem.title = @"League Leader Stats";
     
+    
+    //Trick section headers into being anchored to cell views
+    CGFloat dummyViewHeight = 40;
+    UIView *dummyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, dummyViewHeight)];
+    self.tableView.tableHeaderView = dummyView;
+    self.tableView.contentInset = UIEdgeInsetsMake(-dummyViewHeight, 0, 0, 0);
+
     //set the pan gesture
     //[self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
  
