@@ -90,7 +90,6 @@
 		CDF89A881A68073B00382B6D /* AUDLGameGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF89A871A68073B00382B6D /* AUDLGameGraphViewController.m */; };
 		CDF89A8A1A68074E00382B6D /* AUDLGameGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF89A891A68074E00382B6D /* AUDLGameGraphView.xib */; };
 		E90995F618DCAA7C003A07FD /* AUDLSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */; };
-		E91A883E19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91A883D19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m */; };
 		E967BBEE18F06EBB001BE229 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967BBED18F06EBB001BE229 /* Accounts.framework */; };
 		E96980DB19031D660060E5F2 /* AUDLTop5TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96980D919031D660060E5F2 /* AUDLTop5TableViewCell.m */; };
 		E99C294219057CA800B05EDC /* AUDLTermsOfUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99C294119057CA800B05EDC /* AUDLTermsOfUseViewController.m */; };
@@ -245,8 +244,6 @@
 		CDF89A891A68074E00382B6D /* AUDLGameGraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLGameGraphView.xib; sourceTree = "<group>"; };
 		E90995F418DCAA7C003A07FD /* AUDLSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLSettingsTableViewController.h; sourceTree = "<group>"; };
 		E90995F518DCAA7C003A07FD /* AUDLSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLSettingsTableViewController.m; sourceTree = "<group>"; };
-		E91A883C19004C9E00B8070E /* AUDLPlayerStatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLPlayerStatsTableViewController.h; sourceTree = "<group>"; };
-		E91A883D19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLPlayerStatssTableViewController.m; sourceTree = "<group>"; };
 		E967BBED18F06EBB001BE229 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E967BBEF18F06ED1001BE229 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E967BBF118F077CF001BE229 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -668,16 +665,6 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
-		E91A883B19004C8700B8070E /* Player */ = {
-			isa = PBXGroup;
-			children = (
-				E91A883C19004C9E00B8070E /* AUDLPlayerStatsTableViewController.h */,
-				E91A883D19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m */,
-				E96980CF190311E80060E5F2 /* AUDLTop5Stats */,
-			);
-			name = Player;
-			sourceTree = "<group>";
-		};
 		E96980CF190311E80060E5F2 /* AUDLTop5Stats */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,7 +730,7 @@
 				E9D674C218DE01D700712370 /* AUDLStatsViewController.h */,
 				E9D674C318DE01D700712370 /* AUDLStatsViewController.m */,
 				E9D674C418DE01D700712370 /* AUDLStatsViewController.xib */,
-				E91A883B19004C8700B8070E /* Player */,
+				E96980CF190311E80060E5F2 /* AUDLTop5Stats */,
 			);
 			name = Stats;
 			sourceTree = "<group>";
@@ -979,7 +966,6 @@
 				727ABD7C18D257C1005B9ACC /* main.m in Sources */,
 				E99C294219057CA800B05EDC /* AUDLTermsOfUseViewController.m in Sources */,
 				727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */,
-				E91A883E19004C9E00B8070E /* AUDLPlayerStatssTableViewController.m in Sources */,
 				CD92BC7A1A75B0CE007604B5 /* AUDLScoreTableViewCell.m in Sources */,
 				7249E15918F708E200C4012B /* AUDLIndivTeamTableViewController.m in Sources */,
 			);

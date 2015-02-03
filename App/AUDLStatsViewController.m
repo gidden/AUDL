@@ -10,7 +10,7 @@
 #import "SWRevealViewController.h"
 #import "AUDLTableViewCell.h"
 #import "AUDLTop5TableViewCell.h"
-#import "AUDLPlayerStatsTableViewController.h"
+
 
 @interface AUDLStatsTableViewController ()
 
