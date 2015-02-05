@@ -137,7 +137,7 @@
 
     //create title for the section header
     UILabel* headerLabel = [[UILabel alloc] init];
-    headerLabel.frame = CGRectMake(10, 6, tableView.frame.size.width - 5, 18);
+    headerLabel.frame = CGRectMake(10, 10, tableView.frame.size.width - 5, 18);
     headerLabel.backgroundColor = [UIColor clearColor];
     headerLabel.textColor = [UIColor whiteColor];
     headerLabel.font = [UIFont fontWithName:@"Roboto-Bold" size:12];

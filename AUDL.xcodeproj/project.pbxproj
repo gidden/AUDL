@@ -52,6 +52,7 @@
 		72F4DB0718DB36C700E571FC /* AUDLNewsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4DB0518DB36C700E571FC /* AUDLNewsTableViewController.xib */; };
 		72F4DB0B18DB5A3F00E571FC /* AUDLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F4DB0918DB5A3F00E571FC /* AUDLTableViewCell.m */; };
 		72F4DB0C18DB5A3F00E571FC /* AUDLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4DB0A18DB5A3F00E571FC /* AUDLTableViewCell.xib */; };
+		CD0528241A82EF7F00605673 /* Header_No_Type.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0528231A82EF7F00605673 /* Header_No_Type.png */; };
 		CD32C1571A6A36FC00E75E6B /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32C1541A6A368500E75E6B /* libCorePlot-CocoaTouch.a */; };
 		CD37741D1A70AFCD007FD6E9 /* audl-120.png in Resources */ = {isa = PBXBuildFile; fileRef = CD37741C1A70AFCC007FD6E9 /* audl-120.png */; };
 		CD659C4D1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD659C4C1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m */; };
@@ -202,6 +203,7 @@
 		72F4DB0818DB5A3F00E571FC /* AUDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLTableViewCell.h; sourceTree = "<group>"; };
 		72F4DB0918DB5A3F00E571FC /* AUDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLTableViewCell.m; sourceTree = "<group>"; };
 		72F4DB0A18DB5A3F00E571FC /* AUDLTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLTableViewCell.xib; sourceTree = "<group>"; };
+		CD0528231A82EF7F00605673 /* Header_No_Type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Header_No_Type.png; sourceTree = "<group>"; };
 		CD32C14D1A6A368500E75E6B /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../core-plot/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
 		CD37741C1A70AFCC007FD6E9 /* audl-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audl-120.png"; sourceTree = "<group>"; };
 		CD659C4B1A6F447900B5EDB9 /* AUDLNewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLNewsTableViewCell.h; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 				CD6FD18C1A806E30000D5406 /* downArrowBlack.png */,
 				CD6FD18D1A806E31000D5406 /* README.md */,
 				CD6FD18E1A806E31000D5406 /* upArrowBlack.png */,
+				CD0528231A82EF7F00605673 /* Header_No_Type.png */,
 				CD659C521A6F68C200B5EDB9 /* news_icon.png */,
 				CD92BC831A79FFBD007604B5 /* Blue_Bar.png */,
 				721F682318EF3C260019EFB9 /* Default@2x.png */,
@@ -920,6 +923,7 @@
 				72C7F1781901AC9900D7C49B /* AUDLRosterTableViewController.xib in Resources */,
 				CD92BC6C1A75AE46007604B5 /* Roboto-Medium.ttf in Resources */,
 				CD92BC751A75AE46007604B5 /* RobotoCondensed-LightItalic.ttf in Resources */,
+				CD0528241A82EF7F00605673 /* Header_No_Type.png in Resources */,
 				721F682418EF3C260019EFB9 /* Default@2x.png in Resources */,
 				CD92BC6A1A75AE46007604B5 /* Roboto-Light.ttf in Resources */,
 				CD92BC711A75AE46007604B5 /* RobotoCondensed-Bold.ttf in Resources */,

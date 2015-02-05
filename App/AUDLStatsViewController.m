@@ -104,14 +104,33 @@
 {
     UIView *headerView              = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
     headerView.tag                  = section;
-    headerView.backgroundColor      = [UIColor whiteColor];
-    UILabel *headerString           = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20-50, 50)];
-    BOOL manyCells                  = [[self.sectionBools objectAtIndex:section] boolValue];
-    headerString.text = [self.playerStats.allKeys objectAtIndex:section];
-    headerString.textAlignment      = NSTextAlignmentLeft;
-    headerString.textColor          = [UIColor blackColor];
-    [headerView addSubview:headerString];
+//    headerView.backgroundColor      = [UIColor whiteColor];
     
+    //create a background image for the header
+    UIImage *bg = [UIImage imageNamed:@"Blue_Bar"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:bg];
+    imageView.frame = CGRectMake(headerView.frame.origin.x, headerView.frame.origin.y, headerView.frame.size.width, headerView.frame.size.height);
+    imageView.clipsToBounds = YES;
+
+    BOOL manyCells = [[self.sectionBools objectAtIndex:section] boolValue];
+    
+//    UILabel *headerString           = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20-50, 50)];
+//    headerString.text = [self.playerStats.allKeys objectAtIndex:section];
+//    headerString.textAlignment      = NSTextAlignmentLeft;
+//    headerString.textColor          = [UIColor blackColor];
+//    [headerView addSubview:headerString];
+    
+    //create title for the section header
+    UILabel* headerLabel = [[UILabel alloc] init];
+    headerLabel.frame = CGRectMake(10, 6, tableView.frame.size.width - 5, 18);
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.textColor = [UIColor whiteColor];
+    headerLabel.font = [UIFont fontWithName:@"Roboto-Bold" size:12];
+    //remove date dashes and replace with .'s
+    headerLabel.text = [self.playerStats.allKeys objectAtIndex:section];
+    headerLabel.textAlignment = NSTextAlignmentLeft;
+    
+
     UITapGestureRecognizer  *headerTapped   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sectionHeaderTapped:)];
     [headerView addGestureRecognizer:headerTapped];
     
@@ -119,7 +138,12 @@
     UIImageView *upDownArrow        = [[UIImageView alloc] initWithImage:manyCells ? [UIImage imageNamed:@"upArrowBlack"] : [UIImage imageNamed:@"downArrowBlack"]];
     upDownArrow.autoresizingMask    = UIViewAutoresizingFlexibleLeftMargin;
     upDownArrow.frame               = CGRectMake(self.view.frame.size.width-40, 10, 30, 30);
+    
+    [headerView addSubview:headerLabel];
     [headerView addSubview:upDownArrow];
+    [headerView addSubview:imageView];
+    [headerView sendSubviewToBack:imageView];
+
     
     return headerView;
 }
@@ -150,6 +174,14 @@
     if (cell == nil) {
         cell = [[AUDLTop5TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+    
+    
+    //create a background image for the header
+    UIImage *bg = [UIImage imageNamed:@"Header_No_Type"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:bg];
+    //imageView.frame = CGRectMake(headerView.frame.origin.x, headerView.frame.origin.y, headerView.frame.size.width, headerView.frame.size.height);
+    imageView.clipsToBounds = YES;
+    [cell setBackgroundView:imageView];
     
     // Configure the cell...get player's info for this cell from the stat list
     NSArray *playerInfo = [top5 objectAtIndex:indexPath.row];
