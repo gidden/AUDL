@@ -56,6 +56,7 @@
 		CD32C1571A6A36FC00E75E6B /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32C1541A6A368500E75E6B /* libCorePlot-CocoaTouch.a */; };
 		CD37741D1A70AFCD007FD6E9 /* audl-120.png in Resources */ = {isa = PBXBuildFile; fileRef = CD37741C1A70AFCC007FD6E9 /* audl-120.png */; };
 		CD61BC6D1A856D3100405F62 /* AUDLGameTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD61BC6C1A856D3100405F62 /* AUDLGameTabView.m */; };
+		CD61BC711A857BFA00405F62 /* AUDLGameStatsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD61BC701A857BFA00405F62 /* AUDLGameStatsView.m */; };
 		CD659C4D1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD659C4C1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m */; };
 		CD659C511A6F45ED00B5EDB9 /* AUDLNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD659C501A6F45ED00B5EDB9 /* AUDLNewsTableViewCell.xib */; };
 		CD659C531A6F68C200B5EDB9 /* news_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD659C521A6F68C200B5EDB9 /* news_icon.png */; };
@@ -209,6 +210,8 @@
 		CD37741C1A70AFCC007FD6E9 /* audl-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audl-120.png"; sourceTree = "<group>"; };
 		CD61BC6B1A856CF000405F62 /* AUDLGameTabView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLGameTabView.h; sourceTree = "<group>"; };
 		CD61BC6C1A856D3100405F62 /* AUDLGameTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLGameTabView.m; sourceTree = "<group>"; };
+		CD61BC6F1A857BCF00405F62 /* AUDLGameStatsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLGameStatsView.h; sourceTree = "<group>"; };
+		CD61BC701A857BFA00405F62 /* AUDLGameStatsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLGameStatsView.m; sourceTree = "<group>"; };
 		CD659C4B1A6F447900B5EDB9 /* AUDLNewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLNewsTableViewCell.h; sourceTree = "<group>"; };
 		CD659C4C1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLNewsTableViewCell.m; sourceTree = "<group>"; };
 		CD659C501A6F45ED00B5EDB9 /* AUDLNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLNewsTableViewCell.xib; sourceTree = "<group>"; };
@@ -578,8 +581,19 @@
 			children = (
 				CD61BC6B1A856CF000405F62 /* AUDLGameTabView.h */,
 				CD61BC6C1A856D3100405F62 /* AUDLGameTabView.m */,
+				CD61BC6E1A857BB700405F62 /* Game Stats */,
+				CDF89A831A6806BC00382B6D /* Game Graph */,
 			);
 			name = "Game View";
+			sourceTree = "<group>";
+		};
+		CD61BC6E1A857BB700405F62 /* Game Stats */ = {
+			isa = PBXGroup;
+			children = (
+				CD61BC6F1A857BCF00405F62 /* AUDLGameStatsView.h */,
+				CD61BC701A857BFA00405F62 /* AUDLGameStatsView.m */,
+			);
+			name = "Game Stats";
 			sourceTree = "<group>";
 		};
 		CD659C481A6F445100B5EDB9 /* NewsTableViewCell */ = {
@@ -653,7 +667,6 @@
 				CD92BC791A75B0CE007604B5 /* AUDLScoreTableViewCell.m */,
 				CD92BC7B1A75B0E8007604B5 /* AUDLScoreTableViewCell.xib */,
 				CD61BC671A856C7500405F62 /* Game View */,
-				CDF89A831A6806BC00382B6D /* Game Graph */,
 			);
 			name = "Score Table Cell";
 			sourceTree = "<group>";
@@ -979,6 +992,7 @@
 				CDF89A881A68073B00382B6D /* AUDLGameGraphViewController.m in Sources */,
 				72C1250819046FF400BAEC46 /* AUDLTeamStatsTableViewCell.m in Sources */,
 				72255C1B18F61D52001E6937 /* AUDLScheduleTableViewCell.m in Sources */,
+				CD61BC711A857BFA00405F62 /* AUDLGameStatsView.m in Sources */,
 				CD659C4D1A6F449600B5EDB9 /* AUDLNewsTableViewCell.m in Sources */,
 				CD6FD1901A806E31000D5406 /* README.md in Sources */,
 				72C124FD190459B500BAEC46 /* AUDLTeamScheduleTableViewController.m in Sources */,

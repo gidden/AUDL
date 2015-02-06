@@ -8,6 +8,7 @@
 
 #import "AUDLGameTabView.h"
 #import "AUDLGameGraphViewController.h"
+#import "AUDLGameStatsView.h"
 
 
 @implementation AUDLGameTabView
@@ -43,15 +44,26 @@
     NSArray *tabViewControllers = [NSArray array]; //array of the view controllers to hand to the tabbed view
 
     //add the graph view to the list of tab views
-
+    AUDLGameStatsView *gameStatsView = [[AUDLGameStatsView alloc] init];
+    
+    UITabBarItem *thisDivTab1 = [[UITabBarItem alloc] initWithTitle:@"Stats" image:nil selectedImage:nil];
+    
+    gameStatsView.tabBarItem = thisDivTab1;
+    
+    tabViewControllers = [tabViewControllers arrayByAddingObject:gameStatsView];
+    
     // create the view controller we want to present
     AUDLGameGraphViewController *gameGraphView = [[AUDLGameGraphViewController alloc] initWithGameID:self.gameID];
 
     
     //add a tab bar item for this division
-    UITabBarItem *thisDivTab = [[UITabBarItem alloc] initWithTitle:@"Graph" image:nil selectedImage:nil];
+    UITabBarItem *thisDivTab2 = [[UITabBarItem alloc] initWithTitle:@"Graph" image:nil selectedImage:nil];
 
-    gameGraphView.tabBarItem = thisDivTab;
+    gameGraphView.tabBarItem = thisDivTab2;
+    
+    
+    
+    
     
     //add this view to the array of view controllers
     tabViewControllers = [tabViewControllers arrayByAddingObject:gameGraphView];
