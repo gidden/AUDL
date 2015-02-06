@@ -16,6 +16,20 @@
     [super viewDidLoad];
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self createStatView];
+}
 
 
+-(void) createStatView
+{
+    
+    UIView *statView = [[UIView alloc] init];
+    
+    [self.view addSubview:statView];
+
+}
 @end

@@ -62,9 +62,6 @@
     gameGraphView.tabBarItem = thisDivTab2;
     
     
-    
-    
-    
     //add this view to the array of view controllers
     tabViewControllers = [tabViewControllers arrayByAddingObject:gameGraphView];
     
