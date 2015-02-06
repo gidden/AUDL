@@ -10,6 +10,7 @@
 
 @interface AUDLGameStatsView : UIViewController
 
-
+@property (strong, nonatomic) NSString *gameID;
+@property (strong, nonatomic) NSArray *gameData;
 
 @end

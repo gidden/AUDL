@@ -45,7 +45,7 @@
 
     //add the graph view to the list of tab views
     AUDLGameStatsView *gameStatsView = [[AUDLGameStatsView alloc] init];
-    
+    gameStatsView.gameID = self.gameID;
     UITabBarItem *thisDivTab1 = [[UITabBarItem alloc] initWithTitle:@"Stats" image:nil selectedImage:nil];
     
     gameStatsView.tabBarItem = thisDivTab1;
