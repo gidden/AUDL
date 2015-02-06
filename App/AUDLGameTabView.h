@@ -11,6 +11,8 @@
 
 @interface AUDLGameTabView : UITabBarController
 
+@property (strong, nonatomic) NSString *gameID;
 
+- (id)initWithGameID:(NSString *) ID;
 
 @end

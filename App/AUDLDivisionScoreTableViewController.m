@@ -10,7 +10,7 @@
 #import "AUDLTableViewCell.h"
 #import "AUDLScoreTableViewCell.h"
 #import "AUDLAppDelegate.h"
-#import "AUDLGameGraphViewController.h"
+//#import "AUDLGameGraphViewController.h"
 #import "AUDLGameTabView.h"
 
 @interface AUDLDivisionScoreTableViewController ()
@@ -292,8 +292,8 @@
             
             // create the view controller we want to present
             //AUDLGameGraphViewController *gameGraph = [[AUDLGameGraphViewController alloc] initWithGameID: selectedCell.gameID];
-            AUDLGameTabView *gameView = [[AUDLGameTabView alloc] init];
-            
+            AUDLGameTabView *gameView = [[AUDLGameTabView alloc] initWithGameID:selectedCell.gameID];
+            //gameView.gameID = selectedCell.gameID;
             //AUDLIndivTeamTableViewController *teamSelection = [[AUDLIndivTeamTableViewController alloc] init];
             //teamSelection.teamName = selectedCell.teamName;
             //teamSelection.teamId = selectedCell.teamId;
