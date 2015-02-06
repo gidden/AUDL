@@ -201,15 +201,14 @@
     cell.teamOneIcon.image = [tempDict objectForKey:teamOneId];
     cell.teamTwo.text = [thisGameItem objectAtIndex:2];
     cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
-    cell.date.text = [thisGameItem objectAtIndex:4];
-    //cell.status.text = [thisGameItem objectAtIndex:5];
 
     cell.teamOneScore.textColor = [UIColor colorWithRed:(121/255.0) green:(123/255.0) blue:(125/255.0) alpha:1];
     cell.teamTwoScore.textColor = [UIColor colorWithRed:(121/255.0) green:(123/255.0) blue:(125/255.0) alpha:1];
     cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:6]];
     cell.teamTwoScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:7]];
     teamOneId = [NSString stringWithFormat:[teamOneId stringByAppendingString:@"/"]];
-    cell.gameID = [NSString stringWithString:[teamOneId stringByAppendingString:cell.date.text]];
+    NSString *date = [thisGameItem objectAtIndex:4];
+    cell.gameID = [NSString stringWithString:[teamOneId stringByAppendingString:date]];
 
     cell.status.text =  [thisGameItem objectAtIndex:5];
 

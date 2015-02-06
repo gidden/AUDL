@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *teamOneIcon;
 @property (weak, nonatomic) IBOutlet UILabel *teamTwo;
 @property (weak, nonatomic) IBOutlet UIImageView *teamTwoIcon;
-@property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UILabel *status;
 @property (weak, nonatomic) IBOutlet UILabel *teamOneScore;
 @property (weak, nonatomic) IBOutlet UILabel *teamTwoScore;

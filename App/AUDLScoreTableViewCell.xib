@@ -12,7 +12,6 @@
             <string>Roboto-Medium</string>
             <string>Roboto-Medium</string>
             <string>Roboto-Medium</string>
-            <string>Roboto-Medium</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -34,12 +33,6 @@
                         <color key="textColor" red="0.47450980390000003" green="0.4823529412" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISI-09-4uP">
-                        <rect key="frame" x="0.0" y="60" width="320" height="21"/>
-                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
-                        <color key="textColor" red="0.47450980390000003" green="0.4823529412" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esR-zH-khF">
                         <rect key="frame" x="44" y="22" width="45" height="45"/>
                     </imageView>
@@ -53,7 +46,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBR-QW-HvL">
-                        <rect key="frame" x="94" y="75" width="133" height="21"/>
+                        <rect key="frame" x="94" y="62" width="133" height="21"/>
                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                         <color key="textColor" red="0.47450980390000003" green="0.4823529412" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -73,7 +66,6 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="date" destination="ISI-09-4uP" id="bke-Up-3aV"/>
                 <outlet property="status" destination="nBR-QW-HvL" id="3YB-ZO-gh1"/>
                 <outlet property="teamOne" destination="SWG-oJ-asL" id="wDt-qI-hKV"/>
                 <outlet property="teamOneIcon" destination="esR-zH-khF" id="ceW-aA-o5S"/>
