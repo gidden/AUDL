@@ -13,4 +13,6 @@
 @property (strong, nonatomic) NSString *gameID;
 @property (strong, nonatomic) NSArray *gameData;
 
+@property (strong, nonatomic) IBOutlet UILabel *team1Name;
+
 @end

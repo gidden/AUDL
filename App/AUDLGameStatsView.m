@@ -29,7 +29,7 @@
 -(void) populateStatView
 {
     
-    
+    self.team1Name.text = [self.gameData objectAtIndex:0];
 
 }
 
