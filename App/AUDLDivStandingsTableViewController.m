@@ -16,7 +16,7 @@
 
 @implementation AUDLDivStandingsTableViewController
 
-- (id)initWithSchedule:(NSArray *)standings
+- (id)initWithStandings:(NSArray *)standings
 {
     self = [super init];
     if (self) {

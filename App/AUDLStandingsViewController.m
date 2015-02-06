@@ -44,58 +44,103 @@
     // Get standings items from the server
     [self standingsRequest];
     
-    // Add a gesture recognizer to the table view for the cell selection
-    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
-    [self.view addGestureRecognizer:gesture];
+    [self setupTabView];
+
+}
+
+- (void)setupTabView{
+    
+    //gesture recognizers for moving between tab pages
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:swipeLeft];
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeRight];
+    
+    //add view controllers to the tabbed view
+    NSString *baseIconPath = [server_url stringByAppendingString:@"/Images/iOS/"];
+    
+    NSInteger divCount = [self.standings count]; //the number of divisions to loop over
+
+    NSMutableArray *thisDivisonInfo; // array for a divisions info (name and game sched.)
+    NSString *divName; // string for division name
+    NSArray *divStandings; // array for the game sched.
+    UITabBarItem *thisDivTab; //a tab bar item for the division
+    NSArray *tabViewControllers = [NSArray array]; //array of the view controllers to hand to the tabbed view
+    
+    //loop over our divisions
+    for (NSInteger i=0; i<divCount; i++) {
+        
+        //get the first schedule from the json data we loaded
+        thisDivisonInfo = [[NSMutableArray alloc] initWithArray:[self.standings objectAtIndex:i]];
+        
+        //get the division name
+        divName = [thisDivisonInfo objectAtIndex:0];
+        // get the division's schedule info
+        [thisDivisonInfo removeObjectAtIndex:0];
+        divStandings = [[NSArray alloc] initWithArray:thisDivisonInfo];
+        
+        //setup images for the tab bar item
+        //selected image
+        NSString *onFilename = [baseIconPath stringByAppendingString:divName];
+        onFilename = [onFilename stringByAppendingString:@"-On-Small.png"];
+        NSURL *onURL = [NSURL URLWithString:onFilename];
+        NSData *onData = [NSData dataWithContentsOfURL:onURL];
+        UIImage *onImage = [UIImage imageWithData:onData];
+        onImage = [onImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; //make sure our selected image appears without tint overlay
+        
+        //unselected tab image
+        NSString *offFilename = [baseIconPath stringByAppendingString:divName];
+        offFilename = [offFilename stringByAppendingString:@"-Off-Small.png"];
+        NSURL *offURL = [NSURL URLWithString:offFilename];
+        NSData *offData = [NSData dataWithContentsOfURL:offURL];
+        UIImage *offImage = [UIImage imageWithData:offData];
+        
+        //add a tab bar item for this division
+        thisDivTab = [[UITabBarItem alloc] initWithTitle:@"" image:offImage selectedImage:onImage];
+
+        //create a division view controller
+        AUDLDivStandingsTableViewController *divScheduleView = [[AUDLDivStandingsTableViewController alloc] init];
+        [divScheduleView setStandings:divStandings];
+        [divScheduleView setDivision:divName];
+        
+        //set the tab bar item
+        divScheduleView.tabBarItem = thisDivTab;
+        
+        //add this view to the array of view controllers
+        tabViewControllers = [tabViewControllers arrayByAddingObject:divScheduleView];
+ 
+    }
+
+    self.tabBar.translucent = NO;
+ 
+    //setup the array of view controllers for the tabbed view
+    self.viewControllers = tabViewControllers;
     
 }
+
+
+- (IBAction)tappedRightButton:(id)sender
+{
+    NSUInteger selectedIndex = [self selectedIndex];
+    
+    [self setSelectedIndex:selectedIndex + 1];
+}
+
+- (IBAction)tappedLeftButton:(id)sender
+{
+    NSUInteger selectedIndex = [self selectedIndex];
+    
+    [self setSelectedIndex:selectedIndex - 1];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    //#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    
-    // Return the number of rows in the section.
-    return [self.standings count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSArray *thisStandings = [self.standings objectAtIndex:indexPath.row];
-    
-    // the first element, the cellIdentifier, is the division name
-    NSString *cellIdentifier = [thisStandings objectAtIndex:0];
-    
-    // the next elements, divTeams, is the divison's teams
-    NSMutableArray *divTeams = [[NSMutableArray alloc] init];
-    for(int i=1; i< thisStandings.count; i++){
-        [divTeams addObject:[thisStandings objectAtIndex:i]];
-    }
-    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    
-    // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    [cell setDivTeams:divTeams];
-    [cell setDivisionName:cellIdentifier];
-    
-    // add the right pointing arrow to the cell
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    return cell;
 }
 
 - (void)standingsRequest
@@ -127,33 +172,6 @@
                  JSONObjectWithData:urlData
                  options:0
                  error:&error];
-}
-
-- (void)didSelect:(UIGestureRecognizer *)gestureRecognizer {
-    
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        CGPoint tapLocation = [gestureRecognizer locationInView:self.tableView];
-        NSIndexPath *tappedIndexPath = [self.tableView indexPathForRowAtPoint:tapLocation];
-        UITableViewCell* tappedCell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
-        
-        // pointer to the cell that was selected
-        AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
-        for (int i=0; i<selectedCell.divTeams.count; i++) {
-            NSLog(@"%@", selectedCell.divTeams[i]);
-        }
-        
-        // create the view controller we want to present
-        AUDLDivStandingsTableViewController *division = [[AUDLDivStandingsTableViewController alloc] initWithSchedule:selectedCell.divTeams];
-        division.division = [selectedCell.divisionName stringByAppendingString:@" Division"];
-        
-        // override the back button in the new controller from saying "Schedule"
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
-        self.navigationItem.backBarButtonItem = backButton;
-        
-        // present the new view controller
-        [self.navigationController pushViewController:division animated:YES];
-        
-    }
 }
 
 @end

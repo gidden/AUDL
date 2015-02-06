@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSArray *standings;
 @property id delegate;
 
-- (id)initWithSchedule:(NSArray *)standings;
+- (id)initWithStandings:(NSArray *)standings;
 
 
 
