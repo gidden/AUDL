@@ -292,7 +292,10 @@
             
             // create the view controller we want to present
             //AUDLGameGraphViewController *gameGraph = [[AUDLGameGraphViewController alloc] initWithGameID: selectedCell.gameID];
-            AUDLGameTabView *gameView = [[AUDLGameTabView alloc] initWithGameID:selectedCell.gameID];
+            AUDLGameTabView *gameView = [[AUDLGameTabView alloc] init ];//WithGameID:selectedCell.gameID];
+            gameView.gameID = selectedCell.gameID;
+            gameView.team1Logo = selectedCell.teamOneIcon.image;
+            gameView.team2Logo = selectedCell.teamTwoIcon.image;
             //gameView.gameID = selectedCell.gameID;
             //AUDLIndivTeamTableViewController *teamSelection = [[AUDLIndivTeamTableViewController alloc] init];
             //teamSelection.teamName = selectedCell.teamName;

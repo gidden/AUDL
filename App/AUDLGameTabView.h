@@ -12,6 +12,8 @@
 @interface AUDLGameTabView : UITabBarController
 
 @property (strong, nonatomic) NSString *gameID;
+@property (strong, nonatomic) UIImage *team1Logo;
+@property (strong, nonatomic) UIImage *team2Logo;
 
 - (id)initWithGameID:(NSString *) ID;
 

@@ -328,7 +328,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WiA-HB-QxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-389" y="298"/>
+            <point key="canvasLocation" x="-389" y="297.99999999999994"/>
         </scene>
         <!--News Table View Controller-->
         <scene sceneID="40t-d4-icd">
@@ -340,7 +340,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="sideBarButton" destination="INV-yQ-hje" id="Lpr-db-NYq"/>
-                        <segue destination="ybU-hs-ShC" kind="push" id="g1x-pa-ue8"/>
+                        <segue destination="ybU-hs-ShC" kind="modal" id="g1x-pa-ue8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7KA-O0-jUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -364,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0c-IN-OfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1302" y="-1413"/>
+            <point key="canvasLocation" x="1302" y="-1412.9999999999998"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="GwU-OF-kR7">
@@ -383,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0t-9m-3sz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1302" y="-2043"/>
+            <point key="canvasLocation" x="1302" y="-2042.9999999999998"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6ti-dv-kDc">
@@ -415,12 +415,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="sideBarButton" destination="q3b-4s-CDw" id="QBJ-WL-fsh"/>
-                        <segue destination="gqV-Uq-RsR" kind="push" id="kgw-IQ-EuD"/>
+                        <segue destination="gqV-Uq-RsR" kind="modal" id="kgw-IQ-EuD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2QI-nX-ax5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="-904"/>
+            <point key="canvasLocation" x="1542" y="-903.99999999999989"/>
         </scene>
         <!--Game Graph View Controller-->
         <scene sceneID="cGp-3G-Dnc">
@@ -440,7 +440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llo-Yh-tIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2229" y="-889"/>
+            <point key="canvasLocation" x="2229" y="-888.99999999999989"/>
         </scene>
         <!--Teams Table View Controller-->
         <scene sceneID="czx-bR-dw8">
@@ -560,7 +560,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOI-qd-gtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2159" y="-1901"/>
+            <point key="canvasLocation" x="2159" y="-1900.9999999999998"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="5st-Ty-uG8">
@@ -577,7 +577,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwW-xO-wNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="1178"/>
+            <point key="canvasLocation" x="433" y="1177.9999999999998"/>
         </scene>
         <!--News Web View Controller-->
         <scene sceneID="7PG-37-L2f">

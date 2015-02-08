@@ -6,7 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AUDLGameStatsView">
             <connections>
-                <outlet property="team1Name" destination="W3f-ok-oHL" id="qWx-k6-ckN"/>
+                <outlet property="team1Logo" destination="xsv-5M-5Iv" id="doI-ER-nX2"/>
+                <outlet property="team1Name" destination="L0B-Sp-7J0" id="zWa-aH-LDk"/>
+                <outlet property="team2Logo" destination="55f-T7-3PN" id="jkX-sc-OXr"/>
+                <outlet property="team2Name" destination="W3f-ok-oHL" id="0aC-qq-AY9"/>
                 <outlet property="view" destination="iN0-l3-epB" id="mi2-TU-BTU"/>
             </connections>
         </placeholder>
@@ -15,14 +18,43 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3f-ok-oHL">
-                    <rect key="frame" x="165" y="177" width="259" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3f-ok-oHL">
+                    <rect key="frame" x="333" y="116" width="259" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0B-Sp-7J0">
+                    <rect key="frame" x="13" y="116" width="259" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="55f-T7-3PN">
+                    <rect key="frame" x="333" y="185" width="45" height="45"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xsv-5M-5Iv">
+                    <rect key="frame" x="80" y="185" width="45" height="45"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="L0B-Sp-7J0" firstAttribute="centerY" secondItem="W3f-ok-oHL" secondAttribute="centerY" id="1Td-MU-VlG"/>
+                <constraint firstItem="W3f-ok-oHL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="Ae7-c2-SbH"/>
+                <constraint firstAttribute="centerY" secondItem="W3f-ok-oHL" secondAttribute="centerY" constant="112.5" id="Qlk-Ax-IMQ"/>
+                <constraint firstAttribute="centerX" secondItem="W3f-ok-oHL" secondAttribute="centerX" constant="6" id="XgX-Dn-UyC"/>
+                <constraint firstItem="L0B-Sp-7J0" firstAttribute="centerX" secondItem="xsv-5M-5Iv" secondAttribute="centerX" id="YOf-Sc-muD"/>
+                <constraint firstItem="55f-T7-3PN" firstAttribute="centerX" secondItem="W3f-ok-oHL" secondAttribute="centerX" id="c9C-gJ-COZ"/>
+                <constraint firstItem="L0B-Sp-7J0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="f4F-Gr-4gF"/>
+                <constraint firstAttribute="trailing" secondItem="W3f-ok-oHL" secondAttribute="trailing" constant="17" id="q0r-eY-URh"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Qlk-Ax-IMQ"/>
+                    <exclude reference="XgX-Dn-UyC"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="126" y="167"/>
         </view>
     </objects>
 </document>

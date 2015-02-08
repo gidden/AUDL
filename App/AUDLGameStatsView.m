@@ -7,6 +7,7 @@
 //
 
 #import "AUDLGameStatsView.h"
+#import "AUDLAppDelegate.h"
 #import "Globals.h"
 
 @implementation AUDLGameStatsView
@@ -28,9 +29,18 @@
 
 -(void) populateStatView
 {
-    
+//    UILabel *team2Name = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 20)];
+//    team2Name.text = [self.gameData objectAtIndex:1];
     self.team1Name.text = [self.gameData objectAtIndex:0];
-
+    self.team2Name.text = [self.gameData objectAtIndex:1];
+    self.team1Logo.image = self.team1Image;
+    self.team2Logo.image = self.team2Image;
+    
+    if ( self.team2Image == nil)
+    {
+        NSLog(@"No team 1 logo image.");
+    }
+    //    [self.view addSubview:team2Name];
 }
 
 // Function for getting all available game graph data from the AUDL server

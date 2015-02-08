@@ -10,9 +10,9 @@
 
 @interface AUDLScoreTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *teamOne;
-@property (weak, nonatomic) IBOutlet UIImageView *teamOneIcon;
+@property (strong, nonatomic) IBOutlet UIImageView *teamOneIcon;
 @property (weak, nonatomic) IBOutlet UILabel *teamTwo;
-@property (weak, nonatomic) IBOutlet UIImageView *teamTwoIcon;
+@property (strong, nonatomic) IBOutlet UIImageView *teamTwoIcon;
 @property (weak, nonatomic) IBOutlet UILabel *status;
 @property (weak, nonatomic) IBOutlet UILabel *teamOneScore;
 @property (weak, nonatomic) IBOutlet UILabel *teamTwoScore;

@@ -46,6 +46,13 @@
     //add the graph view to the list of tab views
     AUDLGameStatsView *gameStatsView = [[AUDLGameStatsView alloc] init];
     gameStatsView.gameID = self.gameID;
+    if( self.team1Logo == nil)
+    {
+        NSLog(@"This image is nil.");
+    }
+    gameStatsView.team1Image = self.team1Logo;
+    gameStatsView.team2Image = self.team2Logo;
+    
     UITabBarItem *thisDivTab1 = [[UITabBarItem alloc] initWithTitle:@"Stats" image:nil selectedImage:nil];
     
     gameStatsView.tabBarItem = thisDivTab1;
