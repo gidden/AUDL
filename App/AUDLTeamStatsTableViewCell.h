@@ -10,15 +10,7 @@
 
 @interface AUDLTeamStatsTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *stat;
-@property (weak, nonatomic) IBOutlet UILabel *player1;
-@property (weak, nonatomic) IBOutlet UILabel *player2;
-@property (weak, nonatomic) IBOutlet UILabel *player3;
-@property (weak, nonatomic) IBOutlet UILabel *player4;
-@property (weak, nonatomic) IBOutlet UILabel *player5;
-@property (weak, nonatomic) IBOutlet UILabel *player1No;
-@property (weak, nonatomic) IBOutlet UILabel *player2No;
-@property (weak, nonatomic) IBOutlet UILabel *player3No;
-@property (weak, nonatomic) IBOutlet UILabel *player4No;
-@property (weak, nonatomic) IBOutlet UILabel *player5No;
+@property (weak, nonatomic) IBOutlet UILabel *player;
+@property (weak, nonatomic) IBOutlet UILabel *statVal;
 
 @end
