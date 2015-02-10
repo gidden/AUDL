@@ -26,10 +26,17 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"AUDLTeamStatsTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     
     // each cell is height 150 in xib, so rowHeight must be 150 too
-    self.tableView.rowHeight = 150;
+    self.tableView.rowHeight = 40;
     
     // nav title is currently "TeamName Statistics"
     self.navigationItem.title = self.navigationTitle;
+
+    //setup boolean array for collapsing sections
+    self.sectionBools = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < [self numberOfSectionsInTableView:self.tableView]; i++)
+    {
+        [self.sectionBools addObject:[NSNumber numberWithBool:NO]];
+    }
 
     //Trick section headers into being anchored to cell views
     CGFloat dummyViewHeight = 40;
@@ -65,13 +72,90 @@
 
     return headerTitle;
 }
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *footer  = [[UIView alloc] initWithFrame:CGRectZero];
+    return footer;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 50;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 1;
+}
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView              = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    headerView.tag                  = section;
+    //    headerView.backgroundColor      = [UIColor whiteColor];
+    
+    //create a background image for the header
+    UIImage *bg = [UIImage imageNamed:@"Blue_Bar"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:bg];
+    imageView.frame = CGRectMake(headerView.frame.origin.x, headerView.frame.origin.y, headerView.frame.size.width, headerView.frame.size.height);
+    imageView.clipsToBounds = YES;
+    
+    BOOL manyCells = [[self.sectionBools objectAtIndex:section] boolValue];
+    
+    //    UILabel *headerString           = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20-50, 50)];
+    //    headerString.text = [self.playerStats.allKeys objectAtIndex:section];
+    //    headerString.textAlignment      = NSTextAlignmentLeft;
+    //    headerString.textColor          = [UIColor blackColor];
+    //    [headerView addSubview:headerString];
+    
+    //create title for the section header
+    UILabel* headerLabel = [[UILabel alloc] init];
+    headerLabel.frame = CGRectMake(10, 6, tableView.frame.size.width - 5, 18);
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.textColor = [UIColor whiteColor];
+    headerLabel.font = [UIFont fontWithName:@"Roboto-Bold" size:12];
+    //remove date dashes and replace with .'s
+    NSString *headerTitle = [[self.teamStats objectAtIndex:section+1] objectAtIndex:0];
+    headerTitle = [headerTitle capitalizedString];
+    //Adjust the statname for pmc (temporary)
+    if ([headerTitle isEqualToString:@"Plusminuscount"]) {
+        headerTitle = @"+/-";
+    }
+
+    headerLabel.text = headerTitle;
+    headerLabel.textAlignment = NSTextAlignmentLeft;
+    
+    
+    UITapGestureRecognizer  *headerTapped   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sectionHeaderTapped:)];
+    [headerView addGestureRecognizer:headerTapped];
+    
+    //up or down arrow depending on the bool
+    UIImageView *upDownArrow        = [[UIImageView alloc] initWithImage:manyCells ? [UIImage imageNamed:@"upArrowBlack"] : [UIImage imageNamed:@"downArrowBlack"]];
+    upDownArrow.autoresizingMask    = UIViewAutoresizingFlexibleLeftMargin;
+    upDownArrow.frame               = CGRectMake(self.view.frame.size.width-40, 10, 30, 30);
+    
+    [headerView addSubview:headerLabel];
+    [headerView addSubview:upDownArrow];
+    [headerView addSubview:imageView];
+    [headerView sendSubviewToBack:imageView];
+    
+    
+    return headerView;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     // the first element is an info element on the current team
-    return [[[self.teamStats objectAtIndex:section
-            +1] objectAtIndex:1] count];
+    
+    // Return the number of rows in the section.
+    if ([[self.sectionBools objectAtIndex:section] boolValue]) {
+            return [[[self.teamStats objectAtIndex:section
+                  +1] objectAtIndex:1] count];
+    }
+    else
+    {
+        return 0;
+    }
+
+    
 }
 
 
@@ -94,6 +178,20 @@
     
     
     return cell;
+}
+
+- (void)sectionHeaderTapped:(UITapGestureRecognizer *)gestureRecognizer{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:gestureRecognizer.view.tag];
+    if (indexPath.row == 0) {
+        BOOL collapsed  = [[self.sectionBools objectAtIndex:indexPath.section] boolValue];
+        collapsed       = !collapsed;
+        [self.sectionBools replaceObjectAtIndex:indexPath.section withObject:[NSNumber numberWithBool:collapsed]];
+        
+        //reload specific section animated
+        NSRange range   = NSMakeRange(indexPath.section, 1);
+        NSIndexSet *sectionToReload = [NSIndexSet indexSetWithIndexesInRange:range];
+        [self.tableView reloadSections:sectionToReload withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 

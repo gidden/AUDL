@@ -14,4 +14,5 @@
 @property (nonatomic, strong) NSString *teamId;
 @property (nonatomic, strong) NSString *navigationTitle;
 @property (nonatomic, strong) NSArray *teamStats;
+@property (nonatomic, strong) NSMutableArray *sectionBools;
 @end
