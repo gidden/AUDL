@@ -12,8 +12,7 @@
 
 @interface AUDLGameStatViewCell : UITableViewCell
 
-@property (strong,nonatomic) IBOutlet UILabel *label1;
-@property (strong,nonatomic) IBOutlet UILabel *label2;
-@property (strong,nonatomic) IBOutlet UILabel *label3;
-
+@property (strong,nonatomic) IBOutlet UILabel *team1Stat;
+@property (strong,nonatomic) IBOutlet UILabel *statName;
+@property (strong,nonatomic) IBOutlet UILabel *team2Stat;
 @end

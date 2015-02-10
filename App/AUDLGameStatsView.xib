@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AUDLGameStatsView">
             <connections>
+                <outlet property="status" destination="spJ-gU-0ZJ" id="cEA-h5-Mpf"/>
                 <outlet property="team1Logo" destination="xsv-5M-5Iv" id="doI-ER-nX2"/>
                 <outlet property="team1Name" destination="L0B-Sp-7J0" id="zWa-aH-LDk"/>
                 <outlet property="team1Score" destination="28K-kS-5aP" id="2Nj-tB-MSU"/>
@@ -61,12 +62,12 @@
             <constraints>
                 <constraint firstItem="L0B-Sp-7J0" firstAttribute="centerY" secondItem="W3f-ok-oHL" secondAttribute="centerY" id="1Td-MU-VlG"/>
                 <constraint firstItem="W3f-ok-oHL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="Ae7-c2-SbH"/>
-                <constraint firstItem="28K-kS-5aP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="200" id="FTm-Rq-s0l"/>
+                <constraint firstItem="28K-kS-5aP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="160" id="FTm-Rq-s0l"/>
                 <constraint firstItem="IOm-9b-ta1" firstAttribute="centerX" secondItem="W3f-ok-oHL" secondAttribute="centerX" id="MxV-gF-X5q"/>
                 <constraint firstAttribute="centerY" secondItem="W3f-ok-oHL" secondAttribute="centerY" constant="112.5" id="Qlk-Ax-IMQ"/>
                 <constraint firstAttribute="centerX" secondItem="W3f-ok-oHL" secondAttribute="centerX" constant="6" id="XgX-Dn-UyC"/>
                 <constraint firstItem="L0B-Sp-7J0" firstAttribute="centerX" secondItem="xsv-5M-5Iv" secondAttribute="centerX" id="YOf-Sc-muD"/>
-                <constraint firstItem="spJ-gU-0ZJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="170" id="ZWV-7P-IKG"/>
+                <constraint firstItem="spJ-gU-0ZJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="ZWV-7P-IKG"/>
                 <constraint firstItem="28K-kS-5aP" firstAttribute="centerY" secondItem="IOm-9b-ta1" secondAttribute="centerY" id="bI1-Vj-wC7"/>
                 <constraint firstItem="55f-T7-3PN" firstAttribute="centerX" secondItem="W3f-ok-oHL" secondAttribute="centerX" id="c9C-gJ-COZ"/>
                 <constraint firstItem="L0B-Sp-7J0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="f4F-Gr-4gF"/>

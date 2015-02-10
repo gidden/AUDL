@@ -21,6 +21,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *team2Logo;
 @property (weak, nonatomic) IBOutlet UILabel *team1Score;
 @property (weak, nonatomic) IBOutlet UILabel *team2Score;
+@property (strong,nonatomic) IBOutlet UILabel *status;
+
 @property (strong, nonatomic) IBOutlet UITableView *statTable;
 @property (strong,nonatomic) NSArray *statData;
 @end

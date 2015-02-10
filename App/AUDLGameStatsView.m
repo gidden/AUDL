@@ -38,6 +38,9 @@
     self.team2Score.text = [NSString stringWithFormat:@"%@",[self.gameData objectAtIndex:3]];
     self.team1Logo.image = self.team1Image;
     self.team2Logo.image = self.team2Image;
+    //get the game status
+    NSString *stausVal = [NSString stringWithFormat:@"%@", [self.gameData objectAtIndex:[self.gameData count]-1]];
+    [self setStatusLabel:self.status withStatusValue:stausVal];
     
     //setup the stat table view
     CGRect thisFrame = self.view.frame;
@@ -46,6 +49,7 @@
     self.statTable.delegate = self;
     self.statTable.dataSource = self;
     self.statTable.scrollEnabled = NO;
+    self.statTable.allowsSelection = NO;
     [self.statTable registerNib:[UINib nibWithNibName:@"AUDLGameStatViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     [self.view addSubview:self.statTable];
     self.statData = [self.gameData objectAtIndex:4];
@@ -133,12 +137,47 @@
         cell = [[AUDLGameStatViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     //UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    cell.label1.text = [[[self.statData objectAtIndex:0] objectAtIndex:indexPath.row] objectAtIndex:1];
-    cell.label2.text = [[[self.statData objectAtIndex:0] objectAtIndex:indexPath.row] objectAtIndex:0];
-    cell.label3.text = [[[self.statData objectAtIndex:1] objectAtIndex:indexPath.row] objectAtIndex:1];
-    //cell.textLabel.text = @"Test";
+    NSString *team1PlayerName = [[[self.statData objectAtIndex:0] objectAtIndex:indexPath.row] objectAtIndex:1];
+    team1PlayerName  = [team1PlayerName stringByAppendingString:@" | "];
+    NSString *team1StatVal = [NSString stringWithFormat:@"%@",[[[self.statData objectAtIndex:0] objectAtIndex:indexPath.row] objectAtIndex:2]];
+
+    NSString *team2PlayerName = [[[self.statData objectAtIndex:1] objectAtIndex:indexPath.row] objectAtIndex:1];
+    team2PlayerName = [team2PlayerName stringByAppendingString:@" | "];
+    NSString *team2StatVal = [NSString stringWithFormat:@"%@",[[[self.statData objectAtIndex:1] objectAtIndex:indexPath.row] objectAtIndex:2]];
+
     
+    
+    cell.team1Stat.text = [team1PlayerName stringByAppendingString:team1StatVal];
+    cell.statName.text = [[[self.statData objectAtIndex:0] objectAtIndex:indexPath.row] objectAtIndex:0];
+    cell.team2Stat.text = [team2PlayerName stringByAppendingString:team2StatVal];
     return cell;
+    
+}
+
+-(void)setStatusLabel:(UILabel*)label withStatusValue:(NSString*)statusValue
+{
+    
+    if([statusValue isEqualToString:@"0"])
+    {
+        label.text = @"Upcoming"; // do nothing
+    }
+    else if ( [statusValue isEqualToString:@"1"])
+    {
+        label.text = @"Ongoing";
+    }
+    else if ( [statusValue isEqualToString:@"2"])
+    {
+        label.text = @"Final";
+    }
+    else if ( [statusValue isEqualToString:@"3"])
+    {
+        label.text = @"Final";
+    }
+    else
+    {
+        label.text = @"Default Case";
+    }
+    
     
 }
 
