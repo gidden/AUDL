@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AUDLGameStatsView : UIViewController
+@interface AUDLGameStatsView : UIViewController <UITableViewDelegate, UITableViewDataSource >
 
 @property (strong, nonatomic) NSString *gameID;
 @property (strong, nonatomic) NSArray *gameData;
@@ -19,5 +19,8 @@
 @property (strong, nonatomic) UIImage *team2Image;
 @property (strong, nonatomic) IBOutlet UIImageView *team1Logo;
 @property (strong, nonatomic) IBOutlet UIImageView *team2Logo;
-
+@property (weak, nonatomic) IBOutlet UILabel *team1Score;
+@property (weak, nonatomic) IBOutlet UILabel *team2Score;
+@property (strong, nonatomic) IBOutlet UITableView *statTable;
+@property (strong,nonatomic) NSArray *statData;
 @end

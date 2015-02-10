@@ -8,6 +8,7 @@
 
 #import "AUDLGameStatsView.h"
 #import "AUDLAppDelegate.h"
+#import "AUDLGameStatViewCell.h"
 #import "Globals.h"
 
 @implementation AUDLGameStatsView
@@ -33,9 +34,26 @@
 //    team2Name.text = [self.gameData objectAtIndex:1];
     self.team1Name.text = [self.gameData objectAtIndex:0];
     self.team2Name.text = [self.gameData objectAtIndex:1];
+    self.team1Score.text = [NSString stringWithFormat:@"%@",[self.gameData objectAtIndex:2]];
+    self.team2Score.text = [NSString stringWithFormat:@"%@",[self.gameData objectAtIndex:3]];
     self.team1Logo.image = self.team1Image;
     self.team2Logo.image = self.team2Image;
     
+    //setup the stat table view
+    CGRect thisFrame = self.view.frame;
+    CGRect tableFrame = CGRectMake(thisFrame.origin.x, thisFrame.origin.y + (thisFrame.size.height/2), thisFrame.size.width, thisFrame.size.height);
+    self.statTable = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
+    self.statTable.delegate = self;
+    self.statTable.dataSource = self;
+    self.statTable.scrollEnabled = NO;
+    [self.statTable registerNib:[UINib nibWithNibName:@"AUDLGameStatViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    [self.view addSubview:self.statTable];
+    self.statData = [self.gameData objectAtIndex:4];
+    
+    if (self.statTable == nil)
+    {
+        NSLog(@"Table view not found.");
+    }
     if ( self.team2Image == nil)
     {
         NSLog(@"No team 1 logo image.");
@@ -43,7 +61,7 @@
     //    [self.view addSubview:team2Name];
 }
 
-// Function for getting all available game graph data from the AUDL server
+// Function for getting all available game stat data from the AUDL server
 - (void)gameDataRequest
 {
     
@@ -82,5 +100,46 @@
     
 }
 
+
+#pragma mark - UITableViewDataSource Methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    //#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    //#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    
+    //NSLog(@"Number of stats %z",[[self.statData objectAtIndex:0] count]);
+    //return  [[self.statData objectAtIndex:0] count];
+    return [[self.statData objectAtIndex:1] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Got here.");
+    NSString *cellID = @"Cell";
+    
+    
+    AUDLGameStatViewCell *cell = [self.statTable dequeueReusableCellWithIdentifier:@"Cell"];
+    if (cell == nil)
+    {
+        cell = [[AUDLGameStatViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+    //UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    cell.label1.text = [[[self.statData objectAtIndex:0] objectAtIndex:indexPath.row] objectAtIndex:1];
+    cell.label2.text = [[[self.statData objectAtIndex:0] objectAtIndex:indexPath.row] objectAtIndex:0];
+    cell.label3.text = [[[self.statData objectAtIndex:1] objectAtIndex:indexPath.row] objectAtIndex:1];
+    //cell.textLabel.text = @"Test";
+    
+    return cell;
+    
+}
 
 @end

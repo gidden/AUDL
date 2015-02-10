@@ -54,6 +54,7 @@
 		72F4DB0C18DB5A3F00E571FC /* AUDLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4DB0A18DB5A3F00E571FC /* AUDLTableViewCell.xib */; };
 		CD0528241A82EF7F00605673 /* Header_No_Type.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0528231A82EF7F00605673 /* Header_No_Type.png */; };
 		CD32C1571A6A36FC00E75E6B /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32C1541A6A368500E75E6B /* libCorePlot-CocoaTouch.a */; };
+		CD343A711A89BB3300175C93 /* AUDLGameStatViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD343A701A89BB3300175C93 /* AUDLGameStatViewCell.m */; };
 		CD37741D1A70AFCD007FD6E9 /* audl-120.png in Resources */ = {isa = PBXBuildFile; fileRef = CD37741C1A70AFCC007FD6E9 /* audl-120.png */; };
 		CD61BC6D1A856D3100405F62 /* AUDLGameTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD61BC6C1A856D3100405F62 /* AUDLGameTabView.m */; };
 		CD61BC711A857BFA00405F62 /* AUDLGameStatsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD61BC701A857BFA00405F62 /* AUDLGameStatsView.m */; };
@@ -66,6 +67,7 @@
 		CD6FD18F1A806E31000D5406 /* downArrowBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6FD18C1A806E30000D5406 /* downArrowBlack.png */; };
 		CD6FD1901A806E31000D5406 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CD6FD18D1A806E31000D5406 /* README.md */; };
 		CD6FD1911A806E31000D5406 /* upArrowBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6FD18E1A806E31000D5406 /* upArrowBlack.png */; };
+		CD8BDA001A89B747002690DE /* AUDLGameStatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8BD9FF1A89B747002690DE /* AUDLGameStatViewCell.xib */; };
 		CD8C22C11A6B573C00A719F9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8C22C01A6B573C00A719F9 /* Accelerate.framework */; };
 		CD8C22C51A6B574200A719F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8C22C41A6B574200A719F9 /* QuartzCore.framework */; };
 		CD8FD7C71A6620AB00572CE6 /* Twitter_bird_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */; };
@@ -208,6 +210,7 @@
 		72F4DB0A18DB5A3F00E571FC /* AUDLTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLTableViewCell.xib; sourceTree = "<group>"; };
 		CD0528231A82EF7F00605673 /* Header_No_Type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Header_No_Type.png; sourceTree = "<group>"; };
 		CD32C14D1A6A368500E75E6B /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../core-plot/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
+		CD343A701A89BB3300175C93 /* AUDLGameStatViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLGameStatViewCell.m; sourceTree = "<group>"; };
 		CD37741C1A70AFCC007FD6E9 /* audl-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audl-120.png"; sourceTree = "<group>"; };
 		CD61BC6B1A856CF000405F62 /* AUDLGameTabView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLGameTabView.h; sourceTree = "<group>"; };
 		CD61BC6C1A856D3100405F62 /* AUDLGameTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLGameTabView.m; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 		CD6FD18C1A806E30000D5406 /* downArrowBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downArrowBlack.png; sourceTree = "<group>"; };
 		CD6FD18D1A806E31000D5406 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CD6FD18E1A806E31000D5406 /* upArrowBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upArrowBlack.png; sourceTree = "<group>"; };
+		CD8BD9FA1A884060002690DE /* AUDLGameStatViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUDLGameStatViewCell.h; sourceTree = "<group>"; };
+		CD8BD9FF1A89B747002690DE /* AUDLGameStatViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLGameStatViewCell.xib; sourceTree = "<group>"; };
 		CD8C22C01A6B573C00A719F9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		CD8C22C41A6B574200A719F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CD8FD7C61A6620AB00572CE6 /* Twitter_bird_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter_bird_logo.png; sourceTree = "<group>"; };
@@ -595,6 +600,9 @@
 				CD61BC6F1A857BCF00405F62 /* AUDLGameStatsView.h */,
 				CD61BC701A857BFA00405F62 /* AUDLGameStatsView.m */,
 				CD61BC761A85824200405F62 /* AUDLGameStatsView.xib */,
+				CD8BD9FF1A89B747002690DE /* AUDLGameStatViewCell.xib */,
+				CD8BD9FA1A884060002690DE /* AUDLGameStatViewCell.h */,
+				CD343A701A89BB3300175C93 /* AUDLGameStatViewCell.m */,
 			);
 			name = "Game Stats";
 			sourceTree = "<group>";
@@ -906,6 +914,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD659C5F1A6F7BDE00B5EDB9 /* AUDLNewsWebView.xib in Resources */,
+				CD8BDA001A89B747002690DE /* AUDLGameStatViewCell.xib in Resources */,
 				CD659C531A6F68C200B5EDB9 /* news_icon.png in Resources */,
 				CD92BC6B1A75AE46007604B5 /* Roboto-LightItalic.ttf in Resources */,
 				CD8FD7C71A6620AB00572CE6 /* Twitter_bird_logo.png in Resources */,
@@ -1011,6 +1020,7 @@
 				E9D674BE18DE019100712370 /* AUDLVideoViewController.m in Sources */,
 				727ABD8018D257C1005B9ACC /* AUDLAppDelegate.m in Sources */,
 				72255C2718F6EAB0001E6937 /* AUDLStandingsTableViewCell.m in Sources */,
+				CD343A711A89BB3300175C93 /* AUDLGameStatViewCell.m in Sources */,
 				727ABD7C18D257C1005B9ACC /* main.m in Sources */,
 				E99C294219057CA800B05EDC /* AUDLTermsOfUseViewController.m in Sources */,
 				727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */,
