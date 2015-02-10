@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Globals.h"
 
-@interface AUDLIndivTeamTableViewController : UITabBarController
+@interface AUDLIndivTeamTabViewController : UITabBarController
 @property (nonatomic, strong) NSString *teamName;
 @property (nonatomic) NSString *teamId;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;

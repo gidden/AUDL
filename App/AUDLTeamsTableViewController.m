@@ -9,7 +9,7 @@
 #import "AUDLTeamsTableViewController.h"
 #import "SWRevealViewController.h"
 #import "AUDLTableViewCell.h"
-#import "AUDLIndivTeamTableViewController.h"
+#import "AUDLIndivTeamTabViewController.h"
 #import "AUDLAppDelegate.h"
 
 @interface AUDLTeamsTableViewController ()
@@ -215,7 +215,7 @@
         
         
         // create the view controller we want to present
-        AUDLIndivTeamTableViewController *teamSelection = [[AUDLIndivTeamTableViewController alloc] initWithId:selectedCell.teamId];
+        AUDLIndivTeamTabViewController *teamSelection = [[AUDLIndivTeamTabViewController alloc] initWithId:selectedCell.teamId];
         teamSelection.teamName = selectedCell.teamName;
         //teamSelection.teamId = selectedCell.teamId;
         

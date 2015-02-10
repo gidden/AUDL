@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 AUDL. All rights reserved.
 //
 
-#import "AUDLIndivTeamTableViewController.h"
+#import "AUDLIndivTeamTabViewController.h"
 #import "AUDLTableViewCell.h"
 #import "AUDLRosterTableViewController.h"
 #import "AUDLTeamScheduleTableViewController.h"
@@ -16,7 +16,7 @@
 
 
 
-@implementation AUDLIndivTeamTableViewController
+@implementation AUDLIndivTeamTabViewController
 
 
 
@@ -45,15 +45,17 @@
     
   }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     
     [self teamRequest];
     
     [self setupTabView];
 
 }
+
+
 - (void)setupTabView{
     
     //gesture recognizers for moving between tab pages

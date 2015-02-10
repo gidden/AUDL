@@ -18,7 +18,7 @@
 		72255C2218F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72255C2018F6E8A3001E6937 /* AUDLDivStandingsTableViewController.xib */; };
 		72255C2718F6EAB0001E6937 /* AUDLStandingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72255C2518F6EAB0001E6937 /* AUDLStandingsTableViewCell.m */; };
 		72255C2818F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72255C2618F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib */; };
-		7249E15918F708E200C4012B /* AUDLIndivTeamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7249E15718F708E200C4012B /* AUDLIndivTeamTableViewController.m */; };
+		7249E15918F708E200C4012B /* AUDLIndivTeamTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7249E15718F708E200C4012B /* AUDLIndivTeamTabViewController.m */; };
 		727ABD7018D257C1005B9ACC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD6F18D257C1005B9ACC /* Foundation.framework */; };
 		727ABD7218D257C1005B9ACC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7118D257C1005B9ACC /* CoreGraphics.framework */; };
 		727ABD7418D257C1005B9ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727ABD7318D257C1005B9ACC /* UIKit.framework */; };
@@ -156,8 +156,8 @@
 		72255C2418F6EAB0001E6937 /* AUDLStandingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLStandingsTableViewCell.h; sourceTree = "<group>"; };
 		72255C2518F6EAB0001E6937 /* AUDLStandingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLStandingsTableViewCell.m; sourceTree = "<group>"; };
 		72255C2618F6EAB0001E6937 /* AUDLStandingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDLStandingsTableViewCell.xib; sourceTree = "<group>"; };
-		7249E15618F708E200C4012B /* AUDLIndivTeamTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLIndivTeamTableViewController.h; sourceTree = "<group>"; };
-		7249E15718F708E200C4012B /* AUDLIndivTeamTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLIndivTeamTableViewController.m; sourceTree = "<group>"; };
+		7249E15618F708E200C4012B /* AUDLIndivTeamTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDLIndivTeamTabViewController.h; sourceTree = "<group>"; };
+		7249E15718F708E200C4012B /* AUDLIndivTeamTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDLIndivTeamTabViewController.m; sourceTree = "<group>"; };
 		727ABD6C18D257C1005B9ACC /* AUDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AUDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		727ABD6F18D257C1005B9ACC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		727ABD7118D257C1005B9ACC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -754,8 +754,8 @@
 		E9A9AB7218E91DE400F5BEED /* Team */ = {
 			isa = PBXGroup;
 			children = (
-				7249E15618F708E200C4012B /* AUDLIndivTeamTableViewController.h */,
-				7249E15718F708E200C4012B /* AUDLIndivTeamTableViewController.m */,
+				7249E15618F708E200C4012B /* AUDLIndivTeamTabViewController.h */,
+				7249E15718F708E200C4012B /* AUDLIndivTeamTabViewController.m */,
 				72C7F18219043A6500D7C49B /* Roster */,
 				72C7F18819043AA600D7C49B /* Schedule */,
 				72C1250419045EAD00BAEC46 /* Statistics */,
@@ -1025,7 +1025,7 @@
 				E99C294219057CA800B05EDC /* AUDLTermsOfUseViewController.m in Sources */,
 				727ABDA618D257EC005B9ACC /* SWRevealViewController.m in Sources */,
 				CD92BC7A1A75B0CE007604B5 /* AUDLScoreTableViewCell.m in Sources */,
-				7249E15918F708E200C4012B /* AUDLIndivTeamTableViewController.m in Sources */,
+				7249E15918F708E200C4012B /* AUDLIndivTeamTabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
