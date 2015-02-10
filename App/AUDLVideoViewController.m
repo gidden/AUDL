@@ -37,7 +37,7 @@
     _sidebarButton.action = @selector(revealToggle:);
     
     //set the gesture
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+//    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     //get videos from server
     [self getVideos];

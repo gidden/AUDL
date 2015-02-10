@@ -42,7 +42,7 @@
     _sideBarButton.action = @selector(revealToggle:);
     
     // Add a gesture recognizer for the navigation sidebar
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+//    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     // Get news items from the server
     [self newsItemsRequest];

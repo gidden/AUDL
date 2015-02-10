@@ -40,7 +40,7 @@
     _sidebarButton.action = @selector(revealToggle:);
     
     // Add a gesture recognizer for the navigation sidebar
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+//    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     //get teams
     [self teamsRequest];

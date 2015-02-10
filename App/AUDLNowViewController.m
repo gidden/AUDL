@@ -33,7 +33,7 @@
     [self.navigationItem setLeftBarButtonItem:self.sidebarButton animated:YES];
     
     //set the gesture for the sidebar
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+//    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
  
 }
 

@@ -41,7 +41,7 @@
     _sidebarButton.action = @selector(revealToggle:);
     
     // Set the gesture
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+//    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelect:)];
     [self.view addGestureRecognizer:gesture];

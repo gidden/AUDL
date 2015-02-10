@@ -39,7 +39,7 @@
     _sidebarButton.action = @selector(revealToggle:);
     
     //set the gesture
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+//    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     // Get standings items from the server
     [self standingsRequest];
