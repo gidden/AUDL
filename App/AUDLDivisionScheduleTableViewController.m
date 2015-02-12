@@ -93,18 +93,12 @@
     // get an instance of the appDelegate to access global icon dictionary
     AUDLAppDelegate *appDelegate = (AUDLAppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    // get a temporary pointer for the icon dictionary
-    NSDictionary *tempDict = appDelegate.icons;
-    
-    NSString *teamOneId = [NSString stringWithFormat: @"%@", [thisGameItem objectAtIndex:1]];
-    NSString *teamTwoId = [NSString stringWithFormat: @"%@", [thisGameItem objectAtIndex:3]];
-
-    
+     
     //populate the cell info
     cell.teamOne.text = [thisGameItem objectAtIndex:0];
-    cell.teamOneIcon.image = [tempDict objectForKey:teamOneId];
+    cell.teamOneIcon.image = [self iconFromAbbrev:cell.teamOne.text];
     cell.teamTwo.text = [thisGameItem objectAtIndex:2];
-    cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
+    cell.teamTwoIcon.image = [self iconFromAbbrev:cell.teamTwo.text];
     //setup date and time string
     NSString *date = [thisGameItem objectAtIndex:4];
     NSString *time = [thisGameItem objectAtIndex:5];
@@ -114,6 +108,17 @@
     
     return cell;
 }
+
+-(UIImage*)iconFromAbbrev:(NSString*)teamAbbrev
+{
+    NSString *iconFilename = @"TeamIcons_";
+    iconFilename = [iconFilename stringByAppendingString:teamAbbrev]; //use team abbrev to complete filename
+    iconFilename = [iconFilename stringByAppendingString:@".png"]; // add file extension
+    
+    return [UIImage imageNamed:iconFilename];
+    
+}
+
 
 
 - (void)didSelect:(UIGestureRecognizer *)gestureRecognizer {

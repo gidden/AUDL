@@ -199,10 +199,11 @@
     
     //populate the cell info
     cell.teamOne.text = [thisGameItem objectAtIndex:0];
-    cell.teamOneIcon.image = [tempDict objectForKey:teamOneId];
+    cell.teamOneIcon.image = [self iconFromAbbrev:cell.teamOne.text];
     cell.teamTwo.text = [thisGameItem objectAtIndex:2];
-    cell.teamTwoIcon.image = [tempDict objectForKey:teamTwoId];
+    cell.teamTwoIcon.image = [self iconFromAbbrev:cell.teamTwo.text];
 
+    
     cell.teamOneScore.textColor = [UIColor colorWithRed:(121/255.0) green:(123/255.0) blue:(125/255.0) alpha:1];
     cell.teamTwoScore.textColor = [UIColor colorWithRed:(121/255.0) green:(123/255.0) blue:(125/255.0) alpha:1];
     cell.teamOneScore.text = [NSString stringWithFormat:@"%@",[thisGameItem objectAtIndex:6]];
@@ -220,6 +221,18 @@
 
     return cell;
 }
+
+
+-(UIImage*)iconFromAbbrev:(NSString*)teamAbbrev
+{
+    NSString *iconFilename = @"TeamIcons_";
+    iconFilename = [iconFilename stringByAppendingString:teamAbbrev]; //use team abbrev to complete filename
+    iconFilename = [iconFilename stringByAppendingString:@".png"]; // add file extension
+    
+    return [UIImage imageNamed:iconFilename];
+    
+}
+
 
 -(AUDLScoreTableViewCell*)setCellStatus:(AUDLScoreTableViewCell*)cell withStatusValue:(NSString*)statusValue
 {
