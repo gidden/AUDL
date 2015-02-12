@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="dhz-ay-S1k" customClass="AUDLTeamTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dhz-ay-S1k" id="t6M-gh-CqM">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="TeamName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfc-r9-0Ro">
+                        <rect key="frame" x="114" y="27" width="206" height="21"/>
+                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.1764705882352941" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bw7-XB-YTV">
+                        <rect key="frame" x="20" y="15" width="45" height="45"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="teams_div.png" translatesAutoresizingMaskIntoConstraints="NO" id="s1y-6T-Rhi">
+                        <rect key="frame" x="56" y="15" width="70" height="44"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="Zfc-r9-0Ro" secondAttribute="centerY" constant="-0.5" id="SUi-E7-GS1"/>
+                    <constraint firstAttribute="centerY" secondItem="bw7-XB-YTV" secondAttribute="centerY" constant="1" id="kVg-wz-14s"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dividerView" destination="s1y-6T-Rhi" id="rrt-fh-xwQ"/>
+                <outlet property="teamLogo" destination="bw7-XB-YTV" id="EIP-Rk-UDi"/>
+                <outlet property="teamName" destination="Zfc-r9-0Ro" id="w8R-As-Aba"/>
+            </connections>
+            <point key="canvasLocation" x="153" y="242"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="teams_div.png" width="1" height="200"/>
+    </resources>
+</document>

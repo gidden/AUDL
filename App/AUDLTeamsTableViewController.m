@@ -9,6 +9,7 @@
 #import "AUDLTeamsTableViewController.h"
 #import "SWRevealViewController.h"
 #import "AUDLTableViewCell.h"
+#import "AUDLTeamTableViewCell.h"
 #import "AUDLIndivTeamTabViewController.h"
 #import "AUDLAppDelegate.h"
 
@@ -31,6 +32,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"AUDLTeamTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    self.tableView.rowHeight = 80;
+    
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
     //_sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
@@ -51,6 +55,14 @@
     self.navigationController.navigationBar.translucent = NO;
     //[self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
 
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.title = @"Teams";
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,32 +93,33 @@
     
     NSArray *thisTeam = [self.teams objectAtIndex:indexPath.row];
     // cell identifier is also team name
-    NSString *cellIdentifier = [thisTeam objectAtIndex:0];
+    NSString *cellIdentifier = @"Cell";
     // team ID
     NSString *cellTeamId = [thisTeam objectAtIndex:1];
-    
-    AUDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    AUDLTeamTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[AUDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[AUDLTeamTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+
+
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:cellIdentifier];
-    cell.textLabel.font = [UIFont systemFontOfSize:15.0];
-    //NSLog("%@", cell.textLabel.text)
     [cell setTeamId:[NSString stringWithFormat: @"%@", cellTeamId]];
-    [cell setTeamName:cellIdentifier];
+    cell.teamName.text = [thisTeam objectAtIndex:0];
     
-    
-    //cell.imageView.bounds = CGRectMake(cell.imageView.frame.origin.x,cell.imageView.frame.origin.y, 20, 20);
-    //NSLog("%c", cell.imageView.frame.size.height);
     // show the team's logo to the left of their name
     AUDLAppDelegate *appDelegate = (AUDLAppDelegate *)[[UIApplication sharedApplication] delegate];
     NSDictionary *tempDict = appDelegate.icons;
-    cell.imageView.image = [tempDict objectForKey:cell.teamId];
-    
-    
+    cell.teamLogo.image = [tempDict objectForKey:cell.teamId];
+    cell.dividerView.clipsToBounds = YES;
+    cell.bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"greybar_nodiv.png"]];
+    cell.bgView.frame = cell.frame;
+    cell.bgView.backgroundColor = [UIColor clearColor];
+    cell.bgView.opaque = NO;
+    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundView = cell.bgView;
     // add the right pointing arrow to the cell
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
@@ -208,16 +221,14 @@
         UITableViewCell* tappedCell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
         
         // pointer to the cell that was selected
-        AUDLTableViewCell* selectedCell = (AUDLTableViewCell*)tappedCell;
+        AUDLTeamTableViewCell *selectedCell = (AUDLTeamTableViewCell*)tappedCell;
         NSLog(@"%@", selectedCell.teamId);
         // opens the selected cell's url in Safari
-        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedCell.link]];
         
         
         // create the view controller we want to present
         AUDLIndivTeamTabViewController *teamSelection = [[AUDLIndivTeamTabViewController alloc] initWithId:selectedCell.teamId];
         teamSelection.teamName = selectedCell.teamName;
-        //teamSelection.teamId = selectedCell.teamId;
         
         // override the back button in the new controller from saying "Schedule"
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
