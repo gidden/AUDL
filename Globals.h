@@ -9,6 +9,7 @@
 #ifndef AUDL_Globals_h
 #define AUDL_Globals_h
 
+int i =0;
 
 extern NSString *server_url;
 
